@@ -1,15 +1,30 @@
-# pywise
-## A wrapper client for simplifying interactions with the ConnectWise Manage API in Python
+[![Health IT Logo](https://healthit.com.au/wp-content/uploads/2019/06/HIT-proper-logo.png)](https://healthit.com.au)
 
-Currently undergoing full rewrite. Hold onto your butts.
+# PyWise - A wrapper client for simplifying interactions with the ConnectWise Manage API in Python
+
+PyWise is a full featured, type-annotated API client written in Python for the ConnectWise API's. Currently, it only supports ConnectWise Manage, but more is planned.
+- - - - 
+Features:
+=========
+- 100% API Coverage. All endpoints and response schemas have had their code generated from the ConnectWise Manage OpenAPI Schema.
+- Focus on type-annotation and DX. Models are parsed and validated using [Pydantic](https://github.com/pydantic/pydantic)
+
+PyWise is currently in **pre-release**. This means that while it does work, you may come across issues and inconsistencies. 
+As all Endpoint and Model code has been generated, not all of it has been tested. YMMV.
+Please refer to the roadmap for more information.
+- - - - 
+Known Issues:
+=============
+- Currently only parses and validates **Response** models. No input models yet.
+- As this project is still a WIP, documentation or code commentary may not always align. 
+- Doesn't throw exceptions for errors yet
 
 - - - - 
-Coverage:
-=========
-
-| Endpoint | Done? | Todo |
-|----------|-------|------|
-| Company | :o: | PATCH, PUT, DELETE |
+Planned and in progress:
+=============
+- Automate API Support
+- Input model validation
+- Robust error handling
 
 - - - - 
 How-to:
@@ -23,10 +38,10 @@ How-to:
 - - - - 
 # Initialize API client
 ```python
-from pywise.client import ConnectWiseAPIClient
+from pywise import ConnectWiseManageAPIClient
 
 # init client
-api = ConnectWiseAPIClient(
+api = ConnectWiseManageAPIClient(
   # company name,
   # company url,
   # client id,
@@ -37,52 +52,48 @@ api = ConnectWiseAPIClient(
 
 - - - - 
 # Working with Endpoints
-Endpoints follow the standard CRUD pattern in accordance to what's available with ConnectWise Manage - [ConnectWise Manage REST API Docs (requires ConnectWise Developer account)](https://developer.connectwise.com/Products/ConnectWise_PSA/REST)
+Endpoints are 1:1 to what's available with ConnectWise Manage as code is generated from their OpenAPI schema
+For more information, check out the [ConnectWise Manage REST API Docs (requires ConnectWise Developer account)](https://developer.connectwise.com/Products/ConnectWise_PSA/REST)
 
 # Get
-
-Get many
 ```python
 # sends get request to /company/companies endpoint
-companies = api.company.get()
+companies = api.company.companies.get()
 ```
 
-Get one
+# Get one
 ```python
 # sends get request to /company/companies/{id} endpoint
-companies = api.company.get_with_id(250)
+companies = api.company.companies.id(250).get()
 ```
 
-Get with params
+# Get with params
 ```python
 # sends get request to /company/companies with a condition query string
-conditional_get = api.company.get(params={
+conditional_get = api.company.companies.get(params={
   'conditions': 'company/id=250'
 })
 ```
 
 # Child Endpoints
-The ConnectWise API has many instances of nested endpoints - for example, /company/companies/{company_id}/sites
+The ConnectWise API has many instances of nested endpoints - for example, ```/company/companies/{company_id}/sites```
 
-This is replicated in the library. All Endpoints provide an ```id``` method for setting the ID and traversing down the chain.
+This is replicated in the library. Endpoints provide an ```id``` method for setting the ID and traversing down the path.
 
-Example using the above (/company/companies/{company_id}/sites)
+###### Example using ```/company/companies/{company_id}/sites```
 ```python
-sites = api.company.id(250).sites.get()
+sites = api.company.companies.id(250).sites.get()
 ```
 
-If you attempt to retrieve a child endpoint without first using the ```id``` method, an exception will be thrown.
-
-- - - - 
 # Pagination
 The ConnectWise API paginates data for performance reasons through the ```page``` and ```pageSize``` query parameters. ```pageSize``` is limited to a maximum of 1000.
 
-To make working with paginated data dead simple, Endpoints supply a ```paginated()``` method. Under the hood this wraps a Get request, but does a lot of neat stuff to make working with pages easier.
+To make working with paginated data easy, Endpoints that implement a GET response with an array also supply a ```paginated()``` method. Under the hood this wraps a GET request, but does a lot of neat stuff to make working with pages easier.
 
 Working with pagination
 ```python
-# initialize a PaginatedResponse instance for the companies endpoint, starting on page 1 with a pageSize of 100
-paginated_companies = api.company.paginated(1,100)
+# initialize a PaginatedResponse instance for /company/companies, starting on page 1 with a pageSize of 100
+paginated_companies = api.company.companies.paginated(1,100)
 
 # access the data from the current page using the .data field
 page_one_data = paginated_companies.data
