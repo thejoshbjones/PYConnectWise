@@ -94,9 +94,6 @@ class ConnectWiseEndpoint:
         url_parts = [str(arg).strip("/") for arg in args]
         return "/".join(url_parts)
 
-    def paginated(self, page: int, page_size: int, params={}) -> PaginatedResponse[Any]:
-        return PaginatedResponse(None, Any, Any, None)
-
     def __get_replaced_url(self):
         if self._id is None:
             return self.endpoint_base
@@ -176,20 +173,3 @@ class ConnectWiseEndpoint:
         """
         self._id = id
         return self
-
-    # The following methods should be implemented by the derived classes.
-
-    def get(self, id: int | None = None, *args, **kwargs):
-        pass
-
-    def post(self, id: int | None = None, *args, **kwargs):
-        pass
-
-    def put(self, id: int | None = None, *args, **kwargs):
-        pass
-
-    def patch(self, id: int | None = None, *args, **kwargs):
-        pass
-
-    def delete(self, id: int | None = None, *args, **kwargs):
-        pass
