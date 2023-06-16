@@ -16,7 +16,7 @@ Please refer to the roadmap for more information.
 Known Issues:
 =============
 - The ConnectWise API spec doesn't label optional fields correctly - for example, the mergedParentTicket field on a service ticket is only included in an API response if the ticket has a parent.
-  - Because these aren't labelled, the models generated can't correctly identify what exactly an optional field is. As a result, every field on a model is optional (annotated as ```<type> | None```). I'd like to find a better solution to this.
+  - Because these aren't labelled, the models generated can't correctly identify what exactly an optional field is. As a result, every field on a model is optional (annotated as ```<type> | None```). I'd like to find a better solution to this that doesn't include manually fixing hundreds of models.
 - Currently only parses and validates **Response** models. No input models yet.
 - As this project is still a WIP, documentation or code commentary may not always align. 
 - Little to no error handling just yet
