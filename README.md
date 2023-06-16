@@ -17,7 +17,7 @@ Known Issues:
 =============
 - Currently only parses and validates **Response** models. No input models yet.
 - As this project is still a WIP, documentation or code commentary may not always align. 
-- Doesn't throw exceptions for errors yet
+- Little to no error handling just yet
 
 - - - - 
 Planned and in progress:
