@@ -27,7 +27,7 @@ class CustomFieldValueModel(ConnectWiseModel):
     type: CustomFieldValueModelType | None
     entry_method: EntryMethod | None
     number_of_decimals: int | None
-    value: dict[str, Any] | None
+    value: Any | None
 
     class Config:
         alias_generator = to_camel_case

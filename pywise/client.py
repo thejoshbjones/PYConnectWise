@@ -1,3 +1,4 @@
+
 import os
 import base64
 import requests
@@ -13,7 +14,6 @@ from pywise.endpoints.ScheduleEndpoint import ScheduleEndpoint
 from pywise.endpoints.ServiceEndpoint import ServiceEndpoint
 from pywise.endpoints.SystemEndpoint import SystemEndpoint
 from pywise.endpoints.TimeEndpoint import TimeEndpoint
-
 
 class ConnectWiseManageAPIClient:
     def __init__(

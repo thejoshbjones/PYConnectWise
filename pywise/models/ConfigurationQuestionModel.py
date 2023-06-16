@@ -19,7 +19,7 @@ class ConfigurationQuestionModel(ConnectWiseModel):
     answer_id: int | None
     question_id: int | None
     question: str | None
-    answer: dict[str, Any] | None
+    answer: Any | None
     sequence_number: float | None
     number_of_decimals: int | None
     field_type: FieldType | None

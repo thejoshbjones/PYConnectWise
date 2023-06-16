@@ -7,7 +7,7 @@ def cw_format_datetime(datetime: datetime) -> str:
     return datetime.strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
-def parse_link_headers(headers: dict[str, str]) -> dict[str,Any]:
+def parse_link_headers(headers: dict[str, str]) -> dict[str, Any]:
     links = headers["Link"].split(",")
     has_next_page: bool = False
     has_prev_page: bool = False

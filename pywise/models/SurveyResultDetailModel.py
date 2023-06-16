@@ -5,7 +5,7 @@ from pywise.models.base.connectwise_model import ConnectWiseModel
 
 class SurveyResultDetailModel(ConnectWiseModel):
     question_id: int | None
-    answer: dict[str, Any] | None
+    answer: Any | None
 
     class Config:
         alias_generator = to_camel_case
