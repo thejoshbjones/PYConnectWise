@@ -29,11 +29,17 @@ Planned and in progress:
 - - - - 
 How-to:
 ======
+- [Install](#install)
 - [Initialize API client](#initialize-api-client)
 - [Working with Endpoints](#working-with-endpoints)
   - [Get](#get)
   - [Child Endpoints](#child-endpoints)
 - [Pagination](#pagination)
+- [Examples](#examples)
+
+- - - - 
+# Install
+TODO: Pending PyPi upload
 
 - - - - 
 # Initialize API client
@@ -112,4 +118,19 @@ for company in paginated_companies:
 # this works by yielding every item on the page, then fetching the next page and continuing until there's no data left
 for company in paginated_companies.all():
   # ... do things ...
+```
+- - - -
+# Examples
+## Get all agreements, and all additions for an agreement
+```python
+agreements = api.finance.agreements.paginated(1, 1000)
+for agreement in agreements.all():
+    additions = api.finance.agreements.id(agreement.id).additions.get()
+```
+
+## Get all service tickets with an ID > 1000
+```python
+tickets = api.service.tickets.get(params={
+    'conditions': 'id > 1000'
+})
 ```
