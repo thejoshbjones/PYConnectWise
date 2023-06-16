@@ -141,9 +141,9 @@ import requests
 class ConnectWiseManageAPIClient:
     def __init__(
         self,
-        client_id,
         company_name,
         company_url,
+        client_id,
         public_key,
         private_key,
         codebase=None,
