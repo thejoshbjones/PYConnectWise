@@ -121,7 +121,7 @@ for company in paginated_companies.all():
 ```
 - - - -
 # Examples
-## Get all agreements, and all additions for an agreement
+## Get all agreements, then all additions for an agreement
 ```python
 agreements = api.finance.agreements.paginated(1, 1000)
 for agreement in agreements.all():
