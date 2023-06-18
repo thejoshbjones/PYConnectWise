@@ -11,7 +11,7 @@ class ProjectTicketsIdTasksIdEndpoint(ConnectWiseEndpoint):
     
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[TicketTaskModel]:
         """
-        Performs a GET request against the  endpoint and returns an initialized PaginatedResponse object.
+        Performs a GET request against the /project/tickets/{parentId}/tasks/{id} endpoint and returns an initialized PaginatedResponse object.
 
         Parameters:
             page (int): The page number to request.
@@ -34,7 +34,7 @@ class ProjectTicketsIdTasksIdEndpoint(ConnectWiseEndpoint):
     
     def get(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> TicketTaskModel:
         """
-        Performs a GET request against the  endpoint.
+        Performs a GET request against the /project/tickets/{parentId}/tasks/{id} endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.
@@ -46,7 +46,7 @@ class ProjectTicketsIdTasksIdEndpoint(ConnectWiseEndpoint):
         
     def delete(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> GenericMessageModel:
         """
-        Performs a DELETE request against the  endpoint.
+        Performs a DELETE request against the /project/tickets/{parentId}/tasks/{id} endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.
@@ -58,7 +58,7 @@ class ProjectTicketsIdTasksIdEndpoint(ConnectWiseEndpoint):
         
     def put(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> TicketTaskModel:
         """
-        Performs a PUT request against the  endpoint.
+        Performs a PUT request against the /project/tickets/{parentId}/tasks/{id} endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.
@@ -70,7 +70,7 @@ class ProjectTicketsIdTasksIdEndpoint(ConnectWiseEndpoint):
         
     def patch(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> TicketTaskModel:
         """
-        Performs a PATCH request against the  endpoint.
+        Performs a PATCH request against the /project/tickets/{parentId}/tasks/{id} endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.

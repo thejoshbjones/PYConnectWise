@@ -11,7 +11,7 @@ class FinanceAgreementTypesIdWorkRoleExclusionsIdEndpoint(ConnectWiseEndpoint):
     
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[AgreementTypeWorkRoleExclusionModel]:
         """
-        Performs a GET request against the  endpoint and returns an initialized PaginatedResponse object.
+        Performs a GET request against the /finance/agreementTypes/{parentId}/workRoleExclusions/{id} endpoint and returns an initialized PaginatedResponse object.
 
         Parameters:
             page (int): The page number to request.
@@ -34,7 +34,7 @@ class FinanceAgreementTypesIdWorkRoleExclusionsIdEndpoint(ConnectWiseEndpoint):
     
     def get(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> AgreementTypeWorkRoleExclusionModel:
         """
-        Performs a GET request against the  endpoint.
+        Performs a GET request against the /finance/agreementTypes/{parentId}/workRoleExclusions/{id} endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.
@@ -46,7 +46,7 @@ class FinanceAgreementTypesIdWorkRoleExclusionsIdEndpoint(ConnectWiseEndpoint):
         
     def delete(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> GenericMessageModel:
         """
-        Performs a DELETE request against the  endpoint.
+        Performs a DELETE request against the /finance/agreementTypes/{parentId}/workRoleExclusions/{id} endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.

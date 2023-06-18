@@ -21,7 +21,7 @@ class MarketingGroupsIdContactsEndpoint(ConnectWiseEndpoint):
     
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[MarketingContactModel]:
         """
-        Performs a GET request against the  endpoint and returns an initialized PaginatedResponse object.
+        Performs a GET request against the /marketing/groups/{parentId}/contacts endpoint and returns an initialized PaginatedResponse object.
 
         Parameters:
             page (int): The page number to request.
@@ -44,7 +44,7 @@ class MarketingGroupsIdContactsEndpoint(ConnectWiseEndpoint):
     
     def get(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> list[MarketingContactModel]:
         """
-        Performs a GET request against the  endpoint.
+        Performs a GET request against the /marketing/groups/{parentId}/contacts endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.
@@ -56,7 +56,7 @@ class MarketingGroupsIdContactsEndpoint(ConnectWiseEndpoint):
         
     def post(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> MarketingContactModel:
         """
-        Performs a POST request against the  endpoint.
+        Performs a POST request against the /marketing/groups/{parentId}/contacts endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.

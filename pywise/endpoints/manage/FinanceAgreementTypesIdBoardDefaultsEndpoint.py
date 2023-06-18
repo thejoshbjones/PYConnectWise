@@ -21,7 +21,7 @@ class FinanceAgreementTypesIdBoardDefaultsEndpoint(ConnectWiseEndpoint):
     
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[AgreementTypeBoardDefaultModel]:
         """
-        Performs a GET request against the  endpoint and returns an initialized PaginatedResponse object.
+        Performs a GET request against the /finance/agreementTypes/{parentId}/boardDefaults endpoint and returns an initialized PaginatedResponse object.
 
         Parameters:
             page (int): The page number to request.
@@ -44,7 +44,7 @@ class FinanceAgreementTypesIdBoardDefaultsEndpoint(ConnectWiseEndpoint):
     
     def get(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> list[AgreementTypeBoardDefaultModel]:
         """
-        Performs a GET request against the  endpoint.
+        Performs a GET request against the /finance/agreementTypes/{parentId}/boardDefaults endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.
@@ -56,7 +56,7 @@ class FinanceAgreementTypesIdBoardDefaultsEndpoint(ConnectWiseEndpoint):
         
     def post(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> AgreementTypeBoardDefaultModel:
         """
-        Performs a POST request against the  endpoint.
+        Performs a POST request against the /finance/agreementTypes/{parentId}/boardDefaults endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.

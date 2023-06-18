@@ -43,7 +43,7 @@ class SystemInfoEndpoint(ConnectWiseEndpoint):
     
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[InfoModel]:
         """
-        Performs a GET request against the  endpoint and returns an initialized PaginatedResponse object.
+        Performs a GET request against the /system/info endpoint and returns an initialized PaginatedResponse object.
 
         Parameters:
             page (int): The page number to request.
@@ -66,7 +66,7 @@ class SystemInfoEndpoint(ConnectWiseEndpoint):
     
     def get(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> InfoModel:
         """
-        Performs a GET request against the  endpoint.
+        Performs a GET request against the /system/info endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.

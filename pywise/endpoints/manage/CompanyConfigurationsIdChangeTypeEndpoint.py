@@ -11,7 +11,7 @@ class CompanyConfigurationsIdChangeTypeEndpoint(ConnectWiseEndpoint):
     
     def patch(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> ConfigurationModel:
         """
-        Performs a PATCH request against the  endpoint.
+        Performs a PATCH request against the /company/configurations/{id}/changeType endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.

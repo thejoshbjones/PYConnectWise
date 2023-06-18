@@ -21,7 +21,7 @@ class ProjectSecurityRolesEndpoint(ConnectWiseEndpoint):
     
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[ProjectSecurityRoleModel]:
         """
-        Performs a GET request against the  endpoint and returns an initialized PaginatedResponse object.
+        Performs a GET request against the /project/securityRoles endpoint and returns an initialized PaginatedResponse object.
 
         Parameters:
             page (int): The page number to request.
@@ -44,7 +44,7 @@ class ProjectSecurityRolesEndpoint(ConnectWiseEndpoint):
     
     def get(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> list[ProjectSecurityRoleModel]:
         """
-        Performs a GET request against the  endpoint.
+        Performs a GET request against the /project/securityRoles endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.
@@ -56,7 +56,7 @@ class ProjectSecurityRolesEndpoint(ConnectWiseEndpoint):
         
     def post(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> ProjectSecurityRoleModel:
         """
-        Performs a POST request against the  endpoint.
+        Performs a POST request against the /project/securityRoles endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.

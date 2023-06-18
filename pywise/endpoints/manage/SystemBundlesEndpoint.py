@@ -15,7 +15,7 @@ class SystemBundlesEndpoint(ConnectWiseEndpoint):
     
     def post(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> BundleResultsCollectionModel:
         """
-        Performs a POST request against the  endpoint.
+        Performs a POST request against the /system/bundles endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.

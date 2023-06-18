@@ -11,7 +11,7 @@ class SystemParsingTypesIdEndpoint(ConnectWiseEndpoint):
     
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[ParsingTypeModel]:
         """
-        Performs a GET request against the  endpoint and returns an initialized PaginatedResponse object.
+        Performs a GET request against the /system/parsingTypes/{id} endpoint and returns an initialized PaginatedResponse object.
 
         Parameters:
             page (int): The page number to request.
@@ -34,7 +34,7 @@ class SystemParsingTypesIdEndpoint(ConnectWiseEndpoint):
     
     def get(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> ParsingTypeModel:
         """
-        Performs a GET request against the  endpoint.
+        Performs a GET request against the /system/parsingTypes/{id} endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.

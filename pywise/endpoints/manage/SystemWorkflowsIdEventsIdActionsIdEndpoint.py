@@ -11,7 +11,7 @@ class SystemWorkflowsIdEventsIdActionsIdEndpoint(ConnectWiseEndpoint):
     
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[WorkflowActionModel]:
         """
-        Performs a GET request against the  endpoint and returns an initialized PaginatedResponse object.
+        Performs a GET request against the /system/workflows/{grandparentId}/events/{parentId}/actions/{id} endpoint and returns an initialized PaginatedResponse object.
 
         Parameters:
             page (int): The page number to request.
@@ -34,7 +34,7 @@ class SystemWorkflowsIdEventsIdActionsIdEndpoint(ConnectWiseEndpoint):
     
     def get(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> WorkflowActionModel:
         """
-        Performs a GET request against the  endpoint.
+        Performs a GET request against the /system/workflows/{grandparentId}/events/{parentId}/actions/{id} endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.
@@ -46,7 +46,7 @@ class SystemWorkflowsIdEventsIdActionsIdEndpoint(ConnectWiseEndpoint):
         
     def delete(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> GenericMessageModel:
         """
-        Performs a DELETE request against the  endpoint.
+        Performs a DELETE request against the /system/workflows/{grandparentId}/events/{parentId}/actions/{id} endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.
@@ -58,7 +58,7 @@ class SystemWorkflowsIdEventsIdActionsIdEndpoint(ConnectWiseEndpoint):
         
     def put(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> WorkflowActionModel:
         """
-        Performs a PUT request against the  endpoint.
+        Performs a PUT request against the /system/workflows/{grandparentId}/events/{parentId}/actions/{id} endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.
@@ -70,7 +70,7 @@ class SystemWorkflowsIdEventsIdActionsIdEndpoint(ConnectWiseEndpoint):
         
     def patch(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> WorkflowActionModel:
         """
-        Performs a PATCH request against the  endpoint.
+        Performs a PATCH request against the /system/workflows/{grandparentId}/events/{parentId}/actions/{id} endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.

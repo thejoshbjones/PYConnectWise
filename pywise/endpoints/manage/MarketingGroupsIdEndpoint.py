@@ -23,7 +23,7 @@ class MarketingGroupsIdEndpoint(ConnectWiseEndpoint):
     
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[GroupModel]:
         """
-        Performs a GET request against the  endpoint and returns an initialized PaginatedResponse object.
+        Performs a GET request against the /marketing/groups/{id} endpoint and returns an initialized PaginatedResponse object.
 
         Parameters:
             page (int): The page number to request.
@@ -46,7 +46,7 @@ class MarketingGroupsIdEndpoint(ConnectWiseEndpoint):
     
     def get(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> GroupModel:
         """
-        Performs a GET request against the  endpoint.
+        Performs a GET request against the /marketing/groups/{id} endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.
@@ -58,7 +58,7 @@ class MarketingGroupsIdEndpoint(ConnectWiseEndpoint):
         
     def delete(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> GenericMessageModel:
         """
-        Performs a DELETE request against the  endpoint.
+        Performs a DELETE request against the /marketing/groups/{id} endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.
@@ -70,7 +70,7 @@ class MarketingGroupsIdEndpoint(ConnectWiseEndpoint):
         
     def put(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> GroupModel:
         """
-        Performs a PUT request against the  endpoint.
+        Performs a PUT request against the /marketing/groups/{id} endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.
@@ -82,7 +82,7 @@ class MarketingGroupsIdEndpoint(ConnectWiseEndpoint):
         
     def patch(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> GroupModel:
         """
-        Performs a PATCH request against the  endpoint.
+        Performs a PATCH request against the /marketing/groups/{id} endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.

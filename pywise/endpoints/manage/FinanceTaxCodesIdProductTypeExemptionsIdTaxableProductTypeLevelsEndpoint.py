@@ -21,7 +21,7 @@ class FinanceTaxCodesIdProductTypeExemptionsIdTaxableProductTypeLevelsEndpoint(C
     
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[TaxableProductTypeLevelModel]:
         """
-        Performs a GET request against the  endpoint and returns an initialized PaginatedResponse object.
+        Performs a GET request against the /finance/taxCodes/{grandparentId}/productTypeExemptions/{parentId}/taxableProductTypeLevels endpoint and returns an initialized PaginatedResponse object.
 
         Parameters:
             page (int): The page number to request.
@@ -44,7 +44,7 @@ class FinanceTaxCodesIdProductTypeExemptionsIdTaxableProductTypeLevelsEndpoint(C
     
     def get(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> list[TaxableProductTypeLevelModel]:
         """
-        Performs a GET request against the  endpoint.
+        Performs a GET request against the /finance/taxCodes/{grandparentId}/productTypeExemptions/{parentId}/taxableProductTypeLevels endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.
@@ -56,7 +56,7 @@ class FinanceTaxCodesIdProductTypeExemptionsIdTaxableProductTypeLevelsEndpoint(C
         
     def post(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> TaxableProductTypeLevelModel:
         """
-        Performs a POST request against the  endpoint.
+        Performs a POST request against the /finance/taxCodes/{grandparentId}/productTypeExemptions/{parentId}/taxableProductTypeLevels endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.

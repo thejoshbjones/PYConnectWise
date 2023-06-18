@@ -11,7 +11,7 @@ class ServiceKnowledgebasesettingsIdEndpoint(ConnectWiseEndpoint):
     
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[KnowledgeBaseSettingsModel]:
         """
-        Performs a GET request against the  endpoint and returns an initialized PaginatedResponse object.
+        Performs a GET request against the /service/knowledgebasesettings/{id} endpoint and returns an initialized PaginatedResponse object.
 
         Parameters:
             page (int): The page number to request.
@@ -34,7 +34,7 @@ class ServiceKnowledgebasesettingsIdEndpoint(ConnectWiseEndpoint):
     
     def get(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> KnowledgeBaseSettingsModel:
         """
-        Performs a GET request against the  endpoint.
+        Performs a GET request against the /service/knowledgebasesettings/{id} endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.
@@ -46,7 +46,7 @@ class ServiceKnowledgebasesettingsIdEndpoint(ConnectWiseEndpoint):
         
     def put(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> KnowledgeBaseSettingsModel:
         """
-        Performs a PUT request against the  endpoint.
+        Performs a PUT request against the /service/knowledgebasesettings/{id} endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.
@@ -58,7 +58,7 @@ class ServiceKnowledgebasesettingsIdEndpoint(ConnectWiseEndpoint):
         
     def patch(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> KnowledgeBaseSettingsModel:
         """
-        Performs a PATCH request against the  endpoint.
+        Performs a PATCH request against the /service/knowledgebasesettings/{id} endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.

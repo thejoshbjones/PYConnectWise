@@ -21,7 +21,7 @@ class CompanyManagedDevicesIntegrationsIdCrossReferencesEndpoint(ConnectWiseEndp
     
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[ManagedDevicesIntegrationCrossReferenceModel]:
         """
-        Performs a GET request against the  endpoint and returns an initialized PaginatedResponse object.
+        Performs a GET request against the /company/managedDevicesIntegrations/{parentId}/crossReferences endpoint and returns an initialized PaginatedResponse object.
 
         Parameters:
             page (int): The page number to request.
@@ -44,7 +44,7 @@ class CompanyManagedDevicesIntegrationsIdCrossReferencesEndpoint(ConnectWiseEndp
     
     def get(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> list[ManagedDevicesIntegrationCrossReferenceModel]:
         """
-        Performs a GET request against the  endpoint.
+        Performs a GET request against the /company/managedDevicesIntegrations/{parentId}/crossReferences endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.
@@ -56,7 +56,7 @@ class CompanyManagedDevicesIntegrationsIdCrossReferencesEndpoint(ConnectWiseEndp
         
     def post(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> ManagedDevicesIntegrationCrossReferenceModel:
         """
-        Performs a POST request against the  endpoint.
+        Performs a POST request against the /company/managedDevicesIntegrations/{parentId}/crossReferences endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.

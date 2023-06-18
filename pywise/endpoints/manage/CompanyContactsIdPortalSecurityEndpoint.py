@@ -11,7 +11,7 @@ class CompanyContactsIdPortalSecurityEndpoint(ConnectWiseEndpoint):
     
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[PortalSecurityModel]:
         """
-        Performs a GET request against the  endpoint and returns an initialized PaginatedResponse object.
+        Performs a GET request against the /company/contacts/{id}/portalSecurity endpoint and returns an initialized PaginatedResponse object.
 
         Parameters:
             page (int): The page number to request.
@@ -34,7 +34,7 @@ class CompanyContactsIdPortalSecurityEndpoint(ConnectWiseEndpoint):
     
     def get(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> list[PortalSecurityModel]:
         """
-        Performs a GET request against the  endpoint.
+        Performs a GET request against the /company/contacts/{id}/portalSecurity endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.

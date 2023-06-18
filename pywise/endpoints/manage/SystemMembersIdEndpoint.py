@@ -71,7 +71,7 @@ class SystemMembersIdEndpoint(ConnectWiseEndpoint):
     
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[MemberModel]:
         """
-        Performs a GET request against the  endpoint and returns an initialized PaginatedResponse object.
+        Performs a GET request against the /system/members/{id} endpoint and returns an initialized PaginatedResponse object.
 
         Parameters:
             page (int): The page number to request.
@@ -94,7 +94,7 @@ class SystemMembersIdEndpoint(ConnectWiseEndpoint):
     
     def get(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> MemberModel:
         """
-        Performs a GET request against the  endpoint.
+        Performs a GET request against the /system/members/{id} endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.
@@ -106,7 +106,7 @@ class SystemMembersIdEndpoint(ConnectWiseEndpoint):
         
     def put(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> MemberModel:
         """
-        Performs a PUT request against the  endpoint.
+        Performs a PUT request against the /system/members/{id} endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.
@@ -118,7 +118,7 @@ class SystemMembersIdEndpoint(ConnectWiseEndpoint):
         
     def patch(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> MemberModel:
         """
-        Performs a PATCH request against the  endpoint.
+        Performs a PATCH request against the /system/members/{id} endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.

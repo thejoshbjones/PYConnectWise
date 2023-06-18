@@ -21,7 +21,7 @@ class ServiceImpactsEndpoint(ConnectWiseEndpoint):
     
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[ImpactModel]:
         """
-        Performs a GET request against the  endpoint and returns an initialized PaginatedResponse object.
+        Performs a GET request against the /service/impacts endpoint and returns an initialized PaginatedResponse object.
 
         Parameters:
             page (int): The page number to request.
@@ -44,7 +44,7 @@ class ServiceImpactsEndpoint(ConnectWiseEndpoint):
     
     def get(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> list[ImpactModel]:
         """
-        Performs a GET request against the  endpoint.
+        Performs a GET request against the /service/impacts endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.

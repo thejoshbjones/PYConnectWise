@@ -31,7 +31,7 @@ class TimeSheetsIdEndpoint(ConnectWiseEndpoint):
     
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[TimeSheetModel]:
         """
-        Performs a GET request against the  endpoint and returns an initialized PaginatedResponse object.
+        Performs a GET request against the /time/sheets/{id} endpoint and returns an initialized PaginatedResponse object.
 
         Parameters:
             page (int): The page number to request.
@@ -54,7 +54,7 @@ class TimeSheetsIdEndpoint(ConnectWiseEndpoint):
     
     def get(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> TimeSheetModel:
         """
-        Performs a GET request against the  endpoint.
+        Performs a GET request against the /time/sheets/{id} endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.

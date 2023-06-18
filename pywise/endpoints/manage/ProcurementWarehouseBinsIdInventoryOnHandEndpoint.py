@@ -21,7 +21,7 @@ class ProcurementWarehouseBinsIdInventoryOnHandEndpoint(ConnectWiseEndpoint):
     
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[InventoryOnHandModel]:
         """
-        Performs a GET request against the  endpoint and returns an initialized PaginatedResponse object.
+        Performs a GET request against the /procurement/warehouseBins/{parentId}/inventoryOnHand endpoint and returns an initialized PaginatedResponse object.
 
         Parameters:
             page (int): The page number to request.
@@ -44,7 +44,7 @@ class ProcurementWarehouseBinsIdInventoryOnHandEndpoint(ConnectWiseEndpoint):
     
     def get(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> list[InventoryOnHandModel]:
         """
-        Performs a GET request against the  endpoint.
+        Performs a GET request against the /procurement/warehouseBins/{parentId}/inventoryOnHand endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.

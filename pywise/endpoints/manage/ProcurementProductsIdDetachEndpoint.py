@@ -11,7 +11,7 @@ class ProcurementProductsIdDetachEndpoint(ConnectWiseEndpoint):
     
     def post(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> ProductDetachModel:
         """
-        Performs a POST request against the  endpoint.
+        Performs a POST request against the /procurement/products/{id}/detach endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.

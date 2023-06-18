@@ -21,7 +21,7 @@ class SalesOpportunitiesIdForecastEndpoint(ConnectWiseEndpoint):
     
     def delete(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> GenericMessageModel:
         """
-        Performs a DELETE request against the  endpoint.
+        Performs a DELETE request against the /sales/opportunities/{parentId}/forecast/ endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.
@@ -33,7 +33,7 @@ class SalesOpportunitiesIdForecastEndpoint(ConnectWiseEndpoint):
         
     def put(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> ForecastModel:
         """
-        Performs a PUT request against the  endpoint.
+        Performs a PUT request against the /sales/opportunities/{parentId}/forecast/ endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.
@@ -45,7 +45,7 @@ class SalesOpportunitiesIdForecastEndpoint(ConnectWiseEndpoint):
         
     def patch(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> ForecastModel:
         """
-        Performs a PATCH request against the  endpoint.
+        Performs a PATCH request against the /sales/opportunities/{parentId}/forecast/ endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.

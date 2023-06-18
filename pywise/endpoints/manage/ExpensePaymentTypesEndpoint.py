@@ -25,7 +25,7 @@ class ExpensePaymentTypesEndpoint(ConnectWiseEndpoint):
     
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[PaymentTypeModel]:
         """
-        Performs a GET request against the  endpoint and returns an initialized PaginatedResponse object.
+        Performs a GET request against the /expense/paymentTypes endpoint and returns an initialized PaginatedResponse object.
 
         Parameters:
             page (int): The page number to request.
@@ -48,7 +48,7 @@ class ExpensePaymentTypesEndpoint(ConnectWiseEndpoint):
     
     def get(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> list[PaymentTypeModel]:
         """
-        Performs a GET request against the  endpoint.
+        Performs a GET request against the /expense/paymentTypes endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.
@@ -60,7 +60,7 @@ class ExpensePaymentTypesEndpoint(ConnectWiseEndpoint):
         
     def post(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> PaymentTypeModel:
         """
-        Performs a POST request against the  endpoint.
+        Performs a POST request against the /expense/paymentTypes endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.

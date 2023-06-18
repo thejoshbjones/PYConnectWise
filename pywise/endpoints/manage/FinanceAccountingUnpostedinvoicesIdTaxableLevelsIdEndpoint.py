@@ -11,7 +11,7 @@ class FinanceAccountingUnpostedinvoicesIdTaxableLevelsIdEndpoint(ConnectWiseEndp
     
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[UnpostedInvoiceTaxableLevelModel]:
         """
-        Performs a GET request against the  endpoint and returns an initialized PaginatedResponse object.
+        Performs a GET request against the /finance/accounting/unpostedinvoices/{parentId}/taxableLevels/{id} endpoint and returns an initialized PaginatedResponse object.
 
         Parameters:
             page (int): The page number to request.
@@ -34,7 +34,7 @@ class FinanceAccountingUnpostedinvoicesIdTaxableLevelsIdEndpoint(ConnectWiseEndp
     
     def get(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> UnpostedInvoiceTaxableLevelModel:
         """
-        Performs a GET request against the  endpoint.
+        Performs a GET request against the /finance/accounting/unpostedinvoices/{parentId}/taxableLevels/{id} endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.

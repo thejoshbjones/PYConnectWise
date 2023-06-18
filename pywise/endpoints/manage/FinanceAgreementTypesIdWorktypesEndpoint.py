@@ -21,7 +21,7 @@ class FinanceAgreementTypesIdWorktypesEndpoint(ConnectWiseEndpoint):
     
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[AgreementTypeWorkTypeModel]:
         """
-        Performs a GET request against the  endpoint and returns an initialized PaginatedResponse object.
+        Performs a GET request against the /finance/agreementTypes/{parentId}/worktypes endpoint and returns an initialized PaginatedResponse object.
 
         Parameters:
             page (int): The page number to request.
@@ -44,7 +44,7 @@ class FinanceAgreementTypesIdWorktypesEndpoint(ConnectWiseEndpoint):
     
     def get(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> list[AgreementTypeWorkTypeModel]:
         """
-        Performs a GET request against the  endpoint.
+        Performs a GET request against the /finance/agreementTypes/{parentId}/worktypes endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.
@@ -56,7 +56,7 @@ class FinanceAgreementTypesIdWorktypesEndpoint(ConnectWiseEndpoint):
         
     def post(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> AgreementTypeWorkTypeModel:
         """
-        Performs a POST request against the  endpoint.
+        Performs a POST request against the /finance/agreementTypes/{parentId}/worktypes endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.

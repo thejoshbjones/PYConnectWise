@@ -11,7 +11,7 @@ class CompanyCompaniesIdManagementReportSetupIdEndpoint(ConnectWiseEndpoint):
     
     def put(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> ManagementReportSetupModel:
         """
-        Performs a PUT request against the  endpoint.
+        Performs a PUT request against the /company/companies/{parentId}/managementReportSetup/{id} endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.
@@ -23,7 +23,7 @@ class CompanyCompaniesIdManagementReportSetupIdEndpoint(ConnectWiseEndpoint):
         
     def patch(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> ManagementReportSetupModel:
         """
-        Performs a PATCH request against the  endpoint.
+        Performs a PATCH request against the /company/companies/{parentId}/managementReportSetup/{id} endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.

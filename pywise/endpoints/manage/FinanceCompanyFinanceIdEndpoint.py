@@ -11,7 +11,7 @@ class FinanceCompanyFinanceIdEndpoint(ConnectWiseEndpoint):
     
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[CompanyFinanceModel]:
         """
-        Performs a GET request against the  endpoint and returns an initialized PaginatedResponse object.
+        Performs a GET request against the /finance/companyFinance/{id} endpoint and returns an initialized PaginatedResponse object.
 
         Parameters:
             page (int): The page number to request.
@@ -34,7 +34,7 @@ class FinanceCompanyFinanceIdEndpoint(ConnectWiseEndpoint):
     
     def get(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> CompanyFinanceModel:
         """
-        Performs a GET request against the  endpoint.
+        Performs a GET request against the /finance/companyFinance/{id} endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.
@@ -46,7 +46,7 @@ class FinanceCompanyFinanceIdEndpoint(ConnectWiseEndpoint):
         
     def patch(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> CompanyFinanceModel:
         """
-        Performs a PATCH request against the  endpoint.
+        Performs a PATCH request against the /finance/companyFinance/{id} endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.

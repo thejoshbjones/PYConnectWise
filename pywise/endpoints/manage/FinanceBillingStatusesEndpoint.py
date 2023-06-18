@@ -25,7 +25,7 @@ class FinanceBillingStatusesEndpoint(ConnectWiseEndpoint):
     
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[BillingStatusModel]:
         """
-        Performs a GET request against the  endpoint and returns an initialized PaginatedResponse object.
+        Performs a GET request against the /finance/billingStatuses endpoint and returns an initialized PaginatedResponse object.
 
         Parameters:
             page (int): The page number to request.
@@ -48,7 +48,7 @@ class FinanceBillingStatusesEndpoint(ConnectWiseEndpoint):
     
     def get(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> list[BillingStatusModel]:
         """
-        Performs a GET request against the  endpoint.
+        Performs a GET request against the /finance/billingStatuses endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.
@@ -60,7 +60,7 @@ class FinanceBillingStatusesEndpoint(ConnectWiseEndpoint):
         
     def post(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> BillingStatusModel:
         """
-        Performs a POST request against the  endpoint.
+        Performs a POST request against the /finance/billingStatuses endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.

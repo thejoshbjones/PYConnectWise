@@ -15,7 +15,7 @@ class SystemWorkflowsIdTriggersIdOptionsEndpoint(ConnectWiseEndpoint):
     
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[WorkflowTriggerOptionModel]:
         """
-        Performs a GET request against the  endpoint and returns an initialized PaginatedResponse object.
+        Performs a GET request against the /system/workflows/{grandparentId}/triggers/{parentId}/options endpoint and returns an initialized PaginatedResponse object.
 
         Parameters:
             page (int): The page number to request.
@@ -38,7 +38,7 @@ class SystemWorkflowsIdTriggersIdOptionsEndpoint(ConnectWiseEndpoint):
     
     def get(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> list[WorkflowTriggerOptionModel]:
         """
-        Performs a GET request against the  endpoint.
+        Performs a GET request against the /system/workflows/{grandparentId}/triggers/{parentId}/options endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.

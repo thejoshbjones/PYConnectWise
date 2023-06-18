@@ -25,7 +25,7 @@ class TimeWorkTypesEndpoint(ConnectWiseEndpoint):
     
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[WorkTypeModel]:
         """
-        Performs a GET request against the  endpoint and returns an initialized PaginatedResponse object.
+        Performs a GET request against the /time/workTypes endpoint and returns an initialized PaginatedResponse object.
 
         Parameters:
             page (int): The page number to request.
@@ -48,7 +48,7 @@ class TimeWorkTypesEndpoint(ConnectWiseEndpoint):
     
     def get(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> list[WorkTypeModel]:
         """
-        Performs a GET request against the  endpoint.
+        Performs a GET request against the /time/workTypes endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.
@@ -60,7 +60,7 @@ class TimeWorkTypesEndpoint(ConnectWiseEndpoint):
         
     def post(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> WorkTypeModel:
         """
-        Performs a POST request against the  endpoint.
+        Performs a POST request against the /time/workTypes endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.

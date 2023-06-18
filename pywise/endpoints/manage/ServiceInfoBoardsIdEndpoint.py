@@ -11,7 +11,7 @@ class ServiceInfoBoardsIdEndpoint(ConnectWiseEndpoint):
     
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[BoardInfoModel]:
         """
-        Performs a GET request against the  endpoint and returns an initialized PaginatedResponse object.
+        Performs a GET request against the /service/info/boards/{id} endpoint and returns an initialized PaginatedResponse object.
 
         Parameters:
             page (int): The page number to request.
@@ -34,7 +34,7 @@ class ServiceInfoBoardsIdEndpoint(ConnectWiseEndpoint):
     
     def get(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> BoardInfoModel:
         """
-        Performs a GET request against the  endpoint.
+        Performs a GET request against the /service/info/boards/{id} endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.

@@ -155,6 +155,7 @@ def generate_endpoint(
         additional_imports=additional_imports,
         id_child_endpoint_class=id_child_endpoint_class_name,
         has_id_child=has_id_child,
+        raw_path=path,
     )
 
     save_py_file(

@@ -25,7 +25,7 @@ class ServiceServiceSignoffEndpoint(ConnectWiseEndpoint):
     
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[ServiceSignoffModel]:
         """
-        Performs a GET request against the  endpoint and returns an initialized PaginatedResponse object.
+        Performs a GET request against the /service/serviceSignoff endpoint and returns an initialized PaginatedResponse object.
 
         Parameters:
             page (int): The page number to request.
@@ -48,7 +48,7 @@ class ServiceServiceSignoffEndpoint(ConnectWiseEndpoint):
     
     def get(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> list[ServiceSignoffModel]:
         """
-        Performs a GET request against the  endpoint.
+        Performs a GET request against the /service/serviceSignoff endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.
@@ -60,7 +60,7 @@ class ServiceServiceSignoffEndpoint(ConnectWiseEndpoint):
         
     def post(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> ServiceSignoffModel:
         """
-        Performs a POST request against the  endpoint.
+        Performs a POST request against the /service/serviceSignoff endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.

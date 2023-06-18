@@ -21,7 +21,7 @@ class CompanyContactsRelationshipsEndpoint(ConnectWiseEndpoint):
     
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[ContactRelationshipModel]:
         """
-        Performs a GET request against the  endpoint and returns an initialized PaginatedResponse object.
+        Performs a GET request against the /company/contacts/relationships endpoint and returns an initialized PaginatedResponse object.
 
         Parameters:
             page (int): The page number to request.
@@ -44,7 +44,7 @@ class CompanyContactsRelationshipsEndpoint(ConnectWiseEndpoint):
     
     def get(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> list[ContactRelationshipModel]:
         """
-        Performs a GET request against the  endpoint.
+        Performs a GET request against the /company/contacts/relationships endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.
@@ -56,7 +56,7 @@ class CompanyContactsRelationshipsEndpoint(ConnectWiseEndpoint):
         
     def post(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> ContactRelationshipModel:
         """
-        Performs a POST request against the  endpoint.
+        Performs a POST request against the /company/contacts/relationships endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.

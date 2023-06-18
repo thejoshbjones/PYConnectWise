@@ -15,7 +15,7 @@ class ExpenseTypesIdEndpoint(ConnectWiseEndpoint):
     
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[ExpenseTypeModel]:
         """
-        Performs a GET request against the  endpoint and returns an initialized PaginatedResponse object.
+        Performs a GET request against the /expense/types/{id} endpoint and returns an initialized PaginatedResponse object.
 
         Parameters:
             page (int): The page number to request.
@@ -38,7 +38,7 @@ class ExpenseTypesIdEndpoint(ConnectWiseEndpoint):
     
     def get(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> ExpenseTypeModel:
         """
-        Performs a GET request against the  endpoint.
+        Performs a GET request against the /expense/types/{id} endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.
@@ -50,7 +50,7 @@ class ExpenseTypesIdEndpoint(ConnectWiseEndpoint):
         
     def delete(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> GenericMessageModel:
         """
-        Performs a DELETE request against the  endpoint.
+        Performs a DELETE request against the /expense/types/{id} endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.
@@ -62,7 +62,7 @@ class ExpenseTypesIdEndpoint(ConnectWiseEndpoint):
         
     def put(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> ExpenseTypeModel:
         """
-        Performs a PUT request against the  endpoint.
+        Performs a PUT request against the /expense/types/{id} endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.
@@ -74,7 +74,7 @@ class ExpenseTypesIdEndpoint(ConnectWiseEndpoint):
         
     def patch(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> ExpenseTypeModel:
         """
-        Performs a PATCH request against the  endpoint.
+        Performs a PATCH request against the /expense/types/{id} endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.

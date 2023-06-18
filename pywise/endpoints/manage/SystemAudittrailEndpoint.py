@@ -15,7 +15,7 @@ class SystemAudittrailEndpoint(ConnectWiseEndpoint):
     
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[AuditTrailEntryModel]:
         """
-        Performs a GET request against the  endpoint and returns an initialized PaginatedResponse object.
+        Performs a GET request against the /system/audittrail endpoint and returns an initialized PaginatedResponse object.
 
         Parameters:
             page (int): The page number to request.
@@ -38,7 +38,7 @@ class SystemAudittrailEndpoint(ConnectWiseEndpoint):
     
     def get(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> list[AuditTrailEntryModel]:
         """
-        Performs a GET request against the  endpoint.
+        Performs a GET request against the /system/audittrail endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.

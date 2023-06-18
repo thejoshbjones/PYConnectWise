@@ -11,7 +11,7 @@ class SalesOrdersIdConvertToServiceTicketEndpoint(ConnectWiseEndpoint):
     
     def post(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> TicketModel:
         """
-        Performs a POST request against the  endpoint.
+        Performs a POST request against the /sales/orders/{id}/convertToServiceTicket endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.

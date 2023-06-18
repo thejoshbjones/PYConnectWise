@@ -11,7 +11,7 @@ class SystemEmailConnectorsIdParsingStylesIdParsingRulesIdEndpoint(ConnectWiseEn
     
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[EmailConnectorParsingRuleModel]:
         """
-        Performs a GET request against the  endpoint and returns an initialized PaginatedResponse object.
+        Performs a GET request against the /system/emailConnectors/{grandparentId}/parsingStyles/{parentId}/parsingRules/{id} endpoint and returns an initialized PaginatedResponse object.
 
         Parameters:
             page (int): The page number to request.
@@ -34,7 +34,7 @@ class SystemEmailConnectorsIdParsingStylesIdParsingRulesIdEndpoint(ConnectWiseEn
     
     def get(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> EmailConnectorParsingRuleModel:
         """
-        Performs a GET request against the  endpoint.
+        Performs a GET request against the /system/emailConnectors/{grandparentId}/parsingStyles/{parentId}/parsingRules/{id} endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.
@@ -46,7 +46,7 @@ class SystemEmailConnectorsIdParsingStylesIdParsingRulesIdEndpoint(ConnectWiseEn
         
     def delete(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> GenericMessageModel:
         """
-        Performs a DELETE request against the  endpoint.
+        Performs a DELETE request against the /system/emailConnectors/{grandparentId}/parsingStyles/{parentId}/parsingRules/{id} endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.
@@ -58,7 +58,7 @@ class SystemEmailConnectorsIdParsingStylesIdParsingRulesIdEndpoint(ConnectWiseEn
         
     def put(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> EmailConnectorParsingRuleModel:
         """
-        Performs a PUT request against the  endpoint.
+        Performs a PUT request against the /system/emailConnectors/{grandparentId}/parsingStyles/{parentId}/parsingRules/{id} endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.
@@ -70,7 +70,7 @@ class SystemEmailConnectorsIdParsingStylesIdParsingRulesIdEndpoint(ConnectWiseEn
         
     def patch(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> EmailConnectorParsingRuleModel:
         """
-        Performs a PATCH request against the  endpoint.
+        Performs a PATCH request against the /system/emailConnectors/{grandparentId}/parsingStyles/{parentId}/parsingRules/{id} endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.

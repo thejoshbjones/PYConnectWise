@@ -11,7 +11,7 @@ class SystemWorkflowsUserdefinedfieldsEventsIdEndpoint(ConnectWiseEndpoint):
     
     def post(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> WorkflowActionUserDefinedFieldModel:
         """
-        Performs a POST request against the  endpoint.
+        Performs a POST request against the /system/workflows/userdefinedfields/events/{grandparentId} endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.

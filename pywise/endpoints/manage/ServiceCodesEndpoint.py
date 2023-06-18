@@ -21,7 +21,7 @@ class ServiceCodesEndpoint(ConnectWiseEndpoint):
     
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[CodeModel]:
         """
-        Performs a GET request against the  endpoint and returns an initialized PaginatedResponse object.
+        Performs a GET request against the /service/codes endpoint and returns an initialized PaginatedResponse object.
 
         Parameters:
             page (int): The page number to request.
@@ -44,7 +44,7 @@ class ServiceCodesEndpoint(ConnectWiseEndpoint):
     
     def get(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> list[CodeModel]:
         """
-        Performs a GET request against the  endpoint.
+        Performs a GET request against the /service/codes endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.
@@ -56,7 +56,7 @@ class ServiceCodesEndpoint(ConnectWiseEndpoint):
         
     def post(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> CodeModel:
         """
-        Performs a POST request against the  endpoint.
+        Performs a POST request against the /service/codes endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.

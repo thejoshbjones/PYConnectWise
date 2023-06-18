@@ -25,7 +25,7 @@ class TimeChargeCodesEndpoint(ConnectWiseEndpoint):
     
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[ChargeCodeModel]:
         """
-        Performs a GET request against the  endpoint and returns an initialized PaginatedResponse object.
+        Performs a GET request against the /time/chargeCodes endpoint and returns an initialized PaginatedResponse object.
 
         Parameters:
             page (int): The page number to request.
@@ -48,7 +48,7 @@ class TimeChargeCodesEndpoint(ConnectWiseEndpoint):
     
     def get(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> list[ChargeCodeModel]:
         """
-        Performs a GET request against the  endpoint.
+        Performs a GET request against the /time/chargeCodes endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.
@@ -60,7 +60,7 @@ class TimeChargeCodesEndpoint(ConnectWiseEndpoint):
         
     def post(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> ChargeCodeModel:
         """
-        Performs a POST request against the  endpoint.
+        Performs a POST request against the /time/chargeCodes endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.

@@ -15,7 +15,7 @@ class CompanyOwnershipTypesInfoEndpoint(ConnectWiseEndpoint):
     
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[OwnershipTypeInfoModel]:
         """
-        Performs a GET request against the  endpoint and returns an initialized PaginatedResponse object.
+        Performs a GET request against the /company/ownershipTypes/info endpoint and returns an initialized PaginatedResponse object.
 
         Parameters:
             page (int): The page number to request.
@@ -38,7 +38,7 @@ class CompanyOwnershipTypesInfoEndpoint(ConnectWiseEndpoint):
     
     def get(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> list[OwnershipTypeInfoModel]:
         """
-        Performs a GET request against the  endpoint.
+        Performs a GET request against the /company/ownershipTypes/info endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.

@@ -25,7 +25,7 @@ class ProcurementTypesEndpoint(ConnectWiseEndpoint):
     
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[ProductTypeModel]:
         """
-        Performs a GET request against the  endpoint and returns an initialized PaginatedResponse object.
+        Performs a GET request against the /procurement/types endpoint and returns an initialized PaginatedResponse object.
 
         Parameters:
             page (int): The page number to request.
@@ -48,7 +48,7 @@ class ProcurementTypesEndpoint(ConnectWiseEndpoint):
     
     def get(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> list[ProductTypeModel]:
         """
-        Performs a GET request against the  endpoint.
+        Performs a GET request against the /procurement/types endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.
@@ -60,7 +60,7 @@ class ProcurementTypesEndpoint(ConnectWiseEndpoint):
         
     def post(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> ProductTypeModel:
         """
-        Performs a POST request against the  endpoint.
+        Performs a POST request against the /procurement/types endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.

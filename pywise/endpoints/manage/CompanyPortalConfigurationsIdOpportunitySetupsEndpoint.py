@@ -17,7 +17,7 @@ class CompanyPortalConfigurationsIdOpportunitySetupsEndpoint(ConnectWiseEndpoint
     
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[PortalConfigurationOpportunitySetupModel]:
         """
-        Performs a GET request against the  endpoint and returns an initialized PaginatedResponse object.
+        Performs a GET request against the /company/portalConfigurations/{parentId}/opportunitySetups endpoint and returns an initialized PaginatedResponse object.
 
         Parameters:
             page (int): The page number to request.
@@ -40,7 +40,7 @@ class CompanyPortalConfigurationsIdOpportunitySetupsEndpoint(ConnectWiseEndpoint
     
     def get(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> list[PortalConfigurationOpportunitySetupModel]:
         """
-        Performs a GET request against the  endpoint.
+        Performs a GET request against the /company/portalConfigurations/{parentId}/opportunitySetups endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.
@@ -52,7 +52,7 @@ class CompanyPortalConfigurationsIdOpportunitySetupsEndpoint(ConnectWiseEndpoint
         
     def put(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> PortalConfigurationOpportunitySetupModel:
         """
-        Performs a PUT request against the  endpoint.
+        Performs a PUT request against the /company/portalConfigurations/{parentId}/opportunitySetups endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.
@@ -64,7 +64,7 @@ class CompanyPortalConfigurationsIdOpportunitySetupsEndpoint(ConnectWiseEndpoint
         
     def patch(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> PortalConfigurationOpportunitySetupModel:
         """
-        Performs a PATCH request against the  endpoint.
+        Performs a PATCH request against the /company/portalConfigurations/{parentId}/opportunitySetups endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.

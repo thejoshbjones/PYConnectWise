@@ -21,7 +21,7 @@ class SystemMenuEntriesIdLocationsEndpoint(ConnectWiseEndpoint):
     
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[MenuEntryLocationModel]:
         """
-        Performs a GET request against the  endpoint and returns an initialized PaginatedResponse object.
+        Performs a GET request against the /system/menuEntries/{parentId}/locations endpoint and returns an initialized PaginatedResponse object.
 
         Parameters:
             page (int): The page number to request.
@@ -44,7 +44,7 @@ class SystemMenuEntriesIdLocationsEndpoint(ConnectWiseEndpoint):
     
     def get(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> list[MenuEntryLocationModel]:
         """
-        Performs a GET request against the  endpoint.
+        Performs a GET request against the /system/menuEntries/{parentId}/locations endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.
@@ -56,7 +56,7 @@ class SystemMenuEntriesIdLocationsEndpoint(ConnectWiseEndpoint):
         
     def post(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> MenuEntryLocationModel:
         """
-        Performs a POST request against the  endpoint.
+        Performs a POST request against the /system/menuEntries/{parentId}/locations endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.

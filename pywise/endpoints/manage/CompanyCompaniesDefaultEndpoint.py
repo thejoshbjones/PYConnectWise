@@ -11,7 +11,7 @@ class CompanyCompaniesDefaultEndpoint(ConnectWiseEndpoint):
     
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[CompanyModel]:
         """
-        Performs a GET request against the  endpoint and returns an initialized PaginatedResponse object.
+        Performs a GET request against the /company/companies/default endpoint and returns an initialized PaginatedResponse object.
 
         Parameters:
             page (int): The page number to request.
@@ -34,7 +34,7 @@ class CompanyCompaniesDefaultEndpoint(ConnectWiseEndpoint):
     
     def get(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> CompanyModel:
         """
-        Performs a GET request against the  endpoint.
+        Performs a GET request against the /company/companies/default endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.

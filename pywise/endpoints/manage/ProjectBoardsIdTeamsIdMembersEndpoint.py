@@ -17,7 +17,7 @@ class ProjectBoardsIdTeamsIdMembersEndpoint(ConnectWiseEndpoint):
     
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[ProjectBoardTeamMemberModel]:
         """
-        Performs a GET request against the  endpoint and returns an initialized PaginatedResponse object.
+        Performs a GET request against the /project/boards/{grandparentId}/teams/{parentId}/members endpoint and returns an initialized PaginatedResponse object.
 
         Parameters:
             page (int): The page number to request.
@@ -40,7 +40,7 @@ class ProjectBoardsIdTeamsIdMembersEndpoint(ConnectWiseEndpoint):
     
     def get(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> list[ProjectBoardTeamMemberModel]:
         """
-        Performs a GET request against the  endpoint.
+        Performs a GET request against the /project/boards/{grandparentId}/teams/{parentId}/members endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.
@@ -52,7 +52,7 @@ class ProjectBoardsIdTeamsIdMembersEndpoint(ConnectWiseEndpoint):
         
     def post(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> ProjectBoardTeamMemberModel:
         """
-        Performs a POST request against the  endpoint.
+        Performs a POST request against the /project/boards/{grandparentId}/teams/{parentId}/members endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.

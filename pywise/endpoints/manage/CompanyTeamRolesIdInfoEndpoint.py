@@ -11,7 +11,7 @@ class CompanyTeamRolesIdInfoEndpoint(ConnectWiseEndpoint):
     
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[TeamRoleInfoModel]:
         """
-        Performs a GET request against the  endpoint and returns an initialized PaginatedResponse object.
+        Performs a GET request against the /company/teamRoles/{id}/info endpoint and returns an initialized PaginatedResponse object.
 
         Parameters:
             page (int): The page number to request.
@@ -34,7 +34,7 @@ class CompanyTeamRolesIdInfoEndpoint(ConnectWiseEndpoint):
     
     def get(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> TeamRoleInfoModel:
         """
-        Performs a GET request against the  endpoint.
+        Performs a GET request against the /company/teamRoles/{id}/info endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.

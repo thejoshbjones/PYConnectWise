@@ -11,7 +11,7 @@ class SystemMycompanyDocumentsIdEndpoint(ConnectWiseEndpoint):
     
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[DocumentSetupModel]:
         """
-        Performs a GET request against the  endpoint and returns an initialized PaginatedResponse object.
+        Performs a GET request against the /system/mycompany/documents/{id} endpoint and returns an initialized PaginatedResponse object.
 
         Parameters:
             page (int): The page number to request.
@@ -34,7 +34,7 @@ class SystemMycompanyDocumentsIdEndpoint(ConnectWiseEndpoint):
     
     def get(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> DocumentSetupModel:
         """
-        Performs a GET request against the  endpoint.
+        Performs a GET request against the /system/mycompany/documents/{id} endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.
@@ -46,7 +46,7 @@ class SystemMycompanyDocumentsIdEndpoint(ConnectWiseEndpoint):
         
     def put(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> DocumentSetupModel:
         """
-        Performs a PUT request against the  endpoint.
+        Performs a PUT request against the /system/mycompany/documents/{id} endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.
@@ -58,7 +58,7 @@ class SystemMycompanyDocumentsIdEndpoint(ConnectWiseEndpoint):
         
     def patch(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> DocumentSetupModel:
         """
-        Performs a PATCH request against the  endpoint.
+        Performs a PATCH request against the /system/mycompany/documents/{id} endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.

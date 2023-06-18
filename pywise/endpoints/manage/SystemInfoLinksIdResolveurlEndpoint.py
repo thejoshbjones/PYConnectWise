@@ -11,7 +11,7 @@ class SystemInfoLinksIdResolveurlEndpoint(ConnectWiseEndpoint):
     
     def post(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> LinkResolveUrlInfoModel:
         """
-        Performs a POST request against the  endpoint.
+        Performs a POST request against the /system/info/links/{id}/resolveurl endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.

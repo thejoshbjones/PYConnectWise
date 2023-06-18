@@ -21,7 +21,7 @@ class FinanceGlCaptionsEndpoint(ConnectWiseEndpoint):
     
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[GLCaptionModel]:
         """
-        Performs a GET request against the  endpoint and returns an initialized PaginatedResponse object.
+        Performs a GET request against the /finance/glCaptions endpoint and returns an initialized PaginatedResponse object.
 
         Parameters:
             page (int): The page number to request.
@@ -44,7 +44,7 @@ class FinanceGlCaptionsEndpoint(ConnectWiseEndpoint):
     
     def get(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> list[GLCaptionModel]:
         """
-        Performs a GET request against the  endpoint.
+        Performs a GET request against the /finance/glCaptions endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.

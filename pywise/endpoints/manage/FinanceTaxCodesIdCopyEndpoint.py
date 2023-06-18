@@ -11,7 +11,7 @@ class FinanceTaxCodesIdCopyEndpoint(ConnectWiseEndpoint):
     
     def post(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> TaxCodeModel:
         """
-        Performs a POST request against the  endpoint.
+        Performs a POST request against the /finance/taxCodes/{id}/copy endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.

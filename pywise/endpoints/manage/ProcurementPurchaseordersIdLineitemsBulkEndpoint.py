@@ -11,7 +11,7 @@ class ProcurementPurchaseordersIdLineitemsBulkEndpoint(ConnectWiseEndpoint):
     
     def post(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> BulkResultModel:
         """
-        Performs a POST request against the  endpoint.
+        Performs a POST request against the /procurement/purchaseorders/{parentId}/lineitems/bulk endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.
@@ -23,7 +23,7 @@ class ProcurementPurchaseordersIdLineitemsBulkEndpoint(ConnectWiseEndpoint):
         
     def delete(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> BulkResultModel:
         """
-        Performs a DELETE request against the  endpoint.
+        Performs a DELETE request against the /procurement/purchaseorders/{parentId}/lineitems/bulk endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.
@@ -35,7 +35,7 @@ class ProcurementPurchaseordersIdLineitemsBulkEndpoint(ConnectWiseEndpoint):
         
     def put(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> BulkResultModel:
         """
-        Performs a PUT request against the  endpoint.
+        Performs a PUT request against the /procurement/purchaseorders/{parentId}/lineitems/bulk endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.

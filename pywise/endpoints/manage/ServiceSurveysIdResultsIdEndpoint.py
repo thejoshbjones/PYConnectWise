@@ -11,7 +11,7 @@ class ServiceSurveysIdResultsIdEndpoint(ConnectWiseEndpoint):
     
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[SurveyResultModel]:
         """
-        Performs a GET request against the  endpoint and returns an initialized PaginatedResponse object.
+        Performs a GET request against the /service/surveys/{parentId}/results/{id} endpoint and returns an initialized PaginatedResponse object.
 
         Parameters:
             page (int): The page number to request.
@@ -34,7 +34,7 @@ class ServiceSurveysIdResultsIdEndpoint(ConnectWiseEndpoint):
     
     def get(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> SurveyResultModel:
         """
-        Performs a GET request against the  endpoint.
+        Performs a GET request against the /service/surveys/{parentId}/results/{id} endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.
@@ -46,7 +46,7 @@ class ServiceSurveysIdResultsIdEndpoint(ConnectWiseEndpoint):
         
     def delete(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> GenericMessageModel:
         """
-        Performs a DELETE request against the  endpoint.
+        Performs a DELETE request against the /service/surveys/{parentId}/results/{id} endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.
@@ -58,7 +58,7 @@ class ServiceSurveysIdResultsIdEndpoint(ConnectWiseEndpoint):
         
     def put(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> SurveyResultModel:
         """
-        Performs a PUT request against the  endpoint.
+        Performs a PUT request against the /service/surveys/{parentId}/results/{id} endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.
@@ -70,7 +70,7 @@ class ServiceSurveysIdResultsIdEndpoint(ConnectWiseEndpoint):
         
     def patch(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> SurveyResultModel:
         """
-        Performs a PATCH request against the  endpoint.
+        Performs a PATCH request against the /service/surveys/{parentId}/results/{id} endpoint.
 
         Parameters:
             data (dict[str, Any]): The data to send in the request body.
