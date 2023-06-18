@@ -1,0 +1,84 @@
+from __future__ import annotations
+from typing import Any
+from datetime import datetime
+from pywise.utils.naming import to_camel_case
+from pywise.models.base.connectwise_model import ConnectWiseModel
+from pywise.models.manage.CompanyReferenceModel import CompanyReferenceModel
+from pywise.models.manage.CompanyTypeReferenceModel import CompanyTypeReferenceModel
+from pywise.models.manage.SiteReferenceModel import SiteReferenceModel
+from pywise.models.manage.BillingTermsReferenceModel import BillingTermsReferenceModel
+from pywise.models.manage.PurchaseOrderReferenceModel import PurchaseOrderReferenceModel
+from pywise.models.manage.ProjectReferenceModel import ProjectReferenceModel
+from pywise.models.manage.CurrencyReferenceModel import CurrencyReferenceModel
+from pywise.models.manage.TaxCodeReferenceModel import TaxCodeReferenceModel
+from pywise.models.manage.CompanyReferenceModel import CompanyReferenceModel
+from pywise.models.manage.CompanyTypeReferenceModel import CompanyTypeReferenceModel
+from pywise.models.manage.SiteReferenceModel import SiteReferenceModel
+from pywise.models.manage.GLExportTransactionDetailModel import GLExportTransactionDetailModel
+from pywise.models.manage.GLExportTransactionTaxLevelModel import GLExportTransactionTaxLevelModel
+
+class GLExportTransactionModel(ConnectWiseModel):
+    id: int | None
+    gl_class: str | None
+    gl_type_id: str | None
+    document_date: str | None
+    document_number: str | None
+    document_type: str | None
+    memo: str | None
+    description: str | None
+    attention: str | None
+    sales_territory: str | None
+    company: CompanyReferenceModel | None
+    company_type: CompanyTypeReferenceModel | None
+    company_account_number: str | None
+    site: SiteReferenceModel | None
+    billing_terms: BillingTermsReferenceModel | None
+    billing_terms_xref: str | None
+    due_days: int | None
+    due_date: str | None
+    email_delivery_flag: bool | None
+    print_delivery_flag: bool | None
+    agreement_pre_payment_flag: bool | None
+    account_number: str | None
+    billing_type: str | None
+    gl_entry_ids: str | None
+    purchase_order: PurchaseOrderReferenceModel | None
+    project: ProjectReferenceModel | None
+    currency: CurrencyReferenceModel | None
+    total: float | None
+    sales_rep_id: str | None
+    sales_rep_name: str | None
+    taxable: bool | None
+    taxable_total: float | None
+    tax_code: TaxCodeReferenceModel | None
+    tax_group_rate: float | None
+    piggy_back_flag: bool | None
+    tax_account_number: str | None
+    sales_tax: float | None
+    state_tax: float | None
+    county_tax: float | None
+    city_tax: float | None
+    taxable_amount1: float | None
+    taxable_amount2: float | None
+    taxable_amount3: float | None
+    taxable_amount4: float | None
+    taxable_amount5: float | None
+    tax_agency_xref: str | None
+    state_tax_xref: str | None
+    county_tax_xref: str | None
+    tax_id: str | None
+    tax_dp_applied_flag: bool | None
+    use_avalara_flag: bool | None
+    send_avalara_tax_flag: bool | None
+    ship_to_company: CompanyReferenceModel | None
+    ship_to_company_account_number: str | None
+    ship_to_company_type: CompanyTypeReferenceModel | None
+    ship_to_tax_id: str | None
+    ship_site: SiteReferenceModel | None
+    ship_contact: str | None
+    detail: list[GLExportTransactionDetailModel] | None
+    tax_levels: list[GLExportTransactionTaxLevelModel] | None
+
+    class Config:
+        alias_generator = to_camel_case
+        allow_population_by_field_name = True

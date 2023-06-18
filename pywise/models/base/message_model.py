@@ -1,4 +1,4 @@
-class GenericMessageModel(dict):
-    def __init__(self, **kwargs):
-        for key, value in kwargs.items():
-            self[key] = value
+from pydantic import BaseModel
+
+class GenericMessageModel(BaseModel):
+    message: str

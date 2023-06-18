@@ -1,0 +1,135 @@
+from __future__ import annotations
+from typing import Any
+from datetime import datetime
+from pywise.utils.naming import to_camel_case
+from pywise.models.base.connectwise_model import ConnectWiseModel
+from pywise.models.manage.TicketReferenceModel import TicketReferenceModel
+from pywise.models.manage.SalesOrderReferenceModel import SalesOrderReferenceModel
+from pywise.models.manage.InvoiceReferenceModel import InvoiceReferenceModel
+from pywise.models.manage.ProjectReferenceModel import ProjectReferenceModel
+from pywise.models.manage.IvItemReferenceModel import IvItemReferenceModel
+from pywise.models.manage.RmaStatusReferenceModel import RmaStatusReferenceModel
+from pywise.models.manage.SystemLocationReferenceModel import SystemLocationReferenceModel
+from pywise.models.manage.SystemDepartmentReferenceModel import SystemDepartmentReferenceModel
+from pywise.models.manage.CompanyReferenceModel import CompanyReferenceModel
+from pywise.models.manage.ContactReferenceModel import ContactReferenceModel
+from pywise.models.manage.CountryReferenceModel import CountryReferenceModel
+from pywise.models.manage.RmaDispositionReferenceModel import RmaDispositionReferenceModel
+from pywise.models.manage.SiteReferenceModel import SiteReferenceModel
+from pywise.models.manage.CompanyReferenceModel import CompanyReferenceModel
+from pywise.models.manage.ContactReferenceModel import ContactReferenceModel
+from pywise.models.manage.CountryReferenceModel import CountryReferenceModel
+from pywise.models.manage.RmaActionReferenceModel import RmaActionReferenceModel
+from pywise.models.manage.SiteReferenceModel import SiteReferenceModel
+from pywise.models.manage.CompanyReferenceModel import CompanyReferenceModel
+from pywise.models.manage.ContactReferenceModel import ContactReferenceModel
+from pywise.models.manage.CountryReferenceModel import CountryReferenceModel
+from pywise.models.manage.SiteReferenceModel import SiteReferenceModel
+from pywise.models.manage.CompanyReferenceModel import CompanyReferenceModel
+from pywise.models.manage.ContactReferenceModel import ContactReferenceModel
+from pywise.models.manage.CountryReferenceModel import CountryReferenceModel
+from pywise.models.manage.SiteReferenceModel import SiteReferenceModel
+from pywise.models.manage.ShipmentMethodReferenceModel import ShipmentMethodReferenceModel
+from pywise.models.manage.MemberReferenceModel import MemberReferenceModel
+from pywise.models.manage.MemberReferenceModel import MemberReferenceModel
+from pywise.models.manage.CurrencyReferenceModel import CurrencyReferenceModel
+from pywise.models.manage.MemberReferenceModel import MemberReferenceModel
+from pywise.models.manage.CustomFieldValueModel import CustomFieldValueModel
+
+class RmaTagModel(ConnectWiseModel):
+    id: int | None
+    service_ticket: TicketReferenceModel | None
+    sales_order: SalesOrderReferenceModel | None
+    invoice: InvoiceReferenceModel | None
+    project: ProjectReferenceModel | None
+    summary: str | None
+    product: IvItemReferenceModel | None
+    iv_description: str | None
+    product_description: str | None
+    serial_number: str | None
+    mfg_item_i_d: str | None
+    status: RmaStatusReferenceModel | None
+    list_price: float | None
+    unit_price: float | None
+    location: SystemLocationReferenceModel | None
+    department: SystemDepartmentReferenceModel | None
+    problem_description: str | None
+    returned_company: CompanyReferenceModel | None
+    returned_contact: ContactReferenceModel | None
+    returned_contact_type: str | None
+    returned_contact_phone: str | None
+    returned_contact_extension: str | None
+    returned_contact_email: str | None
+    returned_contact_address_line1: str | None
+    returned_contact_address_line2: str | None
+    returned_contact_city: str | None
+    returned_contact_state: str | None
+    returned_contact_zip: str | None
+    returned_contact_country: CountryReferenceModel | None
+    rma_disposition: RmaDispositionReferenceModel | None
+    returned_site: SiteReferenceModel | None
+    purchased_company: CompanyReferenceModel | None
+    purchased_contact: ContactReferenceModel | None
+    purchased_contact_type: str | None
+    purchased_contact_phone: str | None
+    purchased_contact_extension: str | None
+    purchased_contact_email: str | None
+    purchased_contact_address_line1: str | None
+    purchased_contact_address_line2: str | None
+    purchased_contact_city: str | None
+    purchased_contact_state: str | None
+    purchased_contact_zip: str | None
+    purchased_contact_country: CountryReferenceModel | None
+    purchased_invoice_number: str | None
+    purchased_invoice_date: str | None
+    purchased_order_number: str | None
+    purchased_vendor_action: RmaActionReferenceModel | None
+    purchased_vendor_rma_number: str | None
+    purchased_site: SiteReferenceModel | None
+    purchased_notes: str | None
+    warranty_company: CompanyReferenceModel | None
+    warranty_contact: ContactReferenceModel | None
+    warranty_contact_type: str | None
+    warranty_contact_phone: str | None
+    warranty_contact_email: str | None
+    warranty_contact_extension: str | None
+    warranty_contact_address_line1: str | None
+    warranty_contact_address_line2: str | None
+    warranty_contact_city: str | None
+    warranty_contact_state: str | None
+    warranty_contact_zip: str | None
+    warranty_contact_country: CountryReferenceModel | None
+    warranty_site: SiteReferenceModel | None
+    warranty_notes: str | None
+    repair_company: CompanyReferenceModel | None
+    repair_contact: ContactReferenceModel | None
+    repair_contact_type: str | None
+    repair_contact_phone: str | None
+    repair_contact_extension: str | None
+    repair_contact_email: str | None
+    repair_contact_address_line1: str | None
+    repair_contact_address_line2: str | None
+    repair_contact_city: str | None
+    repair_contact_state: str | None
+    repair_contact_zip: str | None
+    repair_contact_country: CountryReferenceModel | None
+    repair_order_number: str | None
+    repair_site: SiteReferenceModel | None
+    repair_notes: str | None
+    drop_ship_flag: bool | None
+    ship_method: ShipmentMethodReferenceModel | None
+    shipping_date: str | None
+    shipping_tracking_number: str | None
+    internal_notes: str | None
+    closing_notes: str | None
+    date_closed: str | None
+    account_manager: MemberReferenceModel | None
+    technical_contact: MemberReferenceModel | None
+    currency: CurrencyReferenceModel | None
+    closed_by: MemberReferenceModel | None
+    _info: dict[str, str] | None
+    custom_fields: list[CustomFieldValueModel] | None
+
+    class Config:
+        alias_generator = to_camel_case
+        allow_population_by_field_name = True

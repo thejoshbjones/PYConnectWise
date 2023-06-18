@@ -4,6 +4,7 @@ endpoint_template = Template(
 """from pywise.models.base.message_model import GenericMessageModel
 from pywise.endpoints.base.connectwise_endpoint import ConnectWiseEndpoint
 from pywise.responses.paginated_response import PaginatedResponse
+from typing import Any
 {%- if additional_imports is defined %}
 {%- for additional_import in additional_imports %}
 {{ additional_import }}
@@ -12,7 +13,7 @@ from pywise.responses.paginated_response import PaginatedResponse
 
 class {{ endpoint_class }}(ConnectWiseEndpoint):
     def __init__(self, client, parent_endpoint=None):
-        super().__init__(client, "{{ endpoint_path }}", parent_endpoint=parent_endpoint{% if has_id_index %}, id_index="{{ id_index }}"{% endif %})
+        super().__init__(client, "{{ endpoint_path }}", parent_endpoint=parent_endpoint)
         {% if child_endpoints is defined %}
         {%- for child_endpoint in child_endpoints %}
         self.{{ child_endpoint.field_name }} = self.register_child_endpoint(
@@ -27,15 +28,24 @@ class {{ endpoint_class }}(ConnectWiseEndpoint):
         return child
     {% endif %}
 
-    {%- if pagination_model_class is defined %}
-    def paginated(self, page: int, page_size: int, params={}) -> PaginatedResponse[{{ pagination_model_class }}]:
+    {%- if pagination_model_class is not none %}
+    def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[{{ pagination_model_class }}]:
+        \"""
+        Performs a GET request against the {{ raw_path }} endpoint and returns an initialized PaginatedResponse object.
+
+        Parameters:
+            page (int): The page number to request.
+            page_size (int): The number of results to return per page.
+            params (dict[str, int | str]): The parameters to send in the request query string.
+        Returns:
+            PaginatedResponse[{{ pagination_model_class }}]: The initialized PaginatedResponse object.
+        \"""
         params["page"] = page
         params["pageSize"] = page_size
         return PaginatedResponse(
             super().make_request(
                 "GET",
-                params=params,
-                as_json=False,
+                params=params
             ),
             {{ pagination_model_class }},
             self,
@@ -44,18 +54,27 @@ class {{ endpoint_class }}(ConnectWiseEndpoint):
     {% endif %}
 
     {%- for operation in operations %}
-    def {{ operation.name }}(self, data=None, params=None) -> {{ operation.return_type }}:
+    def {{ operation.name }}(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> {{ operation.return_type }}:
+        \"""
+        Performs a {{ operation.name.upper() }} request against the {{ raw_path }} endpoint.
+
+        Parameters:
+            data (dict[str, Any]): The data to send in the request body.
+            params (dict[str, int | str]): The parameters to send in the request query string.
+        Returns:
+            {{ operation.return_type }}: The parsed response data.
+        \"""
         {%- if operation.returns_single %}
-        return self._parse_one({{operation.return_class}}, super().make_request("{{ operation.name.upper() }}", params=params))
+        return self._parse_one({{operation.return_class}}, super().make_request("{{ operation.name.upper() }}", params=params).json())
         {% else %}
-        return self._parse_many({{operation.return_class}}, super().make_request("{{ operation.name.upper() }}", params=params))
+        return self._parse_many({{operation.return_class}}, super().make_request("{{ operation.name.upper() }}", params=params).json())
         {% endif %}
     {%- endfor %}
 """
 )
 
 top_level_endpoint_template = Template(
-"""from pywise.endpoints.base.connectwise_top_level_endpoint import ConnectWiseEndpoint
+"""from pywise.endpoints.base.connectwise_endpoint import ConnectWiseEndpoint
 {%- if additional_imports is defined %}
 {%- for additional_import in additional_imports %}
 {{ additional_import }}
@@ -75,28 +94,10 @@ class {{ endpoint_class }}(ConnectWiseEndpoint):
 """
 )
 
-model_template_old = Template(
-"""from pywise.models.base.connectwise_model import ConnectWiseModel
-{%- if imports is defined %}
-{%- for import in imports %}
-{{ import }}
-{%- endfor %}
-{%- endif %}
-
-class {{ model_class }}():
-    def __init__(self, json_dict):
-        {%- for field in fields %}
-        self.{{ field.name }} : {{ field.type }} = {{ field.type }}({{ field.init_params }})
-        {%- endfor %}
-        
-        super().__init__(json_dict)
-
-"""
-)
-
 model_template = Template(
 """from __future__ import annotations
 from typing import Any
+from datetime import datetime
 from pywise.utils.naming import to_camel_case
 from pywise.models.base.connectwise_model import ConnectWiseModel
 
@@ -143,12 +144,12 @@ class ConnectWiseManageAPIClient:
     \"""
     def __init__(
         self,
-        company_name,
-        manage_url,
-        client_id,
-        public_key,
-        private_key,
-        codebase=None,
+        company_name: str,
+        manage_url: str,
+        client_id: str,
+        public_key: str,
+        private_key: str,
+        codebase: str | None = None,
     ):
         \"""
         Initializes the client with the given credentials and optionally a specific codebase.
@@ -160,22 +161,27 @@ class ConnectWiseManageAPIClient:
             client_id (str): Your ConnectWise Manage API Client ID.
             public_key (str): Your ConnectWise Manage API Public key.
             private_key (str): Your ConnectWise Manage API Private key.
-            codebase (str, optional): Your ConnectWise Manage Codebase. Defaults to None.
+            codebase (str, optional): Your ConnectWise Manage Codebase. If not provided, it will be fetched from the API. Defaults to None.
         \"""
         self.client_id = client_id
         self.company_name = company_name
         self.manage_url = manage_url
         self.public_key = public_key
         self.private_key = private_key
-        self.codebase = codebase
-
+        
         # Retrieve codebase from the API if not provided
         if not codebase:
-            self.codebase = self.__try_get_codebase_from_api(
+            codebase_request = self.__try_get_codebase_from_api(
                 manage_url=manage_url,
                 company_name=company_name,
                 headers=self.get_headers(),
             )
+
+            if codebase_request is None:
+                # we need to except here
+                raise Exception("Could not retrieve codebase from API.")
+            self.codebase = codebase_request
+            
 
         # Initializing endpoints
         {%- for endpoint in endpoints %}
@@ -191,7 +197,7 @@ class ConnectWiseManageAPIClient:
         \"""
         return f"https://{self.manage_url}/{self.codebase.strip('/')}/apis/3.0"
 
-    def __try_get_codebase_from_api(self, manage_url: str, company_name: str, headers: dict[str, str]) -> str:
+    def __try_get_codebase_from_api(self, manage_url: str, company_name: str, headers: dict[str, str]) -> str | None:
         \"""
         Tries to retrieve the codebase from the API using the provided company url, company name and headers.
 

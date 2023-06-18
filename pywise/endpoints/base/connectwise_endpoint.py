@@ -1,5 +1,6 @@
 from __future__ import annotations
 import requests
+from requests import Response
 from pydantic import BaseModel
 from pywise.responses.paginated_response import PaginatedResponse
 from pywise.models.base.connectwise_model import ConnectWiseModel
@@ -37,12 +38,12 @@ class ConnectWiseEndpoint:
 
     Args:
         client: The ConnectWiseAPIClient instance.
-        endpoint_base (str): The base URL for the specific endpoint.
+        endpoint_url (str): The base URL for the specific endpoint.
         parent_endpoint (ConnectWiseEndpoint, optional): The parent endpoint, if applicable.
 
     Attributes:
         client (ConnectWiseAPIClient): The ConnectWiseAPIClient instance.
-        endpoint_base (str): The base URL for the specific endpoint.
+        endpoint_url (str): The base URL for the specific endpoint.
         _parent_endpoint (ConnectWiseEndpoint): The parent endpoint, if applicable.
         model_parser (ModelParser): An instance of the ModelParser class used for parsing API responses.
         _model (Type[TModel]): The model class for the endpoint.
@@ -53,7 +54,7 @@ class ConnectWiseEndpoint:
         TModel: The model class for the endpoint.
     """
 
-    def __init__(self, client, endpoint_base, id_index=None, parent_endpoint=None):
+    def __init__(self, client, endpoint_url: str, parent_endpoint: ConnectWiseEndpoint | None = None):
         """
         Initialize a ConnectWiseEndpoint instance with the client and endpoint base.
 
@@ -62,10 +63,9 @@ class ConnectWiseEndpoint:
             endpoint_base (str): The base URL for the specific endpoint.
         """
         self.client = client
-        self.endpoint_base = endpoint_base
+        self.endpoint_base = endpoint_url
         self._parent_endpoint = parent_endpoint
         self._id = None
-        self._id_index: str | None = id_index
         self._child_endpoints: list[ConnectWiseEndpoint] = []
 
     def register_child_endpoint(self, child_endpoint: TChildEndpoint) -> TChildEndpoint:
@@ -94,14 +94,17 @@ class ConnectWiseEndpoint:
         url_parts = [str(arg).strip("/") for arg in args]
         return "/".join(url_parts)
 
-    def __get_replaced_url(self):
+    def __get_replaced_url(self) -> str:
         if self._id is None:
             return self.endpoint_base
-        return self.endpoint_base.replace(self._id_index, str(self._id))
+        return self.endpoint_base.replace("{id}", str(self._id))
+    
+    def make_request_and_get_json(self, endpoint=None, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> dict[str, Any]:
+        return self.make_request("GET", endpoint, data, params).json()
 
     def make_request(
-        self, method: str, endpoint=None, data=None, params=None, as_json=True
-    ):
+        self, method: str, endpoint=None, data: dict[str, Any] = {}, params: dict[str, int | str] = {}
+    ) -> Response:
         """
         Make an API request using the specified method, endpoint, data, and parameters.
         This function isn't intended for use outside of this class.
@@ -153,20 +156,17 @@ class ConnectWiseEndpoint:
                 f"Request failed with status code {response.status_code}: {response.text}"
             )
 
-        if as_json:
-            return response.json()
-        else:
-            return response
+        return response
 
-    def _parse_many(self, model_type: Type[T], data: list[T]) -> list[T]:
+    def _parse_many(self, model_type: Type[T], data: list[dict[str, Any]]) -> list[T]:
         return [model_type.parse_obj(d) for d in data]
 
-    def _parse_one(self, model_type: Type[T], data: dict) -> T:
+    def _parse_one(self, model_type: Type[T], data: dict[str, Any]) -> T:
         return model_type.parse_obj(data)
 
     def id(self: TSelf, id: int) -> TSelf:
         """
-        Set the ID for the current endpoint and its child endpoints.
+        Set the ID for the current endpoint.
 
         Args:
             id (int): The ID to set.
