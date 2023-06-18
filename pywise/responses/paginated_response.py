@@ -1,6 +1,6 @@
 from __future__ import annotations
 from pywise.models.base.connectwise_model import ConnectWiseModel
-from pywise.helpers import parse_link_headers
+from pywise.utils.helpers import parse_link_headers
 from typing import TYPE_CHECKING, Generic, TypeVar, Type
 from pydantic import BaseModel
 
