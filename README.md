@@ -3,7 +3,9 @@
 # PyWise - A wrapper client for simplifying interactions with the ConnectWise Manage API in Python
 
 PyWise is a full featured, type-annotated API client written in Python for the ConnectWise API's. 
+
 This library has been developed with the intention of making the ConnectWise API's simple and accessible to non-coders while allowing experienced coders to utilize all features the API has to offer without the boilerplate.
+
 Currently, it only supports ConnectWise Manage, but more is planned.
 - - - - 
 Features:
