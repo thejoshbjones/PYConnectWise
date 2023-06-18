@@ -50,11 +50,11 @@ from pywise import ConnectWiseManageAPIClient
 
 # init client
 api = ConnectWiseManageAPIClient(
-  # company name,
-  # company url,
-  # client id,
-  # public key,
-  # private key
+  # your company name,
+  # manage instance url,
+  # your api client id,
+  # your api public key,
+  # your api private key
 )
 ```
 
