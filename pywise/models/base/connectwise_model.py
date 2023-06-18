@@ -1,6 +1,6 @@
 from __future__ import annotations
 from pydantic import BaseModel
-from pywise.models.utils.naming import to_camel_case
+from pywise.utils.naming import to_camel_case
 
 class ConnectWiseModel(BaseModel):
 

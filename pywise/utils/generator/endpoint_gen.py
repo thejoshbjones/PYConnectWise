@@ -6,7 +6,7 @@ from pywise.utils.generator.templates import (
 from pywise.utils.generator.fs import save_py_file
 import os
 import re
-from pywise.models.utils.naming import to_snake_case
+from pywise.utils.naming import to_snake_case
 
 
 def generate_endpoint_legacy(

@@ -4,7 +4,7 @@ from pydantic import BaseModel
 from pywise.responses.paginated_response import PaginatedResponse
 from pywise.models.base.connectwise_model import ConnectWiseModel
 from typing import Any, TypeVar, Generic, TYPE_CHECKING
-from pywise.utils.patch_maker import PatchGroup
+from pywise.utils.experimental.patch_maker import PatchGroup
 from typing import TypeVar, Type, List, Union
 
 TChildEndpoint = TypeVar("TChildEndpoint", bound="ConnectWiseEndpoint")

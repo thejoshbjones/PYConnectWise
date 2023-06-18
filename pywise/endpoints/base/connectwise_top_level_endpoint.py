@@ -3,7 +3,7 @@ import requests
 from pywise.responses.paginated_response import PaginatedResponse
 from pywise.models.base.connectwise_model import ConnectWiseModel
 from typing import Any, TypeVar, Generic, TYPE_CHECKING
-from pywise.utils.patch_maker import PatchGroup
+from pywise.utils.experimental.patch_maker import PatchGroup
 from pywise.endpoints.base.connectwise_endpoint import ConnectWiseEndpoint
 
 TChildEndpoint = TypeVar("TChildEndpoint", bound="ConnectWiseEndpoint")

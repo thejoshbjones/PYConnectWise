@@ -1,6 +1,6 @@
 from __future__ import annotations
 from typing import Any
-from pywise.models.utils.naming import to_camel_case
+from pywise.utils.naming import to_camel_case
 from pywise.models.base.connectwise_model import ConnectWiseModel
 
 class KPIReferenceModel(ConnectWiseModel):
