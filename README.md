@@ -14,8 +14,8 @@ Features:
 - Focus on type-annotation and DX. Models are parsed and validated using [Pydantic](https://github.com/pydantic/pydantic)
 
 PyWise is currently in **pre-release**. This means that while it does work, you may come across issues and inconsistencies. 
+
 As all Endpoint and Model code has been generated, not all of it has been tested. YMMV.
-Please refer to the roadmap for more information.
 - - - - 
 Known Issues:
 =============
