@@ -29,53 +29,54 @@ class LicenseClass(str, Enum):
     X = 'X'
 
 class MyMemberInfoModel(ConnectWiseModel):
-    id: int | None
-    identifier: str | None
-    first_name: str | None
-    middle_initial: str | None
-    last_name: str | None
-    full_name: str | None
-    default_email: str | None
-    photo: DocumentReferenceModel | None
-    license_class: LicenseClass | None
-    inactive_flag: bool | None
-    time_zone: TimeZoneSetupReferenceModel | None
-    use_browser_language_flag: bool | None
-    default_location: SystemLocationReferenceModel | None
-    default_department: SystemDepartmentReferenceModel | None
-    work_role: WorkRoleReferenceModel | None
-    work_type: WorkTypeReferenceModel | None
-    daily_capacity: float | None
-    require_expense_entry_flag: bool | None
-    require_time_sheet_entry_flag: bool | None
-    require_start_and_end_time_on_time_entry_flag: bool | None
-    enter_time_against_company_flag: bool | None
-    allow_expenses_entered_against_companies_flag: bool | None
-    service_default_board: BoardReferenceModel | None
-    service_default_location: SystemLocationReferenceModel | None
-    service_default_department: SystemDepartmentReferenceModel | None
-    restrict_service_default_location_flag: bool | None
-    restrict_service_default_department_flag: bool | None
-    excluded_service_board_ids: list[int] | None
-    project_default_location: SystemLocationReferenceModel | None
-    project_default_department: SystemDepartmentReferenceModel | None
-    project_default_board: ProjectBoardReferenceModel | None
-    restrict_project_default_location_flag: bool | None
-    restrict_project_default_department_flag: bool | None
-    excluded_project_board_ids: list[int] | None
-    schedule_default_location: SystemLocationReferenceModel | None
-    schedule_default_department: SystemDepartmentReferenceModel | None
-    schedule_capacity: float | None
-    service_location: ServiceLocationReferenceModel | None
-    sales_default_location: SystemLocationReferenceModel | None
-    warehouse: WarehouseReferenceModel | None
-    warehouse_bin: WarehouseBinReferenceModel | None
-    restrict_default_warehouse_flag: bool | None
-    restrict_default_warehouse_bin_flag: bool | None
-    sso_session_flag: bool | None
-    sso_client_id: str | None
-    _info: dict[str, str] | None
+    id: int
+    identifier: str
+    first_name: str
+    middle_initial: str
+    last_name: str
+    full_name: str
+    default_email: str
+    photo: DocumentReferenceModel
+    license_class: LicenseClass
+    inactive_flag: bool
+    time_zone: TimeZoneSetupReferenceModel
+    use_browser_language_flag: bool
+    default_location: SystemLocationReferenceModel
+    default_department: SystemDepartmentReferenceModel
+    work_role: WorkRoleReferenceModel
+    work_type: WorkTypeReferenceModel
+    daily_capacity: float
+    require_expense_entry_flag: bool
+    require_time_sheet_entry_flag: bool
+    require_start_and_end_time_on_time_entry_flag: bool
+    enter_time_against_company_flag: bool
+    allow_expenses_entered_against_companies_flag: bool
+    service_default_board: BoardReferenceModel
+    service_default_location: SystemLocationReferenceModel
+    service_default_department: SystemDepartmentReferenceModel
+    restrict_service_default_location_flag: bool
+    restrict_service_default_department_flag: bool
+    excluded_service_board_ids: list[int]
+    project_default_location: SystemLocationReferenceModel
+    project_default_department: SystemDepartmentReferenceModel
+    project_default_board: ProjectBoardReferenceModel
+    restrict_project_default_location_flag: bool
+    restrict_project_default_department_flag: bool
+    excluded_project_board_ids: list[int]
+    schedule_default_location: SystemLocationReferenceModel
+    schedule_default_department: SystemDepartmentReferenceModel
+    schedule_capacity: float
+    service_location: ServiceLocationReferenceModel
+    sales_default_location: SystemLocationReferenceModel
+    warehouse: WarehouseReferenceModel
+    warehouse_bin: WarehouseBinReferenceModel
+    restrict_default_warehouse_flag: bool
+    restrict_default_warehouse_bin_flag: bool
+    sso_session_flag: bool
+    sso_client_id: str
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

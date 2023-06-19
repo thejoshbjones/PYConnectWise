@@ -59,83 +59,84 @@ class PredecessorType(str, Enum):
     Phase = 'Phase'
 
 class ProjectTicketModel(ConnectWiseModel):
-    id: int | None
-    summary: str | None
-    is_issue_flag: bool | None
-    board: BoardReferenceModel | None
-    status: ServiceStatusReferenceModel | None
-    work_role: WorkRoleReferenceModel | None
-    work_type: WorkTypeReferenceModel | None
-    project: ProjectReferenceModel | None
-    phase: ProjectPhaseReferenceModel | None
-    wbs_code: str | None
-    company: CompanyReferenceModel | None
-    site: SiteReferenceModel | None
-    site_name: str | None
-    address_line1: str | None
-    address_line2: str | None
-    city: str | None
-    state_identifier: str | None
-    zip: str | None
-    country: CountryReferenceModel | None
-    contact: ContactReferenceModel | None
-    contact_name: str | None
-    contact_phone_number: str | None
-    contact_phone_extension: str | None
-    contact_email_address: str | None
-    type: ServiceTypeReferenceModel | None
-    sub_type: ServiceSubTypeReferenceModel | None
-    item: ServiceItemReferenceModel | None
-    owner: MemberReferenceModel | None
-    priority: PriorityReferenceModel | None
-    service_location: ServiceLocationReferenceModel | None
-    source: ServiceSourceReferenceModel | None
-    required_date: str | None
-    budget_hours: float | None
-    opportunity: OpportunityReferenceModel | None
-    agreement: AgreementReferenceModel | None
-    knowledge_base_category_id: int | None
-    knowledge_base_sub_category_id: int | None
-    knowledge_base_link_id: int | None
-    knowledge_base_link_type: KnowledgeBaseLinkType | None
-    allow_all_clients_portal_view: bool | None
-    customer_updated_flag: bool | None
-    automatic_email_contact_flag: bool | None
-    automatic_email_resource_flag: bool | None
-    automatic_email_cc_flag: bool | None
-    automatic_email_cc: str | None
-    closed_date: str | None
-    closed_by: str | None
-    closed_flag: bool | None
-    actual_hours: float | None
-    approved: bool | None
-    sub_billing_method: SubBillingMethod | None
-    sub_billing_amount: float | None
-    sub_date_accepted: str | None
-    resources: str | None
-    bill_time: BillTime | None
-    bill_expenses: BillExpenses | None
-    bill_products: BillProducts | None
-    predecessor_type: PredecessorType | None
-    predecessor_id: int | None
-    predecessor_closed_flag: bool | None
-    lag_days: int | None
-    lag_nonworking_days_flag: bool | None
-    estimated_start_date: str | None
-    location: SystemLocationReferenceModel | None
-    department: SystemDepartmentReferenceModel | None
-    duration: int | None
-    mobile_guid: str | None
-    currency: CurrencyReferenceModel | None
-    _info: dict[str, str] | None
-    initial_description: str | None
-    initial_internal_analysis: str | None
-    initial_resolution: str | None
-    contact_email_lookup: str | None
-    process_notifications: bool | None
-    skip_callback: bool | None
-    custom_fields: list[CustomFieldValueModel] | None
+    id: int
+    summary: str
+    is_issue_flag: bool
+    board: BoardReferenceModel
+    status: ServiceStatusReferenceModel
+    work_role: WorkRoleReferenceModel
+    work_type: WorkTypeReferenceModel
+    project: ProjectReferenceModel
+    phase: ProjectPhaseReferenceModel
+    wbs_code: str
+    company: CompanyReferenceModel
+    site: SiteReferenceModel
+    site_name: str
+    address_line1: str
+    address_line2: str
+    city: str
+    state_identifier: str
+    zip: str
+    country: CountryReferenceModel
+    contact: ContactReferenceModel
+    contact_name: str
+    contact_phone_number: str
+    contact_phone_extension: str
+    contact_email_address: str
+    type: ServiceTypeReferenceModel
+    sub_type: ServiceSubTypeReferenceModel
+    item: ServiceItemReferenceModel
+    owner: MemberReferenceModel
+    priority: PriorityReferenceModel
+    service_location: ServiceLocationReferenceModel
+    source: ServiceSourceReferenceModel
+    required_date: str
+    budget_hours: float
+    opportunity: OpportunityReferenceModel
+    agreement: AgreementReferenceModel
+    knowledge_base_category_id: int
+    knowledge_base_sub_category_id: int
+    knowledge_base_link_id: int
+    knowledge_base_link_type: KnowledgeBaseLinkType
+    allow_all_clients_portal_view: bool
+    customer_updated_flag: bool
+    automatic_email_contact_flag: bool
+    automatic_email_resource_flag: bool
+    automatic_email_cc_flag: bool
+    automatic_email_cc: str
+    closed_date: str
+    closed_by: str
+    closed_flag: bool
+    actual_hours: float
+    approved: bool
+    sub_billing_method: SubBillingMethod
+    sub_billing_amount: float
+    sub_date_accepted: str
+    resources: str
+    bill_time: BillTime
+    bill_expenses: BillExpenses
+    bill_products: BillProducts
+    predecessor_type: PredecessorType
+    predecessor_id: int
+    predecessor_closed_flag: bool
+    lag_days: int
+    lag_nonworking_days_flag: bool
+    estimated_start_date: str
+    location: SystemLocationReferenceModel
+    department: SystemDepartmentReferenceModel
+    duration: int
+    mobile_guid: str
+    currency: CurrencyReferenceModel
+    _info: dict[str, str]
+    initial_description: str
+    initial_internal_analysis: str
+    initial_resolution: str
+    contact_email_lookup: str
+    process_notifications: bool
+    skip_callback: bool
+    custom_fields: list[CustomFieldValueModel]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

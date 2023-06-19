@@ -7,13 +7,14 @@ from pywise.models.manage.ManagedDevicesIntegrationReferenceModel import Managed
 from pywise.models.manage.MemberReferenceModel import MemberReferenceModel
 
 class ManagedDevicesIntegrationLoginModel(ConnectWiseModel):
-    id: int | None
-    managed_devices_integration: ManagedDevicesIntegrationReferenceModel | None
-    username: str | None
-    password: str | None
-    member: MemberReferenceModel | None
-    _info: dict[str, str] | None
+    id: int
+    managed_devices_integration: ManagedDevicesIntegrationReferenceModel
+    username: str
+    password: str
+    member: MemberReferenceModel
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

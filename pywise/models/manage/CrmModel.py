@@ -8,31 +8,32 @@ from pywise.models.manage.TeamRoleReferenceModel import TeamRoleReferenceModel
 from pywise.models.manage.TeamRoleReferenceModel import TeamRoleReferenceModel
 
 class CrmModel(ConnectWiseModel):
-    id: int | None
-    company_list_count: int | None
-    lock_probability_flag: bool | None
-    account_manager_role: TeamRoleReferenceModel | None
-    technical_contact_role: TeamRoleReferenceModel | None
-    sales_rep_role: TeamRoleReferenceModel | None
-    company_id_generation_flag: bool | None
-    exclude_spaces_flag: bool | None
-    field1_caption: str | None
-    field2_caption: str | None
-    field3_caption: str | None
-    field4_caption: str | None
-    field5_caption: str | None
-    field6_caption: str | None
-    field7_caption: str | None
-    field8_caption: str | None
-    field9_caption: str | None
-    field10_caption: str | None
-    primary_rep_caption: str | None
-    secondary_rep_caption: str | None
-    other1_caption: str | None
-    other2_caption: str | None
-    default_year: bool | None
-    _info: dict[str, str] | None
+    id: int
+    company_list_count: int
+    lock_probability_flag: bool
+    account_manager_role: TeamRoleReferenceModel
+    technical_contact_role: TeamRoleReferenceModel
+    sales_rep_role: TeamRoleReferenceModel
+    company_id_generation_flag: bool
+    exclude_spaces_flag: bool
+    field1_caption: str
+    field2_caption: str
+    field3_caption: str
+    field4_caption: str
+    field5_caption: str
+    field6_caption: str
+    field7_caption: str
+    field8_caption: str
+    field9_caption: str
+    field10_caption: str
+    primary_rep_caption: str
+    secondary_rep_caption: str
+    other1_caption: str
+    other2_caption: str
+    default_year: bool
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

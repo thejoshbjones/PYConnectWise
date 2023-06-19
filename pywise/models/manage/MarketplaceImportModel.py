@@ -20,11 +20,12 @@ class MarketplaceImportType(str, Enum):
     Views = 'Views'
 
 class MarketplaceImportModel(ConnectWiseModel):
-    id: int | None
-    marketplace_import_type: MarketplaceImportType | None
-    marketplace_object: list[Any] | None
-    required_fields: list[str] | None
+    id: int
+    marketplace_import_type: MarketplaceImportType
+    marketplace_object: list[Any]
+    required_fields: list[str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

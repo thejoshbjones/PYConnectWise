@@ -16,52 +16,53 @@ class ProcurementType(str, Enum):
     Transfer = 'Transfer'
 
 class UnpostedProcurementModel(ConnectWiseModel):
-    id: int | None
-    description: str | None
-    unposted_product_id: str | None
-    location_id: int | None
-    department_id: int | None
-    procurement_type: ProcurementType | None
-    purchase_order: PurchaseOrderReferenceModel | None
-    purchase_date: str | None
-    tracking_number: str | None
-    billing_terms: BillingTermsReferenceModel | None
-    currency: CurrencyReferenceModel | None
-    total: float | None
-    tax_code: TaxCodeReferenceModel | None
-    avalara_tax_flag: bool | None
-    item_taxable_flag: bool | None
-    purchase_order_taxable_flag: bool | None
-    state_tax_flag: bool | None
-    state_tax_xref: str | None
-    state_tax_amount: float | None
-    county_tax_flag: bool | None
-    county_tax_xref: str | None
-    county_tax_amount: float | None
-    city_tax_flag: bool | None
-    city_tax_xref: str | None
-    city_tax_amount: float | None
-    country_tax_flag: bool | None
-    country_tax_xref: str | None
-    country_tax_amount: float | None
-    composite_tax_flag: bool | None
-    composite_tax_xref: str | None
-    composite_tax_amount: float | None
-    level_six_tax_flag: bool | None
-    level_six_tax_xref: str | None
-    level_six_tax_amount: float | None
-    tax_total: float | None
-    customer: CompanyReferenceModel | None
-    vendor: CompanyReferenceModel | None
-    vendor_account_number: str | None
-    vendor_invoice_number: str | None
-    vendor_invoice_date: str | None
-    tax_freight_flag: bool | None
-    freight_tax_total: float | None
-    freight_cost: float | None
-    date_closed: str | None
-    _info: dict[str, str] | None
+    id: int
+    description: str
+    unposted_product_id: str
+    location_id: int
+    department_id: int
+    procurement_type: ProcurementType
+    purchase_order: PurchaseOrderReferenceModel
+    purchase_date: str
+    tracking_number: str
+    billing_terms: BillingTermsReferenceModel
+    currency: CurrencyReferenceModel
+    total: float
+    tax_code: TaxCodeReferenceModel
+    avalara_tax_flag: bool
+    item_taxable_flag: bool
+    purchase_order_taxable_flag: bool
+    state_tax_flag: bool
+    state_tax_xref: str
+    state_tax_amount: float
+    county_tax_flag: bool
+    county_tax_xref: str
+    county_tax_amount: float
+    city_tax_flag: bool
+    city_tax_xref: str
+    city_tax_amount: float
+    country_tax_flag: bool
+    country_tax_xref: str
+    country_tax_amount: float
+    composite_tax_flag: bool
+    composite_tax_xref: str
+    composite_tax_amount: float
+    level_six_tax_flag: bool
+    level_six_tax_xref: str
+    level_six_tax_amount: float
+    tax_total: float
+    customer: CompanyReferenceModel
+    vendor: CompanyReferenceModel
+    vendor_account_number: str
+    vendor_invoice_number: str
+    vendor_invoice_date: str
+    tax_freight_flag: bool
+    freight_tax_total: float
+    freight_cost: float
+    date_closed: str
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

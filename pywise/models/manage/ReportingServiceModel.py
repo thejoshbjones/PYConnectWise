@@ -5,13 +5,14 @@ from pywise.utils.naming import to_camel_case
 from pywise.models.base.connectwise_model import ConnectWiseModel
 
 class ReportingServiceModel(ConnectWiseModel):
-    id: int | None
-    reporting_user_name: str | None
-    reporting_password: str | None
-    reporting_domain: str | None
-    reporting_url: str | None
-    _info: dict[str, str] | None
+    id: int
+    reporting_user_name: str
+    reporting_password: str
+    reporting_domain: str
+    reporting_url: str
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

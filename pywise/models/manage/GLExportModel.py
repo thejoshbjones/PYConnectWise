@@ -14,16 +14,17 @@ from pywise.models.manage.GLExportAdjustmentTransactionModel import GLExportAdju
 from pywise.models.manage.GLExportInventoryTransferModel import GLExportInventoryTransferModel
 
 class GLExportModel(ConnectWiseModel):
-    export_settings: GLExportSettingsModel | None
-    vendors: list[GLExportVendorModel] | None
-    customers: list[GLExportCustomerModel] | None
-    transactions: list[GLExportTransactionModel] | None
-    expenses: list[GLExportExpenseModel] | None
-    expense_bills: list[GLExportExpenseBillModel] | None
-    purchase_transactions: list[GLExportPurchaseTransactionModel] | None
-    adjustment_transactions: list[GLExportAdjustmentTransactionModel] | None
-    inventory_transfers: list[GLExportInventoryTransferModel] | None
+    export_settings: GLExportSettingsModel
+    vendors: list[GLExportVendorModel]
+    customers: list[GLExportCustomerModel]
+    transactions: list[GLExportTransactionModel]
+    expenses: list[GLExportExpenseModel]
+    expense_bills: list[GLExportExpenseBillModel]
+    purchase_transactions: list[GLExportPurchaseTransactionModel]
+    adjustment_transactions: list[GLExportAdjustmentTransactionModel]
+    inventory_transfers: list[GLExportInventoryTransferModel]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

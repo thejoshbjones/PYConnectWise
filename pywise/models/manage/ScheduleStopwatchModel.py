@@ -20,26 +20,27 @@ class Status(str, Enum):
     Stopped = 'Stopped'
 
 class ScheduleStopwatchModel(ConnectWiseModel):
-    _info: dict[str, str] | None
-    agreement: AgreementReferenceModel | None
-    billable_option: BillableOption | None
-    business_unit_id: int | None
-    date_entered: str | None
-    end_time: str | None
-    id: int | None
-    internal_notes: str | None
-    location_id: int | None
-    member: MemberReferenceModel | None
-    mobile_guid: str | None
-    notes: str | None
-    schedule_id: int | None
-    schedule_mobile_guid: str | None
-    start_time: str | None
-    status: Status | None
-    total_pause_time: int | None
-    work_role: WorkRoleReferenceModel | None
-    work_type: WorkTypeReferenceModel | None
+    _info: dict[str, str]
+    agreement: AgreementReferenceModel
+    billable_option: BillableOption
+    business_unit_id: int
+    date_entered: str
+    end_time: str
+    id: int
+    internal_notes: str
+    location_id: int
+    member: MemberReferenceModel
+    mobile_guid: str
+    notes: str
+    schedule_id: int
+    schedule_mobile_guid: str
+    start_time: str
+    status: Status
+    total_pause_time: int
+    work_role: WorkRoleReferenceModel
+    work_type: WorkTypeReferenceModel
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

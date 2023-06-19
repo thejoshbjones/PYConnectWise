@@ -7,15 +7,16 @@ from pywise.models.manage.IRestIdentifiedItemModel import IRestIdentifiedItemMod
 from pywise.models.manage.ErrorResponseMessageModel import ErrorResponseMessageModel
 
 class BundleResultModel(ConnectWiseModel):
-    sequence_number: int | None
-    resource_type: str | None
-    entities: list[IRestIdentifiedItemModel] | None
-    count: int | None
-    version: str | None
-    success: bool | None
-    status_code: int | None
-    error: ErrorResponseMessageModel | None
+    sequence_number: int
+    resource_type: str
+    entities: list[IRestIdentifiedItemModel]
+    count: int
+    version: str
+    success: bool
+    status_code: int
+    error: ErrorResponseMessageModel
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

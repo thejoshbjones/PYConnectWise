@@ -12,16 +12,17 @@ class RateType(str, Enum):
     Multiplier = 'Multiplier'
 
 class AgreementTypeWorkRoleModel(ConnectWiseModel):
-    id: int | None
-    type: AgreementTypeReferenceModel | None
-    work_role: WorkRoleReferenceModel | None
-    effective_date: str | None
-    ending_date: str | None
-    rate: float | None
-    rate_type: RateType | None
-    limit_to: float | None
-    _info: dict[str, str] | None
+    id: int
+    type: AgreementTypeReferenceModel
+    work_role: WorkRoleReferenceModel
+    effective_date: str
+    ending_date: str
+    rate: float
+    rate_type: RateType
+    limit_to: float
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

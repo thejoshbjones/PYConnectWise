@@ -11,29 +11,30 @@ class ManagementItSolutionType(str, Enum):
     Custom = 'Custom'
 
 class ManagementItSolutionModel(ConnectWiseModel):
-    id: int | None
-    name: str | None
-    management_it_solution_type: ManagementItSolutionType | None
-    management_solution_name: str | None
-    management_server_url: str | None
-    webservice_override_url: str | None
-    portal_override_login_url: str | None
-    global_login_flag: bool | None
-    global_login_username: str | None
-    global_login_password: str | None
-    using_ssl_flag: bool | None
-    n_able_username: str | None
-    n_able_password: str | None
-    override_web_service_location_flag: bool | None
-    override_login_location_flag: bool | None
-    continuum_api_username: str | None
-    continuum_api_password: str | None
-    level_api_username: str | None
-    level_api_password: str | None
-    level_var_domain: str | None
-    no_display_flag: bool | None
-    _info: dict[str, str] | None
+    id: int
+    name: str
+    management_it_solution_type: ManagementItSolutionType
+    management_solution_name: str
+    management_server_url: str
+    webservice_override_url: str
+    portal_override_login_url: str
+    global_login_flag: bool
+    global_login_username: str
+    global_login_password: str
+    using_ssl_flag: bool
+    n_able_username: str
+    n_able_password: str
+    override_web_service_location_flag: bool
+    override_login_location_flag: bool
+    continuum_api_username: str
+    continuum_api_password: str
+    level_api_username: str
+    level_api_password: str
+    level_var_domain: str
+    no_display_flag: bool
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

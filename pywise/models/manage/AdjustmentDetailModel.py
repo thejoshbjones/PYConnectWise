@@ -9,18 +9,19 @@ from pywise.models.manage.WarehouseBinReferenceModel import WarehouseBinReferenc
 from pywise.models.manage.AdjustmentReferenceModel import AdjustmentReferenceModel
 
 class AdjustmentDetailModel(ConnectWiseModel):
-    id: int | None
-    catalog_item: CatalogItemReferenceModel | None
-    description: str | None
-    quantity_on_hand: float | None
-    unit_cost: float | None
-    warehouse: WarehouseReferenceModel | None
-    warehouse_bin: WarehouseBinReferenceModel | None
-    quantity_adjusted: int | None
-    serial_number: str | None
-    adjustment: AdjustmentReferenceModel | None
-    _info: dict[str, str] | None
+    id: int
+    catalog_item: CatalogItemReferenceModel
+    description: str
+    quantity_on_hand: float
+    unit_cost: float
+    warehouse: WarehouseReferenceModel
+    warehouse_bin: WarehouseBinReferenceModel
+    quantity_adjusted: int
+    serial_number: str
+    adjustment: AdjustmentReferenceModel
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

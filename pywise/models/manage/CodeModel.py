@@ -5,14 +5,15 @@ from pywise.utils.naming import to_camel_case
 from pywise.models.base.connectwise_model import ConnectWiseModel
 
 class CodeModel(ConnectWiseModel):
-    id: int | None
-    name: str | None
-    description: str | None
-    board_id: int | None
-    location_id: int | None
-    business_unit_id: int | None
-    _info: dict[str, str] | None
+    id: int
+    name: str
+    description: str
+    board_id: int
+    location_id: int
+    business_unit_id: int
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

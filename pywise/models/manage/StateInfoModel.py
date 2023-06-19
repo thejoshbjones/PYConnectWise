@@ -6,12 +6,13 @@ from pywise.models.base.connectwise_model import ConnectWiseModel
 from pywise.models.manage.CountryReferenceModel import CountryReferenceModel
 
 class StateInfoModel(ConnectWiseModel):
-    id: int | None
-    name: str | None
-    identifier: str | None
-    country: CountryReferenceModel | None
-    _info: dict[str, str] | None
+    id: int
+    name: str
+    identifier: str
+    country: CountryReferenceModel
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

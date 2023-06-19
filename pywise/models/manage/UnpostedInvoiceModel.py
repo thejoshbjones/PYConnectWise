@@ -21,53 +21,54 @@ class InvoiceType(str, Enum):
     Standard = 'Standard'
 
 class UnpostedInvoiceModel(ConnectWiseModel):
-    id: int | None
-    billing_log_id: int | None
-    location_id: int | None
-    department_id: int | None
-    company: CompanyReferenceModel | None
-    account_number: str | None
-    bill_to_company: CompanyReferenceModel | None
-    bill_to_site: SiteReferenceModel | None
-    ship_to_company: CompanyReferenceModel | None
-    ship_to_site: SiteReferenceModel | None
-    invoice_number: str | None
-    invoice_date: str | None
-    invoice_type: InvoiceType | None
-    description: str | None
-    billing_terms: BillingTermsReferenceModel | None
-    due_days: str | None
-    due_date: str | None
-    currency: CurrencyReferenceModel | None
-    sub_total: float | None
-    total: float | None
-    invoice_taxable_flag: bool | None
-    tax_code: TaxCodeReferenceModel | None
-    avalara_tax_flag: bool | None
-    item_taxable_flag: bool | None
-    sales_tax_amount: float | None
-    state_tax_flag: bool | None
-    state_tax_xref: str | None
-    state_tax_amount: float | None
-    county_tax_flag: bool | None
-    county_tax_xref: str | None
-    county_tax_amount: float | None
-    city_tax_flag: bool | None
-    city_tax_xref: str | None
-    city_tax_amount: float | None
-    country_tax_flag: bool | None
-    country_tax_xref: str | None
-    country_tax_amount: float | None
-    composite_tax_flag: bool | None
-    composite_tax_xref: str | None
-    composite_tax_amount: float | None
-    level_six_tax_flag: bool | None
-    level_six_tax_xref: str | None
-    level_six_tax_amount: float | None
-    created_by: str | None
-    date_closed: str | None
-    _info: dict[str, str] | None
+    id: int
+    billing_log_id: int
+    location_id: int
+    department_id: int
+    company: CompanyReferenceModel
+    account_number: str
+    bill_to_company: CompanyReferenceModel
+    bill_to_site: SiteReferenceModel
+    ship_to_company: CompanyReferenceModel
+    ship_to_site: SiteReferenceModel
+    invoice_number: str
+    invoice_date: str
+    invoice_type: InvoiceType
+    description: str
+    billing_terms: BillingTermsReferenceModel
+    due_days: str
+    due_date: str
+    currency: CurrencyReferenceModel
+    sub_total: float
+    total: float
+    invoice_taxable_flag: bool
+    tax_code: TaxCodeReferenceModel
+    avalara_tax_flag: bool
+    item_taxable_flag: bool
+    sales_tax_amount: float
+    state_tax_flag: bool
+    state_tax_xref: str
+    state_tax_amount: float
+    county_tax_flag: bool
+    county_tax_xref: str
+    county_tax_amount: float
+    city_tax_flag: bool
+    city_tax_xref: str
+    city_tax_amount: float
+    country_tax_flag: bool
+    country_tax_xref: str
+    country_tax_amount: float
+    composite_tax_flag: bool
+    composite_tax_xref: str
+    composite_tax_amount: float
+    level_six_tax_flag: bool
+    level_six_tax_xref: str
+    level_six_tax_amount: float
+    created_by: str
+    date_closed: str
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

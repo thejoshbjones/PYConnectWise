@@ -32,25 +32,26 @@ class FiscalYearStart(str, Enum):
     December = 'December'
 
 class CorporateStructureModel(ConnectWiseModel):
-    id: int | None
-    level_count: LevelCount | None
-    level1_name: str | None
-    level2_name: str | None
-    level3_name: str | None
-    level4_name: str | None
-    level5_name: str | None
-    fiscal_year_start: FiscalYearStart | None
-    location_caption: str | None
-    group_caption: str | None
-    base_currency: CurrencyReferenceModel | None
-    president: MemberReferenceModel | None
-    chief_operating_officer: MemberReferenceModel | None
-    controller: MemberReferenceModel | None
-    dispatcher: MemberReferenceModel | None
-    service_manager: MemberReferenceModel | None
-    duty_manager: MemberReferenceModel | None
-    _info: dict[str, str] | None
+    id: int
+    level_count: LevelCount
+    level1_name: str
+    level2_name: str
+    level3_name: str
+    level4_name: str
+    level5_name: str
+    fiscal_year_start: FiscalYearStart
+    location_caption: str
+    group_caption: str
+    base_currency: CurrencyReferenceModel
+    president: MemberReferenceModel
+    chief_operating_officer: MemberReferenceModel
+    controller: MemberReferenceModel
+    dispatcher: MemberReferenceModel
+    service_manager: MemberReferenceModel
+    duty_manager: MemberReferenceModel
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

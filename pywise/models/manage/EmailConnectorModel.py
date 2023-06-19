@@ -24,36 +24,37 @@ class EmailServerType(str, Enum):
     Google = 'Google'
 
 class EmailConnectorModel(ConnectWiseModel):
-    id: int | None
-    email_server_type: EmailServerType | None
-    imap_setup: ImapSetupReferenceModel | None
-    office365_email_setup: Office365EmailSetupReferenceModel | None
-    google_email_setup: GoogleEmailSetupReferenceModel | None
-    service_board: BoardReferenceModel | None
-    default_company: CompanyReferenceModel | None
-    default_member: MemberReferenceModel | None
-    location: SystemLocationReferenceModel | None
-    department: SystemDepartmentReferenceModel | None
-    email_notify_from: str | None
-    bcc_email_to: str | None
-    email_errors_to: str | None
-    set_email_to_default_contact_flag: bool | None
-    no_response_flag: bool | None
-    never_respond_flag: bool | None
-    discard_duplicates_flag: bool | None
-    post_replies_to_ticket_flag: bool | None
-    create_contact_flag: bool | None
-    response_email_for_new: str | None
-    response_email_for_existing: str | None
-    source_override: ServiceSourceReferenceModel | None
-    priority_override: PriorityReferenceModel | None
-    type_override: ServiceTypeReferenceModel | None
-    sub_type_override: ServiceSubTypeReferenceModel | None
-    item_override: ServiceItemReferenceModel | None
-    status_override: ServiceStatusReferenceModel | None
-    add_cc_flag: bool | None
-    _info: dict[str, str] | None
+    id: int
+    email_server_type: EmailServerType
+    imap_setup: ImapSetupReferenceModel
+    office365_email_setup: Office365EmailSetupReferenceModel
+    google_email_setup: GoogleEmailSetupReferenceModel
+    service_board: BoardReferenceModel
+    default_company: CompanyReferenceModel
+    default_member: MemberReferenceModel
+    location: SystemLocationReferenceModel
+    department: SystemDepartmentReferenceModel
+    email_notify_from: str
+    bcc_email_to: str
+    email_errors_to: str
+    set_email_to_default_contact_flag: bool
+    no_response_flag: bool
+    never_respond_flag: bool
+    discard_duplicates_flag: bool
+    post_replies_to_ticket_flag: bool
+    create_contact_flag: bool
+    response_email_for_new: str
+    response_email_for_existing: str
+    source_override: ServiceSourceReferenceModel
+    priority_override: PriorityReferenceModel
+    type_override: ServiceTypeReferenceModel
+    sub_type_override: ServiceSubTypeReferenceModel
+    item_override: ServiceItemReferenceModel
+    status_override: ServiceStatusReferenceModel
+    add_cc_flag: bool
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

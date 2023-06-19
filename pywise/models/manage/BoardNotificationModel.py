@@ -7,12 +7,13 @@ from pywise.models.manage.NotificationRecipientReferenceModel import Notificatio
 from pywise.models.manage.MemberReferenceModel import MemberReferenceModel
 
 class BoardNotificationModel(ConnectWiseModel):
-    id: int | None
-    notify_who: NotificationRecipientReferenceModel | None
-    member: MemberReferenceModel | None
-    email: str | None
-    _info: dict[str, str] | None
+    id: int
+    notify_who: NotificationRecipientReferenceModel
+    member: MemberReferenceModel
+    email: str
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

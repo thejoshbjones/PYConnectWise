@@ -24,17 +24,18 @@ class EntryType(str, Enum):
     Option = 'Option'
 
 class SurveyQuestionModel(ConnectWiseModel):
-    id: int | None
-    survey: SurveyReferenceModel | None
-    field_type: FieldType | None
-    entry_type: EntryType | None
-    sequence_number: float | None
-    question: str | None
-    number_of_decimals: int | None
-    required_flag: bool | None
-    inactive_flag: bool | None
-    _info: dict[str, str] | None
+    id: int
+    survey: SurveyReferenceModel
+    field_type: FieldType
+    entry_type: EntryType
+    sequence_number: float
+    question: str
+    number_of_decimals: int
+    required_flag: bool
+    inactive_flag: bool
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

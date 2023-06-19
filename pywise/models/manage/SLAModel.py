@@ -21,29 +21,30 @@ class BasedOn(str, Enum):
     Custom = 'Custom'
 
 class SLAModel(ConnectWiseModel):
-    id: int | None
-    name: str | None
-    based_on: BasedOn | None
-    custom_calendar: CalendarReferenceModel | None
-    default_flag: bool | None
-    application_order: int | None
-    hi_impact_hi_urgency: PriorityReferenceModel | None
-    hi_impact_med_urgency: PriorityReferenceModel | None
-    hi_impact_low_urgency: PriorityReferenceModel | None
-    med_impact_hi_urgency: PriorityReferenceModel | None
-    med_impact_med_urgency: PriorityReferenceModel | None
-    med_impact_low_urgency: PriorityReferenceModel | None
-    low_impact_hi_urgency: PriorityReferenceModel | None
-    low_impact_med_urgency: PriorityReferenceModel | None
-    low_impact_low_urgency: PriorityReferenceModel | None
-    respond_hours: float | None
-    respond_percent: int | None
-    plan_within: float | None
-    plan_within_percent: int | None
-    resolution_hours: float | None
-    resolution_percent: int | None
-    _info: dict[str, str] | None
+    id: int
+    name: str
+    based_on: BasedOn
+    custom_calendar: CalendarReferenceModel
+    default_flag: bool
+    application_order: int
+    hi_impact_hi_urgency: PriorityReferenceModel
+    hi_impact_med_urgency: PriorityReferenceModel
+    hi_impact_low_urgency: PriorityReferenceModel
+    med_impact_hi_urgency: PriorityReferenceModel
+    med_impact_med_urgency: PriorityReferenceModel
+    med_impact_low_urgency: PriorityReferenceModel
+    low_impact_hi_urgency: PriorityReferenceModel
+    low_impact_med_urgency: PriorityReferenceModel
+    low_impact_low_urgency: PriorityReferenceModel
+    respond_hours: float
+    respond_percent: int
+    plan_within: float
+    plan_within_percent: int
+    resolution_hours: float
+    resolution_percent: int
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

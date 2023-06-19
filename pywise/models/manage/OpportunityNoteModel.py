@@ -6,15 +6,16 @@ from pywise.models.base.connectwise_model import ConnectWiseModel
 from pywise.models.manage.NoteTypeReferenceModel import NoteTypeReferenceModel
 
 class OpportunityNoteModel(ConnectWiseModel):
-    id: int | None
-    opportunity_id: int | None
-    type: NoteTypeReferenceModel | None
-    text: str | None
-    flagged: bool | None
-    entered_by: str | None
-    mobile_guid: str | None
-    _info: dict[str, str] | None
+    id: int
+    opportunity_id: int
+    type: NoteTypeReferenceModel
+    text: str
+    flagged: bool
+    entered_by: str
+    mobile_guid: str
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

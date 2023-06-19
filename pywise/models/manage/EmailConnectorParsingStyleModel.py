@@ -6,12 +6,13 @@ from pywise.models.base.connectwise_model import ConnectWiseModel
 from pywise.models.manage.EmailConnectorParsingTypeReferenceModel import EmailConnectorParsingTypeReferenceModel
 
 class EmailConnectorParsingStyleModel(ConnectWiseModel):
-    id: int | None
-    parsing_type: EmailConnectorParsingTypeReferenceModel | None
-    parse_rule: str | None
-    priority: int | None
-    _info: dict[str, str] | None
+    id: int
+    parsing_type: EmailConnectorParsingTypeReferenceModel
+    parse_rule: str
+    priority: int
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

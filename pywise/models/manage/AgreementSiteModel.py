@@ -8,13 +8,14 @@ from pywise.models.manage.SiteReferenceModel import SiteReferenceModel
 from pywise.models.manage.CustomFieldValueModel import CustomFieldValueModel
 
 class AgreementSiteModel(ConnectWiseModel):
-    id: int | None
-    company: CompanyReferenceModel | None
-    site: SiteReferenceModel | None
-    agreement_id: int | None
-    _info: dict[str, str] | None
-    custom_fields: list[CustomFieldValueModel] | None
+    id: int
+    company: CompanyReferenceModel
+    site: SiteReferenceModel
+    agreement_id: int
+    _info: dict[str, str]
+    custom_fields: list[CustomFieldValueModel]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

@@ -7,11 +7,12 @@ from pywise.models.manage.SystemLocationReferenceModel import SystemLocationRefe
 from pywise.models.manage.SystemMenuEntryReferenceModel import SystemMenuEntryReferenceModel
 
 class MenuEntryLocationModel(ConnectWiseModel):
-    id: int | None
-    location: SystemLocationReferenceModel | None
-    menu_entry: SystemMenuEntryReferenceModel | None
-    _info: dict[str, str] | None
+    id: int
+    location: SystemLocationReferenceModel
+    menu_entry: SystemMenuEntryReferenceModel
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

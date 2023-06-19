@@ -14,47 +14,48 @@ from pywise.models.manage.WarehouseBinReferenceModel import WarehouseBinReferenc
 from pywise.models.manage.GLExportInventoryTransferOffsetModel import GLExportInventoryTransferOffsetModel
 
 class GLExportInventoryTransferModel(ConnectWiseModel):
-    id: str | None
-    document_type: str | None
-    document_date: str | None
-    account_number: str | None
-    gl_class: str | None
-    gl_type_id: str | None
-    description: str | None
-    sales_code: str | None
-    memo: str | None
-    cost_account_number: str | None
-    inventory_account_number: str | None
-    transfer_id: int | None
-    item: IvItemReferenceModel | None
-    gl_item_id: str | None
-    sales_description: str | None
-    item_description: str | None
-    currency: CurrencyReferenceModel | None
-    item_price: float | None
-    taxable: bool | None
-    unit_of_measure: UnitOfMeasureReferenceModel | None
-    quantity: float | None
-    cost: float | None
-    total: float | None
-    sub_category: ProductSubCategoryReferenceModel | None
-    serialized_flag: bool | None
-    serial_numbers: str | None
-    bin: WarehouseBinReferenceModel | None
-    warehouse: WarehouseReferenceModel | None
-    transfer_from_bin: WarehouseBinReferenceModel | None
-    transfer_from_location_xref: str | None
-    transfer_to_bin: WarehouseBinReferenceModel | None
-    transfer_to_location_xref: str | None
-    location_xref: str | None
-    price_level_xref: str | None
-    uom_schedule_xref: str | None
-    item_type_xref: str | None
-    inventory_xref: str | None
-    cogs_xref: str | None
-    tax_note: str | None
-    offset: GLExportInventoryTransferOffsetModel | None
+    id: str
+    document_type: str
+    document_date: str
+    account_number: str
+    gl_class: str
+    gl_type_id: str
+    description: str
+    sales_code: str
+    memo: str
+    cost_account_number: str
+    inventory_account_number: str
+    transfer_id: int
+    item: IvItemReferenceModel
+    gl_item_id: str
+    sales_description: str
+    item_description: str
+    currency: CurrencyReferenceModel
+    item_price: float
+    taxable: bool
+    unit_of_measure: UnitOfMeasureReferenceModel
+    quantity: float
+    cost: float
+    total: float
+    sub_category: ProductSubCategoryReferenceModel
+    serialized_flag: bool
+    serial_numbers: str
+    bin: WarehouseBinReferenceModel
+    warehouse: WarehouseReferenceModel
+    transfer_from_bin: WarehouseBinReferenceModel
+    transfer_from_location_xref: str
+    transfer_to_bin: WarehouseBinReferenceModel
+    transfer_to_location_xref: str
+    location_xref: str
+    price_level_xref: str
+    uom_schedule_xref: str
+    item_type_xref: str
+    inventory_xref: str
+    cogs_xref: str
+    tax_note: str
+    offset: GLExportInventoryTransferOffsetModel
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

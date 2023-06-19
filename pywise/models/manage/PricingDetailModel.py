@@ -8,15 +8,16 @@ from pywise.models.manage.ProductCategoryReferenceModel import ProductCategoryRe
 from pywise.models.manage.ProductSubCategoryReferenceModel import ProductSubCategoryReferenceModel
 
 class PricingDetailModel(ConnectWiseModel):
-    id: int | None
-    product: CatalogItemReferenceModel | None
-    category: ProductCategoryReferenceModel | None
-    sub_category: ProductSubCategoryReferenceModel | None
-    start_date: str | None
-    end_date: str | None
-    no_end_date: bool | None
-    _info: dict[str, str] | None
+    id: int
+    product: CatalogItemReferenceModel
+    category: ProductCategoryReferenceModel
+    sub_category: ProductSubCategoryReferenceModel
+    start_date: str
+    end_date: str
+    no_end_date: bool
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

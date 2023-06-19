@@ -20,17 +20,18 @@ class Status(str, Enum):
     BilledAgreement = 'BilledAgreement'
 
 class TimeSheetModel(ConnectWiseModel):
-    id: int | None
-    member: MemberReferenceModel | None
-    year: int | None
-    period: int | None
-    date_start: str | None
-    date_end: str | None
-    status: Status | None
-    hours: float | None
-    deadline: str | None
-    _info: dict[str, str] | None
+    id: int
+    member: MemberReferenceModel
+    year: int
+    period: int
+    date_start: str
+    date_end: str
+    status: Status
+    hours: float
+    deadline: str
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

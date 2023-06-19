@@ -7,21 +7,22 @@ from pywise.models.manage.CurrencyReferenceModel import CurrencyReferenceModel
 from pywise.models.manage.AddressFormatReferenceModel import AddressFormatReferenceModel
 
 class CountryModel(ConnectWiseModel):
-    id: int | None
-    name: str | None
-    default_flag: bool | None
-    currency: CurrencyReferenceModel | None
-    city_caption: str | None
-    state_caption: str | None
-    zip_caption: str | None
-    zip_minimum_length: int | None
-    dialing_prefix: str | None
-    address_format: AddressFormatReferenceModel | None
-    country_code: str | None
-    localization_caption_one: str | None
-    localization_value_one: str | None
-    _info: dict[str, str] | None
+    id: int
+    name: str
+    default_flag: bool
+    currency: CurrencyReferenceModel
+    city_caption: str
+    state_caption: str
+    zip_caption: str
+    zip_minimum_length: int
+    dialing_prefix: str
+    address_format: AddressFormatReferenceModel
+    country_code: str
+    localization_caption_one: str
+    localization_value_one: str
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

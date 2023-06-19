@@ -6,15 +6,16 @@ from pywise.models.base.connectwise_model import ConnectWiseModel
 from pywise.models.manage.OrderStatusEmailTemplateReferenceModel import OrderStatusEmailTemplateReferenceModel
 
 class OrderStatusModel(ConnectWiseModel):
-    id: int | None
-    name: str | None
-    default_flag: bool | None
-    inactive_flag: bool | None
-    sort_order: int | None
-    closed_flag: bool | None
-    email_template: OrderStatusEmailTemplateReferenceModel | None
-    _info: dict[str, str] | None
+    id: int
+    name: str
+    default_flag: bool
+    inactive_flag: bool
+    sort_order: int
+    closed_flag: bool
+    email_template: OrderStatusEmailTemplateReferenceModel
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

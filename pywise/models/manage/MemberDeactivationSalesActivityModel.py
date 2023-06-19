@@ -6,9 +6,10 @@ from pywise.models.base.connectwise_model import ConnectWiseModel
 from pywise.models.manage.MemberReferenceModel import MemberReferenceModel
 
 class MemberDeactivationSalesActivityModel(ConnectWiseModel):
-    count: int | None
-    re_assign_to_member: MemberReferenceModel | None
+    count: int
+    re_assign_to_member: MemberReferenceModel
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

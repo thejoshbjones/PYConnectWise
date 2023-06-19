@@ -28,31 +28,32 @@ from pywise.models.manage.MemberDeactivationDutyManagerModel import MemberDeacti
 from pywise.models.manage.MemberDeactivationSendFromEmailNotifyModel import MemberDeactivationSendFromEmailNotifyModel
 
 class MemberDeactivationModel(ConnectWiseModel):
-    activity: MemberDeactivationSalesActivityModel | None
-    service_team: MemberDeactivationServiceTeamModel | None
-    company_team: list[MemberDeactivationCompanyTeamModel] | None
-    workflow_email: MemberDeactivationWorkflowModel | None
-    service_status_workflow: list[MemberDeactivationStatusWorkflowModel] | None
-    ticket_template: MemberDeactivationServiceTemplateModel | None
-    opportunity: MemberDeactivationOpportunityModel | None
-    sales_team: MemberDeactivationSalesTeamModel | None
-    project_manager: MemberDeactivationProjectManagerModel | None
-    project_time_approver: MemberDeactivationProjectManagerModel | None
-    project_expense_approver: MemberDeactivationProjectManagerModel | None
-    knowledge_base_article: MemberDeactivationKnowledgebaseArticleModel | None
-    my_company_president: MemberDeactivationMyCompanyPresidentRoleModel | None
-    my_company_c_o_o: MemberDeactivationMyCompanyCOORoleModel | None
-    my_company_controller: MemberDeactivationMyCompanyControllerRoleModel | None
-    my_company_dispatch: MemberDeactivationMyCompanyDispatchRoleModel | None
-    my_company_service_manager: MemberDeactivationMyCompanyServiceManagerRoleModel | None
-    my_company_duty_manager_role: MemberDeactivationMyCompanyDutyManagerRoleModel | None
-    department_manager: MemberDeactivationDepartmentMananagerModel | None
-    dispatch_member: MemberDeactivationDispatchMemberModel | None
-    service_manager: MemberDeactivationServiceMangerModel | None
-    duty_manager: MemberDeactivationDutyManagerModel | None
-    send_from_email_notify: MemberDeactivationSendFromEmailNotifyModel | None
-    delete_open_time_sheets_flag: bool | None
+    activity: MemberDeactivationSalesActivityModel
+    service_team: MemberDeactivationServiceTeamModel
+    company_team: list[MemberDeactivationCompanyTeamModel]
+    workflow_email: MemberDeactivationWorkflowModel
+    service_status_workflow: list[MemberDeactivationStatusWorkflowModel]
+    ticket_template: MemberDeactivationServiceTemplateModel
+    opportunity: MemberDeactivationOpportunityModel
+    sales_team: MemberDeactivationSalesTeamModel
+    project_manager: MemberDeactivationProjectManagerModel
+    project_time_approver: MemberDeactivationProjectManagerModel
+    project_expense_approver: MemberDeactivationProjectManagerModel
+    knowledge_base_article: MemberDeactivationKnowledgebaseArticleModel
+    my_company_president: MemberDeactivationMyCompanyPresidentRoleModel
+    my_company_c_o_o: MemberDeactivationMyCompanyCOORoleModel
+    my_company_controller: MemberDeactivationMyCompanyControllerRoleModel
+    my_company_dispatch: MemberDeactivationMyCompanyDispatchRoleModel
+    my_company_service_manager: MemberDeactivationMyCompanyServiceManagerRoleModel
+    my_company_duty_manager_role: MemberDeactivationMyCompanyDutyManagerRoleModel
+    department_manager: MemberDeactivationDepartmentMananagerModel
+    dispatch_member: MemberDeactivationDispatchMemberModel
+    service_manager: MemberDeactivationServiceMangerModel
+    duty_manager: MemberDeactivationDutyManagerModel
+    send_from_email_notify: MemberDeactivationSendFromEmailNotifyModel
+    delete_open_time_sheets_flag: bool
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

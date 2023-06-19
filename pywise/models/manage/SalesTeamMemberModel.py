@@ -8,13 +8,14 @@ from pywise.models.manage.SystemLocationReferenceModel import SystemLocationRefe
 from pywise.models.manage.SystemDepartmentReferenceModel import SystemDepartmentReferenceModel
 
 class SalesTeamMemberModel(ConnectWiseModel):
-    id: int | None
-    member: MemberReferenceModel | None
-    location: SystemLocationReferenceModel | None
-    department: SystemDepartmentReferenceModel | None
-    allow_access_flag: bool | None
-    _info: dict[str, str] | None
+    id: int
+    member: MemberReferenceModel
+    location: SystemLocationReferenceModel
+    department: SystemDepartmentReferenceModel
+    allow_access_flag: bool
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

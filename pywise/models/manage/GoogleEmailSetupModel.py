@@ -6,18 +6,19 @@ from pywise.models.base.connectwise_model import ConnectWiseModel
 from pywise.models.manage.EmailConnectorReferenceModel import EmailConnectorReferenceModel
 
 class GoogleEmailSetupModel(ConnectWiseModel):
-    id: int | None
-    name: str | None
-    username: str | None
-    inbox_folder: str | None
-    processed_folder: str | None
-    failed_folder: str | None
-    client_id: str | None
-    private_key: str | None
-    inactive_flag: bool | None
-    email_connector: EmailConnectorReferenceModel | None
-    _info: dict[str, str] | None
+    id: int
+    name: str
+    username: str
+    inbox_folder: str
+    processed_folder: str
+    failed_folder: str
+    client_id: str
+    private_key: str
+    inactive_flag: bool
+    email_connector: EmailConnectorReferenceModel
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

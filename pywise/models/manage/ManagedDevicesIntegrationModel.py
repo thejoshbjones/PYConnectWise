@@ -15,23 +15,24 @@ class DefaultBillingLevel(str, Enum):
     Summary = 'Summary'
 
 class ManagedDevicesIntegrationModel(ConnectWiseModel):
-    id: int | None
-    name: str | None
-    solution: str | None
-    portal_url: str | None
-    login_by: LoginBy | None
-    global_login_username: str | None
-    global_login_password: str | None
-    default_billing_level: DefaultBillingLevel | None
-    management_it_setup_type: str | None
-    default_location: SystemLocationReferenceModel | None
-    default_department: SystemDepartmentReferenceModel | None
-    integrator_login: IntegratorLoginReferenceModel | None
-    match_on_serial_number_flag: bool | None
-    disable_new_cross_references_flag: bool | None
-    config_bill_customer_flag: bool | None
-    _info: dict[str, str] | None
+    id: int
+    name: str
+    solution: str
+    portal_url: str
+    login_by: LoginBy
+    global_login_username: str
+    global_login_password: str
+    default_billing_level: DefaultBillingLevel
+    management_it_setup_type: str
+    default_location: SystemLocationReferenceModel
+    default_department: SystemDepartmentReferenceModel
+    integrator_login: IntegratorLoginReferenceModel
+    match_on_serial_number_flag: bool
+    disable_new_cross_references_flag: bool
+    config_bill_customer_flag: bool
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

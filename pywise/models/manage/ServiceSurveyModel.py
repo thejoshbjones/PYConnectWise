@@ -7,20 +7,21 @@ from pywise.models.manage.GenericIdIdentifierReferenceModel import GenericIdIden
 from pywise.models.manage.MemberReferenceModel import MemberReferenceModel
 
 class ServiceSurveyModel(ConnectWiseModel):
-    id: int | None
-    name: str | None
-    inactive_flag: bool | None
-    header_include_logo_flag: bool | None
-    header_text: str | None
-    header_text_visible_flag: bool | None
-    footer_text: str | None
-    footer_text_visible_flag: bool | None
-    thank_you_text: str | None
-    notify_who: GenericIdIdentifierReferenceModel | None
-    notify_who_visible_flag: bool | None
-    notify_member: MemberReferenceModel | None
-    _info: dict[str, str] | None
+    id: int
+    name: str
+    inactive_flag: bool
+    header_include_logo_flag: bool
+    header_text: str
+    header_text_visible_flag: bool
+    footer_text: str
+    footer_text_visible_flag: bool
+    thank_you_text: str
+    notify_who: GenericIdIdentifierReferenceModel
+    notify_who_visible_flag: bool
+    notify_member: MemberReferenceModel
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

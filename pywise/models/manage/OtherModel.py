@@ -16,26 +16,27 @@ class ContactSync(str, Enum):
     CLF = 'CLF'
 
 class OtherModel(ConnectWiseModel):
-    id: int | None
-    default_ldap: LdapConfigurationReferenceModel | None
-    default_from_address: str | None
-    portal_url_override: str | None
-    site_url: str | None
-    logo_path: str | None
-    contact_sync: ContactSync | None
-    server_time_zone: TimeZoneSetupReferenceModel | None
-    default_calendar: CalendarReferenceModel | None
-    default_address_format: AddressFormatReferenceModel | None
-    use_ssl_flag: bool | None
-    sync_leads_flag: bool | None
-    include_portal_link_flag: bool | None
-    use_expanded_format_time_flag: bool | None
-    use_expanded_format_activity_flag: bool | None
-    disable_z_admin_login_flag: bool | None
-    locale: LocaleReferenceModel | None
-    update_member_time_zones_flag: bool | None
-    _info: dict[str, str] | None
+    id: int
+    default_ldap: LdapConfigurationReferenceModel
+    default_from_address: str
+    portal_url_override: str
+    site_url: str
+    logo_path: str
+    contact_sync: ContactSync
+    server_time_zone: TimeZoneSetupReferenceModel
+    default_calendar: CalendarReferenceModel
+    default_address_format: AddressFormatReferenceModel
+    use_ssl_flag: bool
+    sync_leads_flag: bool
+    include_portal_link_flag: bool
+    use_expanded_format_time_flag: bool
+    use_expanded_format_activity_flag: bool
+    disable_z_admin_login_flag: bool
+    locale: LocaleReferenceModel
+    update_member_time_zones_flag: bool
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

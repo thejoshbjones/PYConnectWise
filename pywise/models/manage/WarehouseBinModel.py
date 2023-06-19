@@ -12,26 +12,27 @@ from pywise.models.manage.CompanyReferenceModel import CompanyReferenceModel
 from pywise.models.manage.WarehouseBinReferenceModel import WarehouseBinReferenceModel
 
 class WarehouseBinModel(ConnectWiseModel):
-    id: int | None
-    name: str | None
-    warehouse: WarehouseReferenceModel | None
-    location: SystemLocationReferenceModel | None
-    department: SystemDepartmentReferenceModel | None
-    min_quantity: float | None
-    max_quantity: float | None
-    overflow_bin: WarehouseBinReferenceModel | None
-    manager: MemberReferenceModel | None
-    length: float | None
-    width: float | None
-    height: float | None
-    weight: float | None
-    default_flag: bool | None
-    inactive_flag: bool | None
-    quantity_on_hand: int | None
-    company: CompanyReferenceModel | None
-    transfer_bin: WarehouseBinReferenceModel | None
-    _info: dict[str, str] | None
+    id: int
+    name: str
+    warehouse: WarehouseReferenceModel
+    location: SystemLocationReferenceModel
+    department: SystemDepartmentReferenceModel
+    min_quantity: float
+    max_quantity: float
+    overflow_bin: WarehouseBinReferenceModel
+    manager: MemberReferenceModel
+    length: float
+    width: float
+    height: float
+    weight: float
+    default_flag: bool
+    inactive_flag: bool
+    quantity_on_hand: int
+    company: CompanyReferenceModel
+    transfer_bin: WarehouseBinReferenceModel
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

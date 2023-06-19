@@ -5,24 +5,25 @@ from pywise.utils.naming import to_camel_case
 from pywise.models.base.connectwise_model import ConnectWiseModel
 
 class EmailTokenModel(ConnectWiseModel):
-    id: int | None
-    token: str | None
-    description: str | None
-    address_flag: bool | None
-    agreement_flag: bool | None
-    company_flag: bool | None
-    config_flag: bool | None
-    contact_flag: bool | None
-    invoice_flag: bool | None
-    purchase_order_flag: bool | None
-    purchase_order_status_flag: bool | None
-    rma_flag: bool | None
-    sales_flag: bool | None
-    service_flag: bool | None
-    tracks_flag: bool | None
-    workflow_flag: bool | None
-    portal_password_flag: bool | None
+    id: int
+    token: str
+    description: str
+    address_flag: bool
+    agreement_flag: bool
+    company_flag: bool
+    config_flag: bool
+    contact_flag: bool
+    invoice_flag: bool
+    purchase_order_flag: bool
+    purchase_order_status_flag: bool
+    rma_flag: bool
+    sales_flag: bool
+    service_flag: bool
+    tracks_flag: bool
+    workflow_flag: bool
+    portal_password_flag: bool
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

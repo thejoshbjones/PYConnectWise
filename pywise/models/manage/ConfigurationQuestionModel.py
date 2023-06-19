@@ -17,15 +17,16 @@ class FieldType(str, Enum):
     Password = 'Password'
 
 class ConfigurationQuestionModel(ConnectWiseModel):
-    answer_id: int | None
-    question_id: int | None
-    question: str | None
-    answer: Any | None
-    sequence_number: float | None
-    number_of_decimals: int | None
-    field_type: FieldType | None
-    required_flag: bool | None
+    answer_id: int
+    question_id: int
+    question: str
+    answer: Any
+    sequence_number: float
+    number_of_decimals: int
+    field_type: FieldType
+    required_flag: bool
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

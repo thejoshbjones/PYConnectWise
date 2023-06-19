@@ -7,21 +7,22 @@ from pywise.models.manage.MemberReferenceModel import MemberReferenceModel
 from pywise.models.manage.ContactReferenceModel import ContactReferenceModel
 
 class TicketNoteModel(ConnectWiseModel):
-    id: int | None
-    ticket_id: int | None
-    text: str | None
-    detail_description_flag: bool | None
-    internal_analysis_flag: bool | None
-    resolution_flag: bool | None
-    issue_flag: bool | None
-    member: MemberReferenceModel | None
-    contact: ContactReferenceModel | None
-    customer_updated_flag: bool | None
-    process_notifications: bool | None
-    internal_flag: bool | None
-    external_flag: bool | None
-    _info: dict[str, str] | None
+    id: int
+    ticket_id: int
+    text: str
+    detail_description_flag: bool
+    internal_analysis_flag: bool
+    resolution_flag: bool
+    issue_flag: bool
+    member: MemberReferenceModel
+    contact: ContactReferenceModel
+    customer_updated_flag: bool
+    process_notifications: bool
+    internal_flag: bool
+    external_flag: bool
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

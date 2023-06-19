@@ -7,12 +7,13 @@ from pywise.models.manage.KPIReferenceModel import KPIReferenceModel
 from pywise.models.manage.ReportCardReferenceModel import ReportCardReferenceModel
 
 class ReportCardDetailModel(ConnectWiseModel):
-    id: int | None
-    kpi: KPIReferenceModel | None
-    sort_order: int | None
-    report_card: ReportCardReferenceModel | None
-    _info: dict[str, str] | None
+    id: int
+    kpi: KPIReferenceModel
+    sort_order: int
+    report_card: ReportCardReferenceModel
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

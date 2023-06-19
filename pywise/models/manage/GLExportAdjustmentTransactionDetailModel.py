@@ -6,18 +6,19 @@ from pywise.models.base.connectwise_model import ConnectWiseModel
 from pywise.models.manage.IvItemReferenceModel import IvItemReferenceModel
 
 class GLExportAdjustmentTransactionDetailModel(ConnectWiseModel):
-    gl_class: str | None
-    description: str | None
-    memo: str | None
-    item: IvItemReferenceModel | None
-    quantity: int | None
-    total: float | None
-    cost: float | None
-    cost_account_number: str | None
-    inventory_account_number: str | None
-    account_number: str | None
-    product_account_number: str | None
+    gl_class: str
+    description: str
+    memo: str
+    item: IvItemReferenceModel
+    quantity: int
+    total: float
+    cost: float
+    cost_account_number: str
+    inventory_account_number: str
+    account_number: str
+    product_account_number: str
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

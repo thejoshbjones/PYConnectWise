@@ -6,21 +6,22 @@ from pywise.models.base.connectwise_model import ConnectWiseModel
 from pywise.models.manage.CurrencyCodeReferenceModel import CurrencyCodeReferenceModel
 
 class CurrencyModel(ConnectWiseModel):
-    id: int | None
-    currency_identifier: str | None
-    name: str | None
-    symbol: str | None
-    display_id_flag: bool | None
-    display_symbol_flag: bool | None
-    currency_code: CurrencyCodeReferenceModel | None
-    thousands_separator: str | None
-    decimal_separator: str | None
-    negative_parentheses_flag: bool | None
-    right_align: bool | None
-    number_of_decimals: int | None
-    report_format: str | None
-    _info: dict[str, str] | None
+    id: int
+    currency_identifier: str
+    name: str
+    symbol: str
+    display_id_flag: bool
+    display_symbol_flag: bool
+    currency_code: CurrencyCodeReferenceModel
+    thousands_separator: str
+    decimal_separator: str
+    negative_parentheses_flag: bool
+    right_align: bool
+    number_of_decimals: int
+    report_format: str
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

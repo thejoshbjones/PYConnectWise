@@ -36,39 +36,40 @@ class Segment10type(str, Enum):
     Class = 'Class'
 
 class GLCaptionModel(ConnectWiseModel):
-    id: int | None
-    segment1: str | None
-    segment2: str | None
-    segment3: str | None
-    segment4: str | None
-    segment5: str | None
-    segment6: str | None
-    segment7: str | None
-    segment8: str | None
-    segment9: str | None
-    segment10: str | None
-    segment1type: Segment1type | None
-    segment2type: Segment2type | None
-    segment3type: Segment3type | None
-    segment4type: Segment4type | None
-    segment5type: Segment5type | None
-    segment6type: Segment6type | None
-    segment7type: Segment7type | None
-    segment8type: Segment8type | None
-    segment9type: Segment9type | None
-    segment10type: Segment10type | None
-    cogs1: str | None
-    cogs2: str | None
-    cogs3: str | None
-    cogs4: str | None
-    cogs5: str | None
-    cogs6: str | None
-    cogs7: str | None
-    cogs8: str | None
-    cogs9: str | None
-    cogs10: str | None
-    _info: dict[str, str] | None
+    id: int
+    segment1: str
+    segment2: str
+    segment3: str
+    segment4: str
+    segment5: str
+    segment6: str
+    segment7: str
+    segment8: str
+    segment9: str
+    segment10: str
+    segment1type: Segment1type
+    segment2type: Segment2type
+    segment3type: Segment3type
+    segment4type: Segment4type
+    segment5type: Segment5type
+    segment6type: Segment6type
+    segment7type: Segment7type
+    segment8type: Segment8type
+    segment9type: Segment9type
+    segment10type: Segment10type
+    cogs1: str
+    cogs2: str
+    cogs3: str
+    cogs4: str
+    cogs5: str
+    cogs6: str
+    cogs7: str
+    cogs8: str
+    cogs9: str
+    cogs10: str
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

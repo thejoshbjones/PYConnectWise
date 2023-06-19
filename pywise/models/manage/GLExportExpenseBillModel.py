@@ -8,19 +8,20 @@ from pywise.models.manage.CurrencyReferenceModel import CurrencyReferenceModel
 from pywise.models.manage.GLExportExpenseBillDetailModel import GLExportExpenseBillDetailModel
 
 class GLExportExpenseBillModel(ConnectWiseModel):
-    id: int | None
-    document_date: str | None
-    document_type: str | None
-    document_number: str | None
-    memo: str | None
-    gl_class: str | None
-    ap_account_number: str | None
-    member: MemberReferenceModel | None
-    vendor_number: str | None
-    currency: CurrencyReferenceModel | None
-    total: float | None
-    detail: list[GLExportExpenseBillDetailModel] | None
+    id: int
+    document_date: str
+    document_type: str
+    document_number: str
+    memo: str
+    gl_class: str
+    ap_account_number: str
+    member: MemberReferenceModel
+    vendor_number: str
+    currency: CurrencyReferenceModel
+    total: float
+    detail: list[GLExportExpenseBillDetailModel]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

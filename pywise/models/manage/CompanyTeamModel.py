@@ -11,18 +11,19 @@ from pywise.models.manage.ContactReferenceModel import ContactReferenceModel
 from pywise.models.manage.MemberReferenceModel import MemberReferenceModel
 
 class CompanyTeamModel(ConnectWiseModel):
-    id: int | None
-    company: CompanyReferenceModel | None
-    team_role: TeamRoleReferenceModel | None
-    location: SystemLocationReferenceModel | None
-    department: SystemDepartmentReferenceModel | None
-    contact: ContactReferenceModel | None
-    member: MemberReferenceModel | None
-    account_manager_flag: bool | None
-    tech_flag: bool | None
-    sales_flag: bool | None
-    _info: dict[str, str] | None
+    id: int
+    company: CompanyReferenceModel
+    team_role: TeamRoleReferenceModel
+    location: SystemLocationReferenceModel
+    department: SystemDepartmentReferenceModel
+    contact: ContactReferenceModel
+    member: MemberReferenceModel
+    account_manager_flag: bool
+    tech_flag: bool
+    sales_flag: bool
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

@@ -16,21 +16,22 @@ class BillTime(str, Enum):
     NoDefault = 'NoDefault'
 
 class ChargeCodeModel(ConnectWiseModel):
-    id: int | None
-    name: str | None
-    company: CompanyReferenceModel | None
-    location: SystemLocationReferenceModel | None
-    department: SystemDepartmentReferenceModel | None
-    bill_time: BillTime | None
-    expense_entry_flag: bool | None
-    allow_all_expense_type_flag: bool | None
-    time_entry_flag: bool | None
-    work_type: WorkTypeReferenceModel | None
-    work_role: WorkRoleReferenceModel | None
-    integration_xref: str | None
-    expense_type_ids: list[int] | None
-    _info: dict[str, str] | None
+    id: int
+    name: str
+    company: CompanyReferenceModel
+    location: SystemLocationReferenceModel
+    department: SystemDepartmentReferenceModel
+    bill_time: BillTime
+    expense_entry_flag: bool
+    allow_all_expense_type_flag: bool
+    time_entry_flag: bool
+    work_type: WorkTypeReferenceModel
+    work_role: WorkRoleReferenceModel
+    integration_xref: str
+    expense_type_ids: list[int]
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

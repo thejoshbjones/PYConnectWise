@@ -5,13 +5,14 @@ from pywise.utils.naming import to_camel_case
 from pywise.models.base.connectwise_model import ConnectWiseModel
 
 class MarketingCompanyModel(ConnectWiseModel):
-    id: int | None
-    group_id: int | None
-    default_contact_flag: bool | None
-    all_contacts_flag: bool | None
-    unsubscribe_flag: bool | None
-    _info: dict[str, str] | None
+    id: int
+    group_id: int
+    default_contact_flag: bool
+    all_contacts_flag: bool
+    unsubscribe_flag: bool
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

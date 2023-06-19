@@ -7,13 +7,14 @@ from pywise.models.manage.ScheduleEntryReferenceModel import ScheduleEntryRefere
 from pywise.models.manage.MemberReferenceModel import MemberReferenceModel
 
 class ScheduleDetailModel(ConnectWiseModel):
-    id: int | None
-    schedule_entry: ScheduleEntryReferenceModel | None
-    date_start: str | None
-    date_end: str | None
-    member: MemberReferenceModel | None
-    _info: dict[str, str] | None
+    id: int
+    schedule_entry: ScheduleEntryReferenceModel
+    date_start: str
+    date_end: str
+    member: MemberReferenceModel
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

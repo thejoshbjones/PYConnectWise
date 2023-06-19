@@ -10,12 +10,13 @@ class ApplicationUnits(str, Enum):
     Incidents = 'Incidents'
 
 class AgreementTypeInfoModel(ConnectWiseModel):
-    id: int | None
-    name: str | None
-    inactive_flag: bool | None
-    application_units: ApplicationUnits | None
-    _info: dict[str, str] | None
+    id: int
+    name: str
+    inactive_flag: bool
+    application_units: ApplicationUnits
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

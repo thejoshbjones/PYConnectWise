@@ -12,14 +12,15 @@ class AccrualType(str, Enum):
     Vacation = 'Vacation'
 
 class TimeAccrualDetailModel(ConnectWiseModel):
-    id: int | None
-    accrual_type: AccrualType | None
-    start_year: int | None
-    end_year: int | None
-    hours: float | None
-    time_accrual: TimeAccrualReferenceModel | None
-    _info: dict[str, str] | None
+    id: int
+    accrual_type: AccrualType
+    start_year: int
+    end_year: int
+    hours: float
+    time_accrual: TimeAccrualReferenceModel
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

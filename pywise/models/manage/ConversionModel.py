@@ -7,12 +7,13 @@ from pywise.models.manage.UnitOfMeasureReferenceModel import UnitOfMeasureRefere
 from pywise.models.manage.UnitOfMeasureReferenceModel import UnitOfMeasureReferenceModel
 
 class ConversionModel(ConnectWiseModel):
-    id: int | None
-    quantity: float | None
-    uom_type: UnitOfMeasureReferenceModel | None
-    parent_u_o_m: UnitOfMeasureReferenceModel | None
-    _info: dict[str, str] | None
+    id: int
+    quantity: float
+    uom_type: UnitOfMeasureReferenceModel
+    parent_u_o_m: UnitOfMeasureReferenceModel
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

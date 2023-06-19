@@ -12,22 +12,23 @@ from pywise.models.manage.SiteReferenceModel import SiteReferenceModel
 from pywise.models.manage.CurrencyReferenceModel import CurrencyReferenceModel
 
 class WarehouseModel(ConnectWiseModel):
-    id: int | None
-    name: str | None
-    company: CompanyReferenceModel | None
-    location: SystemLocationReferenceModel | None
-    contact: ContactReferenceModel | None
-    department: SystemDepartmentReferenceModel | None
-    manager: MemberReferenceModel | None
-    site: SiteReferenceModel | None
-    location_xref: str | None
-    location_default_flag: bool | None
-    overall_default_flag: bool | None
-    inactive_flag: bool | None
-    locked_flag: bool | None
-    currency: CurrencyReferenceModel | None
-    _info: dict[str, str] | None
+    id: int
+    name: str
+    company: CompanyReferenceModel
+    location: SystemLocationReferenceModel
+    contact: ContactReferenceModel
+    department: SystemDepartmentReferenceModel
+    manager: MemberReferenceModel
+    site: SiteReferenceModel
+    location_xref: str
+    location_default_flag: bool
+    overall_default_flag: bool
+    inactive_flag: bool
+    locked_flag: bool
+    currency: CurrencyReferenceModel
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

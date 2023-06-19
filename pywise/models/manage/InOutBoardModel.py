@@ -7,13 +7,14 @@ from pywise.models.manage.MemberReferenceModel import MemberReferenceModel
 from pywise.models.manage.InOutTypeReferenceModel import InOutTypeReferenceModel
 
 class InOutBoardModel(ConnectWiseModel):
-    id: int | None
-    member: MemberReferenceModel | None
-    in_out_type: InOutTypeReferenceModel | None
-    additional_info: str | None
-    date_back: str | None
-    _info: dict[str, str] | None
+    id: int
+    member: MemberReferenceModel
+    in_out_type: InOutTypeReferenceModel
+    additional_info: str
+    date_back: str
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

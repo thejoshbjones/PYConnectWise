@@ -10,14 +10,15 @@ from pywise.models.manage.IvItemReferenceModel import IvItemReferenceModel
 from pywise.models.manage.IvItemReferenceModel import IvItemReferenceModel
 
 class ManagementItSolutionAgreementInterfaceParameterModel(ConnectWiseModel):
-    id: int | None
-    managed_devices_integration: ManagedDevicesIntegrationReferenceModel | None
-    agreement_type: AgreementTypeReferenceModel | None
-    server_product: IvItemReferenceModel | None
-    workstation_product: IvItemReferenceModel | None
-    spam_stats_product: IvItemReferenceModel | None
-    _info: dict[str, str] | None
+    id: int
+    managed_devices_integration: ManagedDevicesIntegrationReferenceModel
+    agreement_type: AgreementTypeReferenceModel
+    server_product: IvItemReferenceModel
+    workstation_product: IvItemReferenceModel
+    spam_stats_product: IvItemReferenceModel
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

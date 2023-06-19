@@ -23,13 +23,14 @@ class EntryMethod(str, Enum):
     Option = 'Option'
 
 class CustomFieldValueModel(ConnectWiseModel):
-    id: int | None
-    caption: str | None
-    type: CustomFieldValueModelType | None
-    entry_method: EntryMethod | None
-    number_of_decimals: int | None
-    value: Any | None
+    id: int
+    caption: str
+    type: CustomFieldValueModelType
+    entry_method: EntryMethod
+    number_of_decimals: int
+    value: Any
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

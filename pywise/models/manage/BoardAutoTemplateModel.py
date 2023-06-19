@@ -51,25 +51,26 @@ class SendNotesAsEmailSetting(str, Enum):
     Ignore = 'Ignore'
 
 class BoardAutoTemplateModel(ConnectWiseModel):
-    id: int | None
-    type: ServiceTypeReferenceModel | None
-    subtype: ServiceSubTypeReferenceModel | None
-    item: ServiceItemReferenceModel | None
-    service_template: ServiceTemplateReferenceModel | None
-    board: BoardReferenceModel | None
-    summary_setting: SummarySetting | None
-    discussion_setting: DiscussionSetting | None
-    internal_analysis_setting: InternalAnalysisSetting | None
-    resolution_setting: ResolutionSetting | None
-    tasks_setting: TasksSetting | None
-    documents_setting: DocumentsSetting | None
-    resources_setting: ResourcesSetting | None
-    budget_hours_setting: BudgetHoursSetting | None
-    finance_information_setting: FinanceInformationSetting | None
-    send_notes_as_email_setting: SendNotesAsEmailSetting | None
-    auto_apply_flag: bool | None
-    _info: dict[str, str] | None
+    id: int
+    type: ServiceTypeReferenceModel
+    subtype: ServiceSubTypeReferenceModel
+    item: ServiceItemReferenceModel
+    service_template: ServiceTemplateReferenceModel
+    board: BoardReferenceModel
+    summary_setting: SummarySetting
+    discussion_setting: DiscussionSetting
+    internal_analysis_setting: InternalAnalysisSetting
+    resolution_setting: ResolutionSetting
+    tasks_setting: TasksSetting
+    documents_setting: DocumentsSetting
+    resources_setting: ResourcesSetting
+    budget_hours_setting: BudgetHoursSetting
+    finance_information_setting: FinanceInformationSetting
+    send_notes_as_email_setting: SendNotesAsEmailSetting
+    auto_apply_flag: bool
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

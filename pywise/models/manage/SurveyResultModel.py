@@ -8,18 +8,19 @@ from pywise.models.manage.SurveyResultDetailModel import SurveyResultDetailModel
 from pywise.models.manage.CompanyReferenceModel import CompanyReferenceModel
 
 class SurveyResultModel(ConnectWiseModel):
-    id: int | None
-    ticket_id: int | None
-    email_address: str | None
-    footer_response: str | None
-    contact_me_flag: bool | None
-    contact: ContactReferenceModel | None
-    results: list[SurveyResultDetailModel] | None
-    total_points: int | None
-    company: CompanyReferenceModel | None
-    survey_id: int | None
-    _info: dict[str, str] | None
+    id: int
+    ticket_id: int
+    email_address: str
+    footer_response: str
+    contact_me_flag: bool
+    contact: ContactReferenceModel
+    results: list[SurveyResultDetailModel]
+    total_points: int
+    company: CompanyReferenceModel
+    survey_id: int
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

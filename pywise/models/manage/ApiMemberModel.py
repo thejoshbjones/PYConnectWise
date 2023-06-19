@@ -13,26 +13,27 @@ from pywise.models.manage.SystemLocationReferenceModel import SystemLocationRefe
 from pywise.models.manage.BoardReferenceModel import BoardReferenceModel
 
 class ApiMemberModel(ConnectWiseModel):
-    id: int | None
-    identifier: str | None
-    name: str | None
-    email_address: str | None
-    inactive_flag: bool | None
-    inactive_date: str | None
-    time_zone: TimeZoneSetupReferenceModel | None
-    security_role: SecurityRoleReferenceModel | None
-    structure_level: StructureReferenceModel | None
-    security_location: SystemLocationReferenceModel | None
-    default_location: SystemLocationReferenceModel | None
-    default_department: SystemDepartmentReferenceModel | None
-    sales_default_location: SystemLocationReferenceModel | None
-    service_default_board: BoardReferenceModel | None
-    notes: str | None
-    excluded_service_board_ids: list[int] | None
-    block_price_flag: bool | None
-    block_cost_flag: bool | None
-    _info: dict[str, str] | None
+    id: int
+    identifier: str
+    name: str
+    email_address: str
+    inactive_flag: bool
+    inactive_date: str
+    time_zone: TimeZoneSetupReferenceModel
+    security_role: SecurityRoleReferenceModel
+    structure_level: StructureReferenceModel
+    security_location: SystemLocationReferenceModel
+    default_location: SystemLocationReferenceModel
+    default_department: SystemDepartmentReferenceModel
+    sales_default_location: SystemLocationReferenceModel
+    service_default_board: BoardReferenceModel
+    notes: str
+    excluded_service_board_ids: list[int]
+    block_price_flag: bool
+    block_cost_flag: bool
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

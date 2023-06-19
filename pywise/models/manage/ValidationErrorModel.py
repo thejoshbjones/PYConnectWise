@@ -5,12 +5,13 @@ from pywise.utils.naming import to_camel_case
 from pywise.models.base.connectwise_model import ConnectWiseModel
 
 class ValidationErrorModel(ConnectWiseModel):
-    code: str | None
-    message: str | None
-    resource: str | None
-    field: str | None
-    details: str | None
+    code: str
+    message: str
+    resource: str
+    field: str
+    details: str
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

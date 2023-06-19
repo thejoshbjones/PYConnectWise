@@ -78,85 +78,86 @@ class AgreementStatus(str, Enum):
     Inactive = 'Inactive'
 
 class AgreementModel(ConnectWiseModel):
-    id: int | None
-    name: str | None
-    type: AgreementTypeReferenceModel | None
-    company: CompanyReferenceModel | None
-    contact: ContactReferenceModel | None
-    site: SiteReferenceModel | None
-    sub_contract_company: CompanyReferenceModel | None
-    sub_contract_contact: ContactReferenceModel | None
-    parent_agreement: AgreementReferenceModel | None
-    customer_p_o: str | None
-    location: SystemLocationReferenceModel | None
-    department: SystemDepartmentReferenceModel | None
-    restrict_location_flag: bool | None
-    restrict_department_flag: bool | None
-    start_date: str | None
-    end_date: str | None
-    no_ending_date_flag: bool | None
-    opportunity: OpportunityReferenceModel | None
-    cancelled_flag: bool | None
-    date_cancelled: str | None
-    reason_cancelled: str | None
-    sla: SLAReferenceModel | None
-    work_order: str | None
-    internal_notes: str | None
-    application_units: ApplicationUnits | None
-    application_limit: float | None
-    application_cycle: ApplicationCycle | None
-    application_unlimited_flag: bool | None
-    one_time_flag: bool | None
-    cover_agreement_time: bool | None
-    cover_agreement_product: bool | None
-    cover_agreement_expense: bool | None
-    cover_sales_tax: bool | None
-    carry_over_unused: bool | None
-    allow_overruns: bool | None
-    expired_days: int | None
-    limit: int | None
-    expire_when_zero: bool | None
-    charge_to_firm: bool | None
-    employee_comp_rate: EmployeeCompRate | None
-    employee_comp_not_exceed: EmployeeCompNotExceed | None
-    comp_hourly_rate: float | None
-    comp_limit_amount: float | None
-    billing_cycle: BillingCycleReferenceModel | None
-    bill_one_time_flag: bool | None
-    billing_terms: BillingTermsReferenceModel | None
-    invoicing_cycle: InvoicingCycle | None
-    bill_to_company: CompanyReferenceModel | None
-    bill_to_contact: ContactReferenceModel | None
-    bill_to_site: SiteReferenceModel | None
-    bill_amount: float | None
-    taxable: bool | None
-    prorate_first_bill: float | None
-    bill_start_date: str | None
-    tax_code: TaxCodeReferenceModel | None
-    restrict_down_payment: bool | None
-    prorate_flag: bool | None
-    invoice_description: str | None
-    top_comment: bool | None
-    bottom_comment: bool | None
-    work_role: WorkRoleReferenceModel | None
-    work_type: WorkTypeReferenceModel | None
-    project_type: ProjectTypeReferenceModel | None
-    invoice_template: InvoiceTemplateReferenceModel | None
-    bill_time: BillTime | None
-    bill_expenses: BillExpenses | None
-    bill_products: BillProducts | None
-    billable_time_invoice: bool | None
-    billable_expense_invoice: bool | None
-    billable_product_invoice: bool | None
-    currency: CurrencyReferenceModel | None
-    period_type: PeriodType | None
-    auto_invoice_flag: bool | None
-    next_invoice_date: str | None
-    company_location: SystemLocationReferenceModel | None
-    agreement_status: AgreementStatus | None
-    _info: dict[str, str] | None
-    custom_fields: list[CustomFieldValueModel] | None
+    id: int
+    name: str
+    type: AgreementTypeReferenceModel
+    company: CompanyReferenceModel
+    contact: ContactReferenceModel
+    site: SiteReferenceModel
+    sub_contract_company: CompanyReferenceModel
+    sub_contract_contact: ContactReferenceModel
+    parent_agreement: AgreementReferenceModel
+    customer_p_o: str
+    location: SystemLocationReferenceModel
+    department: SystemDepartmentReferenceModel
+    restrict_location_flag: bool
+    restrict_department_flag: bool
+    start_date: str
+    end_date: str
+    no_ending_date_flag: bool
+    opportunity: OpportunityReferenceModel
+    cancelled_flag: bool
+    date_cancelled: str
+    reason_cancelled: str
+    sla: SLAReferenceModel
+    work_order: str
+    internal_notes: str
+    application_units: ApplicationUnits
+    application_limit: float
+    application_cycle: ApplicationCycle
+    application_unlimited_flag: bool
+    one_time_flag: bool
+    cover_agreement_time: bool
+    cover_agreement_product: bool
+    cover_agreement_expense: bool
+    cover_sales_tax: bool
+    carry_over_unused: bool
+    allow_overruns: bool
+    expired_days: int
+    limit: int
+    expire_when_zero: bool
+    charge_to_firm: bool
+    employee_comp_rate: EmployeeCompRate
+    employee_comp_not_exceed: EmployeeCompNotExceed
+    comp_hourly_rate: float
+    comp_limit_amount: float
+    billing_cycle: BillingCycleReferenceModel
+    bill_one_time_flag: bool
+    billing_terms: BillingTermsReferenceModel
+    invoicing_cycle: InvoicingCycle
+    bill_to_company: CompanyReferenceModel
+    bill_to_contact: ContactReferenceModel
+    bill_to_site: SiteReferenceModel
+    bill_amount: float
+    taxable: bool
+    prorate_first_bill: float
+    bill_start_date: str
+    tax_code: TaxCodeReferenceModel
+    restrict_down_payment: bool
+    prorate_flag: bool
+    invoice_description: str
+    top_comment: bool
+    bottom_comment: bool
+    work_role: WorkRoleReferenceModel
+    work_type: WorkTypeReferenceModel
+    project_type: ProjectTypeReferenceModel
+    invoice_template: InvoiceTemplateReferenceModel
+    bill_time: BillTime
+    bill_expenses: BillExpenses
+    bill_products: BillProducts
+    billable_time_invoice: bool
+    billable_expense_invoice: bool
+    billable_product_invoice: bool
+    currency: CurrencyReferenceModel
+    period_type: PeriodType
+    auto_invoice_flag: bool
+    next_invoice_date: str
+    company_location: SystemLocationReferenceModel
+    agreement_status: AgreementStatus
+    _info: dict[str, str]
+    custom_fields: list[CustomFieldValueModel]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

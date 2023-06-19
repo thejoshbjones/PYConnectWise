@@ -10,27 +10,28 @@ from pywise.models.manage.CurrencyReferenceModel import CurrencyReferenceModel
 from pywise.models.manage.GLExportExpenseOffsetModel import GLExportExpenseOffsetModel
 
 class GLExportExpenseModel(ConnectWiseModel):
-    id: int | None
-    document_date: str | None
-    document_type: str | None
-    ap_account_number: str | None
-    ap_class: str | None
-    account_number: str | None
-    gl_class: str | None
-    gl_type_id: str | None
-    memo: str | None
-    description: str | None
-    period_start_date: str | None
-    period_end_date: str | None
-    member: MemberReferenceModel | None
-    vendor_number: str | None
-    company: CompanyReferenceModel | None
-    company_account_number: str | None
-    project: ProjectReferenceModel | None
-    currency: CurrencyReferenceModel | None
-    total: float | None
-    offset: GLExportExpenseOffsetModel | None
+    id: int
+    document_date: str
+    document_type: str
+    ap_account_number: str
+    ap_class: str
+    account_number: str
+    gl_class: str
+    gl_type_id: str
+    memo: str
+    description: str
+    period_start_date: str
+    period_end_date: str
+    member: MemberReferenceModel
+    vendor_number: str
+    company: CompanyReferenceModel
+    company_account_number: str
+    project: ProjectReferenceModel
+    currency: CurrencyReferenceModel
+    total: float
+    offset: GLExportExpenseOffsetModel
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

@@ -72,7 +72,7 @@ def generate_model(
 
                 ### Optional fields aren't labelled as such in CWM's schema
                 ### As a consequence of this, everything is <type> | None until I think of a better solution that doesn't involve me manually editing the schema
-                field_type += " | None"
+                #field_type += " | None"
 
                 fields.append(
                     {
@@ -169,7 +169,7 @@ def generate_model(
 
                 ### Optional fields aren't labelled as such in CWM's schema
                 ### As a consequence of this, everything is <type> | None until I think of a better solution that doesn't involve me manually editing the schema
-                field_type += " | None"
+                #field_type += " | None"
 
                 fields.append(
                     {

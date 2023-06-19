@@ -6,20 +6,21 @@ from pywise.models.base.connectwise_model import ConnectWiseModel
 from pywise.models.manage.EmailConnectorReferenceModel import EmailConnectorReferenceModel
 
 class Office365EmailSetupModel(ConnectWiseModel):
-    id: int | None
-    name: str | None
-    username: str | None
-    inbox_folder: str | None
-    processed_folder: str | None
-    failed_folder: str | None
-    tenant_id: str | None
-    client_id: str | None
-    client_secret: str | None
-    authorized_flag: bool | None
-    inactive_flag: bool | None
-    email_connector: EmailConnectorReferenceModel | None
-    _info: dict[str, str] | None
+    id: int
+    name: str
+    username: str
+    inbox_folder: str
+    processed_folder: str
+    failed_folder: str
+    tenant_id: str
+    client_id: str
+    client_secret: str
+    authorized_flag: bool
+    inactive_flag: bool
+    email_connector: EmailConnectorReferenceModel
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

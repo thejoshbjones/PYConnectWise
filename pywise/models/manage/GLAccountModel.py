@@ -28,35 +28,36 @@ class GlType(str, Enum):
     PT = 'PT'
 
 class GLAccountModel(ConnectWiseModel):
-    id: int | None
-    gl_type: GlType | None
-    mapped_type: MappedTypeReferenceModel | None
-    mapped_record: MappedRecordReferenceModel | None
-    segment1: str | None
-    segment2: str | None
-    segment3: str | None
-    segment4: str | None
-    segment5: str | None
-    segment6: str | None
-    segment7: str | None
-    segment8: str | None
-    segment9: str | None
-    segment10: str | None
-    cogs1: str | None
-    cogs2: str | None
-    cogs3: str | None
-    cogs4: str | None
-    cogs5: str | None
-    cogs6: str | None
-    cogs7: str | None
-    cogs8: str | None
-    cogs9: str | None
-    cogs10: str | None
-    product_id: str | None
-    inventory: str | None
-    sales_code: str | None
-    _info: dict[str, str] | None
+    id: int
+    gl_type: GlType
+    mapped_type: MappedTypeReferenceModel
+    mapped_record: MappedRecordReferenceModel
+    segment1: str
+    segment2: str
+    segment3: str
+    segment4: str
+    segment5: str
+    segment6: str
+    segment7: str
+    segment8: str
+    segment9: str
+    segment10: str
+    cogs1: str
+    cogs2: str
+    cogs3: str
+    cogs4: str
+    cogs5: str
+    cogs6: str
+    cogs7: str
+    cogs8: str
+    cogs9: str
+    cogs10: str
+    product_id: str
+    inventory: str
+    sales_code: str
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

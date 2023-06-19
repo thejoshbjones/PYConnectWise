@@ -6,11 +6,12 @@ from pywise.models.base.connectwise_model import ConnectWiseModel
 from pywise.models.manage.WarehouseReferenceModel import WarehouseReferenceModel
 
 class MinimumStockByWarehouseModel(ConnectWiseModel):
-    id: int | None
-    warehouse: WarehouseReferenceModel | None
-    minimum_stock: int | None
-    _info: dict[str, str] | None
+    id: int
+    warehouse: WarehouseReferenceModel
+    minimum_stock: int
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

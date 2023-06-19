@@ -7,12 +7,13 @@ from pywise.models.manage.SystemLocationReferenceModel import SystemLocationRefe
 from pywise.models.manage.CurrencyReferenceModel import CurrencyReferenceModel
 
 class BillingSetupInfoModel(ConnectWiseModel):
-    id: int | None
-    remit_name: str | None
-    location: SystemLocationReferenceModel | None
-    currency: CurrencyReferenceModel | None
-    _info: dict[str, str] | None
+    id: int
+    remit_name: str
+    location: SystemLocationReferenceModel
+    currency: CurrencyReferenceModel
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

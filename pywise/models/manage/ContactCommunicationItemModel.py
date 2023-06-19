@@ -11,14 +11,15 @@ class CommunicationType(str, Enum):
     Phone = 'Phone'
 
 class ContactCommunicationItemModel(ConnectWiseModel):
-    id: int | None
-    type: CommunicationTypeReferenceModel | None
-    value: str | None
-    extension: str | None
-    default_flag: bool | None
-    domain: str | None
-    communication_type: CommunicationType | None
+    id: int
+    type: CommunicationTypeReferenceModel
+    value: str
+    extension: str
+    default_flag: bool
+    domain: str
+    communication_type: CommunicationType
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

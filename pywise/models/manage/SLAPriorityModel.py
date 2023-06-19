@@ -7,17 +7,18 @@ from pywise.models.manage.PriorityReferenceModel import PriorityReferenceModel
 from pywise.models.manage.SLAReferenceModel import SLAReferenceModel
 
 class SLAPriorityModel(ConnectWiseModel):
-    id: int | None
-    priority: PriorityReferenceModel | None
-    respond_hours: float | None
-    respond_percent: int | None
-    plan_within: float | None
-    plan_within_percent: int | None
-    resolution_hours: float | None
-    resolution_percent: int | None
-    sla: SLAReferenceModel | None
-    _info: dict[str, str] | None
+    id: int
+    priority: PriorityReferenceModel
+    respond_hours: float
+    respond_percent: int
+    plan_within: float
+    plan_within_percent: int
+    resolution_hours: float
+    resolution_percent: int
+    sla: SLAReferenceModel
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

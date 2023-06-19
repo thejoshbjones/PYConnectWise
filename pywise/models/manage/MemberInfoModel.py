@@ -12,18 +12,19 @@ class LicenseClass(str, Enum):
     X = 'X'
 
 class MemberInfoModel(ConnectWiseModel):
-    id: int | None
-    identifier: str | None
-    first_name: str | None
-    middle_initial: str | None
-    last_name: str | None
-    full_name: str | None
-    default_email: str | None
-    photo: DocumentReferenceModel | None
-    license_class: LicenseClass | None
-    inactive_flag: bool | None
-    _info: dict[str, str] | None
+    id: int
+    identifier: str
+    first_name: str
+    middle_initial: str
+    last_name: str
+    full_name: str
+    default_email: str
+    photo: DocumentReferenceModel
+    license_class: LicenseClass
+    inactive_flag: bool
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

@@ -23,25 +23,26 @@ class InquireLevel(str, Enum):
     All = 'All'
 
 class MySecurityModel(ConnectWiseModel):
-    id: int | None
-    add_level: AddLevel | None
-    edit_level: EditLevel | None
-    delete_level: DeleteLevel | None
-    inquire_level: InquireLevel | None
-    module_function_name: str | None
-    module_function_description: str | None
-    my_all_flag: bool | None
-    module_function_identifier: str | None
-    report_flag: bool | None
-    restrict_flag: bool | None
-    custom_flag: bool | None
-    module_description: str | None
-    module_identifier: str | None
-    module_name: str | None
-    sort_order: int | None
-    member: MemberReferenceModel | None
-    _info: dict[str, str] | None
+    id: int
+    add_level: AddLevel
+    edit_level: EditLevel
+    delete_level: DeleteLevel
+    inquire_level: InquireLevel
+    module_function_name: str
+    module_function_description: str
+    my_all_flag: bool
+    module_function_identifier: str
+    report_flag: bool
+    restrict_flag: bool
+    custom_flag: bool
+    module_description: str
+    module_identifier: str
+    module_name: str
+    sort_order: int
+    member: MemberReferenceModel
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

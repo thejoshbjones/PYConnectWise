@@ -84,130 +84,131 @@ class PhoneIntegrationType(str, Enum):
     NONE = 'NONE'
 
 class MemberModel(ConnectWiseModel):
-    id: int | None
-    identifier: str | None
-    password: str | None
-    first_name: str | None
-    middle_initial: str | None
-    last_name: str | None
-    title: str | None
-    report_card: ReportCardReferenceModel | None
-    license_class: LicenseClass | None
-    disable_online_flag: bool | None
-    enable_mobile_flag: bool | None
-    type: MemberTypeReferenceModel | None
-    employee_identifer: str | None
-    vendor_number: str | None
-    notes: str | None
-    time_zone: TimeZoneSetupReferenceModel | None
-    country: CountryReferenceModel | None
-    service_board_team_ids: list[int] | None
-    enable_mobile_gps_flag: bool | None
-    inactive_date: str | None
-    inactive_flag: bool | None
-    last_login: str | None
-    photo: DocumentReferenceModel | None
-    partner_portal_flag: bool | None
-    client_id: str | None
-    sts_user_admin_url: str | None
-    token: str | None
-    toast_notification_flag: bool | None
-    member_personas: list[int] | None
-    office365: MemberOffice365Model | None
-    office_email: str | None
-    office_phone: str | None
-    office_extension: str | None
-    mobile_email: str | None
-    mobile_phone: str | None
-    mobile_extension: str | None
-    home_email: str | None
-    home_phone: str | None
-    home_extension: str | None
-    default_email: DefaultEmail | None
-    primary_email: str | None
-    default_phone: DefaultPhone | None
-    security_role: SecurityRoleReferenceModel | None
-    admin_flag: bool | None
-    structure_level: StructureReferenceModel | None
-    security_location: SystemLocationReferenceModel | None
-    default_location: SystemLocationReferenceModel | None
-    default_department: SystemDepartmentReferenceModel | None
-    reports_to: MemberReferenceModel | None
-    restrict_location_flag: bool | None
-    restrict_department_flag: bool | None
-    work_role: WorkRoleReferenceModel | None
-    work_type: WorkTypeReferenceModel | None
-    time_approver: MemberReferenceModel | None
-    expense_approver: MemberReferenceModel | None
-    billable_forecast: float | None
-    daily_capacity: float | None
-    hourly_cost: float | None
-    hourly_rate: float | None
-    include_in_utilization_reporting_flag: bool | None
-    require_expense_entry_flag: bool | None
-    require_time_sheet_entry_flag: bool | None
-    require_start_and_end_time_on_time_entry_flag: bool | None
-    allow_in_cell_entry_on_time_sheet: bool | None
-    enter_time_against_company_flag: bool | None
-    allow_expenses_entered_against_companies_flag: bool | None
-    time_reminder_email_flag: bool | None
-    days_tolerance: int | None
-    minimum_hours: float | None
-    time_sheet_start_date: str | None
-    hire_date: str | None
-    service_default_location: SystemLocationReferenceModel | None
-    service_default_department: SystemDepartmentReferenceModel | None
-    service_default_board: BoardReferenceModel | None
-    restrict_service_default_location_flag: bool | None
-    restrict_service_default_department_flag: bool | None
-    excluded_service_board_ids: list[int] | None
-    project_default_location: SystemLocationReferenceModel | None
-    project_default_department: SystemDepartmentReferenceModel | None
-    project_default_board: ProjectBoardReferenceModel | None
-    restrict_project_default_location_flag: bool | None
-    restrict_project_default_department_flag: bool | None
-    excluded_project_board_ids: list[int] | None
-    schedule_default_location: SystemLocationReferenceModel | None
-    schedule_default_department: SystemDepartmentReferenceModel | None
-    schedule_capacity: float | None
-    service_location: ServiceLocationReferenceModel | None
-    restrict_schedule_flag: bool | None
-    hide_member_in_dispatch_portal_flag: bool | None
-    calendar: CalendarReferenceModel | None
-    sales_default_location: SystemLocationReferenceModel | None
-    restrict_default_sales_territory_flag: bool | None
-    warehouse: WarehouseReferenceModel | None
-    warehouse_bin: WarehouseBinReferenceModel | None
-    restrict_default_warehouse_flag: bool | None
-    restrict_default_warehouse_bin_flag: bool | None
-    mapi_name: str | None
-    calendar_sync_integration_flag: bool | None
-    enable_ldap_authentication_flag: bool | None
-    ldap_configuration: LdapConfigurationReferenceModel | None
-    ldap_user_name: str | None
-    company_activity_tab_format: CompanyActivityTabFormat | None
-    invoice_time_tab_format: InvoiceTimeTabFormat | None
-    invoice_screen_default_tab_format: InvoiceScreenDefaultTabFormat | None
-    invoicing_display_options: InvoicingDisplayOptions | None
-    agreement_invoicing_display_options: AgreementInvoicingDisplayOptions | None
-    authentication_service_type: AuthenticationServiceType | None
-    timebased_one_time_password_activated: bool | None
-    sso_settings: MemberSsoSettingsReferenceModel | None
-    auto_start_stopwatch: bool | None
-    auto_popup_quick_notes_with_stopwatch: bool | None
-    signature: str | None
-    global_search_default_ticket_filter: GlobalSearchDefaultTicketFilter | None
-    global_search_default_sort: GlobalSearchDefaultSort | None
-    phone_source: str | None
-    phone_integration_type: PhoneIntegrationType | None
-    use_browser_language_flag: bool | None
-    _info: dict[str, str] | None
-    copy_pod_layouts: bool | None
-    copy_shared_default_views: bool | None
-    copy_column_layouts_and_filters: bool | None
-    from_member_rec_id: int | None
-    custom_fields: list[CustomFieldValueModel] | None
+    id: int
+    identifier: str
+    password: str
+    first_name: str
+    middle_initial: str
+    last_name: str
+    title: str
+    report_card: ReportCardReferenceModel
+    license_class: LicenseClass
+    disable_online_flag: bool
+    enable_mobile_flag: bool
+    type: MemberTypeReferenceModel
+    employee_identifer: str
+    vendor_number: str
+    notes: str
+    time_zone: TimeZoneSetupReferenceModel
+    country: CountryReferenceModel
+    service_board_team_ids: list[int]
+    enable_mobile_gps_flag: bool
+    inactive_date: str
+    inactive_flag: bool
+    last_login: str
+    photo: DocumentReferenceModel
+    partner_portal_flag: bool
+    client_id: str
+    sts_user_admin_url: str
+    token: str
+    toast_notification_flag: bool
+    member_personas: list[int]
+    office365: MemberOffice365Model
+    office_email: str
+    office_phone: str
+    office_extension: str
+    mobile_email: str
+    mobile_phone: str
+    mobile_extension: str
+    home_email: str
+    home_phone: str
+    home_extension: str
+    default_email: DefaultEmail
+    primary_email: str
+    default_phone: DefaultPhone
+    security_role: SecurityRoleReferenceModel
+    admin_flag: bool
+    structure_level: StructureReferenceModel
+    security_location: SystemLocationReferenceModel
+    default_location: SystemLocationReferenceModel
+    default_department: SystemDepartmentReferenceModel
+    reports_to: MemberReferenceModel
+    restrict_location_flag: bool
+    restrict_department_flag: bool
+    work_role: WorkRoleReferenceModel
+    work_type: WorkTypeReferenceModel
+    time_approver: MemberReferenceModel
+    expense_approver: MemberReferenceModel
+    billable_forecast: float
+    daily_capacity: float
+    hourly_cost: float
+    hourly_rate: float
+    include_in_utilization_reporting_flag: bool
+    require_expense_entry_flag: bool
+    require_time_sheet_entry_flag: bool
+    require_start_and_end_time_on_time_entry_flag: bool
+    allow_in_cell_entry_on_time_sheet: bool
+    enter_time_against_company_flag: bool
+    allow_expenses_entered_against_companies_flag: bool
+    time_reminder_email_flag: bool
+    days_tolerance: int
+    minimum_hours: float
+    time_sheet_start_date: str
+    hire_date: str
+    service_default_location: SystemLocationReferenceModel
+    service_default_department: SystemDepartmentReferenceModel
+    service_default_board: BoardReferenceModel
+    restrict_service_default_location_flag: bool
+    restrict_service_default_department_flag: bool
+    excluded_service_board_ids: list[int]
+    project_default_location: SystemLocationReferenceModel
+    project_default_department: SystemDepartmentReferenceModel
+    project_default_board: ProjectBoardReferenceModel
+    restrict_project_default_location_flag: bool
+    restrict_project_default_department_flag: bool
+    excluded_project_board_ids: list[int]
+    schedule_default_location: SystemLocationReferenceModel
+    schedule_default_department: SystemDepartmentReferenceModel
+    schedule_capacity: float
+    service_location: ServiceLocationReferenceModel
+    restrict_schedule_flag: bool
+    hide_member_in_dispatch_portal_flag: bool
+    calendar: CalendarReferenceModel
+    sales_default_location: SystemLocationReferenceModel
+    restrict_default_sales_territory_flag: bool
+    warehouse: WarehouseReferenceModel
+    warehouse_bin: WarehouseBinReferenceModel
+    restrict_default_warehouse_flag: bool
+    restrict_default_warehouse_bin_flag: bool
+    mapi_name: str
+    calendar_sync_integration_flag: bool
+    enable_ldap_authentication_flag: bool
+    ldap_configuration: LdapConfigurationReferenceModel
+    ldap_user_name: str
+    company_activity_tab_format: CompanyActivityTabFormat
+    invoice_time_tab_format: InvoiceTimeTabFormat
+    invoice_screen_default_tab_format: InvoiceScreenDefaultTabFormat
+    invoicing_display_options: InvoicingDisplayOptions
+    agreement_invoicing_display_options: AgreementInvoicingDisplayOptions
+    authentication_service_type: AuthenticationServiceType
+    timebased_one_time_password_activated: bool
+    sso_settings: MemberSsoSettingsReferenceModel
+    auto_start_stopwatch: bool
+    auto_popup_quick_notes_with_stopwatch: bool
+    signature: str
+    global_search_default_ticket_filter: GlobalSearchDefaultTicketFilter
+    global_search_default_sort: GlobalSearchDefaultSort
+    phone_source: str
+    phone_integration_type: PhoneIntegrationType
+    use_browser_language_flag: bool
+    _info: dict[str, str]
+    copy_pod_layouts: bool
+    copy_shared_default_views: bool
+    copy_column_layouts_and_filters: bool
+    from_member_rec_id: int
+    custom_fields: list[CustomFieldValueModel]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

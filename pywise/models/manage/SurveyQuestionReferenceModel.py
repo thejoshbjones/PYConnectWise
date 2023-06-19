@@ -5,10 +5,11 @@ from pywise.utils.naming import to_camel_case
 from pywise.models.base.connectwise_model import ConnectWiseModel
 
 class SurveyQuestionReferenceModel(ConnectWiseModel):
-    id: int | None
-    question: str | None
-    _info: dict[str, str] | None
+    id: int
+    question: str
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

@@ -6,12 +6,13 @@ from pywise.models.base.connectwise_model import ConnectWiseModel
 from pywise.models.manage.BoardReferenceModel import BoardReferenceModel
 
 class BoardItemModel(ConnectWiseModel):
-    id: int | None
-    name: str | None
-    inactive_flag: bool | None
-    board: BoardReferenceModel | None
-    _info: dict[str, str] | None
+    id: int
+    name: str
+    inactive_flag: bool
+    board: BoardReferenceModel
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

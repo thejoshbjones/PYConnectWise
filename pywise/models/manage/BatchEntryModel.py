@@ -10,24 +10,25 @@ from pywise.models.manage.ExpenseDetailReferenceModel import ExpenseDetailRefere
 from pywise.models.manage.AdjustmentDetailReferenceModel import AdjustmentDetailReferenceModel
 
 class BatchEntryModel(ConnectWiseModel):
-    id: int | None
-    account_type: str | None
-    name: str | None
-    account_number: str | None
-    debit: float | None
-    credit: float | None
-    cost: float | None
-    item: str | None
-    sales_code: str | None
-    cost_of_goods_sold_account_number: str | None
-    invoice: InvoiceReferenceModel | None
-    purchase_order: PurchaseOrderReferenceModel | None
-    line_item: PurchaseOrderLineItemReferenceModel | None
-    transfer: str | None
-    expense: ExpenseDetailReferenceModel | None
-    adjustment_detail: AdjustmentDetailReferenceModel | None
-    _info: dict[str, str] | None
+    id: int
+    account_type: str
+    name: str
+    account_number: str
+    debit: float
+    credit: float
+    cost: float
+    item: str
+    sales_code: str
+    cost_of_goods_sold_account_number: str
+    invoice: InvoiceReferenceModel
+    purchase_order: PurchaseOrderReferenceModel
+    line_item: PurchaseOrderLineItemReferenceModel
+    transfer: str
+    expense: ExpenseDetailReferenceModel
+    adjustment_detail: AdjustmentDetailReferenceModel
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

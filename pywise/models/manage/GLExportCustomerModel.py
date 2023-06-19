@@ -13,36 +13,37 @@ from pywise.models.manage.CurrencyReferenceModel import CurrencyReferenceModel
 from pywise.models.manage.GLExportCustomerTaxLevelModel import GLExportCustomerTaxLevelModel
 
 class GLExportCustomerModel(ConnectWiseModel):
-    company: CompanyReferenceModel | None
-    company_type: CompanyTypeReferenceModel | None
-    contact: ContactReferenceModel | None
-    site: SiteReferenceModel | None
-    account_number: str | None
-    billing_terms: BillingTermsReferenceModel | None
-    billing_terms_xref: str | None
-    due_days: int | None
-    taxable: bool | None
-    tax_code: TaxCodeReferenceModel | None
-    currency: CurrencyReferenceModel | None
-    state_tax_xref: str | None
-    county_tax_xref: str | None
-    city_tax_xref: str | None
-    country_tax_xref: str | None
-    composite_tax_xref: str | None
-    state_tax_rate: float | None
-    county_tax_rate: float | None
-    city_tax_rate: float | None
-    country_tax_rate: float | None
-    composite_tax_rate: float | None
-    tax_group_rate: float | None
-    tax_agency_xref: str | None
-    state_tax_agency_xref: str | None
-    county_tax_agency_xref: str | None
-    city_tax_agency_xref: str | None
-    country_tax_agency_xref: str | None
-    composite_tax_agency_xref: str | None
-    tax_levels: list[GLExportCustomerTaxLevelModel] | None
+    company: CompanyReferenceModel
+    company_type: CompanyTypeReferenceModel
+    contact: ContactReferenceModel
+    site: SiteReferenceModel
+    account_number: str
+    billing_terms: BillingTermsReferenceModel
+    billing_terms_xref: str
+    due_days: int
+    taxable: bool
+    tax_code: TaxCodeReferenceModel
+    currency: CurrencyReferenceModel
+    state_tax_xref: str
+    county_tax_xref: str
+    city_tax_xref: str
+    country_tax_xref: str
+    composite_tax_xref: str
+    state_tax_rate: float
+    county_tax_rate: float
+    city_tax_rate: float
+    country_tax_rate: float
+    composite_tax_rate: float
+    tax_group_rate: float
+    tax_agency_xref: str
+    state_tax_agency_xref: str
+    county_tax_agency_xref: str
+    city_tax_agency_xref: str
+    country_tax_agency_xref: str
+    composite_tax_agency_xref: str
+    tax_levels: list[GLExportCustomerTaxLevelModel]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

@@ -6,18 +6,19 @@ from pywise.models.base.connectwise_model import ConnectWiseModel
 from pywise.models.manage.TrackReferenceModel import TrackReferenceModel
 
 class CompanyStatusModel(ConnectWiseModel):
-    id: int | None
-    name: str | None
-    default_flag: bool | None
-    inactive_flag: bool | None
-    notify_flag: bool | None
-    disallow_saving_flag: bool | None
-    notification_message: str | None
-    custom_note_flag: bool | None
-    cancel_open_tracks_flag: bool | None
-    track: TrackReferenceModel | None
-    _info: dict[str, str] | None
+    id: int
+    name: str
+    default_flag: bool
+    inactive_flag: bool
+    notify_flag: bool
+    disallow_saving_flag: bool
+    notification_message: str
+    custom_note_flag: bool
+    cancel_open_tracks_flag: bool
+    track: TrackReferenceModel
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

@@ -15,22 +15,23 @@ class InvoiceMarkupOption(str, Enum):
     Percent = 'Percent'
 
 class ExpenseTypeModel(ConnectWiseModel):
-    id: int | None
-    name: str | None
-    amount_caption: str | None
-    reimbursement_rate: float | None
-    bill_expenses: BillExpenses | None
-    invoice_markup_option: InvoiceMarkupOption | None
-    invoice_markup_amount: float | None
-    advanced_amount_flag: bool | None
-    mileage_flag: bool | None
-    quantity_flag: bool | None
-    inactive_flag: bool | None
-    max_amount: float | None
-    integration_x_ref: str | None
-    default_flag: bool | None
-    _info: dict[str, str] | None
+    id: int
+    name: str
+    amount_caption: str
+    reimbursement_rate: float
+    bill_expenses: BillExpenses
+    invoice_markup_option: InvoiceMarkupOption
+    invoice_markup_amount: float
+    advanced_amount_flag: bool
+    mileage_flag: bool
+    quantity_flag: bool
+    inactive_flag: bool
+    max_amount: float
+    integration_x_ref: str
+    default_flag: bool
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

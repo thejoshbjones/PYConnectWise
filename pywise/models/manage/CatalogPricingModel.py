@@ -8,13 +8,14 @@ from pywise.models.manage.CompanyReferenceModel import CompanyReferenceModel
 from pywise.models.manage.SystemLocationReferenceModel import SystemLocationReferenceModel
 
 class CatalogPricingModel(ConnectWiseModel):
-    catalog_item: CatalogItemReferenceModel | None
-    company: CompanyReferenceModel | None
-    location: SystemLocationReferenceModel | None
-    quantity: int | None
-    date: str | None
-    price: float | None
+    catalog_item: CatalogItemReferenceModel
+    company: CompanyReferenceModel
+    location: SystemLocationReferenceModel
+    quantity: int
+    date: str
+    price: float
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

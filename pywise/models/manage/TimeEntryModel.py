@@ -40,48 +40,49 @@ class Status(str, Enum):
     BilledAgreement = 'BilledAgreement'
 
 class TimeEntryModel(ConnectWiseModel):
-    id: int | None
-    company: CompanyReferenceModel | None
-    charge_to_id: int | None
-    charge_to_type: ChargeToType | None
-    member: MemberReferenceModel | None
-    location_id: int | None
-    business_unit_id: int | None
-    work_type: WorkTypeReferenceModel | None
-    work_role: WorkRoleReferenceModel | None
-    agreement: AgreementReferenceModel | None
-    time_start: str | None
-    time_end: str | None
-    hours_deduct: float | None
-    actual_hours: float | None
-    billable_option: BillableOption | None
-    notes: str | None
-    internal_notes: str | None
-    add_to_detail_description_flag: bool | None
-    add_to_internal_analysis_flag: bool | None
-    add_to_resolution_flag: bool | None
-    email_resource_flag: bool | None
-    email_contact_flag: bool | None
-    email_cc_flag: bool | None
-    email_cc: str | None
-    hours_billed: float | None
-    invoice_hours: float | None
-    entered_by: str | None
-    date_entered: str | None
-    invoice: InvoiceReferenceModel | None
-    mobile_guid: str | None
-    hourly_rate: float | None
-    overage_rate: float | None
-    agreement_hours: float | None
-    agreement_amount: float | None
-    time_sheet: TimeSheetReferenceModel | None
-    status: Status | None
-    ticket: TicketReferenceModel | None
-    project: ProjectReferenceModel | None
-    phase: ProjectPhaseReferenceModel | None
-    _info: dict[str, str] | None
-    custom_fields: list[CustomFieldValueModel] | None
+    id: int
+    company: CompanyReferenceModel
+    charge_to_id: int
+    charge_to_type: ChargeToType
+    member: MemberReferenceModel
+    location_id: int
+    business_unit_id: int
+    work_type: WorkTypeReferenceModel
+    work_role: WorkRoleReferenceModel
+    agreement: AgreementReferenceModel
+    time_start: str
+    time_end: str
+    hours_deduct: float
+    actual_hours: float
+    billable_option: BillableOption
+    notes: str
+    internal_notes: str
+    add_to_detail_description_flag: bool
+    add_to_internal_analysis_flag: bool
+    add_to_resolution_flag: bool
+    email_resource_flag: bool
+    email_contact_flag: bool
+    email_cc_flag: bool
+    email_cc: str
+    hours_billed: float
+    invoice_hours: float
+    entered_by: str
+    date_entered: str
+    invoice: InvoiceReferenceModel
+    mobile_guid: str
+    hourly_rate: float
+    overage_rate: float
+    agreement_hours: float
+    agreement_amount: float
+    time_sheet: TimeSheetReferenceModel
+    status: Status
+    ticket: TicketReferenceModel
+    project: ProjectReferenceModel
+    phase: ProjectPhaseReferenceModel
+    _info: dict[str, str]
+    custom_fields: list[CustomFieldValueModel]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

@@ -6,12 +6,13 @@ from pywise.models.base.connectwise_model import ConnectWiseModel
 from pywise.models.manage.SystemLocationReferenceModel import SystemLocationReferenceModel
 
 class TodayPageCategoryModel(ConnectWiseModel):
-    id: int | None
-    name: str | None
-    sort_order: int | None
-    location: SystemLocationReferenceModel | None
-    _info: dict[str, str] | None
+    id: int
+    name: str
+    sort_order: int
+    location: SystemLocationReferenceModel
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

@@ -8,24 +8,25 @@ class TaxIntegrationType(str, Enum):
     Avalara = 'Avalara'
 
 class TaxIntegrationModel(ConnectWiseModel):
-    tax_integration_type: TaxIntegrationType | None
-    id: int | None
-    account_number: str | None
-    license_key: str | None
-    service_url: str | None
-    company_code: str | None
-    time_tax_code: str | None
-    expense_tax_code: str | None
-    product_tax_code: str | None
-    invoice_amount_tax_code: str | None
-    enabled_flag: bool | None
-    commit_transactions_flag: bool | None
-    sales_invoice_flag: bool | None
-    freight_tax_code: str | None
-    accounting_integration_flag: bool | None
-    tax_line_flag: bool | None
-    _info: dict[str, str] | None
+    tax_integration_type: TaxIntegrationType
+    id: int
+    account_number: str
+    license_key: str
+    service_url: str
+    company_code: str
+    time_tax_code: str
+    expense_tax_code: str
+    product_tax_code: str
+    invoice_amount_tax_code: str
+    enabled_flag: bool
+    commit_transactions_flag: bool
+    sales_invoice_flag: bool
+    freight_tax_code: str
+    accounting_integration_flag: bool
+    tax_line_flag: bool
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

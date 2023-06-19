@@ -9,20 +9,21 @@ from pywise.models.manage.ShipmentMethodReferenceModel import ShipmentMethodRefe
 from pywise.models.manage.ProductItemReferenceModel import ProductItemReferenceModel
 
 class ProductPickingShippingDetailModel(ConnectWiseModel):
-    id: int | None
-    picked_quantity: int | None
-    shipped_quantity: int | None
-    warehouse: WarehouseReferenceModel | None
-    warehouse_bin: WarehouseBinReferenceModel | None
-    shipment_method: ShipmentMethodReferenceModel | None
-    serial_number: str | None
-    serial_number_ids: list[int] | None
-    tracking_number: str | None
-    product_item: ProductItemReferenceModel | None
-    line_number: int | None
-    quantity: int | None
-    _info: dict[str, str] | None
+    id: int
+    picked_quantity: int
+    shipped_quantity: int
+    warehouse: WarehouseReferenceModel
+    warehouse_bin: WarehouseBinReferenceModel
+    shipment_method: ShipmentMethodReferenceModel
+    serial_number: str
+    serial_number_ids: list[int]
+    tracking_number: str
+    product_item: ProductItemReferenceModel
+    line_number: int
+    quantity: int
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

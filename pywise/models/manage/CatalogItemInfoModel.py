@@ -12,22 +12,23 @@ class ProductClass(str, Enum):
     Service = 'Service'
 
 class CatalogItemInfoModel(ConnectWiseModel):
-    id: int | None
-    identifier: str | None
-    description: str | None
-    inactive_flag: bool | None
-    product_class: ProductClass | None
-    serialized_cost_flag: bool | None
-    price: float | None
-    cost: float | None
-    taxable_flag: bool | None
-    drop_ship_flag: bool | None
-    special_order_flag: bool | None
-    customer_description: str | None
-    manufacturer_part_number: str | None
-    vendor_sku: str | None
-    _info: dict[str, str] | None
+    id: int
+    identifier: str
+    description: str
+    inactive_flag: bool
+    product_class: ProductClass
+    serialized_cost_flag: bool
+    price: float
+    cost: float
+    taxable_flag: bool
+    drop_ship_flag: bool
+    special_order_flag: bool
+    customer_description: str
+    manufacturer_part_number: str
+    vendor_sku: str
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

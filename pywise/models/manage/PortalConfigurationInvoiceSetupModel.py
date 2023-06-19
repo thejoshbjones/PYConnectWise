@@ -8,20 +8,21 @@ from pywise.models.manage.SystemLocationReferenceModel import SystemLocationRefe
 from pywise.models.manage.PortalConfigurationPaymentProcessorReferenceModel import PortalConfigurationPaymentProcessorReferenceModel
 
 class PortalConfigurationInvoiceSetupModel(ConnectWiseModel):
-    id: int | None
-    portal_configuration: PortalConfigurationReferenceModel | None
-    display_inv_pmt_flag: bool | None
-    allow_inv_pmt_flag: bool | None
-    location: SystemLocationReferenceModel | None
-    payment_processor: PortalConfigurationPaymentProcessorReferenceModel | None
-    login: str | None
-    password: str | None
-    url_override: str | None
-    billing_status_ids: list[int] | None
-    add_all_statuses: bool | None
-    remove_all_statuses: bool | None
-    _info: dict[str, str] | None
+    id: int
+    portal_configuration: PortalConfigurationReferenceModel
+    display_inv_pmt_flag: bool
+    allow_inv_pmt_flag: bool
+    location: SystemLocationReferenceModel
+    payment_processor: PortalConfigurationPaymentProcessorReferenceModel
+    login: str
+    password: str
+    url_override: str
+    billing_status_ids: list[int]
+    add_all_statuses: bool
+    remove_all_statuses: bool
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

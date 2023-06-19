@@ -14,18 +14,19 @@ class DefaultSpecialInvoiceType(str, Enum):
     Standard = 'Standard'
 
 class TimeExpenseModel(ConnectWiseModel):
-    id: int | None
-    tier1_approval_flag: bool | None
-    tier2_approval_flag: bool | None
-    disable_time_entry_flag: bool | None
-    require_time_note_flag: bool | None
-    require_expense_note_flag: bool | None
-    rounding_factor: float | None
-    invoice_start: int | None
-    default_special_invoice_type: DefaultSpecialInvoiceType | None
-    internal_company: CompanyReferenceModel | None
-    _info: dict[str, str] | None
+    id: int
+    tier1_approval_flag: bool
+    tier2_approval_flag: bool
+    disable_time_entry_flag: bool
+    require_time_note_flag: bool
+    require_expense_note_flag: bool
+    rounding_factor: float
+    invoice_start: int
+    default_special_invoice_type: DefaultSpecialInvoiceType
+    internal_company: CompanyReferenceModel
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

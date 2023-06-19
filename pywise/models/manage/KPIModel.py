@@ -6,13 +6,14 @@ from pywise.models.base.connectwise_model import ConnectWiseModel
 from pywise.models.manage.KPICategoryReferenceModel import KPICategoryReferenceModel
 
 class KPIModel(ConnectWiseModel):
-    id: int | None
-    name: str | None
-    category: KPICategoryReferenceModel | None
-    date_filter: str | None
-    sort_order: int | None
-    inactive_flag: bool | None
+    id: int
+    name: str
+    category: KPICategoryReferenceModel
+    date_filter: str
+    sort_order: int
+    inactive_flag: bool
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

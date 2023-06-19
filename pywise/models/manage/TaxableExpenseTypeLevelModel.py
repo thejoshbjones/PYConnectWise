@@ -6,10 +6,11 @@ from pywise.models.base.connectwise_model import ConnectWiseModel
 from pywise.models.manage.TaxCodeLevelReferenceModel import TaxCodeLevelReferenceModel
 
 class TaxableExpenseTypeLevelModel(ConnectWiseModel):
-    id: int | None
-    tax_code_level: TaxCodeLevelReferenceModel | None
-    _info: dict[str, str] | None
+    id: int
+    tax_code_level: TaxCodeLevelReferenceModel
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

@@ -11,16 +11,17 @@ class TeamModelType(str, Enum):
     Team = 'Team'
 
 class TeamModel(ConnectWiseModel):
-    id: int | None
-    type: TeamModelType | None
-    member: MemberReferenceModel | None
-    sales_team: SalesTeamReferenceModel | None
-    commission_percent: int | None
-    referral_flag: bool | None
-    opportunity_id: int | None
-    responsible_flag: bool | None
-    _info: dict[str, str] | None
+    id: int
+    type: TeamModelType
+    member: MemberReferenceModel
+    sales_team: SalesTeamReferenceModel
+    commission_percent: int
+    referral_flag: bool
+    opportunity_id: int
+    responsible_flag: bool
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

@@ -7,12 +7,13 @@ from pywise.models.manage.IRestIdentifiedItemModel import IRestIdentifiedItemMod
 from pywise.models.manage.ErrorResponseMessageModel import ErrorResponseMessageModel
 
 class ResultInfoModel(ConnectWiseModel):
-    success: bool | None
-    original_index: int | None
-    status_code: int | None
-    data: IRestIdentifiedItemModel | None
-    error: ErrorResponseMessageModel | None
+    success: bool
+    original_index: int
+    status_code: int
+    data: IRestIdentifiedItemModel
+    error: ErrorResponseMessageModel
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

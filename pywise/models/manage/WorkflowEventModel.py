@@ -15,15 +15,16 @@ class ExecutionTime(str, Enum):
     Continuously = 'Continuously'
 
 class WorkflowEventModel(ConnectWiseModel):
-    id: int | None
-    name: str | None
-    event_condition: str | None
-    frequency_unit: FrequencyUnit | None
-    frequency_of_execution: int | None
-    max_number_of_execution: int | None
-    execution_time: ExecutionTime | None
-    _info: dict[str, str] | None
+    id: int
+    name: str
+    event_condition: str
+    frequency_unit: FrequencyUnit
+    frequency_of_execution: int
+    max_number_of_execution: int
+    execution_time: ExecutionTime
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

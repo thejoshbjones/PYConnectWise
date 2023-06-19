@@ -27,69 +27,70 @@ class Presence(str, Enum):
     Offline = 'Offline'
 
 class ContactModel(ConnectWiseModel):
-    id: int | None
-    first_name: str | None
-    last_name: str | None
-    company: CompanyReferenceModel | None
-    site: SiteReferenceModel | None
-    address_line1: str | None
-    address_line2: str | None
-    city: str | None
-    state: str | None
-    zip: str | None
-    country: CountryReferenceModel | None
-    relationship: RelationshipReferenceModel | None
-    relationship_override: str | None
-    department: ContactDepartmentReferenceModel | None
-    inactive_flag: bool | None
-    default_merge_contact_id: int | None
-    security_identifier: str | None
-    manager_contact: ContactReferenceModel | None
-    assistant_contact: ContactReferenceModel | None
-    title: str | None
-    school: str | None
-    nick_name: str | None
-    married_flag: bool | None
-    children_flag: bool | None
-    children: str | None
-    significant_other: str | None
-    portal_password: str | None
-    portal_security_level: int | None
-    disable_portal_login_flag: bool | None
-    unsubscribe_flag: bool | None
-    gender: Gender | None
-    birth_day: str | None
-    anniversary: str | None
-    presence: Presence | None
-    mobile_guid: str | None
-    facebook_url: str | None
-    twitter_url: str | None
-    linked_in_url: str | None
-    default_phone_type: str | None
-    default_phone_nbr: str | None
-    default_phone_extension: str | None
-    default_billing_flag: bool | None
-    default_flag: bool | None
-    user_defined_field1: str | None
-    user_defined_field2: str | None
-    user_defined_field3: str | None
-    user_defined_field4: str | None
-    user_defined_field5: str | None
-    user_defined_field6: str | None
-    user_defined_field7: str | None
-    user_defined_field8: str | None
-    user_defined_field9: str | None
-    user_defined_field10: str | None
-    company_location: SystemLocationReferenceModel | None
-    communication_items: list[ContactCommunicationItemModel] | None
-    types: list[ContactTypeReferenceModel] | None
-    integrator_tags: list[str] | None
-    custom_fields: list[CustomFieldValueModel] | None
-    photo: DocumentReferenceModel | None
-    ignore_duplicates: bool | None
-    _info: dict[str, str] | None
-    type_ids: list[int] | None
+    id: int
+    first_name: str
+    last_name: str
+    company: CompanyReferenceModel
+    site: SiteReferenceModel
+    address_line1: str
+    address_line2: str
+    city: str
+    state: str
+    zip: str
+    country: CountryReferenceModel
+    relationship: RelationshipReferenceModel
+    relationship_override: str
+    department: ContactDepartmentReferenceModel
+    inactive_flag: bool
+    default_merge_contact_id: int
+    security_identifier: str
+    manager_contact: ContactReferenceModel
+    assistant_contact: ContactReferenceModel
+    title: str
+    school: str
+    nick_name: str
+    married_flag: bool
+    children_flag: bool
+    children: str
+    significant_other: str
+    portal_password: str
+    portal_security_level: int
+    disable_portal_login_flag: bool
+    unsubscribe_flag: bool
+    gender: Gender
+    birth_day: str
+    anniversary: str
+    presence: Presence
+    mobile_guid: str
+    facebook_url: str
+    twitter_url: str
+    linked_in_url: str
+    default_phone_type: str
+    default_phone_nbr: str
+    default_phone_extension: str
+    default_billing_flag: bool
+    default_flag: bool
+    user_defined_field1: str
+    user_defined_field2: str
+    user_defined_field3: str
+    user_defined_field4: str
+    user_defined_field5: str
+    user_defined_field6: str
+    user_defined_field7: str
+    user_defined_field8: str
+    user_defined_field9: str
+    user_defined_field10: str
+    company_location: SystemLocationReferenceModel
+    communication_items: list[ContactCommunicationItemModel]
+    types: list[ContactTypeReferenceModel]
+    integrator_tags: list[str]
+    custom_fields: list[CustomFieldValueModel]
+    photo: DocumentReferenceModel
+    ignore_duplicates: bool
+    _info: dict[str, str]
+    type_ids: list[int]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

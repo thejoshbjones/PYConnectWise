@@ -6,9 +6,10 @@ from pywise.models.base.connectwise_model import ConnectWiseModel
 from pywise.models.manage.BundleResultModel import BundleResultModel
 
 class BundleResultsCollectionModel(ConnectWiseModel):
-    results: list[BundleResultModel] | None
-    _info: dict[str, str] | None
+    results: list[BundleResultModel]
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

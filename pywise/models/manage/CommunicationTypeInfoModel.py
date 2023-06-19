@@ -5,14 +5,15 @@ from pywise.utils.naming import to_camel_case
 from pywise.models.base.connectwise_model import ConnectWiseModel
 
 class CommunicationTypeInfoModel(ConnectWiseModel):
-    id: int | None
-    description: str | None
-    phone_flag: bool | None
-    fax_flag: bool | None
-    email_flag: bool | None
-    default_flag: bool | None
-    _info: dict[str, str] | None
+    id: int
+    description: str
+    phone_flag: bool
+    fax_flag: bool
+    email_flag: bool
+    default_flag: bool
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

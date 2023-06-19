@@ -21,13 +21,14 @@ class RoutingRule(str, Enum):
     Sales = 'Sales'
 
 class BillingSetupRoutingModel(ConnectWiseModel):
-    id: int | None
-    sequence_number: int | None
-    invoice_rule: InvoiceRule | None
-    routing_rule: RoutingRule | None
-    member: MemberReferenceModel | None
-    _info: dict[str, str] | None
+    id: int
+    sequence_number: int
+    invoice_rule: InvoiceRule
+    routing_rule: RoutingRule
+    member: MemberReferenceModel
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

@@ -6,13 +6,14 @@ from pywise.models.base.connectwise_model import ConnectWiseModel
 from pywise.models.manage.SystemLocationReferenceModel import SystemLocationReferenceModel
 
 class SalesTeamModel(ConnectWiseModel):
-    id: int | None
-    sales_team_identifier: str | None
-    sales_team_description: str | None
-    sales_team_location: SystemLocationReferenceModel | None
-    inactive_flag: bool | None
-    _info: dict[str, str] | None
+    id: int
+    sales_team_identifier: str
+    sales_team_description: str
+    sales_team_location: SystemLocationReferenceModel
+    inactive_flag: bool
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

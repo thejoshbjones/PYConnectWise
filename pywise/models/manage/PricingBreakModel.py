@@ -11,15 +11,16 @@ class PriceMethod(str, Enum):
     PricePerUnit = 'PricePerUnit'
 
 class PricingBreakModel(ConnectWiseModel):
-    id: int | None
-    detail_id: int | None
-    amount: float | None
-    quantity_start: float | None
-    quantity_end: float | None
-    unlimited: bool | None
-    price_method: PriceMethod | None
-    _info: dict[str, str] | None
+    id: int
+    detail_id: int
+    amount: float
+    quantity_start: float
+    quantity_end: float
+    unlimited: bool
+    price_method: PriceMethod
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

@@ -6,12 +6,13 @@ from pywise.models.base.connectwise_model import ConnectWiseModel
 from pywise.models.manage.LicenseBitModel import LicenseBitModel
 
 class InfoModel(ConnectWiseModel):
-    version: str | None
-    is_cloud: bool | None
-    server_time_zone: str | None
-    license_bits: list[LicenseBitModel] | None
-    cloud_region: str | None
+    version: str
+    is_cloud: bool
+    server_time_zone: str
+    license_bits: list[LicenseBitModel]
+    cloud_region: str
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

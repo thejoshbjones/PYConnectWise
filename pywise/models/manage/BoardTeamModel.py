@@ -6,17 +6,18 @@ from pywise.models.base.connectwise_model import ConnectWiseModel
 from pywise.models.manage.MemberReferenceModel import MemberReferenceModel
 
 class BoardTeamModel(ConnectWiseModel):
-    id: int | None
-    name: str | None
-    team_leader: MemberReferenceModel | None
-    members: list[int] | None
-    default_flag: bool | None
-    notify_on_ticket_delete: bool | None
-    board_id: int | None
-    location_id: int | None
-    business_unit_id: int | None
-    _info: dict[str, str] | None
+    id: int
+    name: str
+    team_leader: MemberReferenceModel
+    members: list[int]
+    default_flag: bool
+    notify_on_ticket_delete: bool
+    board_id: int
+    location_id: int
+    business_unit_id: int
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

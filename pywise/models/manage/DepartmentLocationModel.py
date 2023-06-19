@@ -12,18 +12,19 @@ from pywise.models.manage.MemberReferenceModel import MemberReferenceModel
 from pywise.models.manage.LdapConfigurationReferenceModel import LdapConfigurationReferenceModel
 
 class DepartmentLocationModel(ConnectWiseModel):
-    id: int | None
-    location: SystemLocationReferenceModel | None
-    department: SystemDepartmentReferenceModel | None
-    department_manager: MemberReferenceModel | None
-    dispatch: MemberReferenceModel | None
-    service_manager: MemberReferenceModel | None
-    duty_manager: MemberReferenceModel | None
-    ldap_config: LdapConfigurationReferenceModel | None
-    add_all_locations: bool | None
-    remove_all_locations: bool | None
-    _info: dict[str, str] | None
+    id: int
+    location: SystemLocationReferenceModel
+    department: SystemDepartmentReferenceModel
+    department_manager: MemberReferenceModel
+    dispatch: MemberReferenceModel
+    service_manager: MemberReferenceModel
+    duty_manager: MemberReferenceModel
+    ldap_config: LdapConfigurationReferenceModel
+    add_all_locations: bool
+    remove_all_locations: bool
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

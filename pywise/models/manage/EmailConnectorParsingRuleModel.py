@@ -13,19 +13,20 @@ from pywise.models.manage.ServiceItemReferenceModel import ServiceItemReferenceM
 from pywise.models.manage.BoardReferenceModel import BoardReferenceModel
 
 class EmailConnectorParsingRuleModel(ConnectWiseModel):
-    id: int | None
-    parsing_style: EmailConnectorParsingStyleReferenceModel | None
-    priority: int | None
-    parsing_variable: EmailConnectorParsingVariableReferenceModel | None
-    search_term: str | None
-    service_priority: PriorityReferenceModel | None
-    service_status: ServiceStatusReferenceModel | None
-    service_type: ServiceTypeReferenceModel | None
-    service_sub_type: ServiceSubTypeReferenceModel | None
-    service_item: ServiceItemReferenceModel | None
-    service_board: BoardReferenceModel | None
-    _info: dict[str, str] | None
+    id: int
+    parsing_style: EmailConnectorParsingStyleReferenceModel
+    priority: int
+    parsing_variable: EmailConnectorParsingVariableReferenceModel
+    search_term: str
+    service_priority: PriorityReferenceModel
+    service_status: ServiceStatusReferenceModel
+    service_type: ServiceTypeReferenceModel
+    service_sub_type: ServiceSubTypeReferenceModel
+    service_item: ServiceItemReferenceModel
+    service_board: BoardReferenceModel
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

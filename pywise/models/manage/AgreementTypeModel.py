@@ -57,71 +57,72 @@ class BillProducts(str, Enum):
     NoDefault = 'NoDefault'
 
 class AgreementTypeModel(ConnectWiseModel):
-    id: int | None
-    name: str | None
-    prefix_suffix_option: PrefixSuffixOption | None
-    default_flag: bool | None
-    inactive_flag: bool | None
-    pre_payment_flag: bool | None
-    invoice_pre_suffix: str | None
-    location: SystemLocationReferenceModel | None
-    department: SystemDepartmentReferenceModel | None
-    restrict_location_flag: bool | None
-    restrict_department_flag: bool | None
-    sla: SLAReferenceModel | None
-    application_units: ApplicationUnits | None
-    application_limit: float | None
-    application_cycle: ApplicationCycle | None
-    application_unlimited_flag: bool | None
-    one_time_flag: bool | None
-    cover_agreement_time_flag: bool | None
-    cover_agreement_product_flag: bool | None
-    cover_agreement_expense_flag: bool | None
-    cover_sales_tax_flag: bool | None
-    carry_over_unused_flag: bool | None
-    allow_overruns_flag: bool | None
-    expired_days: int | None
-    limit: int | None
-    expire_when_zero: bool | None
-    charge_to_firm_flag: bool | None
-    employee_comp_rate: EmployeeCompRate | None
-    employee_comp_not_exceed: EmployeeCompNotExceed | None
-    comp_hourly_rate: float | None
-    comp_limit_amount: float | None
-    billing_cycle: BillingCycleReferenceModel | None
-    bill_one_time_flag: bool | None
-    billing_terms: BillingTermsReferenceModel | None
-    invoicing_cycle: InvoicingCycle | None
-    bill_amount: float | None
-    taxable_flag: bool | None
-    restrict_down_payment_flag: bool | None
-    invoice_description: str | None
-    top_comment_flag: bool | None
-    bottom_comment_flag: bool | None
-    work_role: WorkRoleReferenceModel | None
-    work_type: WorkTypeReferenceModel | None
-    project_type: ProjectTypeReferenceModel | None
-    invoice_template: InvoiceTemplateReferenceModel | None
-    bill_time: BillTime | None
-    bill_expenses: BillExpenses | None
-    bill_products: BillProducts | None
-    billable_time_invoice_flag: bool | None
-    billable_expense_invoice_flag: bool | None
-    billable_product_invoice_flag: bool | None
-    copy_work_roles_flag: bool | None
-    copy_work_types_flag: bool | None
-    exclusion_work_role_ids: list[int] | None
-    add_all_work_role_exclusions: bool | None
-    remove_all_work_role_exclusions: bool | None
-    exclusion_work_type_ids: list[int] | None
-    add_all_work_type_exclusions: bool | None
-    remove_all_work_type_exclusions: bool | None
-    integration_x_ref: str | None
-    prorate_flag: bool | None
-    email_template: EmailTemplateReferenceModel | None
-    auto_invoice_flag: bool | None
-    _info: dict[str, str] | None
+    id: int
+    name: str
+    prefix_suffix_option: PrefixSuffixOption
+    default_flag: bool
+    inactive_flag: bool
+    pre_payment_flag: bool
+    invoice_pre_suffix: str
+    location: SystemLocationReferenceModel
+    department: SystemDepartmentReferenceModel
+    restrict_location_flag: bool
+    restrict_department_flag: bool
+    sla: SLAReferenceModel
+    application_units: ApplicationUnits
+    application_limit: float
+    application_cycle: ApplicationCycle
+    application_unlimited_flag: bool
+    one_time_flag: bool
+    cover_agreement_time_flag: bool
+    cover_agreement_product_flag: bool
+    cover_agreement_expense_flag: bool
+    cover_sales_tax_flag: bool
+    carry_over_unused_flag: bool
+    allow_overruns_flag: bool
+    expired_days: int
+    limit: int
+    expire_when_zero: bool
+    charge_to_firm_flag: bool
+    employee_comp_rate: EmployeeCompRate
+    employee_comp_not_exceed: EmployeeCompNotExceed
+    comp_hourly_rate: float
+    comp_limit_amount: float
+    billing_cycle: BillingCycleReferenceModel
+    bill_one_time_flag: bool
+    billing_terms: BillingTermsReferenceModel
+    invoicing_cycle: InvoicingCycle
+    bill_amount: float
+    taxable_flag: bool
+    restrict_down_payment_flag: bool
+    invoice_description: str
+    top_comment_flag: bool
+    bottom_comment_flag: bool
+    work_role: WorkRoleReferenceModel
+    work_type: WorkTypeReferenceModel
+    project_type: ProjectTypeReferenceModel
+    invoice_template: InvoiceTemplateReferenceModel
+    bill_time: BillTime
+    bill_expenses: BillExpenses
+    bill_products: BillProducts
+    billable_time_invoice_flag: bool
+    billable_expense_invoice_flag: bool
+    billable_product_invoice_flag: bool
+    copy_work_roles_flag: bool
+    copy_work_types_flag: bool
+    exclusion_work_role_ids: list[int]
+    add_all_work_role_exclusions: bool
+    remove_all_work_role_exclusions: bool
+    exclusion_work_type_ids: list[int]
+    add_all_work_type_exclusions: bool
+    remove_all_work_type_exclusions: bool
+    integration_x_ref: str
+    prorate_flag: bool
+    email_template: EmailTemplateReferenceModel
+    auto_invoice_flag: bool
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

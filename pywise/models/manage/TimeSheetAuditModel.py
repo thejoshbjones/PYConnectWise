@@ -125,16 +125,17 @@ class TimeSheetAuditModelType(str, Enum):
     TimeResolution = 'TimeResolution'
 
 class TimeSheetAuditModel(ConnectWiseModel):
-    id: int | None
-    member: MemberReferenceModel | None
-    source: Source | None
-    type: TimeSheetAuditModelType | None
-    message: str | None
-    old_value: str | None
-    new_value: str | None
-    value: str | None
-    _info: dict[str, str] | None
+    id: int
+    member: MemberReferenceModel
+    source: Source
+    type: TimeSheetAuditModelType
+    message: str
+    old_value: str
+    new_value: str
+    value: str
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

@@ -9,11 +9,12 @@ from pywise.models.manage.ProductDemandModel import ProductDemandModel
 from pywise.models.manage.PurchaseOrderModel import PurchaseOrderModel
 
 class PurchasingDemandModel(ConnectWiseModel):
-    warehouse: WarehouseReferenceModel | None
-    vendor: CompanyReferenceModel | None
-    products: list[ProductDemandModel] | None
-    purchase_order: PurchaseOrderModel | None
+    warehouse: WarehouseReferenceModel
+    vendor: CompanyReferenceModel
+    products: list[ProductDemandModel]
+    purchase_order: PurchaseOrderModel
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

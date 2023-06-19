@@ -25,19 +25,20 @@ class LevelSix(str, Enum):
     Taxable = 'Taxable'
 
 class TaxCodeXRefModel(ConnectWiseModel):
-    id: int | None
-    description: str | None
-    default_flag: bool | None
-    level_one: LevelOne | None
-    level_two: LevelTwo | None
-    level_three: LevelThree | None
-    level_four: LevelFour | None
-    level_five: LevelFive | None
-    level_six: LevelSix | None
-    tax_code: TaxCodeReferenceModel | None
-    taxable_levels: list[int] | None
-    _info: dict[str, str] | None
+    id: int
+    description: str
+    default_flag: bool
+    level_one: LevelOne
+    level_two: LevelTwo
+    level_three: LevelThree
+    level_four: LevelFour
+    level_five: LevelFive
+    level_six: LevelSix
+    tax_code: TaxCodeReferenceModel
+    taxable_levels: list[int]
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

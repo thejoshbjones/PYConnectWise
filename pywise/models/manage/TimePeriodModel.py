@@ -6,14 +6,15 @@ from pywise.models.base.connectwise_model import ConnectWiseModel
 from pywise.models.manage.TimePeriodSetupReferenceModel import TimePeriodSetupReferenceModel
 
 class TimePeriodModel(ConnectWiseModel):
-    id: int | None
-    time_period_setup: TimePeriodSetupReferenceModel | None
-    period: int | None
-    start_date: str | None
-    end_date: str | None
-    deadline_date: str | None
-    _info: dict[str, str] | None
+    id: int
+    time_period_setup: TimePeriodSetupReferenceModel
+    period: int
+    start_date: str
+    end_date: str
+    deadline_date: str
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

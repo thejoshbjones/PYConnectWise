@@ -9,22 +9,23 @@ class RateType(str, Enum):
     Percent = 'Percent'
 
 class TaxCodeLevelModel(ConnectWiseModel):
-    id: int | None
-    tax_level: int | None
-    tax_rate: float | None
-    rate_type: RateType | None
-    taxable_max: float | None
-    caption: str | None
-    tax_code_xref: str | None
-    agency_xref: str | None
-    tax_services_flag: bool | None
-    tax_expenses_flag: bool | None
-    tax_products_flag: bool | None
-    single_unit_flag: bool | None
-    single_unit_minimum: float | None
-    single_unit_maximum: float | None
-    _info: dict[str, str] | None
+    id: int
+    tax_level: int
+    tax_rate: float
+    rate_type: RateType
+    taxable_max: float
+    caption: str
+    tax_code_xref: str
+    agency_xref: str
+    tax_services_flag: bool
+    tax_expenses_flag: bool
+    tax_products_flag: bool
+    single_unit_flag: bool
+    single_unit_minimum: float
+    single_unit_maximum: float
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

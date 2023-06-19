@@ -14,19 +14,20 @@ class WeekStart(str, Enum):
     Saturday = 'Saturday'
 
 class PortalCalendarModel(ConnectWiseModel):
-    id: int | None
-    week_start: WeekStart | None
-    adjust1_start: str | None
-    adjust1_end: str | None
-    adjust1_hours: float | None
-    adjust2_start: str | None
-    adjust2_end: str | None
-    adjust2_hours: float | None
-    adjust3_start: str | None
-    adjust3_end: str | None
-    adjust3_hours: float | None
-    _info: dict[str, str] | None
+    id: int
+    week_start: WeekStart
+    adjust1_start: str
+    adjust1_end: str
+    adjust1_hours: float
+    adjust2_start: str
+    adjust2_end: str
+    adjust2_hours: float
+    adjust3_start: str
+    adjust3_end: str
+    adjust3_hours: float
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

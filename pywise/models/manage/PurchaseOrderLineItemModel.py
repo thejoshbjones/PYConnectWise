@@ -17,41 +17,42 @@ class ReceivedStatus(str, Enum):
     PartiallyReceiveCloneRest = 'PartiallyReceiveCloneRest'
 
 class PurchaseOrderLineItemModel(ConnectWiseModel):
-    id: int | None
-    backordered_flag: bool | None
-    canceled_by: str | None
-    canceled_flag: bool | None
-    canceled_reason: str | None
-    closed_flag: bool | None
-    date_canceled: str | None
-    date_canceled_utc: str | None
-    description: str | None
-    display_internal_notes_flag: bool | None
-    expected_ship_date: str | None
-    internal_notes: str | None
-    line_number: int | None
-    packing_slip: str | None
-    product: IvItemReferenceModel | None
-    purchase_order_id: int | None
-    quantity: float | None
-    received_quantity: int | None
-    serial_numbers: str | None
-    ship_date: str | None
-    shipment_method: ShipmentMethodReferenceModel | None
-    tax: float | None
-    tracking_number: str | None
-    unit_cost: float | None
-    unit_of_measure: UnitOfMeasureReferenceModel | None
-    vendor_order_number: str | None
-    vendor_sku: str | None
-    warehouse: WarehouseReferenceModel | None
-    warehouse_bin: WarehouseBinReferenceModel | None
-    ship_set: str | None
-    date_received: str | None
-    received_status: ReceivedStatus | None
-    _info: dict[str, str] | None
-    custom_fields: list[CustomFieldValueModel] | None
+    id: int
+    backordered_flag: bool
+    canceled_by: str
+    canceled_flag: bool
+    canceled_reason: str
+    closed_flag: bool
+    date_canceled: str
+    date_canceled_utc: str
+    description: str
+    display_internal_notes_flag: bool
+    expected_ship_date: str
+    internal_notes: str
+    line_number: int
+    packing_slip: str
+    product: IvItemReferenceModel
+    purchase_order_id: int
+    quantity: float
+    received_quantity: int
+    serial_numbers: str
+    ship_date: str
+    shipment_method: ShipmentMethodReferenceModel
+    tax: float
+    tracking_number: str
+    unit_cost: float
+    unit_of_measure: UnitOfMeasureReferenceModel
+    vendor_order_number: str
+    vendor_sku: str
+    warehouse: WarehouseReferenceModel
+    warehouse_bin: WarehouseBinReferenceModel
+    ship_set: str
+    date_received: str
+    received_status: ReceivedStatus
+    _info: dict[str, str]
+    custom_fields: list[CustomFieldValueModel]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

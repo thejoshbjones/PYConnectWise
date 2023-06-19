@@ -39,55 +39,56 @@ class BillingMethod(str, Enum):
     OverrideRate = 'OverrideRate'
 
 class ProjectPhaseModel(ConnectWiseModel):
-    id: int | None
-    project_id: int | None
-    description: str | None
-    board: ProjectBoardReferenceModel | None
-    status: PhaseStatusReferenceModel | None
-    agreement: AgreementReferenceModel | None
-    opportunity: OpportunityReferenceModel | None
-    parent_phase: ProjectPhaseReferenceModel | None
-    wbs_code: str | None
-    bill_time: BillTime | None
-    bill_expenses: BillExpenses | None
-    bill_products: BillProducts | None
-    mark_as_milestone_flag: bool | None
-    notes: str | None
-    deadline_date: str | None
-    bill_separately_flag: bool | None
-    billing_method: BillingMethod | None
-    scheduled_hours: float | None
-    scheduled_start: str | None
-    scheduled_end: str | None
-    actual_hours: float | None
-    actual_start: str | None
-    actual_end: str | None
-    budget_hours: float | None
-    location_id: int | None
-    business_unit_id: int | None
-    hourly_rate: float | None
-    billing_start_date: str | None
-    bill_phase_closed_flag: bool | None
-    bill_project_closed_flag: bool | None
-    downpayment: float | None
-    po_number: str | None
-    po_amount: float | None
-    estimated_time_cost: float | None
-    estimated_expense_cost: float | None
-    estimated_product_cost: float | None
-    estimated_time_revenue: float | None
-    estimated_expense_revenue: float | None
-    estimated_product_revenue: float | None
-    currency: CurrencyReferenceModel | None
-    bill_to_company: CompanyReferenceModel | None
-    bill_to_contact: ContactReferenceModel | None
-    bill_to_site: SiteReferenceModel | None
-    ship_to_company: CompanyReferenceModel | None
-    ship_to_contact: ContactReferenceModel | None
-    ship_to_site: SiteReferenceModel | None
-    _info: dict[str, str] | None
-    custom_fields: list[CustomFieldValueModel] | None
+    id: int
+    project_id: int
+    description: str
+    board: ProjectBoardReferenceModel
+    status: PhaseStatusReferenceModel
+    agreement: AgreementReferenceModel
+    opportunity: OpportunityReferenceModel
+    parent_phase: ProjectPhaseReferenceModel
+    wbs_code: str
+    bill_time: BillTime
+    bill_expenses: BillExpenses
+    bill_products: BillProducts
+    mark_as_milestone_flag: bool
+    notes: str
+    deadline_date: str
+    bill_separately_flag: bool
+    billing_method: BillingMethod
+    scheduled_hours: float
+    scheduled_start: str
+    scheduled_end: str
+    actual_hours: float
+    actual_start: str
+    actual_end: str
+    budget_hours: float
+    location_id: int
+    business_unit_id: int
+    hourly_rate: float
+    billing_start_date: str
+    bill_phase_closed_flag: bool
+    bill_project_closed_flag: bool
+    downpayment: float
+    po_number: str
+    po_amount: float
+    estimated_time_cost: float
+    estimated_expense_cost: float
+    estimated_product_cost: float
+    estimated_time_revenue: float
+    estimated_expense_revenue: float
+    estimated_product_revenue: float
+    currency: CurrencyReferenceModel
+    bill_to_company: CompanyReferenceModel
+    bill_to_contact: ContactReferenceModel
+    bill_to_site: SiteReferenceModel
+    ship_to_company: CompanyReferenceModel
+    ship_to_contact: ContactReferenceModel
+    ship_to_site: SiteReferenceModel
+    _info: dict[str, str]
+    custom_fields: list[CustomFieldValueModel]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

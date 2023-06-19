@@ -22,15 +22,16 @@ class InquireLevel(str, Enum):
     All = 'All'
 
 class ProjectSecurityRoleSettingModel(ConnectWiseModel):
-    id: int | None
-    add_level: AddLevel | None
-    edit_level: EditLevel | None
-    delete_level: DeleteLevel | None
-    inquire_level: InquireLevel | None
-    module_identifier: str | None
-    my_flag: bool | None
-    _info: dict[str, str] | None
+    id: int
+    add_level: AddLevel
+    edit_level: EditLevel
+    delete_level: DeleteLevel
+    inquire_level: InquireLevel
+    module_identifier: str
+    my_flag: bool
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

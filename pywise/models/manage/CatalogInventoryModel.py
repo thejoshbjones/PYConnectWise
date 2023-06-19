@@ -9,14 +9,15 @@ from pywise.models.manage.WarehouseBinReferenceModel import WarehouseBinReferenc
 from pywise.models.manage.OnHandSerialNumberReferenceModel import OnHandSerialNumberReferenceModel
 
 class CatalogInventoryModel(ConnectWiseModel):
-    id: int | None
-    catalog_item: CatalogItemReferenceModel | None
-    warehouse: WarehouseReferenceModel | None
-    warehouse_bin: WarehouseBinReferenceModel | None
-    on_hand: int | None
-    serial_numbers: list[OnHandSerialNumberReferenceModel] | None
-    _info: dict[str, str] | None
+    id: int
+    catalog_item: CatalogItemReferenceModel
+    warehouse: WarehouseReferenceModel
+    warehouse_bin: WarehouseBinReferenceModel
+    on_hand: int
+    serial_numbers: list[OnHandSerialNumberReferenceModel]
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

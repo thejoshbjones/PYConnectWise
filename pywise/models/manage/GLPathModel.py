@@ -7,15 +7,16 @@ from pywise.models.manage.SystemLocationReferenceModel import SystemLocationRefe
 from pywise.models.manage.MemberReferenceModel import MemberReferenceModel
 
 class GLPathModel(ConnectWiseModel):
-    id: int | None
-    location: SystemLocationReferenceModel | None
-    path: str | None
-    sql_server_name: str | None
-    database_name: str | None
-    last_payment_sync: str | None
-    last_payment_sync_by: MemberReferenceModel | None
-    _info: dict[str, str] | None
+    id: int
+    location: SystemLocationReferenceModel
+    path: str
+    sql_server_name: str
+    database_name: str
+    last_payment_sync: str
+    last_payment_sync_by: MemberReferenceModel
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

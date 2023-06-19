@@ -41,56 +41,57 @@ class GlType(str, Enum):
     PT = 'PT'
 
 class UnpostedExpenseModel(ConnectWiseModel):
-    id: int | None
-    location_id: int | None
-    department_id: int | None
-    company: CompanyReferenceModel | None
-    account_number: str | None
-    credit_account: str | None
-    expense_detail_id: int | None
-    expense_type: ExpenseTypeReferenceModel | None
-    classification: Classification | None
-    gl_type: GlType | None
-    member: MemberReferenceModel | None
-    date_expense: str | None
-    charge_code: ChargeCodeReferenceModel | None
-    charge_description: str | None
-    in_policy: bool | None
-    payment_method: PaymentMethodReferenceModel | None
-    currency: CurrencyReferenceModel | None
-    total: float | None
-    billable_amount: float | None
-    non_billable_amount: float | None
-    agreement: AgreementReferenceModel | None
-    agreement_amount_covered: float | None
-    ticket: TicketReferenceModel | None
-    project: ProjectReferenceModel | None
-    project_phase: ProjectPhaseReferenceModel | None
-    tax_code: TaxCodeReferenceModel | None
-    avalara_tax_flag: bool | None
-    item_taxable_flag: bool | None
-    sales_tax_amount: float | None
-    state_tax_flag: bool | None
-    state_tax_xref: str | None
-    state_tax_amount: float | None
-    county_tax_flag: bool | None
-    county_tax_xref: str | None
-    county_tax_amount: float | None
-    city_tax_flag: bool | None
-    city_tax_xref: str | None
-    city_tax_amount: float | None
-    country_tax_flag: bool | None
-    country_tax_xref: str | None
-    country_tax_amount: float | None
-    composite_tax_flag: bool | None
-    composite_tax_xref: str | None
-    composite_tax_amount: float | None
-    level_six_tax_flag: bool | None
-    level_six_tax_xref: str | None
-    level_six_tax_amount: float | None
-    date_closed: str | None
-    _info: dict[str, str] | None
+    id: int
+    location_id: int
+    department_id: int
+    company: CompanyReferenceModel
+    account_number: str
+    credit_account: str
+    expense_detail_id: int
+    expense_type: ExpenseTypeReferenceModel
+    classification: Classification
+    gl_type: GlType
+    member: MemberReferenceModel
+    date_expense: str
+    charge_code: ChargeCodeReferenceModel
+    charge_description: str
+    in_policy: bool
+    payment_method: PaymentMethodReferenceModel
+    currency: CurrencyReferenceModel
+    total: float
+    billable_amount: float
+    non_billable_amount: float
+    agreement: AgreementReferenceModel
+    agreement_amount_covered: float
+    ticket: TicketReferenceModel
+    project: ProjectReferenceModel
+    project_phase: ProjectPhaseReferenceModel
+    tax_code: TaxCodeReferenceModel
+    avalara_tax_flag: bool
+    item_taxable_flag: bool
+    sales_tax_amount: float
+    state_tax_flag: bool
+    state_tax_xref: str
+    state_tax_amount: float
+    county_tax_flag: bool
+    county_tax_xref: str
+    county_tax_amount: float
+    city_tax_flag: bool
+    city_tax_xref: str
+    city_tax_amount: float
+    country_tax_flag: bool
+    country_tax_xref: str
+    country_tax_amount: float
+    composite_tax_flag: bool
+    composite_tax_xref: str
+    composite_tax_amount: float
+    level_six_tax_flag: bool
+    level_six_tax_xref: str
+    level_six_tax_amount: float
+    date_closed: str
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

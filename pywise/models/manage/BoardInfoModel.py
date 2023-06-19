@@ -20,22 +20,23 @@ class AllSort(str, Enum):
     Descending = 'Descending'
 
 class BoardInfoModel(ConnectWiseModel):
-    id: int | None
-    name: str | None
-    location: SystemLocationReferenceModel | None
-    department: SystemDepartmentReferenceModel | None
-    project_flag: bool | None
-    inactive_flag: bool | None
-    closed_loop_discussions_flag: bool | None
-    closed_loop_internal_analysis_flag: bool | None
-    closed_loop_resolution_flag: bool | None
-    closed_loop_all_flag: bool | None
-    problem_sort: ProblemSort | None
-    internal_analysis_sort: InternalAnalysisSort | None
-    resolution_sort: ResolutionSort | None
-    all_sort: AllSort | None
-    _info: dict[str, str] | None
+    id: int
+    name: str
+    location: SystemLocationReferenceModel
+    department: SystemDepartmentReferenceModel
+    project_flag: bool
+    inactive_flag: bool
+    closed_loop_discussions_flag: bool
+    closed_loop_internal_analysis_flag: bool
+    closed_loop_resolution_flag: bool
+    closed_loop_all_flag: bool
+    problem_sort: ProblemSort
+    internal_analysis_sort: InternalAnalysisSort
+    resolution_sort: ResolutionSort
+    all_sort: AllSort
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

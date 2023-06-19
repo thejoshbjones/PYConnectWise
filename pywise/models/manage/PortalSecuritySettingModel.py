@@ -5,17 +5,18 @@ from pywise.utils.naming import to_camel_case
 from pywise.models.base.connectwise_model import ConnectWiseModel
 
 class PortalSecuritySettingModel(ConnectWiseModel):
-    id: int | None
-    function_identifier: str | None
-    function_description: str | None
-    level_one: bool | None
-    level_two: bool | None
-    level_three: bool | None
-    level_four: bool | None
-    level_five: bool | None
-    level_six: bool | None
-    _info: dict[str, str] | None
+    id: int
+    function_identifier: str
+    function_description: str
+    level_one: bool
+    level_two: bool
+    level_three: bool
+    level_four: bool
+    level_five: bool
+    level_six: bool
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

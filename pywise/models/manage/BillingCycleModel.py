@@ -15,13 +15,14 @@ class BillingOptions(str, Enum):
     Yearly = 'Yearly'
 
 class BillingCycleModel(ConnectWiseModel):
-    id: int | None
-    identifier: str | None
-    name: str | None
-    default_flag: bool | None
-    billing_options: BillingOptions | None
-    _info: dict[str, str] | None
+    id: int
+    identifier: str
+    name: str
+    default_flag: bool
+    billing_options: BillingOptions
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

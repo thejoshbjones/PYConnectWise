@@ -11,12 +11,13 @@ class BillingLevel(str, Enum):
     Summary = 'Summary'
 
 class ManagementBackupModel(ConnectWiseModel):
-    id: int | None
-    type: AgreementTypeReferenceModel | None
-    item: CatalogItemReferenceModel | None
-    billing_level: BillingLevel | None
-    _info: dict[str, str] | None
+    id: int
+    type: AgreementTypeReferenceModel
+    item: CatalogItemReferenceModel
+    billing_level: BillingLevel
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

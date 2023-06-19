@@ -5,12 +5,13 @@ from pywise.utils.naming import to_camel_case
 from pywise.models.base.connectwise_model import ConnectWiseModel
 
 class ManagedDevicesIntegrationInfoModel(ConnectWiseModel):
-    id: int | None
-    name: str | None
-    solution: str | None
-    management_it_setup_type: str | None
-    _info: dict[str, str] | None
+    id: int
+    name: str
+    solution: str
+    management_it_setup_type: str
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

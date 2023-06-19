@@ -5,12 +5,13 @@ from pywise.utils.naming import to_camel_case
 from pywise.models.base.connectwise_model import ConnectWiseModel
 
 class TrackModel(ConnectWiseModel):
-    id: int | None
-    name: str | None
-    inactive_flag: bool | None
-    notify_action_ids: list[int] | None
-    _info: dict[str, str] | None
+    id: int
+    name: str
+    inactive_flag: bool
+    notify_action_ids: list[int]
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

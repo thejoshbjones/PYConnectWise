@@ -29,45 +29,46 @@ from pywise.models.manage.ContactReferenceModel import ContactReferenceModel
 from pywise.models.manage.CustomFieldValueModel import CustomFieldValueModel
 
 class OpportunityModel(ConnectWiseModel):
-    id: int | None
-    name: str | None
-    expected_close_date: str | None
-    type: OpportunityTypeReferenceModel | None
-    stage: OpportunityStageReferenceModel | None
-    status: OpportunityStatusReferenceModel | None
-    priority: OpportunityPriorityReferenceModel | None
-    notes: str | None
-    probability: OpportunityProbabilityReferenceModel | None
-    source: str | None
-    rating: OpportunityRatingReferenceModel | None
-    campaign: CampaignReferenceModel | None
-    primary_sales_rep: MemberReferenceModel | None
-    secondary_sales_rep: MemberReferenceModel | None
-    location_id: int | None
-    business_unit_id: int | None
-    company: CompanyReferenceModel | None
-    contact: ContactReferenceModel | None
-    site: SiteReferenceModel | None
-    customer_p_o: str | None
-    pipeline_change_date: str | None
-    date_became_lead: str | None
-    closed_date: str | None
-    closed_by: MemberReferenceModel | None
-    total_sales_tax: float | None
-    ship_to_company: CompanyReferenceModel | None
-    ship_to_contact: ContactReferenceModel | None
-    ship_to_site: SiteReferenceModel | None
-    bill_to_company: CompanyReferenceModel | None
-    bill_to_contact: ContactReferenceModel | None
-    bill_to_site: SiteReferenceModel | None
-    billing_terms: BillingTermsReferenceModel | None
-    tax_code: TaxCodeReferenceModel | None
-    currency: CurrencyReferenceModel | None
-    company_location_id: int | None
-    technical_contact: ContactReferenceModel | None
-    _info: dict[str, str] | None
-    custom_fields: list[CustomFieldValueModel] | None
+    id: int
+    name: str
+    expected_close_date: str
+    type: OpportunityTypeReferenceModel
+    stage: OpportunityStageReferenceModel
+    status: OpportunityStatusReferenceModel
+    priority: OpportunityPriorityReferenceModel
+    notes: str
+    probability: OpportunityProbabilityReferenceModel
+    source: str
+    rating: OpportunityRatingReferenceModel
+    campaign: CampaignReferenceModel
+    primary_sales_rep: MemberReferenceModel
+    secondary_sales_rep: MemberReferenceModel
+    location_id: int
+    business_unit_id: int
+    company: CompanyReferenceModel
+    contact: ContactReferenceModel
+    site: SiteReferenceModel
+    customer_p_o: str
+    pipeline_change_date: str
+    date_became_lead: str
+    closed_date: str
+    closed_by: MemberReferenceModel
+    total_sales_tax: float
+    ship_to_company: CompanyReferenceModel
+    ship_to_contact: ContactReferenceModel
+    ship_to_site: SiteReferenceModel
+    bill_to_company: CompanyReferenceModel
+    bill_to_contact: ContactReferenceModel
+    bill_to_site: SiteReferenceModel
+    billing_terms: BillingTermsReferenceModel
+    tax_code: TaxCodeReferenceModel
+    currency: CurrencyReferenceModel
+    company_location_id: int
+    technical_contact: ContactReferenceModel
+    _info: dict[str, str]
+    custom_fields: list[CustomFieldValueModel]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

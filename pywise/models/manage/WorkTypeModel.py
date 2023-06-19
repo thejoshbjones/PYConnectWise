@@ -19,24 +19,25 @@ class AccrualType(str, Enum):
     Vacation = 'Vacation'
 
 class WorkTypeModel(ConnectWiseModel):
-    id: int | None
-    name: str | None
-    bill_time: BillTime | None
-    rate_type: RateType | None
-    rate: float | None
-    hours_min: float | None
-    hours_max: float | None
-    round_bill_hours_to: float | None
-    accrual_type: AccrualType | None
-    inactive_flag: bool | None
-    overall_default_flag: bool | None
-    activity_default_flag: bool | None
-    utilization_flag: bool | None
-    cost_multiplier: float | None
-    integration_x_ref: str | None
-    add_all_agreement_exclusions: bool | None
-    _info: dict[str, str] | None
+    id: int
+    name: str
+    bill_time: BillTime
+    rate_type: RateType
+    rate: float
+    hours_min: float
+    hours_max: float
+    round_bill_hours_to: float
+    accrual_type: AccrualType
+    inactive_flag: bool
+    overall_default_flag: bool
+    activity_default_flag: bool
+    utilization_flag: bool
+    cost_multiplier: float
+    integration_x_ref: str
+    add_all_agreement_exclusions: bool
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

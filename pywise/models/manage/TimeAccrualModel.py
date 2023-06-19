@@ -19,26 +19,27 @@ class HolidayAvailableType(str, Enum):
     CalendarYear = 'CalendarYear'
 
 class TimeAccrualModel(ConnectWiseModel):
-    id: int | None
-    location: SystemLocationReferenceModel | None
-    vacation_flag: bool | None
-    vacation_available_type: VacationAvailableType | None
-    vacation_carryover_allowed_flag: bool | None
-    vacation_carryover_limit: float | None
-    sick_flag: bool | None
-    sick_available_type: SickAvailableType | None
-    sick_carryover_allowed_flag: bool | None
-    sick_carryover_limit: float | None
-    pto_flag: bool | None
-    pto_available_type: PtoAvailableType | None
-    pto_carryover_allowed_flag: bool | None
-    pto_carryover_limit: float | None
-    holiday_flag: bool | None
-    holiday_available_type: HolidayAvailableType | None
-    holiday_carryover_allowed_flag: bool | None
-    holiday_carryover_limit: float | None
-    _info: dict[str, str] | None
+    id: int
+    location: SystemLocationReferenceModel
+    vacation_flag: bool
+    vacation_available_type: VacationAvailableType
+    vacation_carryover_allowed_flag: bool
+    vacation_carryover_limit: float
+    sick_flag: bool
+    sick_available_type: SickAvailableType
+    sick_carryover_allowed_flag: bool
+    sick_carryover_limit: float
+    pto_flag: bool
+    pto_available_type: PtoAvailableType
+    pto_carryover_allowed_flag: bool
+    pto_carryover_limit: float
+    holiday_flag: bool
+    holiday_available_type: HolidayAvailableType
+    holiday_carryover_allowed_flag: bool
+    holiday_carryover_limit: float
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

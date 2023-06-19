@@ -6,11 +6,12 @@ from pywise.models.base.connectwise_model import ConnectWiseModel
 from pywise.models.manage.WorkRoleReferenceModel import WorkRoleReferenceModel
 
 class AgreementWorkRoleExclusionModel(ConnectWiseModel):
-    id: int | None
-    work_role: WorkRoleReferenceModel | None
-    agreement_id: int | None
-    _info: dict[str, str] | None
+    id: int
+    work_role: WorkRoleReferenceModel
+    agreement_id: int
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

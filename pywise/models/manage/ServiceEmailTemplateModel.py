@@ -18,24 +18,25 @@ class ServiceEmailTemplateModelType(str, Enum):
     Specific = 'Specific'
 
 class ServiceEmailTemplateModel(ConnectWiseModel):
-    id: int | None
-    type: ServiceEmailTemplateModelType | None
-    service_survey: ServiceSurveyReferenceModel | None
-    service_board: BoardReferenceModel | None
-    use_sender_flag: bool | None
-    first_name: str | None
-    last_name: str | None
-    email_address: str | None
-    subject: str | None
-    body: str | None
-    copy_sender_flag: bool | None
-    tasks_flag: bool | None
-    resource_records_flag: bool | None
-    external_contact_notifications: bool | None
-    internal_contact_notifications: bool | None
-    service_status: ServiceStatusReferenceModel | None
-    _info: dict[str, str] | None
+    id: int
+    type: ServiceEmailTemplateModelType
+    service_survey: ServiceSurveyReferenceModel
+    service_board: BoardReferenceModel
+    use_sender_flag: bool
+    first_name: str
+    last_name: str
+    email_address: str
+    subject: str
+    body: str
+    copy_sender_flag: bool
+    tasks_flag: bool
+    resource_records_flag: bool
+    external_contact_notifications: bool
+    internal_contact_notifications: bool
+    service_status: ServiceStatusReferenceModel
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

@@ -6,10 +6,11 @@ from pywise.models.base.connectwise_model import ConnectWiseModel
 from pywise.models.manage.ValidationErrorModel import ValidationErrorModel
 
 class ErrorResponseMessageModel(ConnectWiseModel):
-    code: str | None
-    message: str | None
-    errors: list[ValidationErrorModel] | None
+    code: str
+    message: str
+    errors: list[ValidationErrorModel]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

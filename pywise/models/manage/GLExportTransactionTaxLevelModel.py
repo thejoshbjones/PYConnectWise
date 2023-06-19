@@ -5,11 +5,12 @@ from pywise.utils.naming import to_camel_case
 from pywise.models.base.connectwise_model import ConnectWiseModel
 
 class GLExportTransactionTaxLevelModel(ConnectWiseModel):
-    tax_amount: float | None
-    taxable_amount: float | None
-    tax_code_xref: str | None
-    tax_level: int | None
+    tax_amount: float
+    taxable_amount: float
+    tax_code_xref: str
+    tax_level: int
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

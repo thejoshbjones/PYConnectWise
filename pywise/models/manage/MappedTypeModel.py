@@ -26,13 +26,14 @@ class GlType(str, Enum):
     PT = 'PT'
 
 class MappedTypeModel(ConnectWiseModel):
-    id: int | None
-    name: str | None
-    table: str | None
-    rec_id_field: str | None
-    gl_type: GlType | None
-    sort_order: int | None
+    id: int
+    name: str
+    table: str
+    rec_id_field: str
+    gl_type: GlType
+    sort_order: int
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

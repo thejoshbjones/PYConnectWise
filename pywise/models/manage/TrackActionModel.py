@@ -26,28 +26,29 @@ class NotifyType(str, Enum):
     CreateServiceTicket = 'CreateServiceTicket'
 
 class TrackActionModel(ConnectWiseModel):
-    id: int | None
-    notify_type: NotifyType | None
-    service_template: ServiceTemplateReferenceModel | None
-    specific_member_to: MemberReferenceModel | None
-    email_recipient: str | None
-    specific_member_from: MemberReferenceModel | None
-    email_from: str | None
-    subject: str | None
-    notes: str | None
-    activity_type: ActivityTypeReferenceModel | None
-    activity_status: ActivityStatusReferenceModel | None
-    company_status: CompanyStatusReferenceModel | None
-    track: TrackReferenceModel | None
-    attached_track: TrackReferenceModel | None
-    group: GroupReferenceModel | None
-    cc_contact: ContactReferenceModel | None
-    bcc_contact: ContactReferenceModel | None
-    days_to_execute: int | None
-    notify_who: NotificationRecipientReferenceModel | None
-    notify_from: NotificationRecipientReferenceModel | None
-    _info: dict[str, str] | None
+    id: int
+    notify_type: NotifyType
+    service_template: ServiceTemplateReferenceModel
+    specific_member_to: MemberReferenceModel
+    email_recipient: str
+    specific_member_from: MemberReferenceModel
+    email_from: str
+    subject: str
+    notes: str
+    activity_type: ActivityTypeReferenceModel
+    activity_status: ActivityStatusReferenceModel
+    company_status: CompanyStatusReferenceModel
+    track: TrackReferenceModel
+    attached_track: TrackReferenceModel
+    group: GroupReferenceModel
+    cc_contact: ContactReferenceModel
+    bcc_contact: ContactReferenceModel
+    days_to_execute: int
+    notify_who: NotificationRecipientReferenceModel
+    notify_from: NotificationRecipientReferenceModel
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

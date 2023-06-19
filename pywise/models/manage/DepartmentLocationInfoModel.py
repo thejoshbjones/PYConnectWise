@@ -7,11 +7,12 @@ from pywise.models.manage.SystemLocationReferenceModel import SystemLocationRefe
 from pywise.models.manage.SystemDepartmentReferenceModel import SystemDepartmentReferenceModel
 
 class DepartmentLocationInfoModel(ConnectWiseModel):
-    id: int | None
-    location: SystemLocationReferenceModel | None
-    department: SystemDepartmentReferenceModel | None
-    _info: dict[str, str] | None
+    id: int
+    location: SystemLocationReferenceModel
+    department: SystemDepartmentReferenceModel
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

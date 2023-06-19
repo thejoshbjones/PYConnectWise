@@ -37,49 +37,50 @@ class AttachConfigurationsFor(str, Enum):
     Contact = 'Contact'
 
 class WorkflowActionModel(ConnectWiseModel):
-    id: int | None
-    notify_type: NotifyTypeReferenceModel | None
-    notify_who: NotificationRecipientReferenceModel | None
-    specific_member_to: MemberReferenceModel | None
-    email_recipient: str | None
-    notify_from: NotificationRecipientReferenceModel | None
-    specific_member_from: MemberReferenceModel | None
-    email_from: str | None
-    cc_contact: ContactReferenceModel | None
-    bcc_contact: ContactReferenceModel | None
-    subject: str | None
-    notes: str | None
-    activity_status: ActivityStatusReferenceModel | None
-    activity_type: ActivityTypeReferenceModel | None
-    attached_track: TrackReferenceModel | None
-    days_to_execute: int | None
-    board: BoardReferenceModel | None
-    board_status: ServiceStatusReferenceModel | None
-    service_type: ServiceTypeReferenceModel | None
-    service_sub_type: ServiceSubTypeReferenceModel | None
-    service_item: ServiceItemReferenceModel | None
-    group: GroupReferenceModel | None
-    service_template: ServiceTemplateReferenceModel | None
-    invoice_min_days: int | None
-    automate_script: AutomateScriptReferenceModel | None
-    script_success_status: ServiceStatusReferenceModel | None
-    script_fail_status: ServiceStatusReferenceModel | None
-    detail_notes_flag: bool | None
-    internal_notes_flag: bool | None
-    audit_notes_flag: bool | None
-    service_priority: PriorityReferenceModel | None
-    update_owner_flag: bool | None
-    sales_order_status: OrderStatusReferenceModel | None
-    project_status: ProjectStatusReferenceModel | None
-    company_status: CompanyStatusReferenceModel | None
-    attachments: list[int] | None
-    service_survey: ServiceSurveyReferenceModel | None
-    specific_team_to: GenericBoardTeamReferenceModel | None
-    attach_configurations_for: AttachConfigurationsFor | None
-    configuration_type: ConfigurationTypeReferenceModel | None
-    configuration_status: ConfigurationStatusReferenceModel | None
-    _info: dict[str, str] | None
+    id: int
+    notify_type: NotifyTypeReferenceModel
+    notify_who: NotificationRecipientReferenceModel
+    specific_member_to: MemberReferenceModel
+    email_recipient: str
+    notify_from: NotificationRecipientReferenceModel
+    specific_member_from: MemberReferenceModel
+    email_from: str
+    cc_contact: ContactReferenceModel
+    bcc_contact: ContactReferenceModel
+    subject: str
+    notes: str
+    activity_status: ActivityStatusReferenceModel
+    activity_type: ActivityTypeReferenceModel
+    attached_track: TrackReferenceModel
+    days_to_execute: int
+    board: BoardReferenceModel
+    board_status: ServiceStatusReferenceModel
+    service_type: ServiceTypeReferenceModel
+    service_sub_type: ServiceSubTypeReferenceModel
+    service_item: ServiceItemReferenceModel
+    group: GroupReferenceModel
+    service_template: ServiceTemplateReferenceModel
+    invoice_min_days: int
+    automate_script: AutomateScriptReferenceModel
+    script_success_status: ServiceStatusReferenceModel
+    script_fail_status: ServiceStatusReferenceModel
+    detail_notes_flag: bool
+    internal_notes_flag: bool
+    audit_notes_flag: bool
+    service_priority: PriorityReferenceModel
+    update_owner_flag: bool
+    sales_order_status: OrderStatusReferenceModel
+    project_status: ProjectStatusReferenceModel
+    company_status: CompanyStatusReferenceModel
+    attachments: list[int]
+    service_survey: ServiceSurveyReferenceModel
+    specific_team_to: GenericBoardTeamReferenceModel
+    attach_configurations_for: AttachConfigurationsFor
+    configuration_type: ConfigurationTypeReferenceModel
+    configuration_status: ConfigurationStatusReferenceModel
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

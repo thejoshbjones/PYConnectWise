@@ -6,10 +6,11 @@ from pywise.models.base.connectwise_model import ConnectWiseModel
 from pywise.models.manage.BillingStatusReferenceModel import BillingStatusReferenceModel
 
 class ClosedInvoiceModel(ConnectWiseModel):
-    id: int | None
-    status: BillingStatusReferenceModel | None
-    _info: dict[str, str] | None
+    id: int
+    status: BillingStatusReferenceModel
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

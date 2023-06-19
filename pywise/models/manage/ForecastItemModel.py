@@ -16,37 +16,38 @@ class ForecastType(str, Enum):
     Service = 'Service'
 
 class ForecastItemModel(ConnectWiseModel):
-    id: int | None
-    forecast_description: str | None
-    opportunity: OpportunityReferenceModel | None
-    quantity: float | None
-    status: OpportunityStatusReferenceModel | None
-    catalog_item: IvItemReferenceModel | None
-    product_description: str | None
-    product_class: str | None
-    revenue: float | None
-    cost: float | None
-    margin: float | None
-    percentage: int | None
-    include_flag: bool | None
-    quote_werks_doc_no: str | None
-    quote_werks_doc_name: str | None
-    quote_werks_quantity: int | None
-    forecast_type: ForecastType | None
-    link_flag: bool | None
-    recurring_revenue: float | None
-    recurring_cost: float | None
-    recurring_date_start: str | None
-    recurring_date_end: str | None
-    bill_cycle: BillingCycleReferenceModel | None
-    cycle_basis: str | None
-    cycles: int | None
-    recurring_flag: bool | None
-    sequence_number: float | None
-    sub_number: int | None
-    taxable_flag: bool | None
-    _info: dict[str, str] | None
+    id: int
+    forecast_description: str
+    opportunity: OpportunityReferenceModel
+    quantity: float
+    status: OpportunityStatusReferenceModel
+    catalog_item: IvItemReferenceModel
+    product_description: str
+    product_class: str
+    revenue: float
+    cost: float
+    margin: float
+    percentage: int
+    include_flag: bool
+    quote_werks_doc_no: str
+    quote_werks_doc_name: str
+    quote_werks_quantity: int
+    forecast_type: ForecastType
+    link_flag: bool
+    recurring_revenue: float
+    recurring_cost: float
+    recurring_date_start: str
+    recurring_date_end: str
+    bill_cycle: BillingCycleReferenceModel
+    cycle_basis: str
+    cycles: int
+    recurring_flag: bool
+    sequence_number: float
+    sub_number: int
+    taxable_flag: bool
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

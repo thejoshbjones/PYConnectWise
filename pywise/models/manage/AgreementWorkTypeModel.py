@@ -22,25 +22,26 @@ class OverageRateType(str, Enum):
     Multiplier = 'Multiplier'
 
 class AgreementWorkTypeModel(ConnectWiseModel):
-    id: int | None
-    work_type: WorkTypeReferenceModel | None
-    location_id: int | None
-    rate_type: RateType | None
-    bill_time: BillTime | None
-    rate: float | None
-    hours_max: float | None
-    hours_min: float | None
-    round_bill_hours: float | None
-    overage_rate: float | None
-    overage_rate_type: OverageRateType | None
-    agreement_limit: float | None
-    site: SiteReferenceModel | None
-    effective_date: str | None
-    ending_date: str | None
-    agreement_id: int | None
-    company: CompanyReferenceModel | None
-    _info: dict[str, str] | None
+    id: int
+    work_type: WorkTypeReferenceModel
+    location_id: int
+    rate_type: RateType
+    bill_time: BillTime
+    rate: float
+    hours_max: float
+    hours_min: float
+    round_bill_hours: float
+    overage_rate: float
+    overage_rate_type: OverageRateType
+    agreement_limit: float
+    site: SiteReferenceModel
+    effective_date: str
+    ending_date: str
+    agreement_id: int
+    company: CompanyReferenceModel
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

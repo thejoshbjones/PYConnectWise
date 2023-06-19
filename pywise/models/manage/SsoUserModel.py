@@ -6,19 +6,20 @@ from pywise.models.base.connectwise_model import ConnectWiseModel
 from pywise.models.manage.MemberReferenceModel import MemberReferenceModel
 
 class SsoUserModel(ConnectWiseModel):
-    id: int | None
-    sso_user_id: str | None
-    user_name: str | None
-    first_name: str | None
-    last_name: str | None
-    email: str | None
-    email_confirmed: bool | None
-    disabled_flag: bool | None
-    linked_flag: bool | None
-    date_entered: str | None
-    last_updated: str | None
-    linked_member: MemberReferenceModel | None
+    id: int
+    sso_user_id: str
+    user_name: str
+    first_name: str
+    last_name: str
+    email: str
+    email_confirmed: bool
+    disabled_flag: bool
+    linked_flag: bool
+    date_entered: str
+    last_updated: str
+    linked_member: MemberReferenceModel
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

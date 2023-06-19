@@ -24,29 +24,30 @@ class EntryTypeIdentifier(str, Enum):
     Option = 'Option'
 
 class UserDefinedFieldModel(ConnectWiseModel):
-    id: int | None
-    pod_id: int | None
-    caption: str | None
-    sequence_number: int | None
-    help_text: str | None
-    field_type_identifier: FieldTypeIdentifier | None
-    number_decimals: int | None
-    entry_type_identifier: EntryTypeIdentifier | None
-    required_flag: bool | None
-    display_on_screen_flag: bool | None
-    read_only_flag: bool | None
-    list_view_flag: bool | None
-    button_url: str | None
-    options: list[UserDefinedFieldOptionModel] | None
-    business_unit_ids: list[int] | None
-    location_ids: list[int] | None
-    add_all_business_units: bool | None
-    remove_all_business_units: bool | None
-    add_all_locations: bool | None
-    remove_all_locations: bool | None
-    date_created: str | None
-    _info: dict[str, str] | None
+    id: int
+    pod_id: int
+    caption: str
+    sequence_number: int
+    help_text: str
+    field_type_identifier: FieldTypeIdentifier
+    number_decimals: int
+    entry_type_identifier: EntryTypeIdentifier
+    required_flag: bool
+    display_on_screen_flag: bool
+    read_only_flag: bool
+    list_view_flag: bool
+    button_url: str
+    options: list[UserDefinedFieldOptionModel]
+    business_unit_ids: list[int]
+    location_ids: list[int]
+    add_all_business_units: bool
+    remove_all_business_units: bool
+    add_all_locations: bool
+    remove_all_locations: bool
+    date_created: str
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

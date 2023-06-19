@@ -7,14 +7,15 @@ from pywise.models.manage.NoteTypeReferenceModel import NoteTypeReferenceModel
 from pywise.models.manage.CompanyReferenceModel import CompanyReferenceModel
 
 class CompanyNoteModel(ConnectWiseModel):
-    id: int | None
-    text: str | None
-    type: NoteTypeReferenceModel | None
-    flagged: bool | None
-    entered_by: str | None
-    company: CompanyReferenceModel | None
-    _info: dict[str, str] | None
+    id: int
+    text: str
+    type: NoteTypeReferenceModel
+    flagged: bool
+    entered_by: str
+    company: CompanyReferenceModel
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

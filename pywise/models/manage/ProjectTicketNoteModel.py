@@ -13,23 +13,24 @@ class NoteType(str, Enum):
     MeetingNote = 'MeetingNote'
 
 class ProjectTicketNoteModel(ConnectWiseModel):
-    id: int | None
-    note_type: NoteType | None
-    ticket: TicketReferenceModel | None
-    text: str | None
-    detail_description_flag: bool | None
-    internal_analysis_flag: bool | None
-    resolution_flag: bool | None
-    time_start: str | None
-    time_end: str | None
-    bundled_flag: bool | None
-    merged_flag: bool | None
-    issue_flag: bool | None
-    original_author: str | None
-    member: MemberReferenceModel | None
-    contact: ContactReferenceModel | None
-    _info: dict[str, str] | None
+    id: int
+    note_type: NoteType
+    ticket: TicketReferenceModel
+    text: str
+    detail_description_flag: bool
+    internal_analysis_flag: bool
+    resolution_flag: bool
+    time_start: str
+    time_end: str
+    bundled_flag: bool
+    merged_flag: bool
+    issue_flag: bool
+    original_author: str
+    member: MemberReferenceModel
+    contact: ContactReferenceModel
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

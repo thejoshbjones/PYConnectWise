@@ -7,12 +7,13 @@ from pywise.models.manage.CompanyStatusReferenceModel import CompanyStatusRefere
 from pywise.models.manage.CompanyReferenceModel import CompanyReferenceModel
 
 class CompanyCustomNoteModel(ConnectWiseModel):
-    id: int | None
-    custom_note: str | None
-    status: CompanyStatusReferenceModel | None
-    company: CompanyReferenceModel | None
-    _info: dict[str, str] | None
+    id: int
+    custom_note: str
+    status: CompanyStatusReferenceModel
+    company: CompanyReferenceModel
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

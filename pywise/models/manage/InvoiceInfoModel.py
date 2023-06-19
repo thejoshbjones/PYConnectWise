@@ -14,18 +14,19 @@ from pywise.models.manage.BillingSetupModel import BillingSetupModel
 from pywise.models.manage.AgreementBillingInfoModel import AgreementBillingInfoModel
 
 class InvoiceInfoModel(ConnectWiseModel):
-    id: int | None
-    invoice: InvoiceModel | None
-    invoice_template: InvoiceTemplateModel | None
-    products: list[ProductItemModel] | None
-    bundled_components_info: list[ProductComponentModel] | None
-    expenses: list[ExpenseEntryModel] | None
-    time_entries: list[TimeEntryModel] | None
-    logo: DocumentInfoModel | None
-    billing_setup: BillingSetupModel | None
-    agreement_billing_info: list[AgreementBillingInfoModel] | None
-    _info: dict[str, str] | None
+    id: int
+    invoice: InvoiceModel
+    invoice_template: InvoiceTemplateModel
+    products: list[ProductItemModel]
+    bundled_components_info: list[ProductComponentModel]
+    expenses: list[ExpenseEntryModel]
+    time_entries: list[TimeEntryModel]
+    logo: DocumentInfoModel
+    billing_setup: BillingSetupModel
+    agreement_billing_info: list[AgreementBillingInfoModel]
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

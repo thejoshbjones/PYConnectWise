@@ -8,14 +8,15 @@ from pywise.models.manage.MemberReferenceModel import MemberReferenceModel
 from pywise.models.manage.CompanyReferenceModel import CompanyReferenceModel
 
 class ManagementReportNotificationModel(ConnectWiseModel):
-    id: int | None
-    notify_who: NotificationRecipientReferenceModel | None
-    member: MemberReferenceModel | None
-    email: str | None
-    global_flag: bool | None
-    company: CompanyReferenceModel | None
-    _info: dict[str, str] | None
+    id: int
+    notify_who: NotificationRecipientReferenceModel
+    member: MemberReferenceModel
+    email: str
+    global_flag: bool
+    company: CompanyReferenceModel
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

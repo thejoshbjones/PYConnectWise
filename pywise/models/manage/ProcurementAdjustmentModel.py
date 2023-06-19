@@ -7,17 +7,18 @@ from pywise.models.manage.AdjustmentTypeReferenceModel import AdjustmentTypeRefe
 from pywise.models.manage.AdjustmentDetailModel import AdjustmentDetailModel
 
 class ProcurementAdjustmentModel(ConnectWiseModel):
-    id: int | None
-    identifier: str | None
-    type: AdjustmentTypeReferenceModel | None
-    reason: str | None
-    notes: str | None
-    closed_flag: bool | None
-    closed_by: str | None
-    closed_date: str | None
-    adjustment_details: list[AdjustmentDetailModel] | None
-    _info: dict[str, str] | None
+    id: int
+    identifier: str
+    type: AdjustmentTypeReferenceModel
+    reason: str
+    notes: str
+    closed_flag: bool
+    closed_by: str
+    closed_date: str
+    adjustment_details: list[AdjustmentDetailModel]
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

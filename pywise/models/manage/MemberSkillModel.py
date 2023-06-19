@@ -13,15 +13,16 @@ class SkillLevel(str, Enum):
     Expert = 'Expert'
 
 class MemberSkillModel(ConnectWiseModel):
-    id: int | None
-    skill: SkillReferenceModel | None
-    skill_level: SkillLevel | None
-    certified_flag: bool | None
-    years_experience: int | None
-    notes: str | None
-    member: MemberReferenceModel | None
-    _info: dict[str, str] | None
+    id: int
+    skill: SkillReferenceModel
+    skill_level: SkillLevel
+    certified_flag: bool
+    years_experience: int
+    notes: str
+    member: MemberReferenceModel
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

@@ -5,9 +5,10 @@ from pywise.utils.naming import to_camel_case
 from pywise.models.base.connectwise_model import ConnectWiseModel
 
 class LinkResolveUrlInfoModel(ConnectWiseModel):
-    reference_id: int | None
-    url: str | None
+    reference_id: int
+    url: str
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

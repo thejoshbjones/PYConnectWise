@@ -6,17 +6,18 @@ from pywise.models.base.connectwise_model import ConnectWiseModel
 from pywise.models.manage.MemberReferenceModel import MemberReferenceModel
 
 class GLExportExpenseOffsetModel(ConnectWiseModel):
-    id: int | None
-    document_date: str | None
-    document_type: str | None
-    account_number: str | None
-    gl_type_id: str | None
-    gl_class: str | None
-    member: MemberReferenceModel | None
-    memo: str | None
-    description: str | None
-    total: float | None
+    id: int
+    document_date: str
+    document_type: str
+    account_number: str
+    gl_type_id: str
+    gl_class: str
+    member: MemberReferenceModel
+    memo: str
+    description: str
+    total: float
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

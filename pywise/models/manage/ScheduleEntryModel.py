@@ -11,30 +11,31 @@ from pywise.models.manage.ScheduleTypeReferenceModel import ScheduleTypeReferenc
 from pywise.models.manage.ScheduleSpanReferenceModel import ScheduleSpanReferenceModel
 
 class ScheduleEntryModel(ConnectWiseModel):
-    id: int | None
-    object_id: int | None
-    name: str | None
-    member: MemberReferenceModel | None
-    where: ServiceLocationReferenceModel | None
-    date_start: str | None
-    date_end: str | None
-    reminder: ReminderReferenceModel | None
-    status: ScheduleStatusReferenceModel | None
-    type: ScheduleTypeReferenceModel | None
-    span: ScheduleSpanReferenceModel | None
-    done_flag: bool | None
-    acknowledged_flag: bool | None
-    owner_flag: bool | None
-    meeting_flag: bool | None
-    allow_schedule_conflicts_flag: bool | None
-    add_member_to_project_flag: bool | None
-    project_role_id: int | None
-    mobile_guid: str | None
-    acknowledged_date: str | None
-    close_date: str | None
-    hours: float | None
-    _info: dict[str, str] | None
+    id: int
+    object_id: int
+    name: str
+    member: MemberReferenceModel
+    where: ServiceLocationReferenceModel
+    date_start: str
+    date_end: str
+    reminder: ReminderReferenceModel
+    status: ScheduleStatusReferenceModel
+    type: ScheduleTypeReferenceModel
+    span: ScheduleSpanReferenceModel
+    done_flag: bool
+    acknowledged_flag: bool
+    owner_flag: bool
+    meeting_flag: bool
+    allow_schedule_conflicts_flag: bool
+    add_member_to_project_flag: bool
+    project_role_id: int
+    mobile_guid: str
+    acknowledged_date: str
+    close_date: str
+    hours: float
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

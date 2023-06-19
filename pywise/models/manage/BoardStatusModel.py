@@ -15,23 +15,24 @@ class EscalationStatus(str, Enum):
     NoEscalation = 'NoEscalation'
 
 class BoardStatusModel(ConnectWiseModel):
-    id: int | None
-    name: str | None
-    board: BoardReferenceModel | None
-    sort_order: int | None
-    display_on_board: bool | None
-    inactive: bool | None
-    closed_status: bool | None
-    time_entry_not_allowed: bool | None
-    default_flag: bool | None
-    escalation_status: EscalationStatus | None
-    customer_portal_description: str | None
-    customer_portal_flag: bool | None
-    email_template: ServiceEmailTemplateReferenceModel | None
-    status_indicator: StatusIndicatorReferenceModel | None
-    custom_status_indicator_name: str | None
-    _info: dict[str, str] | None
+    id: int
+    name: str
+    board: BoardReferenceModel
+    sort_order: int
+    display_on_board: bool
+    inactive: bool
+    closed_status: bool
+    time_entry_not_allowed: bool
+    default_flag: bool
+    escalation_status: EscalationStatus
+    customer_portal_description: str
+    customer_portal_flag: bool
+    email_template: ServiceEmailTemplateReferenceModel
+    status_indicator: StatusIndicatorReferenceModel
+    custom_status_indicator_name: str
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

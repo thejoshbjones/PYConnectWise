@@ -35,55 +35,56 @@ class Impact(str, Enum):
     High = 'High'
 
 class ServiceTemplateModel(ConnectWiseModel):
-    id: int | None
-    name: str | None
-    board: BoardReferenceModel | None
-    type: ServiceTypeReferenceModel | None
-    item: ServiceItemReferenceModel | None
-    subtype: ServiceSubTypeReferenceModel | None
-    service_location: ServiceLocationReferenceModel | None
-    status: ServiceStatusReferenceModel | None
-    source: ServiceSourceReferenceModel | None
-    priority: PriorityReferenceModel | None
-    team: ServiceTeamReferenceModel | None
-    company: CompanyReferenceModel | None
-    contact: ContactReferenceModel | None
-    site: SiteReferenceModel | None
-    assigned_notify_flag: bool | None
-    location: SystemLocationReferenceModel | None
-    department: SystemDepartmentReferenceModel | None
-    summary: str | None
-    problem: str | None
-    hours_budget: float | None
-    internal_analysis: str | None
-    time_billable_flag: bool | None
-    expense_billable_flag: bool | None
-    purchase_order_number: str | None
-    reference: str | None
-    bill_complete__flag: bool | None
-    bill_service_separately_flag: bool | None
-    billing_amount: float | None
-    bill_unapproved_time_and_expenses_flag: bool | None
-    override_flag: bool | None
-    time_invoice_flag: bool | None
-    expense_invoice_flag: bool | None
-    product_invoice_flag: bool | None
-    agreement: AgreementReferenceModel | None
-    billing_method: BillingMethod | None
-    severity: Severity | None
-    impact: Impact | None
-    assigned_by: MemberReferenceModel | None
-    schedule_days_before: int | None
-    service_days_before: int | None
-    attach_schedule_to_new_service_flag: bool | None
-    template_flag: bool | None
-    email_contact_flag: bool | None
-    email_resource_flag: bool | None
-    email_c_c_flag: bool | None
-    email_c_c: str | None
-    restrict_downpayment_flag: bool | None
-    _info: dict[str, str] | None
+    id: int
+    name: str
+    board: BoardReferenceModel
+    type: ServiceTypeReferenceModel
+    item: ServiceItemReferenceModel
+    subtype: ServiceSubTypeReferenceModel
+    service_location: ServiceLocationReferenceModel
+    status: ServiceStatusReferenceModel
+    source: ServiceSourceReferenceModel
+    priority: PriorityReferenceModel
+    team: ServiceTeamReferenceModel
+    company: CompanyReferenceModel
+    contact: ContactReferenceModel
+    site: SiteReferenceModel
+    assigned_notify_flag: bool
+    location: SystemLocationReferenceModel
+    department: SystemDepartmentReferenceModel
+    summary: str
+    problem: str
+    hours_budget: float
+    internal_analysis: str
+    time_billable_flag: bool
+    expense_billable_flag: bool
+    purchase_order_number: str
+    reference: str
+    bill_complete__flag: bool
+    bill_service_separately_flag: bool
+    billing_amount: float
+    bill_unapproved_time_and_expenses_flag: bool
+    override_flag: bool
+    time_invoice_flag: bool
+    expense_invoice_flag: bool
+    product_invoice_flag: bool
+    agreement: AgreementReferenceModel
+    billing_method: BillingMethod
+    severity: Severity
+    impact: Impact
+    assigned_by: MemberReferenceModel
+    schedule_days_before: int
+    service_days_before: int
+    attach_schedule_to_new_service_flag: bool
+    template_flag: bool
+    email_contact_flag: bool
+    email_resource_flag: bool
+    email_c_c_flag: bool
+    email_c_c: str
+    restrict_downpayment_flag: bool
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

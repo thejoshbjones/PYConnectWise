@@ -5,16 +5,17 @@ from pywise.utils.naming import to_camel_case
 from pywise.models.base.connectwise_model import ConnectWiseModel
 
 class GLExportInventoryTransferOffsetModel(ConnectWiseModel):
-    id: int | None
-    document_type: str | None
-    document_date: str | None
-    account_number: str | None
-    gl_class: str | None
-    total: float | None
-    memo: str | None
-    description: str | None
-    gl_type_id: str | None
+    id: int
+    document_type: str
+    document_date: str
+    account_number: str
+    gl_class: str
+    total: float
+    memo: str
+    description: str
+    gl_type_id: str
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

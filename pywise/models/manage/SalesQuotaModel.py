@@ -11,40 +11,41 @@ from pywise.models.manage.ProductSubCategoryReferenceModel import ProductSubCate
 from pywise.models.manage.CurrencyReferenceModel import CurrencyReferenceModel
 
 class SalesQuotaModel(ConnectWiseModel):
-    id: int | None
-    member: MemberReferenceModel | None
-    forecast_year: int | None
-    location: SystemLocationReferenceModel | None
-    department: SystemDepartmentReferenceModel | None
-    category: ProductCategoryReferenceModel | None
-    sub_category: ProductSubCategoryReferenceModel | None
-    january_revenue: float | None
-    january_margin: float | None
-    february_revenue: float | None
-    february_margin: float | None
-    march_revenue: float | None
-    march_margin: float | None
-    april_revenue: float | None
-    april_margin: float | None
-    may_revenue: float | None
-    may_margin: float | None
-    june_revenue: float | None
-    june_margin: float | None
-    july_revenue: float | None
-    july_margin: float | None
-    august_revenue: float | None
-    august_margin: float | None
-    september_revenue: float | None
-    september_margin: float | None
-    october_revenue: float | None
-    october_margin: float | None
-    november_revenue: float | None
-    november_margin: float | None
-    december_revenue: float | None
-    december_margin: float | None
-    currency: CurrencyReferenceModel | None
-    _info: dict[str, str] | None
+    id: int
+    member: MemberReferenceModel
+    forecast_year: int
+    location: SystemLocationReferenceModel
+    department: SystemDepartmentReferenceModel
+    category: ProductCategoryReferenceModel
+    sub_category: ProductSubCategoryReferenceModel
+    january_revenue: float
+    january_margin: float
+    february_revenue: float
+    february_margin: float
+    march_revenue: float
+    march_margin: float
+    april_revenue: float
+    april_margin: float
+    may_revenue: float
+    may_margin: float
+    june_revenue: float
+    june_margin: float
+    july_revenue: float
+    july_margin: float
+    august_revenue: float
+    august_margin: float
+    september_revenue: float
+    september_margin: float
+    october_revenue: float
+    october_margin: float
+    november_revenue: float
+    november_margin: float
+    december_revenue: float
+    december_margin: float
+    currency: CurrencyReferenceModel
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

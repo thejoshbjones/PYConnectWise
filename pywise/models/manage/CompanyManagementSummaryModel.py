@@ -14,42 +14,43 @@ class DeviceType(str, Enum):
     Workstations = 'Workstations'
 
 class CompanyManagementSummaryModel(ConnectWiseModel):
-    id: int | None
-    management_solution: ManagementSolutionReferenceModel | None
-    group_identifier: str | None
-    device_type: DeviceType | None
-    agreement: AgreementReferenceModel | None
-    snmp_machines: int | None
-    total_workstations: int | None
-    total_servers: int | None
-    total_windows_servers: int | None
-    total_windows_workstations: int | None
-    total_managed_machines: int | None
-    servers_offline: int | None
-    servers_disk_space_low: int | None
-    failed_backup_jobs: int | None
-    total_notifications: int | None
-    successful_backup_jobs: int | None
-    server_availability: int | None
-    viruses_removed: int | None
-    spyware_items_removed: int | None
-    windows_patches_installed: int | None
-    disk_cleanups: int | None
-    disk_defragmentations: int | None
-    fully_patched_machines: int | None
-    missing_one_two_patches_machines: int | None
-    missing_three_five_patches_machines: int | None
-    missing_more_five_patches_machines: int | None
-    missing_unscanned_patches_machines: int | None
-    alerts_generated: str | None
-    internet_connectivity: float | None
-    disk_space_cleaned_mb: int | None
-    missing_security_patches: str | None
-    cpu_utilization: float | None
-    memory_utilization: float | None
-    company: CompanyReferenceModel | None
-    _info: dict[str, str] | None
+    id: int
+    management_solution: ManagementSolutionReferenceModel
+    group_identifier: str
+    device_type: DeviceType
+    agreement: AgreementReferenceModel
+    snmp_machines: int
+    total_workstations: int
+    total_servers: int
+    total_windows_servers: int
+    total_windows_workstations: int
+    total_managed_machines: int
+    servers_offline: int
+    servers_disk_space_low: int
+    failed_backup_jobs: int
+    total_notifications: int
+    successful_backup_jobs: int
+    server_availability: int
+    viruses_removed: int
+    spyware_items_removed: int
+    windows_patches_installed: int
+    disk_cleanups: int
+    disk_defragmentations: int
+    fully_patched_machines: int
+    missing_one_two_patches_machines: int
+    missing_three_five_patches_machines: int
+    missing_more_five_patches_machines: int
+    missing_unscanned_patches_machines: int
+    alerts_generated: str
+    internet_connectivity: float
+    disk_space_cleaned_mb: int
+    missing_security_patches: str
+    cpu_utilization: float
+    memory_utilization: float
+    company: CompanyReferenceModel
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

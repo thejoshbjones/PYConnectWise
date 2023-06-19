@@ -5,18 +5,19 @@ from pywise.utils.naming import to_camel_case
 from pywise.models.base.connectwise_model import ConnectWiseModel
 
 class FormSubmittedModel(ConnectWiseModel):
-    id: int | None
-    campaign_id: int | None
-    contact_id: int | None
-    date_submitted: str | None
-    url: str | None
-    query_string: str | None
-    page_type: str | None
-    page_sub_type: str | None
-    topic: str | None
-    version: str | None
-    status: str | None
+    id: int
+    campaign_id: int
+    contact_id: int
+    date_submitted: str
+    url: str
+    query_string: str
+    page_type: str
+    page_sub_type: str
+    topic: str
+    version: str
+    status: str
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

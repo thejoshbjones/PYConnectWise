@@ -18,19 +18,20 @@ class BatchSchedule(str, Enum):
     SlaHours = 'SlaHours'
 
 class WorkflowModel(ConnectWiseModel):
-    id: int | None
-    name: str | None
-    table_type: WorkflowTableTypeReferenceModel | None
-    location: SystemLocationReferenceModel | None
-    department: SystemDepartmentReferenceModel | None
-    activate_flag: bool | None
-    batch_interval: int | None
-    batch_frequency_unit: BatchFrequencyUnit | None
-    batch_last_ran: str | None
-    batch_schedule: BatchSchedule | None
-    board: BoardReferenceModel | None
-    _info: dict[str, str] | None
+    id: int
+    name: str
+    table_type: WorkflowTableTypeReferenceModel
+    location: SystemLocationReferenceModel
+    department: SystemDepartmentReferenceModel
+    activate_flag: bool
+    batch_interval: int
+    batch_frequency_unit: BatchFrequencyUnit
+    batch_last_ran: str
+    batch_schedule: BatchSchedule
+    board: BoardReferenceModel
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

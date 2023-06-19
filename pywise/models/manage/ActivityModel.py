@@ -20,32 +20,33 @@ from pywise.models.manage.CurrencyReferenceModel import CurrencyReferenceModel
 from pywise.models.manage.CustomFieldValueModel import CustomFieldValueModel
 
 class ActivityModel(ConnectWiseModel):
-    id: int | None
-    name: str | None
-    type: ActivityTypeReferenceModel | None
-    company: CompanyReferenceModel | None
-    contact: ContactReferenceModel | None
-    phone_number: str | None
-    email: str | None
-    status: ActivityStatusReferenceModel | None
-    opportunity: OpportunityReferenceModel | None
-    ticket: TicketReferenceModel | None
-    agreement: AgreementReferenceModel | None
-    campaign: CampaignReferenceModel | None
-    notes: str | None
-    date_start: str | None
-    date_end: str | None
-    assigned_by: MemberReferenceModel | None
-    assign_to: MemberReferenceModel | None
-    schedule_status: ScheduleStatusReferenceModel | None
-    reminder: ReminderReferenceModel | None
-    where: ServiceLocationReferenceModel | None
-    notify_flag: bool | None
-    mobile_guid: str | None
-    currency: CurrencyReferenceModel | None
-    _info: dict[str, str] | None
-    custom_fields: list[CustomFieldValueModel] | None
+    id: int
+    name: str
+    type: ActivityTypeReferenceModel
+    company: CompanyReferenceModel
+    contact: ContactReferenceModel
+    phone_number: str
+    email: str
+    status: ActivityStatusReferenceModel
+    opportunity: OpportunityReferenceModel
+    ticket: TicketReferenceModel
+    agreement: AgreementReferenceModel
+    campaign: CampaignReferenceModel
+    notes: str
+    date_start: str
+    date_end: str
+    assigned_by: MemberReferenceModel
+    assign_to: MemberReferenceModel
+    schedule_status: ScheduleStatusReferenceModel
+    reminder: ReminderReferenceModel
+    where: ServiceLocationReferenceModel
+    notify_flag: bool
+    mobile_guid: str
+    currency: CurrencyReferenceModel
+    _info: dict[str, str]
+    custom_fields: list[CustomFieldValueModel]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

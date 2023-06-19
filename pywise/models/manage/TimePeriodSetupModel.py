@@ -15,21 +15,22 @@ class TimePeriodSetupModelType(str, Enum):
     Monthly = 'Monthly'
 
 class TimePeriodSetupModel(ConnectWiseModel):
-    id: int | None
-    period_apply_to: PeriodApplyTo | None
-    year: int | None
-    number_future_periods: int | None
-    type: TimePeriodSetupModelType | None
-    description: str | None
-    first_period_end_date: str | None
-    monthly_period_ends: int | None
-    semi_monthly_first_period: int | None
-    semi_monthly_second_period: int | None
-    semi_monthly_last_day_flag: bool | None
-    last_day_flag: bool | None
-    days_past_end_date: int | None
-    _info: dict[str, str] | None
+    id: int
+    period_apply_to: PeriodApplyTo
+    year: int
+    number_future_periods: int
+    type: TimePeriodSetupModelType
+    description: str
+    first_period_end_date: str
+    monthly_period_ends: int
+    semi_monthly_first_period: int
+    semi_monthly_second_period: int
+    semi_monthly_last_day_flag: bool
+    last_day_flag: bool
+    days_past_end_date: int
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

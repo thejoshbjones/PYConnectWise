@@ -7,14 +7,15 @@ from pywise.models.manage.ConfigurationTypeReferenceModel import ConfigurationTy
 from pywise.models.manage.ConfigurationTypeQuestionReferenceModel import ConfigurationTypeQuestionReferenceModel
 
 class ConfigurationTypeQuestionValueModel(ConnectWiseModel):
-    id: int | None
-    configuration_type: ConfigurationTypeReferenceModel | None
-    question: ConfigurationTypeQuestionReferenceModel | None
-    value: str | None
-    default_flag: bool | None
-    inactive_flag: bool | None
-    _info: dict[str, str] | None
+    id: int
+    configuration_type: ConfigurationTypeReferenceModel
+    question: ConfigurationTypeQuestionReferenceModel
+    value: str
+    default_flag: bool
+    inactive_flag: bool
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

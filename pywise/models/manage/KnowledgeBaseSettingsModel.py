@@ -6,11 +6,12 @@ from pywise.models.base.connectwise_model import ConnectWiseModel
 from pywise.models.manage.MemberReferenceModel import MemberReferenceModel
 
 class KnowledgeBaseSettingsModel(ConnectWiseModel):
-    id: int | None
-    require_approval: bool | None
-    default_approver: MemberReferenceModel | None
-    _info: dict[str, str] | None
+    id: int
+    require_approval: bool
+    default_approver: MemberReferenceModel
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

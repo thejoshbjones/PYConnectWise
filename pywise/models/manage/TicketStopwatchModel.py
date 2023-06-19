@@ -22,32 +22,33 @@ class Status(str, Enum):
     Stopped = 'Stopped'
 
 class TicketStopwatchModel(ConnectWiseModel):
-    _info: dict[str, str] | None
-    agreement: AgreementReferenceModel | None
-    billable_option: BillableOption | None
-    business_unit_id: int | None
-    date_entered: str | None
-    end_time: str | None
-    id: int | None
-    internal_notes: str | None
-    location_id: int | None
-    member: MemberReferenceModel | None
-    mobile_guid: str | None
-    notes: str | None
-    service_status: ServiceStatusReferenceModel | None
-    start_time: str | None
-    status: Status | None
-    ticket: TicketReferenceModel | None
-    ticket_mobile_guid: str | None
-    total_pause_time: int | None
-    work_role: WorkRoleReferenceModel | None
-    work_type: WorkTypeReferenceModel | None
-    show_notes_in_discussion_flag: bool | None
-    show_notes_in_internal_flag: bool | None
-    show_notes_in_resolution_flag: bool | None
-    email_notes_to_contact_flag: bool | None
-    email_notes_to_resources_flag: bool | None
+    _info: dict[str, str]
+    agreement: AgreementReferenceModel
+    billable_option: BillableOption
+    business_unit_id: int
+    date_entered: str
+    end_time: str
+    id: int
+    internal_notes: str
+    location_id: int
+    member: MemberReferenceModel
+    mobile_guid: str
+    notes: str
+    service_status: ServiceStatusReferenceModel
+    start_time: str
+    status: Status
+    ticket: TicketReferenceModel
+    ticket_mobile_guid: str
+    total_pause_time: int
+    work_role: WorkRoleReferenceModel
+    work_type: WorkTypeReferenceModel
+    show_notes_in_discussion_flag: bool
+    show_notes_in_internal_flag: bool
+    show_notes_in_resolution_flag: bool
+    email_notes_to_contact_flag: bool
+    email_notes_to_resources_flag: bool
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

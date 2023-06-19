@@ -9,16 +9,17 @@ from pywise.models.manage.IvItemReferenceModel import IvItemReferenceModel
 from pywise.models.manage.ConfigurationTypeReferenceModel import ConfigurationTypeReferenceModel
 
 class ManagedDevicesIntegrationCrossReferenceModel(ConnectWiseModel):
-    id: int | None
-    managed_devices_integration: ManagedDevicesIntegrationReferenceModel | None
-    vendor_type: str | None
-    vendor_level: str | None
-    agreement_type: AgreementTypeReferenceModel | None
-    product: IvItemReferenceModel | None
-    configuration_type: ConfigurationTypeReferenceModel | None
-    inactive_flag: bool | None
-    _info: dict[str, str] | None
+    id: int
+    managed_devices_integration: ManagedDevicesIntegrationReferenceModel
+    vendor_type: str
+    vendor_level: str
+    agreement_type: AgreementTypeReferenceModel
+    product: IvItemReferenceModel
+    configuration_type: ConfigurationTypeReferenceModel
+    inactive_flag: bool
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

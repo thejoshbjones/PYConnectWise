@@ -17,13 +17,14 @@ class LogType(str, Enum):
     Info = 'Info'
 
 class ManagedDevicesIntegrationNotificationModel(ConnectWiseModel):
-    id: int | None
-    managed_devices_integration: ManagedDevicesIntegrationReferenceModel | None
-    notify_who: NotificationRecipientReferenceModel | None
-    member: MemberReferenceModel | None
-    log_type: LogType | None
-    _info: dict[str, str] | None
+    id: int
+    managed_devices_integration: ManagedDevicesIntegrationReferenceModel
+    notify_who: NotificationRecipientReferenceModel
+    member: MemberReferenceModel
+    log_type: LogType
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

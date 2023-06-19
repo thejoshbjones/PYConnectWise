@@ -7,13 +7,14 @@ from pywise.models.manage.BoardReferenceModel import BoardReferenceModel
 from pywise.models.manage.ServiceTypeReferenceModel import ServiceTypeReferenceModel
 
 class BoardDefaultModel(ConnectWiseModel):
-    id: int | None
-    board: BoardReferenceModel | None
-    service_type: ServiceTypeReferenceModel | None
-    default_flag: bool | None
-    agreement_id: int | None
-    _info: dict[str, str] | None
+    id: int
+    board: BoardReferenceModel
+    service_type: ServiceTypeReferenceModel
+    default_flag: bool
+    agreement_id: int
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

@@ -9,28 +9,29 @@ class SsoType(str, Enum):
     SAML = 'SAML'
 
 class SsoConfigurationModel(ConnectWiseModel):
-    id: int | None
-    name: str | None
-    sso_type: SsoType | None
-    inactive_flag: bool | None
-    saml_entity_id: str | None
-    saml_sign_in_url: str | None
-    saml_idp_certificate: str | None
-    saml_certificate_name: str | None
-    saml_certificate_issued_to: str | None
-    saml_certificate_thumbprint: str | None
-    saml_certificate_valid_from: str | None
-    saml_certificate_valid_to: str | None
-    location_ids: list[int] | None
-    client_id: str | None
-    sts_base_url: str | None
-    sts_user_admin_url: str | None
-    token: str | None
-    submitted_member_count: int | None
-    all_members_submitted: bool | None
-    _info: dict[str, str] | None
-    is_sso_on_by_default: bool | None
+    id: int
+    name: str
+    sso_type: SsoType
+    inactive_flag: bool
+    saml_entity_id: str
+    saml_sign_in_url: str
+    saml_idp_certificate: str
+    saml_certificate_name: str
+    saml_certificate_issued_to: str
+    saml_certificate_thumbprint: str
+    saml_certificate_valid_from: str
+    saml_certificate_valid_to: str
+    location_ids: list[int]
+    client_id: str
+    sts_base_url: str
+    sts_user_admin_url: str
+    token: str
+    submitted_member_count: int
+    all_members_submitted: bool
+    _info: dict[str, str]
+    is_sso_on_by_default: bool
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True

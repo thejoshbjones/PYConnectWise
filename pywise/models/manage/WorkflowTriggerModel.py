@@ -6,15 +6,16 @@ from pywise.models.base.connectwise_model import ConnectWiseModel
 from pywise.models.manage.UserDefinedFieldReferenceModel import UserDefinedFieldReferenceModel
 
 class WorkflowTriggerModel(ConnectWiseModel):
-    id: int | None
-    name: str | None
-    description: str | None
-    has_options_flag: bool | None
-    has_operator_flag: bool | None
-    custom_field: UserDefinedFieldReferenceModel | None
-    expected_type: str | None
-    _info: dict[str, str] | None
+    id: int
+    name: str
+    description: str
+    has_options_flag: bool
+    has_operator_flag: bool
+    custom_field: UserDefinedFieldReferenceModel
+    expected_type: str
+    _info: dict[str, str]
 
     class Config:
         alias_generator = to_camel_case
         allow_population_by_field_name = True
+        use_enum_values = True
