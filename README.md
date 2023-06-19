@@ -53,7 +53,8 @@ How-to:
 
 - - - - 
 # Install
-```pip install pyconnectwise```
+
+Open a terminal and run ```pip install pyconnectwise```
 
 - - - - 
 # Initialize API client
