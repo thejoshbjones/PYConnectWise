@@ -9,6 +9,7 @@ class SystemImportMassMaintenanceIdEndpoint(ConnectWiseEndpoint):
         super().__init__(client, "{id}", parent_endpoint=parent_endpoint)
         
     
+    
     def post(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> ImportMassMaintenanceModel:
         """
         Performs a POST request against the /system/importMassMaintenance/{id} endpoint.

@@ -18,7 +18,16 @@ class SystemUserDefinedFieldsEndpoint(ConnectWiseEndpoint):
             SystemUserDefinedFieldsInfoEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> SystemUserDefinedFieldsIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized SystemUserDefinedFieldsIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            SystemUserDefinedFieldsIdEndpoint: The initialized SystemUserDefinedFieldsIdEndpoint object.
+        """
         child = SystemUserDefinedFieldsIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

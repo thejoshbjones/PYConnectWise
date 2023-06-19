@@ -9,6 +9,7 @@ class CompanyEntityTypesIdEndpoint(ConnectWiseEndpoint):
         super().__init__(client, "{id}", parent_endpoint=parent_endpoint)
         
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[EntityTypeModel]:
         """
         Performs a GET request against the /company/entityTypes/{id} endpoint and returns an initialized PaginatedResponse object.

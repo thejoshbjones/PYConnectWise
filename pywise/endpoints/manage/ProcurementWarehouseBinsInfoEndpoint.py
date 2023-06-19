@@ -13,6 +13,7 @@ class ProcurementWarehouseBinsInfoEndpoint(ConnectWiseEndpoint):
             ProcurementWarehouseBinsInfoCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[WarehouseBinInfoModel]:
         """
         Performs a GET request against the /procurement/warehouseBins/info endpoint and returns an initialized PaginatedResponse object.

@@ -13,6 +13,7 @@ class CompanyContactsDepartmentsInfoEndpoint(ConnectWiseEndpoint):
             CompanyContactsDepartmentsInfoCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[ContactDepartmentInfoModel]:
         """
         Performs a GET request against the /company/contacts/departments/info endpoint and returns an initialized PaginatedResponse object.

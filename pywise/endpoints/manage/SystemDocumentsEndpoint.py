@@ -18,7 +18,16 @@ class SystemDocumentsEndpoint(ConnectWiseEndpoint):
             SystemDocumentsUploadsampleEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> SystemDocumentsIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized SystemDocumentsIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            SystemDocumentsIdEndpoint: The initialized SystemDocumentsIdEndpoint object.
+        """
         child = SystemDocumentsIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

@@ -13,6 +13,7 @@ class SystemMembersTypesInfoEndpoint(ConnectWiseEndpoint):
             SystemMembersTypesInfoCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[MemberTypeInfoModel]:
         """
         Performs a GET request against the /system/members/types/info endpoint and returns an initialized PaginatedResponse object.

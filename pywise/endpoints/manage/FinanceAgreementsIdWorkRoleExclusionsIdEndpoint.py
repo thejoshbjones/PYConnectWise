@@ -8,6 +8,7 @@ class FinanceAgreementsIdWorkRoleExclusionsIdEndpoint(ConnectWiseEndpoint):
         super().__init__(client, "{id}", parent_endpoint=parent_endpoint)
         
     
+    
     def delete(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> GenericMessageModel:
         """
         Performs a DELETE request against the /finance/agreements/{parentId}/workRoleExclusions/{id} endpoint.

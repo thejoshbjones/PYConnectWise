@@ -14,7 +14,16 @@ class SystemDepartmentsIdLocationsEndpoint(ConnectWiseEndpoint):
             SystemDepartmentsIdLocationsCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> SystemDepartmentsIdLocationsIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized SystemDepartmentsIdLocationsIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            SystemDepartmentsIdLocationsIdEndpoint: The initialized SystemDepartmentsIdLocationsIdEndpoint object.
+        """
         child = SystemDepartmentsIdLocationsIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

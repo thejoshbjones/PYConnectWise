@@ -18,7 +18,16 @@ class FinanceInvoiceEmailTemplatesEndpoint(ConnectWiseEndpoint):
             FinanceInvoiceEmailTemplatesInfoEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> FinanceInvoiceEmailTemplatesIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized FinanceInvoiceEmailTemplatesIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            FinanceInvoiceEmailTemplatesIdEndpoint: The initialized FinanceInvoiceEmailTemplatesIdEndpoint object.
+        """
         child = FinanceInvoiceEmailTemplatesIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

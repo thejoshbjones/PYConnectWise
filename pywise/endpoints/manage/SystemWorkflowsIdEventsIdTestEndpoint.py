@@ -8,3 +8,4 @@ class SystemWorkflowsIdEventsIdTestEndpoint(ConnectWiseEndpoint):
         super().__init__(client, "test", parent_endpoint=parent_endpoint)
         
     
+    

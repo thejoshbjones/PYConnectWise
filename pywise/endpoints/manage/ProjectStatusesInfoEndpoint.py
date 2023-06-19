@@ -13,6 +13,7 @@ class ProjectStatusesInfoEndpoint(ConnectWiseEndpoint):
             ProjectStatusesInfoCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[ProjectStatusInfoModel]:
         """
         Performs a GET request against the /project/statuses/info endpoint and returns an initialized PaginatedResponse object.

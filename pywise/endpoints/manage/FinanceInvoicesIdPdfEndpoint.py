@@ -8,6 +8,7 @@ class FinanceInvoicesIdPdfEndpoint(ConnectWiseEndpoint):
         super().__init__(client, "pdf", parent_endpoint=parent_endpoint)
         
     
+    
     def get(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> GenericMessageModel:
         """
         Performs a GET request against the /finance/invoices/{id}/pdf endpoint.

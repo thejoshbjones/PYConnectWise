@@ -18,7 +18,16 @@ class ServiceBoardsIdSubtypesEndpoint(ConnectWiseEndpoint):
             ServiceBoardsIdSubtypesInfoEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> ServiceBoardsIdSubtypesIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized ServiceBoardsIdSubtypesIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            ServiceBoardsIdSubtypesIdEndpoint: The initialized ServiceBoardsIdSubtypesIdEndpoint object.
+        """
         child = ServiceBoardsIdSubtypesIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

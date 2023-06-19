@@ -13,6 +13,7 @@ class CompanyContactsTypesCountEndpoint(ConnectWiseEndpoint):
             CompanyContactsTypesCountInfoEndpoint(client, parent_endpoint=self)
         )
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[CountModel]:
         """
         Performs a GET request against the /company/contacts/types/count endpoint and returns an initialized PaginatedResponse object.

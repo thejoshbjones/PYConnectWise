@@ -14,7 +14,16 @@ class FinanceDeliveryMethodsEndpoint(ConnectWiseEndpoint):
             FinanceDeliveryMethodsCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> FinanceDeliveryMethodsIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized FinanceDeliveryMethodsIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            FinanceDeliveryMethodsIdEndpoint: The initialized FinanceDeliveryMethodsIdEndpoint object.
+        """
         child = FinanceDeliveryMethodsIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

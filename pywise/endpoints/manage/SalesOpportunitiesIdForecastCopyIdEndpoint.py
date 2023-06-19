@@ -9,6 +9,7 @@ class SalesOpportunitiesIdForecastCopyIdEndpoint(ConnectWiseEndpoint):
         super().__init__(client, "{id}", parent_endpoint=parent_endpoint)
         
     
+    
     def post(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> SuccessResponseModel:
         """
         Performs a POST request against the /sales/opportunities/{parentId}/forecast/copy/{id} endpoint.

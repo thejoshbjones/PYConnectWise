@@ -17,6 +17,7 @@ class CompanyConfigurationsStatusesIdEndpoint(ConnectWiseEndpoint):
             CompanyConfigurationsStatusesIdUsagesEndpoint(client, parent_endpoint=self)
         )
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[ConfigurationStatusModel]:
         """
         Performs a GET request against the /company/configurations/statuses/{id} endpoint and returns an initialized PaginatedResponse object.

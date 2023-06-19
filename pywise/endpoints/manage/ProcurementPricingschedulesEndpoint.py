@@ -14,7 +14,16 @@ class ProcurementPricingschedulesEndpoint(ConnectWiseEndpoint):
             ProcurementPricingschedulesCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> ProcurementPricingschedulesIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized ProcurementPricingschedulesIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            ProcurementPricingschedulesIdEndpoint: The initialized ProcurementPricingschedulesIdEndpoint object.
+        """
         child = ProcurementPricingschedulesIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

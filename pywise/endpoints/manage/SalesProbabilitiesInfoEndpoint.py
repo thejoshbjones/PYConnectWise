@@ -13,6 +13,7 @@ class SalesProbabilitiesInfoEndpoint(ConnectWiseEndpoint):
             SalesProbabilitiesInfoCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[SalesProbabilityInfoModel]:
         """
         Performs a GET request against the /sales/probabilities/info endpoint and returns an initialized PaginatedResponse object.

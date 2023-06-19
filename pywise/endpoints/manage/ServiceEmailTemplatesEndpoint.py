@@ -14,7 +14,16 @@ class ServiceEmailTemplatesEndpoint(ConnectWiseEndpoint):
             ServiceEmailTemplatesCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> ServiceEmailTemplatesIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized ServiceEmailTemplatesIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            ServiceEmailTemplatesIdEndpoint: The initialized ServiceEmailTemplatesIdEndpoint object.
+        """
         child = ServiceEmailTemplatesIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

@@ -13,6 +13,7 @@ class ServiceSchedulingMembersInfoEndpoint(ConnectWiseEndpoint):
             ServiceSchedulingMembersInfoCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[SchedulingMemberInfoModel]:
         """
         Performs a GET request against the /service/scheduling/members/info endpoint and returns an initialized PaginatedResponse object.

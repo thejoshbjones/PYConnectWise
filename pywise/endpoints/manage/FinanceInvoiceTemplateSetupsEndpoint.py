@@ -14,7 +14,16 @@ class FinanceInvoiceTemplateSetupsEndpoint(ConnectWiseEndpoint):
             FinanceInvoiceTemplateSetupsCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> FinanceInvoiceTemplateSetupsIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized FinanceInvoiceTemplateSetupsIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            FinanceInvoiceTemplateSetupsIdEndpoint: The initialized FinanceInvoiceTemplateSetupsIdEndpoint object.
+        """
         child = FinanceInvoiceTemplateSetupsIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

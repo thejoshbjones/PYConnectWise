@@ -14,7 +14,16 @@ class TimeAccrualsEndpoint(ConnectWiseEndpoint):
             TimeAccrualsCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> TimeAccrualsIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized TimeAccrualsIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            TimeAccrualsIdEndpoint: The initialized TimeAccrualsIdEndpoint object.
+        """
         child = TimeAccrualsIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

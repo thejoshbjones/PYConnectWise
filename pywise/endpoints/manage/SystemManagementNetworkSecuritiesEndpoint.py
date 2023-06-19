@@ -14,7 +14,16 @@ class SystemManagementNetworkSecuritiesEndpoint(ConnectWiseEndpoint):
             SystemManagementNetworkSecuritiesCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> SystemManagementNetworkSecuritiesIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized SystemManagementNetworkSecuritiesIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            SystemManagementNetworkSecuritiesIdEndpoint: The initialized SystemManagementNetworkSecuritiesIdEndpoint object.
+        """
         child = SystemManagementNetworkSecuritiesIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

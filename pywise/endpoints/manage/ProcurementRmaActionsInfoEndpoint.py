@@ -13,6 +13,7 @@ class ProcurementRmaActionsInfoEndpoint(ConnectWiseEndpoint):
             ProcurementRmaActionsInfoCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[RmaActionInfoModel]:
         """
         Performs a GET request against the /procurement/rmaActions/info endpoint and returns an initialized PaginatedResponse object.

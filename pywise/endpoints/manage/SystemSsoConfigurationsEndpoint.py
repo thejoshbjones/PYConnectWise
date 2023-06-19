@@ -14,7 +14,16 @@ class SystemSsoConfigurationsEndpoint(ConnectWiseEndpoint):
             SystemSsoConfigurationsCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> SystemSsoConfigurationsIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized SystemSsoConfigurationsIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            SystemSsoConfigurationsIdEndpoint: The initialized SystemSsoConfigurationsIdEndpoint object.
+        """
         child = SystemSsoConfigurationsIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

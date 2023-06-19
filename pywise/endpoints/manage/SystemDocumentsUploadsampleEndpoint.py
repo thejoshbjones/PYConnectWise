@@ -8,6 +8,7 @@ class SystemDocumentsUploadsampleEndpoint(ConnectWiseEndpoint):
         super().__init__(client, "uploadsample", parent_endpoint=parent_endpoint)
         
     
+    
     def get(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> GenericMessageModel:
         """
         Performs a GET request against the /system/documents/uploadsample endpoint.

@@ -14,7 +14,16 @@ class SalesSalesTeamsEndpoint(ConnectWiseEndpoint):
             SalesSalesTeamsCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> SalesSalesTeamsIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized SalesSalesTeamsIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            SalesSalesTeamsIdEndpoint: The initialized SalesSalesTeamsIdEndpoint object.
+        """
         child = SalesSalesTeamsIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

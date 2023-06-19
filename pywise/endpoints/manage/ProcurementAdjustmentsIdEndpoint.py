@@ -13,6 +13,7 @@ class ProcurementAdjustmentsIdEndpoint(ConnectWiseEndpoint):
             ProcurementAdjustmentsIdDetailsEndpoint(client, parent_endpoint=self)
         )
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[ProcurementAdjustmentModel]:
         """
         Performs a GET request against the /procurement/adjustments/{id} endpoint and returns an initialized PaginatedResponse object.

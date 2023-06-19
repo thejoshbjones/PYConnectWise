@@ -21,6 +21,7 @@ class MarketingGroupsIdEndpoint(ConnectWiseEndpoint):
             MarketingGroupsIdContactsEndpoint(client, parent_endpoint=self)
         )
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[GroupModel]:
         """
         Performs a GET request against the /marketing/groups/{id} endpoint and returns an initialized PaginatedResponse object.

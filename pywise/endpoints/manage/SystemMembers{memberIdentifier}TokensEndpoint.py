@@ -9,6 +9,7 @@ class SystemMembers{memberIdentifier}TokensEndpoint(ConnectWiseEndpoint):
         super().__init__(client, "tokens", parent_endpoint=parent_endpoint)
         
     
+    
     def post(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> TokenModel:
         """
         Performs a POST request against the /system/members/{memberIdentifier}/tokens endpoint.

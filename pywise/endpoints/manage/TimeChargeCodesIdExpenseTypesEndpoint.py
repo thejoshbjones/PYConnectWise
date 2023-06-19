@@ -14,7 +14,16 @@ class TimeChargeCodesIdExpenseTypesEndpoint(ConnectWiseEndpoint):
             TimeChargeCodesIdExpenseTypesCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> TimeChargeCodesIdExpenseTypesIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized TimeChargeCodesIdExpenseTypesIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            TimeChargeCodesIdExpenseTypesIdEndpoint: The initialized TimeChargeCodesIdExpenseTypesIdEndpoint object.
+        """
         child = TimeChargeCodesIdExpenseTypesIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

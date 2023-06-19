@@ -13,6 +13,7 @@ class ServiceLocationsIdEndpoint(ConnectWiseEndpoint):
             ServiceLocationsIdInfoEndpoint(client, parent_endpoint=self)
         )
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[ServiceLocationModel]:
         """
         Performs a GET request against the /service/locations/{id} endpoint and returns an initialized PaginatedResponse object.

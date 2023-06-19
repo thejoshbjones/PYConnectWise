@@ -29,6 +29,7 @@ class ProcurementCatalogIdEndpoint(ConnectWiseEndpoint):
             ProcurementCatalogIdMinimumStockByWarehouseEndpoint(client, parent_endpoint=self)
         )
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[CatalogItemModel]:
         """
         Performs a GET request against the /procurement/catalog/{id} endpoint and returns an initialized PaginatedResponse object.

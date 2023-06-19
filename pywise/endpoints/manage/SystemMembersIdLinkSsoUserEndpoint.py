@@ -9,6 +9,7 @@ class SystemMembersIdLinkSsoUserEndpoint(ConnectWiseEndpoint):
         super().__init__(client, "linkSsoUser", parent_endpoint=parent_endpoint)
         
     
+    
     def post(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> SuccessResponseModel:
         """
         Performs a POST request against the /system/members/{id}/linkSsoUser endpoint.

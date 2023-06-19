@@ -13,6 +13,7 @@ class ServiceTicketsInfoEndpoint(ConnectWiseEndpoint):
             ServiceTicketsInfoCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[TicketInfoModel]:
         """
         Performs a GET request against the /service/tickets/info endpoint and returns an initialized PaginatedResponse object.

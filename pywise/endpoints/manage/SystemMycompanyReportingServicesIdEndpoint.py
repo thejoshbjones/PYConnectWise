@@ -13,6 +13,7 @@ class SystemMycompanyReportingServicesIdEndpoint(ConnectWiseEndpoint):
             SystemMycompanyReportingServicesIdTestConnectionEndpoint(client, parent_endpoint=self)
         )
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[ReportingServiceModel]:
         """
         Performs a GET request against the /system/mycompany/reportingServices/{id} endpoint and returns an initialized PaginatedResponse object.

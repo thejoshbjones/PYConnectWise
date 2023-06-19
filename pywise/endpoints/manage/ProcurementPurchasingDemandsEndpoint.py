@@ -9,6 +9,7 @@ class ProcurementPurchasingDemandsEndpoint(ConnectWiseEndpoint):
         super().__init__(client, "purchasingDemands", parent_endpoint=parent_endpoint)
         
     
+    
     def post(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> PurchasingDemandModel:
         """
         Performs a POST request against the /procurement/purchasingDemands endpoint.

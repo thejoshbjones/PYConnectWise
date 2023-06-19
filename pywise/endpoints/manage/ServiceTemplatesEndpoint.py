@@ -18,7 +18,16 @@ class ServiceTemplatesEndpoint(ConnectWiseEndpoint):
             ServiceTemplatesInfoEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> ServiceTemplatesIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized ServiceTemplatesIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            ServiceTemplatesIdEndpoint: The initialized ServiceTemplatesIdEndpoint object.
+        """
         child = ServiceTemplatesIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

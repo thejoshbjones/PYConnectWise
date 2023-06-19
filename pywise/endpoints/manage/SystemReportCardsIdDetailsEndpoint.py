@@ -14,7 +14,16 @@ class SystemReportCardsIdDetailsEndpoint(ConnectWiseEndpoint):
             SystemReportCardsIdDetailsCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> SystemReportCardsIdDetailsIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized SystemReportCardsIdDetailsIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            SystemReportCardsIdDetailsIdEndpoint: The initialized SystemReportCardsIdDetailsIdEndpoint object.
+        """
         child = SystemReportCardsIdDetailsIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

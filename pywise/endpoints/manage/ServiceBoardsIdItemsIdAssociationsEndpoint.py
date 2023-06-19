@@ -14,7 +14,16 @@ class ServiceBoardsIdItemsIdAssociationsEndpoint(ConnectWiseEndpoint):
             ServiceBoardsIdItemsIdAssociationsCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> ServiceBoardsIdItemsIdAssociationsIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized ServiceBoardsIdItemsIdAssociationsIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            ServiceBoardsIdItemsIdAssociationsIdEndpoint: The initialized ServiceBoardsIdItemsIdAssociationsIdEndpoint object.
+        """
         child = ServiceBoardsIdItemsIdAssociationsIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

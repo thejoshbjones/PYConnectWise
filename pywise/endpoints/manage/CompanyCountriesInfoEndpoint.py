@@ -13,6 +13,7 @@ class CompanyCountriesInfoEndpoint(ConnectWiseEndpoint):
             CompanyCountriesInfoCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[CountryInfoModel]:
         """
         Performs a GET request against the /company/countries/info endpoint and returns an initialized PaginatedResponse object.

@@ -9,6 +9,7 @@ class FinanceAccountingUnpostedinvoicesIdTaxableLevelsIdEndpoint(ConnectWiseEndp
         super().__init__(client, "{id}", parent_endpoint=parent_endpoint)
         
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[UnpostedInvoiceTaxableLevelModel]:
         """
         Performs a GET request against the /finance/accounting/unpostedinvoices/{parentId}/taxableLevels/{id} endpoint and returns an initialized PaginatedResponse object.

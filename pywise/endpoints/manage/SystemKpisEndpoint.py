@@ -14,7 +14,16 @@ class SystemKpisEndpoint(ConnectWiseEndpoint):
             SystemKpisCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> SystemKpisIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized SystemKpisIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            SystemKpisIdEndpoint: The initialized SystemKpisIdEndpoint object.
+        """
         child = SystemKpisIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

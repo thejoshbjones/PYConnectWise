@@ -13,6 +13,7 @@ class FinanceAgreementsTypesInfoEndpoint(ConnectWiseEndpoint):
             FinanceAgreementsTypesInfoCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[AgreementTypeInfoModel]:
         """
         Performs a GET request against the /finance/agreements/types/info endpoint and returns an initialized PaginatedResponse object.

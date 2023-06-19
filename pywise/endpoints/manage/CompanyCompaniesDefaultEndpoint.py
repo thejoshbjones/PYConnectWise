@@ -9,6 +9,7 @@ class CompanyCompaniesDefaultEndpoint(ConnectWiseEndpoint):
         super().__init__(client, "default", parent_endpoint=parent_endpoint)
         
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[CompanyModel]:
         """
         Performs a GET request against the /company/companies/default endpoint and returns an initialized PaginatedResponse object.

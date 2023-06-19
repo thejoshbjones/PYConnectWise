@@ -14,7 +14,16 @@ class SystemTodayPageCategoriesEndpoint(ConnectWiseEndpoint):
             SystemTodayPageCategoriesCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> SystemTodayPageCategoriesIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized SystemTodayPageCategoriesIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            SystemTodayPageCategoriesIdEndpoint: The initialized SystemTodayPageCategoriesIdEndpoint object.
+        """
         child = SystemTodayPageCategoriesIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

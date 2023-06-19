@@ -9,6 +9,7 @@ class SystemMycompanyServicesIdEndpoint(ConnectWiseEndpoint):
         super().__init__(client, "{id}", parent_endpoint=parent_endpoint)
         
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[ServiceModel]:
         """
         Performs a GET request against the /system/mycompany/services/{id} endpoint and returns an initialized PaginatedResponse object.

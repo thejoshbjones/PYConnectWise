@@ -9,6 +9,7 @@ class FinanceTaxIntegrationsIdEndpoint(ConnectWiseEndpoint):
         super().__init__(client, "{id}", parent_endpoint=parent_endpoint)
         
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[TaxIntegrationModel]:
         """
         Performs a GET request against the /finance/taxIntegrations/{id} endpoint and returns an initialized PaginatedResponse object.

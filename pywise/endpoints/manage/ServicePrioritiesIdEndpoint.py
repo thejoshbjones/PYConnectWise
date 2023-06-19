@@ -17,6 +17,7 @@ class ServicePrioritiesIdEndpoint(ConnectWiseEndpoint):
             ServicePrioritiesIdUsagesEndpoint(client, parent_endpoint=self)
         )
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[PriorityModel]:
         """
         Performs a GET request against the /service/priorities/{id} endpoint and returns an initialized PaginatedResponse object.

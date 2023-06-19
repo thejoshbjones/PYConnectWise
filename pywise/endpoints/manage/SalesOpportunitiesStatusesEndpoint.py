@@ -18,7 +18,16 @@ class SalesOpportunitiesStatusesEndpoint(ConnectWiseEndpoint):
             SalesOpportunitiesStatusesInfoEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> SalesOpportunitiesStatusesIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized SalesOpportunitiesStatusesIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            SalesOpportunitiesStatusesIdEndpoint: The initialized SalesOpportunitiesStatusesIdEndpoint object.
+        """
         child = SalesOpportunitiesStatusesIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

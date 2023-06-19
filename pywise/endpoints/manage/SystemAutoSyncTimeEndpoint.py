@@ -14,7 +14,16 @@ class SystemAutoSyncTimeEndpoint(ConnectWiseEndpoint):
             SystemAutoSyncTimeCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> SystemAutoSyncTimeIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized SystemAutoSyncTimeIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            SystemAutoSyncTimeIdEndpoint: The initialized SystemAutoSyncTimeIdEndpoint object.
+        """
         child = SystemAutoSyncTimeIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

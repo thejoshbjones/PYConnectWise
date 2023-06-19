@@ -9,6 +9,7 @@ class ProcurementPurchaseordersIdLineitemsBulkEndpoint(ConnectWiseEndpoint):
         super().__init__(client, "bulk", parent_endpoint=parent_endpoint)
         
     
+    
     def post(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> BulkResultModel:
         """
         Performs a POST request against the /procurement/purchaseorders/{parentId}/lineitems/bulk endpoint.

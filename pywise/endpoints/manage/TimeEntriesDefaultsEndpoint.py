@@ -9,6 +9,7 @@ class TimeEntriesDefaultsEndpoint(ConnectWiseEndpoint):
         super().__init__(client, "defaults", parent_endpoint=parent_endpoint)
         
     
+    
     def post(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> TimeEntryModel:
         """
         Performs a POST request against the /time/entries/defaults endpoint.

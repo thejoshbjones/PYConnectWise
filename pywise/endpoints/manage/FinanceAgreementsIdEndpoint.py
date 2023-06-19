@@ -45,6 +45,7 @@ class FinanceAgreementsIdEndpoint(ConnectWiseEndpoint):
             FinanceAgreementsIdWorktypesEndpoint(client, parent_endpoint=self)
         )
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[AgreementModel]:
         """
         Performs a GET request against the /finance/agreements/{id} endpoint and returns an initialized PaginatedResponse object.

@@ -9,6 +9,7 @@ class TimeTimePeriodSetupsDefaultEndpoint(ConnectWiseEndpoint):
         super().__init__(client, "default", parent_endpoint=parent_endpoint)
         
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[TimePeriodSetupDefaultsModel]:
         """
         Performs a GET request against the /time/timePeriodSetups/default endpoint and returns an initialized PaginatedResponse object.

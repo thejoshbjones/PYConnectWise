@@ -14,7 +14,16 @@ class SystemOffice365EmailSetupsEndpoint(ConnectWiseEndpoint):
             SystemOffice365EmailSetupsCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> SystemOffice365EmailSetupsIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized SystemOffice365EmailSetupsIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            SystemOffice365EmailSetupsIdEndpoint: The initialized SystemOffice365EmailSetupsIdEndpoint object.
+        """
         child = SystemOffice365EmailSetupsIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

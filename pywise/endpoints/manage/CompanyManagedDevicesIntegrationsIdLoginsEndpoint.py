@@ -14,7 +14,16 @@ class CompanyManagedDevicesIntegrationsIdLoginsEndpoint(ConnectWiseEndpoint):
             CompanyManagedDevicesIntegrationsIdLoginsCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> CompanyManagedDevicesIntegrationsIdLoginsIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized CompanyManagedDevicesIntegrationsIdLoginsIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            CompanyManagedDevicesIntegrationsIdLoginsIdEndpoint: The initialized CompanyManagedDevicesIntegrationsIdLoginsIdEndpoint object.
+        """
         child = CompanyManagedDevicesIntegrationsIdLoginsIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

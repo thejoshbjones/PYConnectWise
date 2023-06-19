@@ -14,7 +14,16 @@ class SystemFileuploadsettingsEndpoint(ConnectWiseEndpoint):
             SystemFileuploadsettingsCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> SystemFileuploadsettingsIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized SystemFileuploadsettingsIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            SystemFileuploadsettingsIdEndpoint: The initialized SystemFileuploadsettingsIdEndpoint object.
+        """
         child = SystemFileuploadsettingsIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

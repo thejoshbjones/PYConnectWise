@@ -17,6 +17,7 @@ class SystemMyAccountIdEndpoint(ConnectWiseEndpoint):
             SystemMyAccountIdSkillsEndpoint(client, parent_endpoint=self)
         )
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[MyAccountModel]:
         """
         Performs a GET request against the /system/myAccount/{id} endpoint and returns an initialized PaginatedResponse object.

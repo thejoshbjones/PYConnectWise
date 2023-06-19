@@ -14,7 +14,16 @@ class SystemCallbacksEndpoint(ConnectWiseEndpoint):
             SystemCallbacksCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> SystemCallbacksIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized SystemCallbacksIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            SystemCallbacksIdEndpoint: The initialized SystemCallbacksIdEndpoint object.
+        """
         child = SystemCallbacksIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

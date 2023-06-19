@@ -17,6 +17,7 @@ class ServiceSurveysIdQuestionsIdEndpoint(ConnectWiseEndpoint):
             ServiceSurveysIdQuestionsIdCopyEndpoint(client, parent_endpoint=self)
         )
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[ServiceSurveyQuestionModel]:
         """
         Performs a GET request against the /service/surveys/{parentId}/questions/{id} endpoint and returns an initialized PaginatedResponse object.

@@ -14,7 +14,16 @@ class SystemInfoStandardNotesEndpoint(ConnectWiseEndpoint):
             SystemInfoStandardNotesCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> SystemInfoStandardNotesIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized SystemInfoStandardNotesIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            SystemInfoStandardNotesIdEndpoint: The initialized SystemInfoStandardNotesIdEndpoint object.
+        """
         child = SystemInfoStandardNotesIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

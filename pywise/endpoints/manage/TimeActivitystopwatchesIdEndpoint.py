@@ -9,6 +9,7 @@ class TimeActivitystopwatchesIdEndpoint(ConnectWiseEndpoint):
         super().__init__(client, "{id}", parent_endpoint=parent_endpoint)
         
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[ActivityStopwatchModel]:
         """
         Performs a GET request against the /time/activitystopwatches/{id} endpoint and returns an initialized PaginatedResponse object.

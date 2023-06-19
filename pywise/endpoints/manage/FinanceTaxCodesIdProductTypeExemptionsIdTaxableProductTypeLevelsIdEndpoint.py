@@ -9,6 +9,7 @@ class FinanceTaxCodesIdProductTypeExemptionsIdTaxableProductTypeLevelsIdEndpoint
         super().__init__(client, "{id}", parent_endpoint=parent_endpoint)
         
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[TaxableProductTypeLevelModel]:
         """
         Performs a GET request against the /finance/taxCodes/{grandparentId}/productTypeExemptions/{parentId}/taxableProductTypeLevels/{id} endpoint and returns an initialized PaginatedResponse object.

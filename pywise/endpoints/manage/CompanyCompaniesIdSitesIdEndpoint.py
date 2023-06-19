@@ -13,6 +13,7 @@ class CompanyCompaniesIdSitesIdEndpoint(ConnectWiseEndpoint):
             CompanyCompaniesIdSitesIdUsagesEndpoint(client, parent_endpoint=self)
         )
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[CompanySiteModel]:
         """
         Performs a GET request against the /company/companies/{parentId}/sites/{id} endpoint and returns an initialized PaginatedResponse object.

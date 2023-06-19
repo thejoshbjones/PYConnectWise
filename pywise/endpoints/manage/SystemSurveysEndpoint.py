@@ -18,7 +18,16 @@ class SystemSurveysEndpoint(ConnectWiseEndpoint):
             SystemSurveysInfoEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> SystemSurveysIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized SystemSurveysIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            SystemSurveysIdEndpoint: The initialized SystemSurveysIdEndpoint object.
+        """
         child = SystemSurveysIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

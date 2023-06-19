@@ -22,7 +22,16 @@ class SystemLdapConfigurationsEndpoint(ConnectWiseEndpoint):
             SystemLdapConfigurationsTestLinkEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> SystemLdapConfigurationsIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized SystemLdapConfigurationsIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            SystemLdapConfigurationsIdEndpoint: The initialized SystemLdapConfigurationsIdEndpoint object.
+        """
         child = SystemLdapConfigurationsIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

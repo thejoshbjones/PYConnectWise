@@ -18,7 +18,16 @@ class SystemMyCompanyCrmEndpoint(ConnectWiseEndpoint):
             SystemMyCompanyCrmInfoEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> SystemMyCompanyCrmIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized SystemMyCompanyCrmIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            SystemMyCompanyCrmIdEndpoint: The initialized SystemMyCompanyCrmIdEndpoint object.
+        """
         child = SystemMyCompanyCrmIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

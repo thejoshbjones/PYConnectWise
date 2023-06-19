@@ -9,6 +9,7 @@ class SystemUserDefinedFieldsIdInfoEndpoint(ConnectWiseEndpoint):
         super().__init__(client, "info", parent_endpoint=parent_endpoint)
         
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[UserDefinedFieldInfoModel]:
         """
         Performs a GET request against the /system/userDefinedFields/{id}/info endpoint and returns an initialized PaginatedResponse object.

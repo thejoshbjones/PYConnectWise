@@ -14,7 +14,16 @@ class FinanceAccountingUnpostedprocurementIdTaxableLevelsEndpoint(ConnectWiseEnd
             FinanceAccountingUnpostedprocurementIdTaxableLevelsCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> FinanceAccountingUnpostedprocurementIdTaxableLevelsIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized FinanceAccountingUnpostedprocurementIdTaxableLevelsIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            FinanceAccountingUnpostedprocurementIdTaxableLevelsIdEndpoint: The initialized FinanceAccountingUnpostedprocurementIdTaxableLevelsIdEndpoint object.
+        """
         child = FinanceAccountingUnpostedprocurementIdTaxableLevelsIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

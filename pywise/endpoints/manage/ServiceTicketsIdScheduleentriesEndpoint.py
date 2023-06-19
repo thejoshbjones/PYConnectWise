@@ -13,6 +13,7 @@ class ServiceTicketsIdScheduleentriesEndpoint(ConnectWiseEndpoint):
             ServiceTicketsIdScheduleentriesCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[ScheduleEntryReferenceModel]:
         """
         Performs a GET request against the /service/tickets/{parentId}/scheduleentries endpoint and returns an initialized PaginatedResponse object.

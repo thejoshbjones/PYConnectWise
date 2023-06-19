@@ -9,6 +9,7 @@ class ScheduleCalendarsCountEndpoint(ConnectWiseEndpoint):
         super().__init__(client, "count", parent_endpoint=parent_endpoint)
         
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[CalendarModel]:
         """
         Performs a GET request against the /schedule/calendars/count endpoint and returns an initialized PaginatedResponse object.

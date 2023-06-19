@@ -13,6 +13,7 @@ class CompanyManagedDevicesIntegrationsInfoEndpoint(ConnectWiseEndpoint):
             CompanyManagedDevicesIntegrationsInfoCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[ManagedDevicesIntegrationInfoModel]:
         """
         Performs a GET request against the /company/managedDevicesIntegrations/info endpoint and returns an initialized PaginatedResponse object.

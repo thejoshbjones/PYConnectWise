@@ -14,7 +14,16 @@ class SystemCustomReportsEndpoint(ConnectWiseEndpoint):
             SystemCustomReportsCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> SystemCustomReportsIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized SystemCustomReportsIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            SystemCustomReportsIdEndpoint: The initialized SystemCustomReportsIdEndpoint object.
+        """
         child = SystemCustomReportsIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

@@ -14,7 +14,16 @@ class ServiceKnowledgeBaseArticlesEndpoint(ConnectWiseEndpoint):
             ServiceKnowledgeBaseArticlesCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> ServiceKnowledgeBaseArticlesIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized ServiceKnowledgeBaseArticlesIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            ServiceKnowledgeBaseArticlesIdEndpoint: The initialized ServiceKnowledgeBaseArticlesIdEndpoint object.
+        """
         child = ServiceKnowledgeBaseArticlesIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

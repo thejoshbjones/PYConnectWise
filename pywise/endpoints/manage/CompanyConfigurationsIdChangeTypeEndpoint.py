@@ -9,6 +9,7 @@ class CompanyConfigurationsIdChangeTypeEndpoint(ConnectWiseEndpoint):
         super().__init__(client, "changeType", parent_endpoint=parent_endpoint)
         
     
+    
     def patch(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> ConfigurationModel:
         """
         Performs a PATCH request against the /company/configurations/{id}/changeType endpoint.

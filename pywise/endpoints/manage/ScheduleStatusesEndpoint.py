@@ -14,7 +14,16 @@ class ScheduleStatusesEndpoint(ConnectWiseEndpoint):
             ScheduleStatusesCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> ScheduleStatusesIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized ScheduleStatusesIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            ScheduleStatusesIdEndpoint: The initialized ScheduleStatusesIdEndpoint object.
+        """
         child = ScheduleStatusesIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

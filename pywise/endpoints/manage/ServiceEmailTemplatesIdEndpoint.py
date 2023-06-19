@@ -13,6 +13,7 @@ class ServiceEmailTemplatesIdEndpoint(ConnectWiseEndpoint):
             ServiceEmailTemplatesIdUsagesEndpoint(client, parent_endpoint=self)
         )
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[ServiceEmailTemplateModel]:
         """
         Performs a GET request against the /service/emailTemplates/{id} endpoint and returns an initialized PaginatedResponse object.

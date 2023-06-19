@@ -15,7 +15,16 @@ class FinanceAccountingBatchesEndpoint(ConnectWiseEndpoint):
             FinanceAccountingBatchesCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> FinanceAccountingBatchesIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized FinanceAccountingBatchesIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            FinanceAccountingBatchesIdEndpoint: The initialized FinanceAccountingBatchesIdEndpoint object.
+        """
         child = FinanceAccountingBatchesIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

@@ -9,6 +9,7 @@ class SystemInfoLinksIdResolveurlEndpoint(ConnectWiseEndpoint):
         super().__init__(client, "resolveurl", parent_endpoint=parent_endpoint)
         
     
+    
     def post(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> LinkResolveUrlInfoModel:
         """
         Performs a POST request against the /system/info/links/{id}/resolveurl endpoint.

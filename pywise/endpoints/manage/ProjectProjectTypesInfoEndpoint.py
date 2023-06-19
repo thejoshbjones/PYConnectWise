@@ -13,6 +13,7 @@ class ProjectProjectTypesInfoEndpoint(ConnectWiseEndpoint):
             ProjectProjectTypesInfoCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[ProjectTypeInfoModel]:
         """
         Performs a GET request against the /project/projectTypes/info endpoint and returns an initialized PaginatedResponse object.

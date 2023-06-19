@@ -17,6 +17,7 @@ class SystemOffice365EmailSetupsIdEndpoint(ConnectWiseEndpoint):
             SystemOffice365EmailSetupsIdTestConnectionEndpoint(client, parent_endpoint=self)
         )
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[Office365EmailSetupModel]:
         """
         Performs a GET request against the /system/office365/emailSetups/{id} endpoint and returns an initialized PaginatedResponse object.

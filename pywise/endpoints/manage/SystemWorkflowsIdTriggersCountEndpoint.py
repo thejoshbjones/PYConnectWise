@@ -9,6 +9,7 @@ class SystemWorkflowsIdTriggersCountEndpoint(ConnectWiseEndpoint):
         super().__init__(client, "count", parent_endpoint=parent_endpoint)
         
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[CountModel]:
         """
         Performs a GET request against the /system/workflows/{parentId}/triggers/count endpoint and returns an initialized PaginatedResponse object.

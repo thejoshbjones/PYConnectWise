@@ -14,7 +14,16 @@ class SystemSettingsEndpoint(ConnectWiseEndpoint):
             SystemSettingsCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> SystemSettingsIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized SystemSettingsIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            SystemSettingsIdEndpoint: The initialized SystemSettingsIdEndpoint object.
+        """
         child = SystemSettingsIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

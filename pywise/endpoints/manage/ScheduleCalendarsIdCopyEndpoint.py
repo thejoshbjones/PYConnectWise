@@ -9,6 +9,7 @@ class ScheduleCalendarsIdCopyEndpoint(ConnectWiseEndpoint):
         super().__init__(client, "copy", parent_endpoint=parent_endpoint)
         
     
+    
     def post(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> CalendarModel:
         """
         Performs a POST request against the /schedule/calendars/{id}/copy endpoint.

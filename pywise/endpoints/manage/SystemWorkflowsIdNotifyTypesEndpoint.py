@@ -18,7 +18,16 @@ class SystemWorkflowsIdNotifyTypesEndpoint(ConnectWiseEndpoint):
             SystemWorkflowsIdNotifyTypesInfoEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> SystemWorkflowsIdNotifyTypesIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized SystemWorkflowsIdNotifyTypesIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            SystemWorkflowsIdNotifyTypesIdEndpoint: The initialized SystemWorkflowsIdNotifyTypesIdEndpoint object.
+        """
         child = SystemWorkflowsIdNotifyTypesIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

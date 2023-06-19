@@ -14,7 +14,16 @@ class ServiceTeamsEndpoint(ConnectWiseEndpoint):
             ServiceTeamsCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> ServiceTeamsIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized ServiceTeamsIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            ServiceTeamsIdEndpoint: The initialized ServiceTeamsIdEndpoint object.
+        """
         child = ServiceTeamsIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

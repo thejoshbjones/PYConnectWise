@@ -10,7 +10,16 @@ class SystemMycompanyServicesEndpoint(ConnectWiseEndpoint):
         super().__init__(client, "services", parent_endpoint=parent_endpoint)
         
     
+    
     def id(self, id: int) -> SystemMycompanyServicesIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized SystemMycompanyServicesIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            SystemMycompanyServicesIdEndpoint: The initialized SystemMycompanyServicesIdEndpoint object.
+        """
         child = SystemMycompanyServicesIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

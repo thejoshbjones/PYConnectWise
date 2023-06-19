@@ -14,7 +14,16 @@ class FinanceAgreementTypesIdWorkRoleExclusionsEndpoint(ConnectWiseEndpoint):
             FinanceAgreementTypesIdWorkRoleExclusionsCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> FinanceAgreementTypesIdWorkRoleExclusionsIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized FinanceAgreementTypesIdWorkRoleExclusionsIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            FinanceAgreementTypesIdWorkRoleExclusionsIdEndpoint: The initialized FinanceAgreementTypesIdWorkRoleExclusionsIdEndpoint object.
+        """
         child = FinanceAgreementTypesIdWorkRoleExclusionsIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

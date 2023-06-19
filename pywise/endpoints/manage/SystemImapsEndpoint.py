@@ -18,7 +18,16 @@ class SystemImapsEndpoint(ConnectWiseEndpoint):
             SystemImapsInfoEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> SystemImapsIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized SystemImapsIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            SystemImapsIdEndpoint: The initialized SystemImapsIdEndpoint object.
+        """
         child = SystemImapsIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

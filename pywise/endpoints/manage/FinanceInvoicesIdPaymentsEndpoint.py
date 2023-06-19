@@ -10,7 +10,16 @@ class FinanceInvoicesIdPaymentsEndpoint(ConnectWiseEndpoint):
         super().__init__(client, "payments", parent_endpoint=parent_endpoint)
         
     
+    
     def id(self, id: int) -> FinanceInvoicesIdPaymentsIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized FinanceInvoicesIdPaymentsIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            FinanceInvoicesIdPaymentsIdEndpoint: The initialized FinanceInvoicesIdPaymentsIdEndpoint object.
+        """
         child = FinanceInvoicesIdPaymentsIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

@@ -18,7 +18,16 @@ class ProcurementWarehouseBinsEndpoint(ConnectWiseEndpoint):
             ProcurementWarehouseBinsInfoEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> ProcurementWarehouseBinsIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized ProcurementWarehouseBinsIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            ProcurementWarehouseBinsIdEndpoint: The initialized ProcurementWarehouseBinsIdEndpoint object.
+        """
         child = ProcurementWarehouseBinsIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

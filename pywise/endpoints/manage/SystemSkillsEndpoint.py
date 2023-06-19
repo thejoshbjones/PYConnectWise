@@ -18,7 +18,16 @@ class SystemSkillsEndpoint(ConnectWiseEndpoint):
             SystemSkillsInfoEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> SystemSkillsIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized SystemSkillsIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            SystemSkillsIdEndpoint: The initialized SystemSkillsIdEndpoint object.
+        """
         child = SystemSkillsIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

@@ -21,6 +21,7 @@ class TimeWorkRolesIdEndpoint(ConnectWiseEndpoint):
             TimeWorkRolesIdLocationsEndpoint(client, parent_endpoint=self)
         )
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[WorkRoleModel]:
         """
         Performs a GET request against the /time/workRoles/{id} endpoint and returns an initialized PaginatedResponse object.

@@ -8,6 +8,7 @@ class CompanyContactsIdImageEndpoint(ConnectWiseEndpoint):
         super().__init__(client, "image", parent_endpoint=parent_endpoint)
         
     
+    
     def get(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> GenericMessageModel:
         """
         Performs a GET request against the /company/contacts/{id}/image endpoint.

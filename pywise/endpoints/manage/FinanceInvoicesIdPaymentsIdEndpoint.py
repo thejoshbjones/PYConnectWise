@@ -9,6 +9,7 @@ class FinanceInvoicesIdPaymentsIdEndpoint(ConnectWiseEndpoint):
         super().__init__(client, "{id}", parent_endpoint=parent_endpoint)
         
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[PaymentModel]:
         """
         Performs a GET request against the /finance/invoices/{parentId}/payments/{id} endpoint and returns an initialized PaginatedResponse object.

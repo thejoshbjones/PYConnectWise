@@ -13,6 +13,7 @@ class CompanyNoteTypesIdEndpoint(ConnectWiseEndpoint):
             CompanyNoteTypesIdInfoEndpoint(client, parent_endpoint=self)
         )
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[CompanyNoteTypeModel]:
         """
         Performs a GET request against the /company/noteTypes/{id} endpoint and returns an initialized PaginatedResponse object.

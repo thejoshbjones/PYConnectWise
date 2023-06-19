@@ -9,6 +9,7 @@ class SystemMembersIdManagedDeviceAccountsBulkEndpoint(ConnectWiseEndpoint):
         super().__init__(client, "bulk", parent_endpoint=parent_endpoint)
         
     
+    
     def delete(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> BulkResultModel:
         """
         Performs a DELETE request against the /system/members/{parentId}/managedDeviceAccounts/bulk endpoint.

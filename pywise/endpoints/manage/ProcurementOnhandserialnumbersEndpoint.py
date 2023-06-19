@@ -14,7 +14,16 @@ class ProcurementOnhandserialnumbersEndpoint(ConnectWiseEndpoint):
             ProcurementOnhandserialnumbersCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> ProcurementOnhandserialnumbersIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized ProcurementOnhandserialnumbersIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            ProcurementOnhandserialnumbersIdEndpoint: The initialized ProcurementOnhandserialnumbersIdEndpoint object.
+        """
         child = ProcurementOnhandserialnumbersIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

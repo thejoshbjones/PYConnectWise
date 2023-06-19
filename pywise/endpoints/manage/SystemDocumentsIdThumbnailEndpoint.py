@@ -8,3 +8,4 @@ class SystemDocumentsIdThumbnailEndpoint(ConnectWiseEndpoint):
         super().__init__(client, "thumbnail", parent_endpoint=parent_endpoint)
         
     
+    

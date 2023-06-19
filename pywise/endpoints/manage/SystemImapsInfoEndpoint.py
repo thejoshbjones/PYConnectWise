@@ -13,6 +13,7 @@ class SystemImapsInfoEndpoint(ConnectWiseEndpoint):
             SystemImapsInfoCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[ImapInfoModel]:
         """
         Performs a GET request against the /system/imaps/info endpoint and returns an initialized PaginatedResponse object.

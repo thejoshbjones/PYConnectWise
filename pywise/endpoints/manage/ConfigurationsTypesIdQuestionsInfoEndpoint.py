@@ -13,6 +13,7 @@ class ConfigurationsTypesIdQuestionsInfoEndpoint(ConnectWiseEndpoint):
             ConfigurationsTypesIdQuestionsInfoCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[ConfigurationTypeQuestionInfoModel]:
         """
         Performs a GET request against the /configurations/types/{parentId}/questions/info endpoint and returns an initialized PaginatedResponse object.

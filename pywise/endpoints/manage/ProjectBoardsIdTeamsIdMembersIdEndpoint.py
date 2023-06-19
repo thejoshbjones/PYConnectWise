@@ -9,6 +9,7 @@ class ProjectBoardsIdTeamsIdMembersIdEndpoint(ConnectWiseEndpoint):
         super().__init__(client, "{id}", parent_endpoint=parent_endpoint)
         
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[ProjectBoardTeamMemberModel]:
         """
         Performs a GET request against the /project/boards/{grandparentId}/teams/{parentId}/members/{id} endpoint and returns an initialized PaginatedResponse object.

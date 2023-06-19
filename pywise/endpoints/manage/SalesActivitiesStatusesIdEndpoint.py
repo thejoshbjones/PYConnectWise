@@ -13,6 +13,7 @@ class SalesActivitiesStatusesIdEndpoint(ConnectWiseEndpoint):
             SalesActivitiesStatusesIdInfoEndpoint(client, parent_endpoint=self)
         )
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[ActivityStatusModel]:
         """
         Performs a GET request against the /sales/activities/statuses/{id} endpoint and returns an initialized PaginatedResponse object.

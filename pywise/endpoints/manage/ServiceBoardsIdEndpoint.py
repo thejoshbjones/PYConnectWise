@@ -53,6 +53,7 @@ class ServiceBoardsIdEndpoint(ConnectWiseEndpoint):
             ServiceBoardsIdTypeSubTypeItemAssociationsEndpoint(client, parent_endpoint=self)
         )
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[BoardModel]:
         """
         Performs a GET request against the /service/boards/{id} endpoint and returns an initialized PaginatedResponse object.

@@ -13,6 +13,7 @@ class SystemMyCompanyCorporateStructureIdEndpoint(ConnectWiseEndpoint):
             SystemMyCompanyCorporateStructureIdInfoEndpoint(client, parent_endpoint=self)
         )
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[CorporateStructureModel]:
         """
         Performs a GET request against the /system/myCompany/corporateStructure/{id} endpoint and returns an initialized PaginatedResponse object.

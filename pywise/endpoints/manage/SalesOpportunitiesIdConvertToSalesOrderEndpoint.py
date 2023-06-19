@@ -9,6 +9,7 @@ class SalesOpportunitiesIdConvertToSalesOrderEndpoint(ConnectWiseEndpoint):
         super().__init__(client, "convertToSalesOrder", parent_endpoint=parent_endpoint)
         
     
+    
     def post(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> OrderModel:
         """
         Performs a POST request against the /sales/opportunities/{id}/convertToSalesOrder endpoint.

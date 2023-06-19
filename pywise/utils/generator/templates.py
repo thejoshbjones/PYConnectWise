@@ -21,8 +21,17 @@ class {{ endpoint_class }}(ConnectWiseEndpoint):
         )
         {%- endfor %}
         {%- endif %}
+    
     {% if has_id_child %}
     def id(self, id: int) -> {{ id_child_endpoint_class }}:
+        \"""
+        Sets the ID for this endpoint and returns an initialized {{ id_child_endpoint_class }} object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            {{ id_child_endpoint_class }}: The initialized {{ id_child_endpoint_class }} object.
+        \"""
         child = {{ id_child_endpoint_class }}(self.client, parent_endpoint=self)
         child._id = id
         return child

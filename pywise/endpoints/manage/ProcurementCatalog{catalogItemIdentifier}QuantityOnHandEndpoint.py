@@ -9,6 +9,7 @@ class ProcurementCatalog{catalogItemIdentifier}QuantityOnHandEndpoint(ConnectWis
         super().__init__(client, "quantityOnHand", parent_endpoint=parent_endpoint)
         
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[CountModel]:
         """
         Performs a GET request against the /procurement/catalog/{catalogItemIdentifier}/quantityOnHand endpoint and returns an initialized PaginatedResponse object.

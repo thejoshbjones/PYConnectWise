@@ -14,7 +14,16 @@ class SystemExperimentsEndpoint(ConnectWiseEndpoint):
             SystemExperimentsCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> SystemExperimentsIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized SystemExperimentsIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            SystemExperimentsIdEndpoint: The initialized SystemExperimentsIdEndpoint object.
+        """
         child = SystemExperimentsIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

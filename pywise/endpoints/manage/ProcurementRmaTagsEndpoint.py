@@ -18,7 +18,16 @@ class ProcurementRmaTagsEndpoint(ConnectWiseEndpoint):
             ProcurementRmaTagsDefaultEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> ProcurementRmaTagsIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized ProcurementRmaTagsIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            ProcurementRmaTagsIdEndpoint: The initialized ProcurementRmaTagsIdEndpoint object.
+        """
         child = ProcurementRmaTagsIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

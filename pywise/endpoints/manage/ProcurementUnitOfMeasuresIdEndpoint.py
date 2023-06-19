@@ -13,6 +13,7 @@ class ProcurementUnitOfMeasuresIdEndpoint(ConnectWiseEndpoint):
             ProcurementUnitOfMeasuresIdConversionsEndpoint(client, parent_endpoint=self)
         )
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[UnitOfMeasureModel]:
         """
         Performs a GET request against the /procurement/unitOfMeasures/{id} endpoint and returns an initialized PaginatedResponse object.

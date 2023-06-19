@@ -13,6 +13,7 @@ class ServiceKnowledgeBaseSubCategoriesIdEndpoint(ConnectWiseEndpoint):
             ServiceKnowledgeBaseSubCategoriesIdUsagesEndpoint(client, parent_endpoint=self)
         )
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[KnowledgeBaseSubCategoryModel]:
         """
         Performs a GET request against the /service/knowledgeBaseSubCategories/{id} endpoint and returns an initialized PaginatedResponse object.

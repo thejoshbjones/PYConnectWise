@@ -18,7 +18,16 @@ class SystemWorkflowsTableTypesEndpoint(ConnectWiseEndpoint):
             SystemWorkflowsTableTypesInfoEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> SystemWorkflowsTableTypesIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized SystemWorkflowsTableTypesIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            SystemWorkflowsTableTypesIdEndpoint: The initialized SystemWorkflowsTableTypesIdEndpoint object.
+        """
         child = SystemWorkflowsTableTypesIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

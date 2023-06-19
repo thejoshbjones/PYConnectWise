@@ -9,6 +9,7 @@ class SystemApiMembersIdEndpoint(ConnectWiseEndpoint):
         super().__init__(client, "{id}", parent_endpoint=parent_endpoint)
         
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[ApiMemberModel]:
         """
         Performs a GET request against the /system/apiMembers/{id} endpoint and returns an initialized PaginatedResponse object.

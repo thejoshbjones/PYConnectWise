@@ -9,6 +9,7 @@ class ProjectTicketsIdAllNotesEndpoint(ConnectWiseEndpoint):
         super().__init__(client, "allNotes", parent_endpoint=parent_endpoint)
         
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[ProjectTicketNoteModel]:
         """
         Performs a GET request against the /project/tickets/{parentId}/allNotes endpoint and returns an initialized PaginatedResponse object.

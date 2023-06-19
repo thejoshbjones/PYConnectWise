@@ -18,7 +18,16 @@ class TimeEntriesEndpoint(ConnectWiseEndpoint):
             TimeEntriesDefaultsEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> TimeEntriesIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized TimeEntriesIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            TimeEntriesIdEndpoint: The initialized TimeEntriesIdEndpoint object.
+        """
         child = TimeEntriesIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

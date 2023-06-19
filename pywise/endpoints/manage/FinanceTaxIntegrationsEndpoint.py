@@ -14,7 +14,16 @@ class FinanceTaxIntegrationsEndpoint(ConnectWiseEndpoint):
             FinanceTaxIntegrationsCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> FinanceTaxIntegrationsIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized FinanceTaxIntegrationsIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            FinanceTaxIntegrationsIdEndpoint: The initialized FinanceTaxIntegrationsIdEndpoint object.
+        """
         child = FinanceTaxIntegrationsIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

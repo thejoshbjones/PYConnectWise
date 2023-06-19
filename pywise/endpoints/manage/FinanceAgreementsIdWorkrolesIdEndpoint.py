@@ -9,6 +9,7 @@ class FinanceAgreementsIdWorkrolesIdEndpoint(ConnectWiseEndpoint):
         super().__init__(client, "{id}", parent_endpoint=parent_endpoint)
         
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[AgreementWorkRoleModel]:
         """
         Performs a GET request against the /finance/agreements/{parentId}/workroles/{id} endpoint and returns an initialized PaginatedResponse object.

@@ -9,6 +9,7 @@ class FinanceTaxCodesIdTaxCodeXRefsIdTaxableXRefLevelsCountEndpoint(ConnectWiseE
         super().__init__(client, "count", parent_endpoint=parent_endpoint)
         
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[CountModel]:
         """
         Performs a GET request against the /finance/taxCodes/{grandparentId}/taxCodeXRefs/{parentId}/taxableXRefLevels/count endpoint and returns an initialized PaginatedResponse object.

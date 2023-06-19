@@ -14,7 +14,16 @@ class ServiceBoardsIdExcludedMembersEndpoint(ConnectWiseEndpoint):
             ServiceBoardsIdExcludedMembersCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> ServiceBoardsIdExcludedMembersIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized ServiceBoardsIdExcludedMembersIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            ServiceBoardsIdExcludedMembersIdEndpoint: The initialized ServiceBoardsIdExcludedMembersIdEndpoint object.
+        """
         child = ServiceBoardsIdExcludedMembersIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

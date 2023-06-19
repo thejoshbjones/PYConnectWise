@@ -14,7 +14,16 @@ class SystemCertificationsEndpoint(ConnectWiseEndpoint):
             SystemCertificationsCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> SystemCertificationsIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized SystemCertificationsIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            SystemCertificationsIdEndpoint: The initialized SystemCertificationsIdEndpoint object.
+        """
         child = SystemCertificationsIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

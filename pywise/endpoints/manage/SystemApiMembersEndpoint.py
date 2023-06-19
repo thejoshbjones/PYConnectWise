@@ -18,7 +18,16 @@ class SystemApiMembersEndpoint(ConnectWiseEndpoint):
             SystemApiMembersDefaultEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> SystemApiMembersIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized SystemApiMembersIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            SystemApiMembersIdEndpoint: The initialized SystemApiMembersIdEndpoint object.
+        """
         child = SystemApiMembersIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

@@ -9,6 +9,7 @@ class SystemStandardNotesIdEndpoint(ConnectWiseEndpoint):
         super().__init__(client, "{id}", parent_endpoint=parent_endpoint)
         
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[StandardNoteModel]:
         """
         Performs a GET request against the /system/standardNotes/{id} endpoint and returns an initialized PaginatedResponse object.

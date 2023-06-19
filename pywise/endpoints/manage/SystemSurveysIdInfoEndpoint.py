@@ -9,6 +9,7 @@ class SystemSurveysIdInfoEndpoint(ConnectWiseEndpoint):
         super().__init__(client, "info", parent_endpoint=parent_endpoint)
         
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[SurveyInfoModel]:
         """
         Performs a GET request against the /system/surveys/{id}/info endpoint and returns an initialized PaginatedResponse object.

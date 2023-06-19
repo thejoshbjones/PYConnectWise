@@ -14,7 +14,16 @@ class FinanceAccountingUnpostedexpensesIdTaxableLevelsEndpoint(ConnectWiseEndpoi
             FinanceAccountingUnpostedexpensesIdTaxableLevelsCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> FinanceAccountingUnpostedexpensesIdTaxableLevelsIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized FinanceAccountingUnpostedexpensesIdTaxableLevelsIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            FinanceAccountingUnpostedexpensesIdTaxableLevelsIdEndpoint: The initialized FinanceAccountingUnpostedexpensesIdTaxableLevelsIdEndpoint object.
+        """
         child = FinanceAccountingUnpostedexpensesIdTaxableLevelsIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

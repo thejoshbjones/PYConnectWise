@@ -14,7 +14,16 @@ class SystemInfoLocalesEndpoint(ConnectWiseEndpoint):
             SystemInfoLocalesCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> SystemInfoLocalesIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized SystemInfoLocalesIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            SystemInfoLocalesIdEndpoint: The initialized SystemInfoLocalesIdEndpoint object.
+        """
         child = SystemInfoLocalesIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

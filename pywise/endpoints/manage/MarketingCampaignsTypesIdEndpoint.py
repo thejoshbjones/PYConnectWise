@@ -17,6 +17,7 @@ class MarketingCampaignsTypesIdEndpoint(ConnectWiseEndpoint):
             MarketingCampaignsTypesIdSubTypesEndpoint(client, parent_endpoint=self)
         )
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[CampaignTypeModel]:
         """
         Performs a GET request against the /marketing/campaigns/types/{id} endpoint and returns an initialized PaginatedResponse object.

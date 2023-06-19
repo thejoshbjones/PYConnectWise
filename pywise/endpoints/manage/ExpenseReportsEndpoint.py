@@ -14,7 +14,16 @@ class ExpenseReportsEndpoint(ConnectWiseEndpoint):
             ExpenseReportsCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> ExpenseReportsIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized ExpenseReportsIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            ExpenseReportsIdEndpoint: The initialized ExpenseReportsIdEndpoint object.
+        """
         child = ExpenseReportsIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

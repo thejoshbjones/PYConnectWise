@@ -14,7 +14,16 @@ class ServiceTicketsIdConfigurationsEndpoint(ConnectWiseEndpoint):
             ServiceTicketsIdConfigurationsCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> ServiceTicketsIdConfigurationsIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized ServiceTicketsIdConfigurationsIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            ServiceTicketsIdConfigurationsIdEndpoint: The initialized ServiceTicketsIdConfigurationsIdEndpoint object.
+        """
         child = ServiceTicketsIdConfigurationsIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

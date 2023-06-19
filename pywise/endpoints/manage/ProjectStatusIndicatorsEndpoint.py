@@ -14,7 +14,16 @@ class ProjectStatusIndicatorsEndpoint(ConnectWiseEndpoint):
             ProjectStatusIndicatorsCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> ProjectStatusIndicatorsIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized ProjectStatusIndicatorsIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            ProjectStatusIndicatorsIdEndpoint: The initialized ProjectStatusIndicatorsIdEndpoint object.
+        """
         child = ProjectStatusIndicatorsIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

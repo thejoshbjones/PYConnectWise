@@ -13,6 +13,7 @@ class FinanceBillingStatusesInfoEndpoint(ConnectWiseEndpoint):
             FinanceBillingStatusesInfoCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[BillingStatusInfoModel]:
         """
         Performs a GET request against the /finance/billingStatuses/info endpoint and returns an initialized PaginatedResponse object.

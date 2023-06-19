@@ -9,6 +9,7 @@ class CompanyCompanyPickerItemsClearEndpoint(ConnectWiseEndpoint):
         super().__init__(client, "clear", parent_endpoint=parent_endpoint)
         
     
+    
     def post(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> ClearPickerRequestModel:
         """
         Performs a POST request against the /company/companyPickerItems/clear endpoint.

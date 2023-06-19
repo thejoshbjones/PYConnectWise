@@ -9,6 +9,7 @@ class CompanyManagementBackupsIdEndpoint(ConnectWiseEndpoint):
         super().__init__(client, "{id}", parent_endpoint=parent_endpoint)
         
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[ManagementBackupModel]:
         """
         Performs a GET request against the /company/managementBackups/{id} endpoint and returns an initialized PaginatedResponse object.

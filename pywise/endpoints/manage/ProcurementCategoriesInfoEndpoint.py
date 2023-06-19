@@ -13,6 +13,7 @@ class ProcurementCategoriesInfoEndpoint(ConnectWiseEndpoint):
             ProcurementCategoriesInfoCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[CategoryInfoModel]:
         """
         Performs a GET request against the /procurement/categories/info endpoint and returns an initialized PaginatedResponse object.

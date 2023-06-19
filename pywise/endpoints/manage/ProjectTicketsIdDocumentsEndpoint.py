@@ -13,6 +13,7 @@ class ProjectTicketsIdDocumentsEndpoint(ConnectWiseEndpoint):
             ProjectTicketsIdDocumentsCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[DocumentReferenceModel]:
         """
         Performs a GET request against the /project/tickets/{parentId}/documents endpoint and returns an initialized PaginatedResponse object.

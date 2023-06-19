@@ -14,7 +14,16 @@ class FinanceTaxCodesIdExpenseTypeExemptionsEndpoint(ConnectWiseEndpoint):
             FinanceTaxCodesIdExpenseTypeExemptionsCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> FinanceTaxCodesIdExpenseTypeExemptionsIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized FinanceTaxCodesIdExpenseTypeExemptionsIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            FinanceTaxCodesIdExpenseTypeExemptionsIdEndpoint: The initialized FinanceTaxCodesIdExpenseTypeExemptionsIdEndpoint object.
+        """
         child = FinanceTaxCodesIdExpenseTypeExemptionsIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

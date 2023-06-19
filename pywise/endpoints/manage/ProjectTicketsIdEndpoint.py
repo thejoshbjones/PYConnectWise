@@ -49,6 +49,7 @@ class ProjectTicketsIdEndpoint(ConnectWiseEndpoint):
             ProjectTicketsIdTimeentriesEndpoint(client, parent_endpoint=self)
         )
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[ProjectTicketModel]:
         """
         Performs a GET request against the /project/tickets/{id} endpoint and returns an initialized PaginatedResponse object.

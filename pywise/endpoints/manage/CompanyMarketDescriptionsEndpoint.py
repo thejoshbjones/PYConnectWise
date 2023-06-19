@@ -18,7 +18,16 @@ class CompanyMarketDescriptionsEndpoint(ConnectWiseEndpoint):
             CompanyMarketDescriptionsInfoEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> CompanyMarketDescriptionsIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized CompanyMarketDescriptionsIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            CompanyMarketDescriptionsIdEndpoint: The initialized CompanyMarketDescriptionsIdEndpoint object.
+        """
         child = CompanyMarketDescriptionsIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

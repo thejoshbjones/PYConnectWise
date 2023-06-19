@@ -9,6 +9,7 @@ class CompanyTracksIdActionsIdEndpoint(ConnectWiseEndpoint):
         super().__init__(client, "{id}", parent_endpoint=parent_endpoint)
         
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[TrackActionModel]:
         """
         Performs a GET request against the /company/tracks/{parentId}/actions/{id} endpoint and returns an initialized PaginatedResponse object.

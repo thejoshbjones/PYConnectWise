@@ -14,7 +14,16 @@ class ScheduleEntriesIdDetailsEndpoint(ConnectWiseEndpoint):
             ScheduleEntriesIdDetailsCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> ScheduleEntriesIdDetailsIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized ScheduleEntriesIdDetailsIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            ScheduleEntriesIdDetailsIdEndpoint: The initialized ScheduleEntriesIdDetailsIdEndpoint object.
+        """
         child = ScheduleEntriesIdDetailsIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

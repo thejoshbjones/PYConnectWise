@@ -18,7 +18,16 @@ class CompanyAddressFormatsEndpoint(ConnectWiseEndpoint):
             CompanyAddressFormatsInfoEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> CompanyAddressFormatsIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized CompanyAddressFormatsIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            CompanyAddressFormatsIdEndpoint: The initialized CompanyAddressFormatsIdEndpoint object.
+        """
         child = CompanyAddressFormatsIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

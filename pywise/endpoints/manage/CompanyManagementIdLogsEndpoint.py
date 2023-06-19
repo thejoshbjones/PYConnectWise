@@ -9,6 +9,7 @@ class CompanyManagementIdLogsEndpoint(ConnectWiseEndpoint):
         super().__init__(client, "logs", parent_endpoint=parent_endpoint)
         
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[ManagementLogDocumentInfoModel]:
         """
         Performs a GET request against the /company/management/{id}/logs endpoint and returns an initialized PaginatedResponse object.

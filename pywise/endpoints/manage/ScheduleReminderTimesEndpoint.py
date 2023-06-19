@@ -14,7 +14,16 @@ class ScheduleReminderTimesEndpoint(ConnectWiseEndpoint):
             ScheduleReminderTimesCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> ScheduleReminderTimesIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized ScheduleReminderTimesIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            ScheduleReminderTimesIdEndpoint: The initialized ScheduleReminderTimesIdEndpoint object.
+        """
         child = ScheduleReminderTimesIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

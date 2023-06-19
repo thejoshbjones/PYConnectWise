@@ -17,6 +17,7 @@ class ServiceSLAsIdEndpoint(ConnectWiseEndpoint):
             ServiceSLAsIdPrioritiesEndpoint(client, parent_endpoint=self)
         )
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[SLAModel]:
         """
         Performs a GET request against the /service/SLAs/{id} endpoint and returns an initialized PaginatedResponse object.

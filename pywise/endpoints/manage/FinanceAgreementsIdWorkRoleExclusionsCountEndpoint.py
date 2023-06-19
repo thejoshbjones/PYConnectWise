@@ -9,6 +9,7 @@ class FinanceAgreementsIdWorkRoleExclusionsCountEndpoint(ConnectWiseEndpoint):
         super().__init__(client, "count", parent_endpoint=parent_endpoint)
         
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[CountModel]:
         """
         Performs a GET request against the /finance/agreements/{parentId}/workRoleExclusions/count endpoint and returns an initialized PaginatedResponse object.

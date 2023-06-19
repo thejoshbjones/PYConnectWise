@@ -14,7 +14,16 @@ class CompanyCompaniesIdManagementReportNotificationsEndpoint(ConnectWiseEndpoin
             CompanyCompaniesIdManagementReportNotificationsCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> CompanyCompaniesIdManagementReportNotificationsIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized CompanyCompaniesIdManagementReportNotificationsIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            CompanyCompaniesIdManagementReportNotificationsIdEndpoint: The initialized CompanyCompaniesIdManagementReportNotificationsIdEndpoint object.
+        """
         child = CompanyCompaniesIdManagementReportNotificationsIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

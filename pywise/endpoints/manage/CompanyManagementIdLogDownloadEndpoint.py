@@ -8,6 +8,7 @@ class CompanyManagementIdLogDownloadEndpoint(ConnectWiseEndpoint):
         super().__init__(client, "download", parent_endpoint=parent_endpoint)
         
     
+    
     def get(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> GenericMessageModel:
         """
         Performs a GET request against the /company/management/{id}/log/download endpoint.

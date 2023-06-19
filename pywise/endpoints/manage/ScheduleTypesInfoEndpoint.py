@@ -13,6 +13,7 @@ class ScheduleTypesInfoEndpoint(ConnectWiseEndpoint):
             ScheduleTypesInfoCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[ScheduleTypeInfoModel]:
         """
         Performs a GET request against the /schedule/types/info endpoint and returns an initialized PaginatedResponse object.

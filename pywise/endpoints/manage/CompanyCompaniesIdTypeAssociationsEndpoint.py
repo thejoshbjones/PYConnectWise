@@ -14,7 +14,16 @@ class CompanyCompaniesIdTypeAssociationsEndpoint(ConnectWiseEndpoint):
             CompanyCompaniesIdTypeAssociationsCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> CompanyCompaniesIdTypeAssociationsIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized CompanyCompaniesIdTypeAssociationsIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            CompanyCompaniesIdTypeAssociationsIdEndpoint: The initialized CompanyCompaniesIdTypeAssociationsIdEndpoint object.
+        """
         child = CompanyCompaniesIdTypeAssociationsIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

@@ -9,6 +9,7 @@ class CompanyPortalConfigurationsIdServiceSetupsCountEndpoint(ConnectWiseEndpoin
         super().__init__(client, "count", parent_endpoint=parent_endpoint)
         
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[CountModel]:
         """
         Performs a GET request against the /company/portalConfigurations/{parentId}/serviceSetups/count endpoint and returns an initialized PaginatedResponse object.

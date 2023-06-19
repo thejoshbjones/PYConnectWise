@@ -14,7 +14,16 @@ class ProcurementRmaStatusesIdNotificationsEndpoint(ConnectWiseEndpoint):
             ProcurementRmaStatusesIdNotificationsCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> ProcurementRmaStatusesIdNotificationsIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized ProcurementRmaStatusesIdNotificationsIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            ProcurementRmaStatusesIdNotificationsIdEndpoint: The initialized ProcurementRmaStatusesIdNotificationsIdEndpoint object.
+        """
         child = ProcurementRmaStatusesIdNotificationsIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

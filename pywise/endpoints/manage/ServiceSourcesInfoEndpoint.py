@@ -13,6 +13,7 @@ class ServiceSourcesInfoEndpoint(ConnectWiseEndpoint):
             ServiceSourcesInfoCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[SourceInfoModel]:
         """
         Performs a GET request against the /service/sources/info endpoint and returns an initialized PaginatedResponse object.

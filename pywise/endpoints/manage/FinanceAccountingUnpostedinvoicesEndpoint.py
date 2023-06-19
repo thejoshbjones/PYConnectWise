@@ -14,7 +14,16 @@ class FinanceAccountingUnpostedinvoicesEndpoint(ConnectWiseEndpoint):
             FinanceAccountingUnpostedinvoicesCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> FinanceAccountingUnpostedinvoicesIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized FinanceAccountingUnpostedinvoicesIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            FinanceAccountingUnpostedinvoicesIdEndpoint: The initialized FinanceAccountingUnpostedinvoicesIdEndpoint object.
+        """
         child = FinanceAccountingUnpostedinvoicesIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

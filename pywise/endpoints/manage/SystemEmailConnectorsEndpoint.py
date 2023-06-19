@@ -18,7 +18,16 @@ class SystemEmailConnectorsEndpoint(ConnectWiseEndpoint):
             SystemEmailConnectorsInfoEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> SystemEmailConnectorsIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized SystemEmailConnectorsIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            SystemEmailConnectorsIdEndpoint: The initialized SystemEmailConnectorsIdEndpoint object.
+        """
         child = SystemEmailConnectorsIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

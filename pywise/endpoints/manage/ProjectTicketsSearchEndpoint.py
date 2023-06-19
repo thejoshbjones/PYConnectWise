@@ -9,6 +9,7 @@ class ProjectTicketsSearchEndpoint(ConnectWiseEndpoint):
         super().__init__(client, "search", parent_endpoint=parent_endpoint)
         
     
+    
     def post(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> list[ProjectTicketModel]:
         """
         Performs a POST request against the /project/tickets/search endpoint.

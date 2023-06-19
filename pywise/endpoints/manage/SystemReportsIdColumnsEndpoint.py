@@ -8,3 +8,4 @@ class SystemReportsIdColumnsEndpoint(ConnectWiseEndpoint):
         super().__init__(client, "columns", parent_endpoint=parent_endpoint)
         
     
+    

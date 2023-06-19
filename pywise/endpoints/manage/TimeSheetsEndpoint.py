@@ -14,7 +14,16 @@ class TimeSheetsEndpoint(ConnectWiseEndpoint):
             TimeSheetsCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> TimeSheetsIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized TimeSheetsIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            TimeSheetsIdEndpoint: The initialized TimeSheetsIdEndpoint object.
+        """
         child = TimeSheetsIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

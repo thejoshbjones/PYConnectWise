@@ -14,7 +14,16 @@ class ServiceSurveysIdResultsEndpoint(ConnectWiseEndpoint):
             ServiceSurveysIdResultsCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> ServiceSurveysIdResultsIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized ServiceSurveysIdResultsIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            ServiceSurveysIdResultsIdEndpoint: The initialized ServiceSurveysIdResultsIdEndpoint object.
+        """
         child = ServiceSurveysIdResultsIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

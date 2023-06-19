@@ -13,6 +13,7 @@ class MarketingCampaignsIdActivitiesEndpoint(ConnectWiseEndpoint):
             MarketingCampaignsIdActivitiesCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[ActivityReferenceModel]:
         """
         Performs a GET request against the /marketing/campaigns/{id}/activities endpoint and returns an initialized PaginatedResponse object.

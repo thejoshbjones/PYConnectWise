@@ -9,6 +9,7 @@ class MarketingCampaignsIdFormsSubmittedIdEndpoint(ConnectWiseEndpoint):
         super().__init__(client, "{id}", parent_endpoint=parent_endpoint)
         
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[FormSubmittedModel]:
         """
         Performs a GET request against the /marketing/campaigns/{parentId}/formsSubmitted/{id} endpoint and returns an initialized PaginatedResponse object.

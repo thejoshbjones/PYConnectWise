@@ -13,6 +13,7 @@ class ProjectSecurityRolesIdEndpoint(ConnectWiseEndpoint):
             ProjectSecurityRolesIdSettingsEndpoint(client, parent_endpoint=self)
         )
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[ProjectSecurityRoleModel]:
         """
         Performs a GET request against the /project/securityRoles/{id} endpoint and returns an initialized PaginatedResponse object.

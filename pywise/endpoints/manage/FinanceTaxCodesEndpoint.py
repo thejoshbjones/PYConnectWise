@@ -18,7 +18,16 @@ class FinanceTaxCodesEndpoint(ConnectWiseEndpoint):
             FinanceTaxCodesInfoEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> FinanceTaxCodesIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized FinanceTaxCodesIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            FinanceTaxCodesIdEndpoint: The initialized FinanceTaxCodesIdEndpoint object.
+        """
         child = FinanceTaxCodesIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

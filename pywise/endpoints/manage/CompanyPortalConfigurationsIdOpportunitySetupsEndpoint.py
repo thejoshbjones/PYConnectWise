@@ -10,7 +10,16 @@ class CompanyPortalConfigurationsIdOpportunitySetupsEndpoint(ConnectWiseEndpoint
         super().__init__(client, "opportunitySetups", parent_endpoint=parent_endpoint)
         
     
+    
     def id(self, id: int) -> CompanyPortalConfigurationsIdOpportunitySetupsIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized CompanyPortalConfigurationsIdOpportunitySetupsIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            CompanyPortalConfigurationsIdOpportunitySetupsIdEndpoint: The initialized CompanyPortalConfigurationsIdOpportunitySetupsIdEndpoint object.
+        """
         child = CompanyPortalConfigurationsIdOpportunitySetupsIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

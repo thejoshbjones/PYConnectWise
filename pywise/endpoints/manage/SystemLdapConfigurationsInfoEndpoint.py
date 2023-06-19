@@ -13,6 +13,7 @@ class SystemLdapConfigurationsInfoEndpoint(ConnectWiseEndpoint):
             SystemLdapConfigurationsInfoCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[LdapConfigurationInfoModel]:
         """
         Performs a GET request against the /system/ldapConfigurations/info endpoint and returns an initialized PaginatedResponse object.

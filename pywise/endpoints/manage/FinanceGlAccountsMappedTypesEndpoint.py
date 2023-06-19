@@ -13,6 +13,7 @@ class FinanceGlAccountsMappedTypesEndpoint(ConnectWiseEndpoint):
             FinanceGlAccountsMappedTypesCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[MappedTypeModel]:
         """
         Performs a GET request against the /finance/glAccounts/mappedTypes endpoint and returns an initialized PaginatedResponse object.

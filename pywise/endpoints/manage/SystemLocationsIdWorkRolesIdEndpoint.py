@@ -9,6 +9,7 @@ class SystemLocationsIdWorkRolesIdEndpoint(ConnectWiseEndpoint):
         super().__init__(client, "{id}", parent_endpoint=parent_endpoint)
         
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[LocationWorkRoleModel]:
         """
         Performs a GET request against the /system/locations/{parentId}/workRoles/{id} endpoint and returns an initialized PaginatedResponse object.

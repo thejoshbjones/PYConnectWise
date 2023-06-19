@@ -18,7 +18,16 @@ class TimeTimePeriodSetupsEndpoint(ConnectWiseEndpoint):
             TimeTimePeriodSetupsDefaultEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> TimeTimePeriodSetupsIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized TimeTimePeriodSetupsIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            TimeTimePeriodSetupsIdEndpoint: The initialized TimeTimePeriodSetupsIdEndpoint object.
+        """
         child = TimeTimePeriodSetupsIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

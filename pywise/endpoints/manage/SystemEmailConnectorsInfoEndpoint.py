@@ -13,6 +13,7 @@ class SystemEmailConnectorsInfoEndpoint(ConnectWiseEndpoint):
             SystemEmailConnectorsInfoCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[EmailConnectorInfoModel]:
         """
         Performs a GET request against the /system/emailConnectors/info endpoint and returns an initialized PaginatedResponse object.

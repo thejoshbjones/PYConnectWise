@@ -13,6 +13,7 @@ class SystemGoogleemailsetupIdEndpoint(ConnectWiseEndpoint):
             SystemGoogleemailsetupIdTestConnectionEndpoint(client, parent_endpoint=self)
         )
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[GoogleEmailSetupModel]:
         """
         Performs a GET request against the /system/googleemailsetup/{id} endpoint and returns an initialized PaginatedResponse object.

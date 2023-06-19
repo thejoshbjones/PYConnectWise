@@ -14,7 +14,16 @@ class ProcurementCatalogIdMinimumStockByWarehouseEndpoint(ConnectWiseEndpoint):
             ProcurementCatalogIdMinimumStockByWarehouseCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> ProcurementCatalogIdMinimumStockByWarehouseIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized ProcurementCatalogIdMinimumStockByWarehouseIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            ProcurementCatalogIdMinimumStockByWarehouseIdEndpoint: The initialized ProcurementCatalogIdMinimumStockByWarehouseIdEndpoint object.
+        """
         child = ProcurementCatalogIdMinimumStockByWarehouseIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

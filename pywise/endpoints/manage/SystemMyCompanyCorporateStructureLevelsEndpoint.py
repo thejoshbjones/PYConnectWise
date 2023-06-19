@@ -14,7 +14,16 @@ class SystemMyCompanyCorporateStructureLevelsEndpoint(ConnectWiseEndpoint):
             SystemMyCompanyCorporateStructureLevelsCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> SystemMyCompanyCorporateStructureLevelsIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized SystemMyCompanyCorporateStructureLevelsIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            SystemMyCompanyCorporateStructureLevelsIdEndpoint: The initialized SystemMyCompanyCorporateStructureLevelsIdEndpoint object.
+        """
         child = SystemMyCompanyCorporateStructureLevelsIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

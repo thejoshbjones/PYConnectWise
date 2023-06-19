@@ -9,6 +9,7 @@ class SystemWorkflowsIdEventsIdCopyEndpoint(ConnectWiseEndpoint):
         super().__init__(client, "copy", parent_endpoint=parent_endpoint)
         
     
+    
     def post(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> WorkflowEventModel:
         """
         Performs a POST request against the /system/workflows/{parentId}/events/{id}/copy endpoint.

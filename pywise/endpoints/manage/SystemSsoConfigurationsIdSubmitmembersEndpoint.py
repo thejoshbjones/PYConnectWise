@@ -9,6 +9,7 @@ class SystemSsoConfigurationsIdSubmitmembersEndpoint(ConnectWiseEndpoint):
         super().__init__(client, "submitmembers", parent_endpoint=parent_endpoint)
         
     
+    
     def post(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> SsoConfigurationModel:
         """
         Performs a POST request against the /system/ssoConfigurations/{id}/submitmembers endpoint.

@@ -14,7 +14,16 @@ class FinanceGlCaptionsEndpoint(ConnectWiseEndpoint):
             FinanceGlCaptionsCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> FinanceGlCaptionsIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized FinanceGlCaptionsIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            FinanceGlCaptionsIdEndpoint: The initialized FinanceGlCaptionsIdEndpoint object.
+        """
         child = FinanceGlCaptionsIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

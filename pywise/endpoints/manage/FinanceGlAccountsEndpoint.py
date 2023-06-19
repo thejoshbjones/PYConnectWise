@@ -18,7 +18,16 @@ class FinanceGlAccountsEndpoint(ConnectWiseEndpoint):
             FinanceGlAccountsMappedTypesEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> FinanceGlAccountsIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized FinanceGlAccountsIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            FinanceGlAccountsIdEndpoint: The initialized FinanceGlAccountsIdEndpoint object.
+        """
         child = FinanceGlAccountsIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

@@ -13,6 +13,7 @@ class SystemCertificationsIdEndpoint(ConnectWiseEndpoint):
             SystemCertificationsIdUsagesEndpoint(client, parent_endpoint=self)
         )
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[CertificationModel]:
         """
         Performs a GET request against the /system/certifications/{id} endpoint and returns an initialized PaginatedResponse object.

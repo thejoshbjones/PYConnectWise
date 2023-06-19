@@ -13,6 +13,7 @@ class CompanyMarketDescriptionsInfoEndpoint(ConnectWiseEndpoint):
             CompanyMarketDescriptionsInfoCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[MarketDescriptionInfoModel]:
         """
         Performs a GET request against the /company/marketDescriptions/info endpoint and returns an initialized PaginatedResponse object.

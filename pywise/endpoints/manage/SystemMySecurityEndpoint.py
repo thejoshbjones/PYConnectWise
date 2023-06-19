@@ -9,6 +9,7 @@ class SystemMySecurityEndpoint(ConnectWiseEndpoint):
         super().__init__(client, "mySecurity", parent_endpoint=parent_endpoint)
         
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[MySecurityModel]:
         """
         Performs a GET request against the /system/mySecurity endpoint and returns an initialized PaginatedResponse object.

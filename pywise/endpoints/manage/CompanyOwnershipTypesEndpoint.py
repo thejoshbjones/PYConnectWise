@@ -18,7 +18,16 @@ class CompanyOwnershipTypesEndpoint(ConnectWiseEndpoint):
             CompanyOwnershipTypesInfoEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> CompanyOwnershipTypesIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized CompanyOwnershipTypesIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            CompanyOwnershipTypesIdEndpoint: The initialized CompanyOwnershipTypesIdEndpoint object.
+        """
         child = CompanyOwnershipTypesIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

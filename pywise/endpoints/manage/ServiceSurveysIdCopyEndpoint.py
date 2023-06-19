@@ -9,6 +9,7 @@ class ServiceSurveysIdCopyEndpoint(ConnectWiseEndpoint):
         super().__init__(client, "copy", parent_endpoint=parent_endpoint)
         
     
+    
     def post(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> ServiceSurveyModel:
         """
         Performs a POST request against the /service/surveys/{id}/copy endpoint.

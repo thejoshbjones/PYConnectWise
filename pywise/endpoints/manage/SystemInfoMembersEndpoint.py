@@ -15,7 +15,16 @@ class SystemInfoMembersEndpoint(ConnectWiseEndpoint):
             SystemInfoMembersCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> SystemInfoMembersIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized SystemInfoMembersIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            SystemInfoMembersIdEndpoint: The initialized SystemInfoMembersIdEndpoint object.
+        """
         child = SystemInfoMembersIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

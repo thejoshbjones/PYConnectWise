@@ -26,7 +26,16 @@ class MarketingCampaignsEndpoint(ConnectWiseEndpoint):
             MarketingCampaignsTypesEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> MarketingCampaignsIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized MarketingCampaignsIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            MarketingCampaignsIdEndpoint: The initialized MarketingCampaignsIdEndpoint object.
+        """
         child = MarketingCampaignsIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

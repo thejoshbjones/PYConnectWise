@@ -9,6 +9,7 @@ class ServiceBoardsIdNotificationsIdEndpoint(ConnectWiseEndpoint):
         super().__init__(client, "{id}", parent_endpoint=parent_endpoint)
         
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[BoardNotificationModel]:
         """
         Performs a GET request against the /service/boards/{parentId}/notifications/{id} endpoint and returns an initialized PaginatedResponse object.

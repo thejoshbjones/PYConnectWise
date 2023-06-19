@@ -14,7 +14,16 @@ class FinanceAgreementsIdAdjustmentsEndpoint(ConnectWiseEndpoint):
             FinanceAgreementsIdAdjustmentsCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> FinanceAgreementsIdAdjustmentsIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized FinanceAgreementsIdAdjustmentsIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            FinanceAgreementsIdAdjustmentsIdEndpoint: The initialized FinanceAgreementsIdAdjustmentsIdEndpoint object.
+        """
         child = FinanceAgreementsIdAdjustmentsIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

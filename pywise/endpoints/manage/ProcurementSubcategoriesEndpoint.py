@@ -14,7 +14,16 @@ class ProcurementSubcategoriesEndpoint(ConnectWiseEndpoint):
             ProcurementSubcategoriesCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> ProcurementSubcategoriesIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized ProcurementSubcategoriesIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            ProcurementSubcategoriesIdEndpoint: The initialized ProcurementSubcategoriesIdEndpoint object.
+        """
         child = ProcurementSubcategoriesIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

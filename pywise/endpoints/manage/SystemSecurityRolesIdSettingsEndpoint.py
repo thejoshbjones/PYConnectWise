@@ -14,7 +14,16 @@ class SystemSecurityRolesIdSettingsEndpoint(ConnectWiseEndpoint):
             SystemSecurityRolesIdSettingsCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> SystemSecurityRolesIdSettingsIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized SystemSecurityRolesIdSettingsIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            SystemSecurityRolesIdSettingsIdEndpoint: The initialized SystemSecurityRolesIdSettingsIdEndpoint object.
+        """
         child = SystemSecurityRolesIdSettingsIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

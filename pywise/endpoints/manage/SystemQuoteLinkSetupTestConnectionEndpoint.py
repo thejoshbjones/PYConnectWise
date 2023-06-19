@@ -9,6 +9,7 @@ class SystemQuoteLinkSetupTestConnectionEndpoint(ConnectWiseEndpoint):
         super().__init__(client, "testConnection", parent_endpoint=parent_endpoint)
         
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[SuccessResponseModel]:
         """
         Performs a GET request against the /system/quoteLinkSetup/testConnection endpoint and returns an initialized PaginatedResponse object.

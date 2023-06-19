@@ -9,6 +9,7 @@ class FinanceTaxCodesIdCopyEndpoint(ConnectWiseEndpoint):
         super().__init__(client, "copy", parent_endpoint=parent_endpoint)
         
     
+    
     def post(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> TaxCodeModel:
         """
         Performs a POST request against the /finance/taxCodes/{id}/copy endpoint.

@@ -10,7 +10,16 @@ class ServiceKnowledgebasesettingsEndpoint(ConnectWiseEndpoint):
         super().__init__(client, "knowledgebasesettings", parent_endpoint=parent_endpoint)
         
     
+    
     def id(self, id: int) -> ServiceKnowledgebasesettingsIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized ServiceKnowledgebasesettingsIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            ServiceKnowledgebasesettingsIdEndpoint: The initialized ServiceKnowledgebasesettingsIdEndpoint object.
+        """
         child = ServiceKnowledgebasesettingsIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

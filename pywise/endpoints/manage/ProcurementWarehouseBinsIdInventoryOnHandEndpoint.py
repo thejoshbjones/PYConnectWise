@@ -14,7 +14,16 @@ class ProcurementWarehouseBinsIdInventoryOnHandEndpoint(ConnectWiseEndpoint):
             ProcurementWarehouseBinsIdInventoryOnHandCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> ProcurementWarehouseBinsIdInventoryOnHandIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized ProcurementWarehouseBinsIdInventoryOnHandIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            ProcurementWarehouseBinsIdInventoryOnHandIdEndpoint: The initialized ProcurementWarehouseBinsIdInventoryOnHandIdEndpoint object.
+        """
         child = ProcurementWarehouseBinsIdInventoryOnHandIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

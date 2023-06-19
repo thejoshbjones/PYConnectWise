@@ -14,7 +14,16 @@ class SystemEmailTokensEndpoint(ConnectWiseEndpoint):
             SystemEmailTokensCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> SystemEmailTokensIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized SystemEmailTokensIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            SystemEmailTokensIdEndpoint: The initialized SystemEmailTokensIdEndpoint object.
+        """
         child = SystemEmailTokensIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

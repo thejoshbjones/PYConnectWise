@@ -9,6 +9,7 @@ class FinanceClosedInvoicesIdEndpoint(ConnectWiseEndpoint):
         super().__init__(client, "{id}", parent_endpoint=parent_endpoint)
         
     
+    
     def put(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> ClosedInvoiceModel:
         """
         Performs a PUT request against the /finance/closedInvoices/{id} endpoint.

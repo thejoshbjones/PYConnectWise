@@ -10,7 +10,16 @@ class CompanyPortalConfigurationsIdPasswordEmailSetupsEndpoint(ConnectWiseEndpoi
         super().__init__(client, "passwordEmailSetups", parent_endpoint=parent_endpoint)
         
     
+    
     def id(self, id: int) -> CompanyPortalConfigurationsIdPasswordEmailSetupsIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized CompanyPortalConfigurationsIdPasswordEmailSetupsIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            CompanyPortalConfigurationsIdPasswordEmailSetupsIdEndpoint: The initialized CompanyPortalConfigurationsIdPasswordEmailSetupsIdEndpoint object.
+        """
         child = CompanyPortalConfigurationsIdPasswordEmailSetupsIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

@@ -9,6 +9,7 @@ class CompanyPortalConfigurationsIdInvoiceSetupsIdTestTransactionEndpoint(Connec
         super().__init__(client, "testTransaction", parent_endpoint=parent_endpoint)
         
     
+    
     def post(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> SuccessResponseModel:
         """
         Performs a POST request against the /company/portalConfigurations/{parentId}/invoiceSetups/{id}/testTransaction endpoint.

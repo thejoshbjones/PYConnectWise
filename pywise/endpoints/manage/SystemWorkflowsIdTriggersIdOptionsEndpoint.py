@@ -13,6 +13,7 @@ class SystemWorkflowsIdTriggersIdOptionsEndpoint(ConnectWiseEndpoint):
             SystemWorkflowsIdTriggersIdOptionsCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[WorkflowTriggerOptionModel]:
         """
         Performs a GET request against the /system/workflows/{grandparentId}/triggers/{parentId}/options endpoint and returns an initialized PaginatedResponse object.

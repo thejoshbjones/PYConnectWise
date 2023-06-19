@@ -9,6 +9,7 @@ class SystemMyCompanyTimeExpenseIdEndpoint(ConnectWiseEndpoint):
         super().__init__(client, "{id}", parent_endpoint=parent_endpoint)
         
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[TimeExpenseModel]:
         """
         Performs a GET request against the /system/myCompany/timeExpense/{id} endpoint and returns an initialized PaginatedResponse object.

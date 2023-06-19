@@ -9,6 +9,7 @@ class SystemWorkflowsUserdefinedfieldsEventsIdActionsIdEndpoint(ConnectWiseEndpo
         super().__init__(client, "{parentId}", parent_endpoint=parent_endpoint)
         
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[WorkflowActionUserDefinedFieldModel]:
         """
         Performs a GET request against the /system/workflows/userdefinedfields/events{grandparentId}/actions/{parentId} endpoint and returns an initialized PaginatedResponse object.

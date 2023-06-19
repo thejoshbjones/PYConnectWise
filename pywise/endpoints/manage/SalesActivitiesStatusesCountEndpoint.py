@@ -9,6 +9,7 @@ class SalesActivitiesStatusesCountEndpoint(ConnectWiseEndpoint):
         super().__init__(client, "count", parent_endpoint=parent_endpoint)
         
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[CountModel]:
         """
         Performs a GET request against the /sales/activities/statuses/count endpoint and returns an initialized PaginatedResponse object.

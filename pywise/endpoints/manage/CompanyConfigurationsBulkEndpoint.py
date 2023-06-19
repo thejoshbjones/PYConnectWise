@@ -10,6 +10,7 @@ class CompanyConfigurationsBulkEndpoint(ConnectWiseEndpoint):
         super().__init__(client, "bulk", parent_endpoint=parent_endpoint)
         
     
+    
     def post(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> ConfigurationModel:
         """
         Performs a POST request against the /company/configurations/bulk endpoint.

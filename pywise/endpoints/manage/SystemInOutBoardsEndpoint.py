@@ -14,7 +14,16 @@ class SystemInOutBoardsEndpoint(ConnectWiseEndpoint):
             SystemInOutBoardsCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> SystemInOutBoardsIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized SystemInOutBoardsIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            SystemInOutBoardsIdEndpoint: The initialized SystemInOutBoardsIdEndpoint object.
+        """
         child = SystemInOutBoardsIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

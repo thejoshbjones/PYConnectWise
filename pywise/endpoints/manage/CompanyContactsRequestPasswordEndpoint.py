@@ -8,6 +8,7 @@ class CompanyContactsRequestPasswordEndpoint(ConnectWiseEndpoint):
         super().__init__(client, "requestPassword", parent_endpoint=parent_endpoint)
         
     
+    
     def post(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> GenericMessageModel:
         """
         Performs a POST request against the /company/contacts/requestPassword endpoint.

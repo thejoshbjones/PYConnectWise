@@ -9,6 +9,7 @@ class SystemMembersIdDeactivateEndpoint(ConnectWiseEndpoint):
         super().__init__(client, "deactivate", parent_endpoint=parent_endpoint)
         
     
+    
     def post(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> MemberDeactivationModel:
         """
         Performs a POST request against the /system/members/{id}/deactivate endpoint.

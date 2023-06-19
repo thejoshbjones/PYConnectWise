@@ -13,6 +13,7 @@ class ServiceServiceSignoffInfoEndpoint(ConnectWiseEndpoint):
             ServiceServiceSignoffInfoCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[ServiceSignoffInfoModel]:
         """
         Performs a GET request against the /service/serviceSignoff/info endpoint and returns an initialized PaginatedResponse object.

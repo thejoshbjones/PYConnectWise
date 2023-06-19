@@ -13,6 +13,7 @@ class SystemEmailConnectorsIdParsingStylesIdEndpoint(ConnectWiseEndpoint):
             SystemEmailConnectorsIdParsingStylesIdParsingRulesEndpoint(client, parent_endpoint=self)
         )
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[EmailConnectorParsingStyleModel]:
         """
         Performs a GET request against the /system/emailConnectors/{parentId}/parsingStyles/{id} endpoint and returns an initialized PaginatedResponse object.

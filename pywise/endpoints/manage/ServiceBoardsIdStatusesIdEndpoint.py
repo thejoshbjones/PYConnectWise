@@ -21,6 +21,7 @@ class ServiceBoardsIdStatusesIdEndpoint(ConnectWiseEndpoint):
             ServiceBoardsIdStatusesIdUsagesEndpoint(client, parent_endpoint=self)
         )
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[BoardStatusModel]:
         """
         Performs a GET request against the /service/boards/{parentId}/statuses/{id} endpoint and returns an initialized PaginatedResponse object.

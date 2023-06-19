@@ -18,7 +18,16 @@ class CompanyCommunicationTypesEndpoint(ConnectWiseEndpoint):
             CompanyCommunicationTypesInfoEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> CompanyCommunicationTypesIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized CompanyCommunicationTypesIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            CompanyCommunicationTypesIdEndpoint: The initialized CompanyCommunicationTypesIdEndpoint object.
+        """
         child = CompanyCommunicationTypesIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

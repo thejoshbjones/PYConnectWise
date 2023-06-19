@@ -13,6 +13,7 @@ class SystemTimeZoneSetupsInfoEndpoint(ConnectWiseEndpoint):
             SystemTimeZoneSetupsInfoCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[TimeZoneSetupInfoModel]:
         """
         Performs a GET request against the /system/timeZoneSetups/info endpoint and returns an initialized PaginatedResponse object.

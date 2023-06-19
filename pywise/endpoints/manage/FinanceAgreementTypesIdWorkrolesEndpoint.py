@@ -18,7 +18,16 @@ class FinanceAgreementTypesIdWorkrolesEndpoint(ConnectWiseEndpoint):
             FinanceAgreementTypesIdWorkrolesInfoEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> FinanceAgreementTypesIdWorkrolesIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized FinanceAgreementTypesIdWorkrolesIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            FinanceAgreementTypesIdWorkrolesIdEndpoint: The initialized FinanceAgreementTypesIdWorkrolesIdEndpoint object.
+        """
         child = FinanceAgreementTypesIdWorkrolesIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

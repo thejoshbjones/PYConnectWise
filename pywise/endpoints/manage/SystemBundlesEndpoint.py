@@ -13,6 +13,7 @@ class SystemBundlesEndpoint(ConnectWiseEndpoint):
             SystemBundlesCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def post(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> BundleResultsCollectionModel:
         """
         Performs a POST request against the /system/bundles endpoint.

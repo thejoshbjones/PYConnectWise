@@ -14,7 +14,16 @@ class TimeSchedulestopwatchesEndpoint(ConnectWiseEndpoint):
             TimeSchedulestopwatchesCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> TimeSchedulestopwatchesIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized TimeSchedulestopwatchesIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            TimeSchedulestopwatchesIdEndpoint: The initialized TimeSchedulestopwatchesIdEndpoint object.
+        """
         child = TimeSchedulestopwatchesIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

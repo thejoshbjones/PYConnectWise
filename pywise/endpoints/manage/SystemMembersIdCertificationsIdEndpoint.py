@@ -9,6 +9,7 @@ class SystemMembersIdCertificationsIdEndpoint(ConnectWiseEndpoint):
         super().__init__(client, "{id}", parent_endpoint=parent_endpoint)
         
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[MemberCertificationModel]:
         """
         Performs a GET request against the /system/members/{parentId}/certifications/{id} endpoint and returns an initialized PaginatedResponse object.

@@ -10,7 +10,16 @@ class SystemSurveysIdQuestionsIdValuesEndpoint(ConnectWiseEndpoint):
         super().__init__(client, "values", parent_endpoint=parent_endpoint)
         
     
+    
     def id(self, id: int) -> SystemSurveysIdQuestionsIdValuesIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized SystemSurveysIdQuestionsIdValuesIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            SystemSurveysIdQuestionsIdValuesIdEndpoint: The initialized SystemSurveysIdQuestionsIdValuesIdEndpoint object.
+        """
         child = SystemSurveysIdQuestionsIdValuesIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

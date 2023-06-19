@@ -13,6 +13,7 @@ class ExpenseTypesIdEndpoint(ConnectWiseEndpoint):
             ExpenseTypesIdInfoEndpoint(client, parent_endpoint=self)
         )
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[ExpenseTypeModel]:
         """
         Performs a GET request against the /expense/types/{id} endpoint and returns an initialized PaginatedResponse object.

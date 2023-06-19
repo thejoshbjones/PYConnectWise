@@ -9,6 +9,7 @@ class SystemMembersWithSsoEndpoint(ConnectWiseEndpoint):
         super().__init__(client, "withSso", parent_endpoint=parent_endpoint)
         
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[MemberModel]:
         """
         Performs a GET request against the /system/members/withSso endpoint and returns an initialized PaginatedResponse object.

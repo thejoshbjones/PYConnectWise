@@ -9,6 +9,7 @@ class ServiceBoardsIdSubtypesIdUsagesListEndpoint(ConnectWiseEndpoint):
         super().__init__(client, "list", parent_endpoint=parent_endpoint)
         
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[UsageModel]:
         """
         Performs a GET request against the /service/boards/{parentId}/subtypes/{id}/usages/list endpoint and returns an initialized PaginatedResponse object.

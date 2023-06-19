@@ -13,6 +13,7 @@ class SalesOrdersIdEndpoint(ConnectWiseEndpoint):
             SalesOrdersIdConvertToServiceTicketEndpoint(client, parent_endpoint=self)
         )
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[OrderModel]:
         """
         Performs a GET request against the /sales/orders/{id} endpoint and returns an initialized PaginatedResponse object.

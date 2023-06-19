@@ -22,7 +22,16 @@ class SalesActivitiesEndpoint(ConnectWiseEndpoint):
             SalesActivitiesTypesEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> SalesActivitiesIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized SalesActivitiesIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            SalesActivitiesIdEndpoint: The initialized SalesActivitiesIdEndpoint object.
+        """
         child = SalesActivitiesIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

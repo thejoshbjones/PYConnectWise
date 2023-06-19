@@ -14,7 +14,16 @@ class ServiceSLAsEndpoint(ConnectWiseEndpoint):
             ServiceSLAsCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> ServiceSLAsIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized ServiceSLAsIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            ServiceSLAsIdEndpoint: The initialized ServiceSLAsIdEndpoint object.
+        """
         child = ServiceSLAsIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

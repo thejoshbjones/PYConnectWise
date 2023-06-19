@@ -18,7 +18,16 @@ class SystemInOutTypesEndpoint(ConnectWiseEndpoint):
             SystemInOutTypesInfoEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> SystemInOutTypesIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized SystemInOutTypesIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            SystemInOutTypesIdEndpoint: The initialized SystemInOutTypesIdEndpoint object.
+        """
         child = SystemInOutTypesIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

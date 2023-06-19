@@ -9,6 +9,7 @@ class CompanyPortalConfigurationsIdPasswordEmailSetupsIdEndpoint(ConnectWiseEndp
         super().__init__(client, "{id}", parent_endpoint=parent_endpoint)
         
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[PortalConfigurationPasswordEmailSetupModel]:
         """
         Performs a GET request against the /company/portalConfigurations/{parentId}/passwordEmailSetups/{id} endpoint and returns an initialized PaginatedResponse object.

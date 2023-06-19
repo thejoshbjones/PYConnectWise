@@ -13,6 +13,7 @@ class TimeAccrualsIdEndpoint(ConnectWiseEndpoint):
             TimeAccrualsIdDetailsEndpoint(client, parent_endpoint=self)
         )
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[TimeAccrualModel]:
         """
         Performs a GET request against the /time/accruals/{id} endpoint and returns an initialized PaginatedResponse object.

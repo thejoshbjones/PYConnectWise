@@ -9,6 +9,7 @@ class SalesOpportunitiesIdConvertToServiceTicketEndpoint(ConnectWiseEndpoint):
         super().__init__(client, "convertToServiceTicket", parent_endpoint=parent_endpoint)
         
     
+    
     def post(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> TicketModel:
         """
         Performs a POST request against the /sales/opportunities/{id}/convertToServiceTicket endpoint.

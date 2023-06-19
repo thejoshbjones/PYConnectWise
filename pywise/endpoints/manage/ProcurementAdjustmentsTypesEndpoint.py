@@ -18,7 +18,16 @@ class ProcurementAdjustmentsTypesEndpoint(ConnectWiseEndpoint):
             ProcurementAdjustmentsTypesInfoEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> ProcurementAdjustmentsTypesIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized ProcurementAdjustmentsTypesIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            ProcurementAdjustmentsTypesIdEndpoint: The initialized ProcurementAdjustmentsTypesIdEndpoint object.
+        """
         child = ProcurementAdjustmentsTypesIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

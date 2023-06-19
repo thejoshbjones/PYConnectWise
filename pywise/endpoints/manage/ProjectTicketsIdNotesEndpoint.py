@@ -14,7 +14,16 @@ class ProjectTicketsIdNotesEndpoint(ConnectWiseEndpoint):
             ProjectTicketsIdNotesCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> ProjectTicketsIdNotesIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized ProjectTicketsIdNotesIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            ProjectTicketsIdNotesIdEndpoint: The initialized ProjectTicketsIdNotesIdEndpoint object.
+        """
         child = ProjectTicketsIdNotesIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

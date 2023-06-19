@@ -9,6 +9,7 @@ class SystemSettingsIdEndpoint(ConnectWiseEndpoint):
         super().__init__(client, "{id}", parent_endpoint=parent_endpoint)
         
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[SystemSettingModel]:
         """
         Performs a GET request against the /system/settings/{id} endpoint and returns an initialized PaginatedResponse object.

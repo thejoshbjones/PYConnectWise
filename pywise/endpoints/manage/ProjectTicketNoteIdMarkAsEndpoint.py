@@ -8,6 +8,7 @@ class ProjectTicketNoteIdMarkAsEndpoint(ConnectWiseEndpoint):
         super().__init__(client, "", parent_endpoint=parent_endpoint)
         
     
+    
     def post(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> GenericMessageModel:
         """
         Performs a POST request against the /project/ticketNote/{id}/markAs/ endpoint.

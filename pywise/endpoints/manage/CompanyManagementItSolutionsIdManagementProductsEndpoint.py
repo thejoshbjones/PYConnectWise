@@ -14,7 +14,16 @@ class CompanyManagementItSolutionsIdManagementProductsEndpoint(ConnectWiseEndpoi
             CompanyManagementItSolutionsIdManagementProductsCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> CompanyManagementItSolutionsIdManagementProductsIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized CompanyManagementItSolutionsIdManagementProductsIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            CompanyManagementItSolutionsIdManagementProductsIdEndpoint: The initialized CompanyManagementItSolutionsIdManagementProductsIdEndpoint object.
+        """
         child = CompanyManagementItSolutionsIdManagementProductsIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

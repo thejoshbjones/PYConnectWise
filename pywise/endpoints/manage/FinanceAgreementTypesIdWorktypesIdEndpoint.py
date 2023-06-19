@@ -9,6 +9,7 @@ class FinanceAgreementTypesIdWorktypesIdEndpoint(ConnectWiseEndpoint):
         super().__init__(client, "{id}", parent_endpoint=parent_endpoint)
         
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[AgreementTypeWorkTypeModel]:
         """
         Performs a GET request against the /finance/agreementTypes/{parentId}/worktypes/{id} endpoint and returns an initialized PaginatedResponse object.

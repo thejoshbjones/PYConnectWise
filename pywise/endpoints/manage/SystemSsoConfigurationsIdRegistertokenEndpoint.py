@@ -9,6 +9,7 @@ class SystemSsoConfigurationsIdRegistertokenEndpoint(ConnectWiseEndpoint):
         super().__init__(client, "registertoken", parent_endpoint=parent_endpoint)
         
     
+    
     def post(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> SsoConfigurationModel:
         """
         Performs a POST request against the /system/ssoConfigurations/{id}/registertoken endpoint.

@@ -14,7 +14,16 @@ class ProcurementPricingschedulesIdDetailsIdBreaksEndpoint(ConnectWiseEndpoint):
             ProcurementPricingschedulesIdDetailsIdBreaksCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> ProcurementPricingschedulesIdDetailsIdBreaksIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized ProcurementPricingschedulesIdDetailsIdBreaksIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            ProcurementPricingschedulesIdDetailsIdBreaksIdEndpoint: The initialized ProcurementPricingschedulesIdDetailsIdBreaksIdEndpoint object.
+        """
         child = ProcurementPricingschedulesIdDetailsIdBreaksIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

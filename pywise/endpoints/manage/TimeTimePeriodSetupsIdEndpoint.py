@@ -13,6 +13,7 @@ class TimeTimePeriodSetupsIdEndpoint(ConnectWiseEndpoint):
             TimeTimePeriodSetupsIdPeriodsEndpoint(client, parent_endpoint=self)
         )
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[TimePeriodSetupModel]:
         """
         Performs a GET request against the /time/timePeriodSetups/{id} endpoint and returns an initialized PaginatedResponse object.

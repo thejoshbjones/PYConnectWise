@@ -14,7 +14,16 @@ class ServiceKnowledgeBaseSubCategoriesEndpoint(ConnectWiseEndpoint):
             ServiceKnowledgeBaseSubCategoriesCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> ServiceKnowledgeBaseSubCategoriesIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized ServiceKnowledgeBaseSubCategoriesIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            ServiceKnowledgeBaseSubCategoriesIdEndpoint: The initialized ServiceKnowledgeBaseSubCategoriesIdEndpoint object.
+        """
         child = ServiceKnowledgeBaseSubCategoriesIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

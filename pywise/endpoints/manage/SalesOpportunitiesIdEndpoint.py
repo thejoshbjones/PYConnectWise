@@ -41,6 +41,7 @@ class SalesOpportunitiesIdEndpoint(ConnectWiseEndpoint):
             SalesOpportunitiesIdTeamEndpoint(client, parent_endpoint=self)
         )
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[OpportunityModel]:
         """
         Performs a GET request against the /sales/opportunities/{id} endpoint and returns an initialized PaginatedResponse object.

@@ -9,6 +9,7 @@ class CompanyManagementIdExecuteManagedItSyncEndpoint(ConnectWiseEndpoint):
         super().__init__(client, "executeManagedItSync", parent_endpoint=parent_endpoint)
         
     
+    
     def post(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> SuccessResponseModel:
         """
         Performs a POST request against the /company/management/{id}/executeManagedItSync endpoint.

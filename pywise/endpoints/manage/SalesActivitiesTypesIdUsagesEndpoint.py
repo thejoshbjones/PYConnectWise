@@ -13,6 +13,7 @@ class SalesActivitiesTypesIdUsagesEndpoint(ConnectWiseEndpoint):
             SalesActivitiesTypesIdUsagesListEndpoint(client, parent_endpoint=self)
         )
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[UsageModel]:
         """
         Performs a GET request against the /sales/activities/types/{id}/usages endpoint and returns an initialized PaginatedResponse object.

@@ -9,6 +9,7 @@ class CompanyCompanyFinanceIdEndpoint(ConnectWiseEndpoint):
         super().__init__(client, "{id}", parent_endpoint=parent_endpoint)
         
     
+    
     def put(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> CompanyFinanceModel:
         """
         Performs a PUT request against the /company/companyFinance/{id} endpoint.

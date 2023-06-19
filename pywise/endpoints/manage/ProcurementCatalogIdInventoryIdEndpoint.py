@@ -9,6 +9,7 @@ class ProcurementCatalogIdInventoryIdEndpoint(ConnectWiseEndpoint):
         super().__init__(client, "{id}", parent_endpoint=parent_endpoint)
         
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[CatalogInventoryModel]:
         """
         Performs a GET request against the /procurement/catalog/{parentId}/inventory/{id} endpoint and returns an initialized PaginatedResponse object.

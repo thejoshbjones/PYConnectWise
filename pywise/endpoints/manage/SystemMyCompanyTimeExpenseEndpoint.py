@@ -14,7 +14,16 @@ class SystemMyCompanyTimeExpenseEndpoint(ConnectWiseEndpoint):
             SystemMyCompanyTimeExpenseCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> SystemMyCompanyTimeExpenseIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized SystemMyCompanyTimeExpenseIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            SystemMyCompanyTimeExpenseIdEndpoint: The initialized SystemMyCompanyTimeExpenseIdEndpoint object.
+        """
         child = SystemMyCompanyTimeExpenseIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

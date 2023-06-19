@@ -18,7 +18,16 @@ class ServiceSourcesEndpoint(ConnectWiseEndpoint):
             ServiceSourcesInfoEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> ServiceSourcesIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized ServiceSourcesIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            ServiceSourcesIdEndpoint: The initialized ServiceSourcesIdEndpoint object.
+        """
         child = ServiceSourcesIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

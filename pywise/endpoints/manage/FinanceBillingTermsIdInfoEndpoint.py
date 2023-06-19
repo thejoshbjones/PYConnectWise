@@ -9,6 +9,7 @@ class FinanceBillingTermsIdInfoEndpoint(ConnectWiseEndpoint):
         super().__init__(client, "info", parent_endpoint=parent_endpoint)
         
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[BillingTermInfoModel]:
         """
         Performs a GET request against the /finance/billingTerms/{id}/info endpoint and returns an initialized PaginatedResponse object.

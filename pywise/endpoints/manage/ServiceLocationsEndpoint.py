@@ -18,7 +18,16 @@ class ServiceLocationsEndpoint(ConnectWiseEndpoint):
             ServiceLocationsInfoEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> ServiceLocationsIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized ServiceLocationsIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            ServiceLocationsIdEndpoint: The initialized ServiceLocationsIdEndpoint object.
+        """
         child = ServiceLocationsIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

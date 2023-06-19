@@ -9,6 +9,7 @@ class CompanyPortalConfigurationsCopyEndpoint(ConnectWiseEndpoint):
         super().__init__(client, "copy", parent_endpoint=parent_endpoint)
         
     
+    
     def post(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> PortalConfigurationModel:
         """
         Performs a POST request against the /company/portalConfigurations/copy endpoint.

@@ -18,7 +18,16 @@ class SystemMyCompanyCorporateStructureEndpoint(ConnectWiseEndpoint):
             SystemMyCompanyCorporateStructureInfoEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> SystemMyCompanyCorporateStructureIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized SystemMyCompanyCorporateStructureIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            SystemMyCompanyCorporateStructureIdEndpoint: The initialized SystemMyCompanyCorporateStructureIdEndpoint object.
+        """
         child = SystemMyCompanyCorporateStructureIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

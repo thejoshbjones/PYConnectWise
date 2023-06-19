@@ -14,7 +14,16 @@ class CompanyPortalConfigurationsInvoiceSetupPaymentProcessorsEndpoint(ConnectWi
             CompanyPortalConfigurationsInvoiceSetupPaymentProcessorsCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> CompanyPortalConfigurationsInvoiceSetupPaymentProcessorsIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized CompanyPortalConfigurationsInvoiceSetupPaymentProcessorsIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            CompanyPortalConfigurationsInvoiceSetupPaymentProcessorsIdEndpoint: The initialized CompanyPortalConfigurationsInvoiceSetupPaymentProcessorsIdEndpoint object.
+        """
         child = CompanyPortalConfigurationsInvoiceSetupPaymentProcessorsIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

@@ -13,6 +13,7 @@ class FinanceTaxCodesIdWorkRoleExemptionsIdEndpoint(ConnectWiseEndpoint):
             FinanceTaxCodesIdWorkRoleExemptionsIdTaxableWorkRoleLevelsEndpoint(client, parent_endpoint=self)
         )
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[WorkRoleExemptionModel]:
         """
         Performs a GET request against the /finance/taxCodes/{parentId}/workRoleExemptions/{id} endpoint and returns an initialized PaginatedResponse object.

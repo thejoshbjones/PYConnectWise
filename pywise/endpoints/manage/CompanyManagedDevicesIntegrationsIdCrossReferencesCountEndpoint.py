@@ -9,6 +9,7 @@ class CompanyManagedDevicesIntegrationsIdCrossReferencesCountEndpoint(ConnectWis
         super().__init__(client, "count", parent_endpoint=parent_endpoint)
         
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[CountModel]:
         """
         Performs a GET request against the /company/managedDevicesIntegrations/{parentId}/crossReferences/count endpoint and returns an initialized PaginatedResponse object.

@@ -18,7 +18,16 @@ class ExpenseTypesEndpoint(ConnectWiseEndpoint):
             ExpenseTypesInfoEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> ExpenseTypesIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized ExpenseTypesIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            ExpenseTypesIdEndpoint: The initialized ExpenseTypesIdEndpoint object.
+        """
         child = ExpenseTypesIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

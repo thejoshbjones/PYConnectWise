@@ -9,6 +9,7 @@ class CompanyContactsValidatePortalCredentialsEndpoint(ConnectWiseEndpoint):
         super().__init__(client, "validatePortalCredentials", parent_endpoint=parent_endpoint)
         
     
+    
     def post(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> ValidatePortalResponseModel:
         """
         Performs a POST request against the /company/contacts/validatePortalCredentials endpoint.

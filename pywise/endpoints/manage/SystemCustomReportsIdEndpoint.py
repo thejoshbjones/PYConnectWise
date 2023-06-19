@@ -13,6 +13,7 @@ class SystemCustomReportsIdEndpoint(ConnectWiseEndpoint):
             SystemCustomReportsIdParametersEndpoint(client, parent_endpoint=self)
         )
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[CustomReportModel]:
         """
         Performs a GET request against the /system/customReports/{id} endpoint and returns an initialized PaginatedResponse object.

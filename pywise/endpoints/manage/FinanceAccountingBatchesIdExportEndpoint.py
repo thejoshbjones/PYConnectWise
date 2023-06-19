@@ -9,6 +9,7 @@ class FinanceAccountingBatchesIdExportEndpoint(ConnectWiseEndpoint):
         super().__init__(client, "export", parent_endpoint=parent_endpoint)
         
     
+    
     def post(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> GLExportModel:
         """
         Performs a POST request against the /finance/accounting/batches/{id}/export endpoint.

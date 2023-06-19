@@ -14,7 +14,16 @@ class ProcurementUnitOfMeasuresIdConversionsEndpoint(ConnectWiseEndpoint):
             ProcurementUnitOfMeasuresIdConversionsCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> ProcurementUnitOfMeasuresIdConversionsIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized ProcurementUnitOfMeasuresIdConversionsIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            ProcurementUnitOfMeasuresIdConversionsIdEndpoint: The initialized ProcurementUnitOfMeasuresIdConversionsIdEndpoint object.
+        """
         child = ProcurementUnitOfMeasuresIdConversionsIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

@@ -9,6 +9,7 @@ class SystemIntegratorTagsIdEndpoint(ConnectWiseEndpoint):
         super().__init__(client, "{id}", parent_endpoint=parent_endpoint)
         
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[IntegratorTagModel]:
         """
         Performs a GET request against the /system/integratorTags/{id} endpoint and returns an initialized PaginatedResponse object.

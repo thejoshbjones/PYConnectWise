@@ -14,7 +14,16 @@ class ServiceSeveritiesEndpoint(ConnectWiseEndpoint):
             ServiceSeveritiesCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> ServiceSeveritiesIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized ServiceSeveritiesIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            ServiceSeveritiesIdEndpoint: The initialized ServiceSeveritiesIdEndpoint object.
+        """
         child = ServiceSeveritiesIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

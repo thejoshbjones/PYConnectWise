@@ -9,6 +9,7 @@ class ServiceTicketsIdAttachChildrenEndpoint(ConnectWiseEndpoint):
         super().__init__(client, "attachChildren", parent_endpoint=parent_endpoint)
         
     
+    
     def post(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> SuccessResponseModel:
         """
         Performs a POST request against the /service/tickets/{parentId}/attachChildren endpoint.

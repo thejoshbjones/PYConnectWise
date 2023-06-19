@@ -13,6 +13,7 @@ class FinanceInvoiceEmailTemplatesInfoEndpoint(ConnectWiseEndpoint):
             FinanceInvoiceEmailTemplatesInfoCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[InvoiceEmailTemplateInfoModel]:
         """
         Performs a GET request against the /finance/invoiceEmailTemplates/info endpoint and returns an initialized PaginatedResponse object.

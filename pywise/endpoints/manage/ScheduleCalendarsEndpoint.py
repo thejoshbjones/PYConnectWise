@@ -18,7 +18,16 @@ class ScheduleCalendarsEndpoint(ConnectWiseEndpoint):
             ScheduleCalendarsInfoEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> ScheduleCalendarsIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized ScheduleCalendarsIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            ScheduleCalendarsIdEndpoint: The initialized ScheduleCalendarsIdEndpoint object.
+        """
         child = ScheduleCalendarsIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

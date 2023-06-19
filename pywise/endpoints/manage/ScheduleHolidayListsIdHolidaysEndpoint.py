@@ -14,7 +14,16 @@ class ScheduleHolidayListsIdHolidaysEndpoint(ConnectWiseEndpoint):
             ScheduleHolidayListsIdHolidaysCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> ScheduleHolidayListsIdHolidaysIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized ScheduleHolidayListsIdHolidaysIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            ScheduleHolidayListsIdHolidaysIdEndpoint: The initialized ScheduleHolidayListsIdHolidaysIdEndpoint object.
+        """
         child = ScheduleHolidayListsIdHolidaysIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

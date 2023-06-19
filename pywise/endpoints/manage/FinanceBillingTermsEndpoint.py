@@ -18,7 +18,16 @@ class FinanceBillingTermsEndpoint(ConnectWiseEndpoint):
             FinanceBillingTermsInfoEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> FinanceBillingTermsIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized FinanceBillingTermsIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            FinanceBillingTermsIdEndpoint: The initialized FinanceBillingTermsIdEndpoint object.
+        """
         child = FinanceBillingTermsIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

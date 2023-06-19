@@ -18,7 +18,16 @@ class ScheduleColorsEndpoint(ConnectWiseEndpoint):
             ScheduleColorsResetEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> ScheduleColorsIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized ScheduleColorsIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            ScheduleColorsIdEndpoint: The initialized ScheduleColorsIdEndpoint object.
+        """
         child = ScheduleColorsIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

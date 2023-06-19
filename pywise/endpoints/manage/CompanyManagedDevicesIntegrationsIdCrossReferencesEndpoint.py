@@ -14,7 +14,16 @@ class CompanyManagedDevicesIntegrationsIdCrossReferencesEndpoint(ConnectWiseEndp
             CompanyManagedDevicesIntegrationsIdCrossReferencesCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> CompanyManagedDevicesIntegrationsIdCrossReferencesIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized CompanyManagedDevicesIntegrationsIdCrossReferencesIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            CompanyManagedDevicesIntegrationsIdCrossReferencesIdEndpoint: The initialized CompanyManagedDevicesIntegrationsIdCrossReferencesIdEndpoint object.
+        """
         child = CompanyManagedDevicesIntegrationsIdCrossReferencesIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

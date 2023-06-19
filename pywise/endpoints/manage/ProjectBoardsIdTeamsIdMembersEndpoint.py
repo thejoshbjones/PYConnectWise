@@ -10,7 +10,16 @@ class ProjectBoardsIdTeamsIdMembersEndpoint(ConnectWiseEndpoint):
         super().__init__(client, "members", parent_endpoint=parent_endpoint)
         
     
+    
     def id(self, id: int) -> ProjectBoardsIdTeamsIdMembersIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized ProjectBoardsIdTeamsIdMembersIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            ProjectBoardsIdTeamsIdMembersIdEndpoint: The initialized ProjectBoardsIdTeamsIdMembersIdEndpoint object.
+        """
         child = ProjectBoardsIdTeamsIdMembersIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

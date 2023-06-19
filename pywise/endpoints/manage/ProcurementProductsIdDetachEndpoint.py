@@ -9,6 +9,7 @@ class ProcurementProductsIdDetachEndpoint(ConnectWiseEndpoint):
         super().__init__(client, "detach", parent_endpoint=parent_endpoint)
         
     
+    
     def post(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> ProductDetachModel:
         """
         Performs a POST request against the /procurement/products/{id}/detach endpoint.

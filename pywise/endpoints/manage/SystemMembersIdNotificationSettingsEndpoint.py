@@ -14,7 +14,16 @@ class SystemMembersIdNotificationSettingsEndpoint(ConnectWiseEndpoint):
             SystemMembersIdNotificationSettingsCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> SystemMembersIdNotificationSettingsIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized SystemMembersIdNotificationSettingsIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            SystemMembersIdNotificationSettingsIdEndpoint: The initialized SystemMembersIdNotificationSettingsIdEndpoint object.
+        """
         child = SystemMembersIdNotificationSettingsIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

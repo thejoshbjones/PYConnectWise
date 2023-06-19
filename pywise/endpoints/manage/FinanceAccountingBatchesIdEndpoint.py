@@ -17,6 +17,7 @@ class FinanceAccountingBatchesIdEndpoint(ConnectWiseEndpoint):
             FinanceAccountingBatchesIdEntriesEndpoint(client, parent_endpoint=self)
         )
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[AccountingBatchModel]:
         """
         Performs a GET request against the /finance/accounting/batches/{id} endpoint and returns an initialized PaginatedResponse object.

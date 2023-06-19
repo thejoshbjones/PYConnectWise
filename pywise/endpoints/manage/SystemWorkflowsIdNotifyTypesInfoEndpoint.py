@@ -13,6 +13,7 @@ class SystemWorkflowsIdNotifyTypesInfoEndpoint(ConnectWiseEndpoint):
             SystemWorkflowsIdNotifyTypesInfoCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def paginated(self, page: int, page_size: int, params: dict[str, int | str] = {}) -> PaginatedResponse[WorkflowNotifyTypeInfoModel]:
         """
         Performs a GET request against the /system/workflows/{parentId}/notifyTypes/info endpoint and returns an initialized PaginatedResponse object.

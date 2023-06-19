@@ -14,7 +14,16 @@ class SystemWorkflowActionsIdAutomateParametersEndpoint(ConnectWiseEndpoint):
             SystemWorkflowActionsIdAutomateParametersCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> SystemWorkflowActionsIdAutomateParametersIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized SystemWorkflowActionsIdAutomateParametersIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            SystemWorkflowActionsIdAutomateParametersIdEndpoint: The initialized SystemWorkflowActionsIdAutomateParametersIdEndpoint object.
+        """
         child = SystemWorkflowActionsIdAutomateParametersIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

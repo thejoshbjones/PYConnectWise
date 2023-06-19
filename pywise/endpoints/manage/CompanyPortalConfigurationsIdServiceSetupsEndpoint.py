@@ -14,7 +14,16 @@ class CompanyPortalConfigurationsIdServiceSetupsEndpoint(ConnectWiseEndpoint):
             CompanyPortalConfigurationsIdServiceSetupsCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> CompanyPortalConfigurationsIdServiceSetupsIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized CompanyPortalConfigurationsIdServiceSetupsIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            CompanyPortalConfigurationsIdServiceSetupsIdEndpoint: The initialized CompanyPortalConfigurationsIdServiceSetupsIdEndpoint object.
+        """
         child = CompanyPortalConfigurationsIdServiceSetupsIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

@@ -14,7 +14,16 @@ class SystemParsingTypesEndpoint(ConnectWiseEndpoint):
             SystemParsingTypesCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> SystemParsingTypesIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized SystemParsingTypesIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            SystemParsingTypesIdEndpoint: The initialized SystemParsingTypesIdEndpoint object.
+        """
         child = SystemParsingTypesIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

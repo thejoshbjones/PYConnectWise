@@ -9,6 +9,7 @@ class SalesOpportunitiesIdConvertToAgreementEndpoint(ConnectWiseEndpoint):
         super().__init__(client, "convertToAgreement", parent_endpoint=parent_endpoint)
         
     
+    
     def post(self, data: dict[str, Any] = {}, params: dict[str, int | str] = {}) -> AgreementModel:
         """
         Performs a POST request against the /sales/opportunities/{id}/convertToAgreement endpoint.

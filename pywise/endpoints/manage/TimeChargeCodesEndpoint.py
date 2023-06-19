@@ -18,7 +18,16 @@ class TimeChargeCodesEndpoint(ConnectWiseEndpoint):
             TimeChargeCodesInfoEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> TimeChargeCodesIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized TimeChargeCodesIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            TimeChargeCodesIdEndpoint: The initialized TimeChargeCodesIdEndpoint object.
+        """
         child = TimeChargeCodesIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child

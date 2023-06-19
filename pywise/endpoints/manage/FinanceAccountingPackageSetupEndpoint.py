@@ -14,7 +14,16 @@ class FinanceAccountingPackageSetupEndpoint(ConnectWiseEndpoint):
             FinanceAccountingPackageSetupCountEndpoint(client, parent_endpoint=self)
         )
     
+    
     def id(self, id: int) -> FinanceAccountingPackageSetupIdEndpoint:
+        """
+        Sets the ID for this endpoint and returns an initialized FinanceAccountingPackageSetupIdEndpoint object to move down the chain.
+
+        Parameters:
+            id (int): The ID to set.
+        Returns:
+            FinanceAccountingPackageSetupIdEndpoint: The initialized FinanceAccountingPackageSetupIdEndpoint object.
+        """
         child = FinanceAccountingPackageSetupIdEndpoint(self.client, parent_endpoint=self)
         child._id = id
         return child
