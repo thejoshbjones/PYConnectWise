@@ -2,7 +2,7 @@
 
 # PyWise - A wrapper client for simplifying interactions with the ConnectWise Manage API in Python
 
-PyWise is a full featured, type-annotated API client written in Python for the ConnectWise API's. 
+PyWise is a full featured, type annotated API client written in Python for the ConnectWise API's. 
 
 This library has been developed with the intention of making the ConnectWise API's simple and accessible to non-coders while allowing experienced coders to utilize all features the API has to offer without the boilerplate.
 
@@ -11,7 +11,8 @@ Currently, it only supports ConnectWise Manage, but more is planned.
 Features:
 =========
 - 100% API Coverage. All endpoints and response schemas have had their code generated from the ConnectWise Manage OpenAPI Schema.
-- Focus on type-annotation and DX. Models are parsed and validated using [Pydantic](https://github.com/pydantic/pydantic)
+- Beginner and expert friendly.
+- Focus on type annotations and DX (Developer Experience). Models are declared and parsed using [Pydantic](https://github.com/pydantic/pydantic)
 
 PyWise is currently in **pre-release**. This means that while it does work, you may come across issues and inconsistencies. 
 
@@ -20,8 +21,15 @@ As all Endpoint and Model code has been generated, not all of it has been tested
 Known Issues:
 =============
 - The ConnectWise API spec doesn't label optional fields correctly - for example, the mergedParentTicket field on a service ticket is only included in an API response if the ticket has a parent.
-  - Because these aren't labelled, the models generated can't correctly identify what exactly an optional field is. As a result, every field on a model is optional (annotated as ```<type> | None```). I'd like to find a better solution to this that doesn't include manually fixing hundreds of models.
-- Currently only parses and validates **Response** models. No input models yet.
+  - Because these aren't labelled, the models generated can't correctly identify what exactly an optional field is. There's 3 potential solutions for this, all with caveats:
+    - Manually edit the schema or models
+      - This isn't maintainable - if a new version comes out, it'll need to be re-done. It's also very manual labour intensive.
+    - Annotate every field in a model as ```<type> | None```
+      - This negatively impacts DX (Developer Experience). Every field would need to be checked for None manually otherwise the type checker would yell at you.
+    - Opt out of Pydantic validation altogether by setting ```validate_assignment = False``` on models.
+      - We miss out on the best part of Pydantic this way, and it also introduces the risk of accessing fields (such as ```TicketModel.mergedParentTicket```) without being notified of it potentially being None.
+      - This is the option I've opted for for the time being. I'd like to find a better solution to this.
+- Currently only parses **Response** models. No input models yet.
 - As this project is still a WIP, documentation or code commentary may not always align. 
 - Little to no error handling just yet
 
