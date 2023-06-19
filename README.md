@@ -1,8 +1,8 @@
 [![Health IT Logo](https://healthit.com.au/wp-content/uploads/2019/06/HIT-proper-logo.png)](https://healthit.com.au)
 
-# PyWise - A wrapper client for simplifying interactions with the ConnectWise Manage API in Python
+# pyconnectwise - A wrapper client for simplifying interactions with the ConnectWise Manage API in Python
 
-PyWise is a full featured, type annotated API client written in Python for the ConnectWise API's. 
+pyconnectwise is a full featured, type annotated API client written in Python for the ConnectWise API's. 
 
 This library has been developed with the intention of making the ConnectWise API's simple and accessible to non-coders while allowing experienced coders to utilize all features the API has to offer without the boilerplate.
 
@@ -14,7 +14,7 @@ Features:
 - Beginner and expert friendly.
 - Focus on type annotations and DX (Developer Experience). Models are declared and parsed using [Pydantic](https://github.com/pydantic/pydantic)
 
-PyWise is currently in **pre-release**. This means that while it does work, you may come across issues and inconsistencies. 
+pyconnectwise is currently in **pre-release**. This means that while it does work, you may come across issues and inconsistencies. 
 
 As all Endpoint and Model code has been generated, not all of it has been tested. YMMV.
 - - - - 
@@ -58,7 +58,7 @@ How-to:
 - - - - 
 # Initialize API client
 ```python
-from pywise import ConnectWiseManageAPIClient
+from pyconnectwise import ConnectWiseManageAPIClient
 
 # init client
 api = ConnectWiseManageAPIClient(
