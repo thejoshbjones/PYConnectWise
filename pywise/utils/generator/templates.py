@@ -138,7 +138,7 @@ class {{ model_class }}(ConnectWiseModel):
 """
 )
 
-client_template = Template(
+manage_client_template = Template(
 """import base64
 import requests
 {%- if imports is defined %}
@@ -254,6 +254,83 @@ class ConnectWiseManageAPIClient:
             "Content-Type": "application/json",
             "clientId": self.client_id,
             "Authorization": self.__get_auth_string(),
+        }
+        return headers
+
+"""
+)
+
+automate_client_template = Template(
+"""import base64
+import requests
+from datetime import datetime
+{%- if imports is defined %}
+{%- for import in imports %}
+{{ import }}
+{%- endfor %}
+{%- endif %}
+
+class ConnectWiseAutomateAPIClient:
+    \"""
+    ConnectWise Automate API client. Handles the connection to the ConnectWise Automate API
+    and the configuration of all the available endpoints.
+    \"""
+    def __init__(
+        self,
+        automate_url: str,
+        client_id: str,
+        username: str,
+        password: str,
+    ):
+        \"""
+        Initializes the client with the given credentials and optionally a specific codebase.
+        If no codebase is given, it tries to get it from the API.
+
+        Parameters:
+            automate_url (str): URL of your ConnectWise Automate instance.
+            client_id (str): Your ConnectWise Automate API Client ID.
+            username (str): Your ConnectWise Automate API username.
+            password (str): Your ConnectWise Automate API password.
+        \"""
+        self.client_id = client_id
+        self.automate_url = automate_url
+        self.username = username
+        self.password = password
+        self.token_expiry_time: datetime = datetime.now().isoformat()
+
+        # Grab first access token
+        self.access_token: str = __get_access_token()
+                
+        # Initializing endpoints
+        {%- for endpoint in endpoints %}
+        self.{{ endpoint.field_name }} = {{ endpoint.class_name }}(self)
+        {%- endfor %}
+
+    def get_url(self) -> str:
+        \"""
+        Generates and returns the URL for the ConnectWise Automate API endpoints based on the company url and codebase.
+        Logs in an obtains an access token.
+        Returns:
+            str: API URL.
+        \"""
+        return f"https://{self.automate_url}/cwa"
+
+    def __get_access_token() -> str:
+        token = ""
+        try:
+            result
+
+    def get_headers(self) -> dict[str, str]:
+        \"""
+        Generates and returns the headers required for making API requests.
+
+        Returns:
+            dict[str, str]: Dictionary of headers including Content-Type, Client ID, and Authorization.
+        \"""
+        headers = {
+            "Content-Type": "application/json",
+            "clientId": self.client_id,
+            "Authorization": f"Bearer {self.access_token}",
         }
         return headers
 
