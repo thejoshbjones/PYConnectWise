@@ -26,7 +26,7 @@ Known Issues:
       - This isn't maintainable - if a new version comes out, it'll need to be re-done. It's also very manual labour intensive.
     - Annotate every field in a model as ```<type> | None```
       - This negatively impacts DX (Developer Experience). Every field would need to be checked for None manually otherwise the type checker would yell at you.
-    - Opt out of Pydantic validation altogether by setting ```validate_assignment = False``` on models.
+    - Opt out of Pydantic validation altogether.
       - We miss out on the best part of Pydantic this way, and it also introduces the risk of accessing fields (such as ```TicketModel.mergedParentTicket```) without being notified of it potentially being None.
       - This is the option I've opted for for the time being. I'd like to find a better solution to this.
 - Currently only parses **Response** models. No input models yet.
