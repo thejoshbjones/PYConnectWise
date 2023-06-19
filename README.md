@@ -53,7 +53,7 @@ How-to:
 
 - - - - 
 # Install
-TODO: Pending PyPi upload
+```pip install pyconnectwise```
 
 - - - - 
 # Initialize API client
